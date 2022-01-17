@@ -19,7 +19,7 @@ class CreateRelatoriosAbastecimentosTable extends Migration
             $table->string('caminho_relatorio');
             $table->unsignedBigInteger('fk_usuario');
 
-            $table->foreign('fk_usuario')->references('id_usuario')->on('users');
+            $table->foreign('fk_usuario')->references('id')->on('users');
 
 
         });

@@ -3529,9 +3529,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 
 
 
@@ -3542,6 +3539,79 @@ __webpack_require__.r(__webpack_exports__);
   },
   props: {
     colabs: Array
+  },
+  data: function data() {
+    return {
+      form: {
+        id: null
+      }
+    };
+  },
+  methods: {
+    /*
+      sendForm() {
+          //this.$inertia.get("/colaborador/deletar/"+id);
+          this.$inertia.get("/colaborador/deletar/"+id, {
+          forceFormData: true,
+          preserveScroll: false,
+          _token: this.$page.props.csrf_token,
+            /*onSuccess: () => {
+            bootbox.alert({
+              centerVertical: true,
+              backdrop: true,
+              closeButton: false,
+              size: "large",
+              title:
+                "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+              message:
+                "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" +
+                "<span style='font-weight:bold; position: relative; top: 5px;'>Colaborador registrado com sucesso!</span>",
+            });
+                    
+            
+          },
+        });
+    
+          
+      },*/
+    sendForm: function sendForm(id) {
+      //:href="'/colaborador/deletar/'+colab.us_id"
+      bootbox.confirm({
+        centerVertical: true,
+        backdrop: true,
+        closeButton: false,
+        size: "large",
+        title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+        message: "<i class='fas fa-exclamation-circle' style='color:red'></i></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Deletar usuário?</span>",
+        buttons: {
+          cancel: {
+            label: '<i class="fa fa-times"></i> Não'
+          },
+          confirm: {
+            className: "btn-danger",
+            label: '<i class="fa fa-check"></i> Sim'
+          }
+        },
+        callback: function callback(result) {
+          if (result == true) {
+            $.ajax({
+              type: 'get',
+              headers: {
+                "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
+              },
+              url: "/colaborador/deletar/" + id
+              /*success: function (result) {
+                $('#resultadoPesq').html(result);
+              },
+              error: function () {
+                $('#resultadoPesq').html("Nenhum resultado encontrado.");
+              }*/
+
+            });
+          }
+        }
+      });
+    }
   },
   mounted: function mounted() {
     $(document).ready(function () {
@@ -31431,15 +31501,16 @@ var render = function () {
                         [_c("i", { staticClass: "fas fa-edit" })]
                       ),
                       _vm._v(" "),
-                      _c(
-                        "Link",
-                        {
-                          attrs: {
-                            href: "/colaborador/deletar/" + colab.us_id,
+                      _c("span", [
+                        _c("i", {
+                          staticClass: "fas fa-trash-alt",
+                          on: {
+                            click: function ($event) {
+                              return _vm.sendForm(colab.us_id)
+                            },
                           },
-                        },
-                        [_c("i", { staticClass: "fas fa-trash-alt" })]
-                      ),
+                        }),
+                      ]),
                     ],
                     1
                   ),
