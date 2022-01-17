@@ -2,7 +2,11 @@
 
 namespace App\Providers;
 
+use GuzzleHttp\Psr7\Request;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\ServiceProvider;
+use Inertia\Inertia;
+use Inertia\Middleware;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,8 +17,17 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        
+        Inertia::share('flash', function () {
+
+            return [
+                'success' => Session::get('success'),
+            ];
+
+        });
+
     }
+
 
     /**
      * Bootstrap any application services.
@@ -25,4 +38,5 @@ class AppServiceProvider extends ServiceProvider
     {
         //
     }
+
 }
