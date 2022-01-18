@@ -18,4 +18,4 @@ Route::get('/colaborador/lista', [UsersController::class, 'listarUsuarios'])->na
 Route::get('/colaborador/visualizar/{id}', [UsersController::class, 'show'])->name('colaborador.mostrar');
 Route::get('/colaborador/editar/{id}', [UsersController::class, 'edit'])->name('colaborador.editar');
 Route::post('/colaborador/update/{id}', [UsersController::class, 'update'])->name('colaborador.atualizar');
-Route::get('/colaborador/deletar/{id}', [UsersController::class, 'destroy'])->name('colaborador.deletar');
+Route::post('/colaborador/deletar/{id}', [UsersController::class, 'destroy'])->name('colaborador.deletar');

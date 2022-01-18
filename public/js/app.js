@@ -3534,14 +3534,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -3560,60 +3552,10 @@ __webpack_require__.r(__webpack_exports__);
       }
     };
   },
-
-  /*methods: {
-    sendForm(id) {
+  methods: {
+    sendForm: function sendForm(id) {
       //:href="'/colaborador/deletar/'+colab.us_id"
-        $("#deleteUser").on("click", function (event) {
-          event.preventDefault();
-          bootbox.confirm({
-          centerVertical: true,
-          backdrop: true,
-          closeButton: false,
-          size: "large",
-          title:
-            "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
-          message:
-            "<i class='fas fa-exclamation-circle' style='color:red'></i></i>&nbsp&nbsp" +
-            "<span style='font-weight:bold; position: relative; top: 5px;'>Deletar usuário?</span>",
-          buttons: {
-            cancel: {
-              label: '<i class="fa fa-times"></i> Não',
-            },
-            confirm: {
-              className: "btn-danger",
-              label: '<i class="fa fa-check"></i> Sim',
-            },
-          },
-          callback: function (result) {
-            if (result == true) {
-              //var url = '/colaborador/deletar/'+id;
-              //window.location.href = url;
-              //window.location = '/colaborador/deletar/'+id;
-                $.ajax({
-                url: "/colaborador/deletar/" + id,
-                method: "GET",
-                headers: {
-                  "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
-                },
-                success: function () {
-                  /*window.location.href = '/colaborador/deletar/'+id;
-                $( "#myTable" ).load( "/colaboradores/lista #myTable" );
-                },
-              });
-            }
-          },
-        });
-      });
-    },
-  },*/
-  mounted: function mounted() {
-    $("#deleteUser").on("click", function (event) {
-      //var id = document.getElementById('#deleteUser').value
-      var input = document.querySelector("#deleteUser");
-      var id = input.value;
-      alert(id);
-      event.preventDefault();
+      var v = this;
       bootbox.confirm({
         centerVertical: true,
         backdrop: true,
@@ -3632,24 +3574,32 @@ __webpack_require__.r(__webpack_exports__);
         },
         callback: function callback(result) {
           if (result == true) {
-            //var url = '/colaborador/deletar/'+id;
+            v.$inertia.post("/colaborador/deletar/" + id, {
+              forceFormData: true,
+              preserveScroll: false,
+              _token: v.$page.props.csrf_token
+            }); //var url = '/colaborador/deletar/'+id;
             //window.location.href = url;
             //window.location = '/colaborador/deletar/'+id;
+
+            /*
             $.ajax({
               url: "/colaborador/deletar/" + id,
               method: "GET",
               headers: {
-                "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
+                "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
               },
-              success: function success() {
+              success: function () {
                 /*window.location.href = '/colaborador/deletar/'+id;
-                $( "#myTable" ).load( "/colaboradores/lista #myTable" );*/
-              }
-            });
+                $( "#myTable" ).load( "/colaboradores/lista #myTable" );
+              },
+            });*/
           }
         }
       });
-    });
+    }
+  },
+  mounted: function mounted() {
     $(document).ready(function () {
       $("#myTable").DataTable({
         language: {
@@ -31540,7 +31490,11 @@ var render = function () {
                       _c("span", [
                         _c("i", {
                           staticClass: "fas fa-trash-alt",
-                          attrs: { id: "deleteUser", value: colab.us_id },
+                          on: {
+                            click: function ($event) {
+                              return _vm.sendForm(colab.us_id)
+                            },
+                          },
                         }),
                       ]),
                     ],

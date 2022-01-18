@@ -248,7 +248,6 @@ class UsersController extends Controller
         DB::table('users')->delete($id);
         $colabs = User::listarColaboradores();
         return Inertia::render('Users/ListAllUsers.vue', ['colabs' => $colabs]);
-        //return redirect()->back();
 
         
         //$colabs = User::listarColaboradores();
