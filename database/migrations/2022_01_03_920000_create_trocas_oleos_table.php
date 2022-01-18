@@ -14,7 +14,7 @@ class CreateTrocasOleosTable extends Migration
     public function up()
     {
         Schema::create('trocas__oleos', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_troc_oleo');
             $table->timestamps();
             $table->string('nome_oleo');
             $table->tinyInteger('filtro_oleo');

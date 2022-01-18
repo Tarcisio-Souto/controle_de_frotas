@@ -14,7 +14,7 @@ class CreateManutencoesTable extends Migration
     public function up()
     {
         Schema::create('manutencoes', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_manutencao');
             $table->timestamps();
             $table->string('observacao');
             $table->string('custo_total');

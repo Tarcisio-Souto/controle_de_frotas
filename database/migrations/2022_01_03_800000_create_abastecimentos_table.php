@@ -14,7 +14,7 @@ class CreateAbastecimentosTable extends Migration
     public function up()
     {
         Schema::create('abastecimentos', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_abastecimento');
             $table->timestamps();
             $table->float('preco_litro');
             $table->integer('litros_abast');

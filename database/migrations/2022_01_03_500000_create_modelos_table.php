@@ -15,7 +15,7 @@ class CreateModelosTable extends Migration
     {
         Schema::create('modelos', function (Blueprint $table) {
             
-            $table->id();
+            $table->id('id_modelo');
             $table->timestamps();
             $table->string('nome_modelo');            
             $table->unsignedBigInteger('fk_fabricante');   
