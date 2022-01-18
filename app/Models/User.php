@@ -106,8 +106,12 @@ class User extends Authenticatable
 
     public static function deleteUser($id) {
 
-        $colab = DB::table('users')->delete($id);
-        return $colab;
+        
+
+        //$colab = DB::table('users')->delete($id);
+
+        $colab = User::find($id);
+        return $colab->delete();
 
     }
 

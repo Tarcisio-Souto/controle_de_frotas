@@ -28,7 +28,20 @@
               <Link :href="'/colaborador/editar/' + colab.us_id"
                 ><i class="fas fa-edit"></i
               ></Link>
-              <span><i class="fas fa-trash-alt" @click="sendForm(colab.us_id)"></i></span>
+              <span
+                ><i
+                  class="fas fa-trash-alt"
+                  id="deleteUser"
+                  :value="colab.us_id"
+                ></i
+              ></span>
+              <!--<span
+                ><i
+                  class="fas fa-trash-alt"
+                  id="deleteUser"
+                  @click="sendForm(colab.us_id)"
+                ></i
+              ></span>-->
             </td>
           </tr>
         </tbody>
@@ -66,92 +79,119 @@ export default {
     colabs: Array,
   },
 
-   data: () => {
+  data: () => {
     return {
       form: {
-        id: null
+        id: null,
       },
     };
   },
 
-  methods: {
-
-  /*
-    sendForm() {
-
-      //this.$inertia.get("/colaborador/deletar/"+id);
-
-      this.$inertia.get("/colaborador/deletar/"+id, {
-        forceFormData: true,
-        preserveScroll: false,
-        _token: this.$page.props.csrf_token,
-
-        /*onSuccess: () => {
-          bootbox.alert({
-            centerVertical: true,
-            backdrop: true,
-            closeButton: false,
-            size: "large",
-            title:
-              "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
-            message:
-              "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" +
-              "<span style='font-weight:bold; position: relative; top: 5px;'>Colaborador registrado com sucesso!</span>",
-          });
-                  
-          
-        },
-      });
-
-
-
-      
-    },*/
-
+  /*methods: {
     sendForm(id) {
       //:href="'/colaborador/deletar/'+colab.us_id"
 
-      bootbox.confirm({
-        centerVertical: true,
-        backdrop: true,
-        closeButton: false,
-        size: "large",
-        title:
-          "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
-        message:
-          "<i class='fas fa-exclamation-circle' style='color:red'></i></i>&nbsp&nbsp" +
-          "<span style='font-weight:bold; position: relative; top: 5px;'>Deletar usuário?</span>",
-        buttons: {
-          cancel: {
-            label: '<i class="fa fa-times"></i> Não',
-          },
-          confirm: {
-            className: "btn-danger",
-            label: '<i class="fa fa-check"></i> Sim',
-          },
-        },
-        callback: function (result) {
-          if (result == true) {
+      $("#deleteUser").on("click", function (event) {
 
-            $.ajax({
-              type: 'get',
-              headers: {
-                "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
-              },
-              url: "/colaborador/deletar/"+id,
-              /*success: function (result) {
-                $('#resultadoPesq').html(result);
+        event.preventDefault();
+
+        bootbox.confirm({
+          centerVertical: true,
+          backdrop: true,
+          closeButton: false,
+          size: "large",
+          title:
+            "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+          message:
+            "<i class='fas fa-exclamation-circle' style='color:red'></i></i>&nbsp&nbsp" +
+            "<span style='font-weight:bold; position: relative; top: 5px;'>Deletar usuário?</span>",
+          buttons: {
+            cancel: {
+              label: '<i class="fa fa-times"></i> Não',
             },
-            error: function () {
-                $('#resultadoPesq').html("Nenhum resultado encontrado.");
-            }*/
-            });
-          }
-        },
+            confirm: {
+              className: "btn-danger",
+              label: '<i class="fa fa-check"></i> Sim',
+            },
+          },
+          callback: function (result) {
+            if (result == true) {
+              //var url = '/colaborador/deletar/'+id;
+              //window.location.href = url;
+              //window.location = '/colaborador/deletar/'+id;
+
+              $.ajax({
+                url: "/colaborador/deletar/" + id,
+                method: "GET",
+                headers: {
+                  "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+                },
+                success: function () {
+                  /*window.location.href = '/colaborador/deletar/'+id;
+                $( "#myTable" ).load( "/colaboradores/lista #myTable" );
+                },
+              });
+            }
+          },
+        });
       });
     },
-  },
+  },*/
   mounted() {
+
+    $("#deleteUser").on("click", function (event) {
+
+        //var id = document.getElementById('#deleteUser').value
+        var input = document.querySelector("#deleteUser");
+        var id = input.value;
+
+        alert(id);
+
+        event.preventDefault();
+
+        bootbox.confirm({
+          centerVertical: true,
+          backdrop: true,
+          closeButton: false,
+          size: "large",
+          title:
+            "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+          message:
+            "<i class='fas fa-exclamation-circle' style='color:red'></i></i>&nbsp&nbsp" +
+            "<span style='font-weight:bold; position: relative; top: 5px;'>Deletar usuário?</span>",
+          buttons: {
+            cancel: {
+              label: '<i class="fa fa-times"></i> Não',
+            },
+            confirm: {
+              className: "btn-danger",
+              label: '<i class="fa fa-check"></i> Sim',
+            },
+          },
+          callback: function (result) {
+            if (result == true) {
+              //var url = '/colaborador/deletar/'+id;
+              //window.location.href = url;
+              //window.location = '/colaborador/deletar/'+id;
+
+              $.ajax({
+                url: "/colaborador/deletar/" + id,
+                method: "GET",
+                headers: {
+                  "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+                },
+                success: function () {
+                  /*window.location.href = '/colaborador/deletar/'+id;
+                $( "#myTable" ).load( "/colaboradores/lista #myTable" );*/
+                },
+              });
+            }
+          },
+        });
+      });
+
+
+
     $(document).ready(function () {
       $("#myTable").DataTable({
         language: {

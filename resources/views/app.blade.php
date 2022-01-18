@@ -8,7 +8,7 @@
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet" />
     <script src="{{ mix('/js/app.js') }}" defer></script>
 
-    
+
     <!-- Font Awesome JS -->
     <script src="https://kit.fontawesome.com/3d7779fa7f.js" crossorigin="anonymous"></script>
 
@@ -25,11 +25,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
         crossorigin="anonymous">
 
-        
+
+    
+
     <!-- Bootbox JS -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.5.2/bootbox.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.5.2/bootbox.js"></script>
 
     <!-- DataTables -->
 

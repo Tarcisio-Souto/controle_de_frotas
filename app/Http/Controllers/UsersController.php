@@ -243,12 +243,17 @@ class UsersController extends Controller
 
 
     public function destroy($id) {
+      
 
-        $user = new User();
-        $user::deleteUser($id);
-
-        $colabs = $user::listarColaboradores();
+        DB::table('users')->delete($id);
+        $colabs = User::listarColaboradores();
         return Inertia::render('Users/ListAllUsers.vue', ['colabs' => $colabs]);
+        //return redirect()->back();
+
+        
+        //$colabs = User::listarColaboradores();
+        //return Inertia::render('Users/ListAllUsers.vue', ['colabs' => $colabs]);
+        
 
     }
 
