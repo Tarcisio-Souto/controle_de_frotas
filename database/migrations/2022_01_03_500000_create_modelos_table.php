@@ -15,12 +15,12 @@ class CreateModelosTable extends Migration
     {
         Schema::create('modelos', function (Blueprint $table) {
             
-            $table->id('id_modelo');
+            $table->id('id');
             $table->timestamps();
             $table->string('nome_modelo');            
             $table->unsignedBigInteger('fk_fabricante');   
 
-            $table->foreign('fk_fabricante')->references('id_fabricante')->on('fabricantes');
+            $table->foreign('fk_fabricante')->references('id')->on('fabricantes');
 
         });
     }

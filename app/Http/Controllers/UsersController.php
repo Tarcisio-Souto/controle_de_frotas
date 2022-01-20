@@ -154,7 +154,7 @@ class UsersController extends Controller
     public function update(Request $req) {
 
         $user = User::find($req->id);
-
+        
         $msg1 = '';
         $msg2 = '';
         $msg3 = '';
@@ -189,8 +189,9 @@ class UsersController extends Controller
 
         } else {
 
-            
-            $address = Enderecos::all()->find($user->fk_endereco);
+
+            $address = Enderecos::find($user->fk_endereco);
+
 
             $address->bairro = $req->bairro;
             $address->cep = $req->cep;
@@ -248,10 +249,6 @@ class UsersController extends Controller
         DB::table('users')->delete($id);
         $colabs = User::listarColaboradores();
         return Inertia::render('Users/ListAllUsers.vue', ['colabs' => $colabs]);
-
-        
-        //$colabs = User::listarColaboradores();
-        //return Inertia::render('Users/ListAllUsers.vue', ['colabs' => $colabs]);
         
 
     }

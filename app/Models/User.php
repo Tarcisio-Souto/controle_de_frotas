@@ -69,9 +69,7 @@ class User extends Authenticatable
 
     public static function listarColaboradores() {
 
-        //$colabs = DB::table('users')->get();
-        //return $colabs;
-
+        
         $colabs = DB::table('users as us')
         ->join('cargos as cg','us.fk_cargo', '=', 'cg.id')
         ->join('empresas as emp', 'us.fk_empresa', '=', 'emp.id')
@@ -80,6 +78,7 @@ class User extends Authenticatable
         'emp.id as emp.emp_id', 'us.id as us_id', 'end.id as end_id', 'cg.id as cg_id',
         'emp.nome as nome_emp', 'us.nome as nome_colab', 'cg.nome as nome_cg')
         ->get();
+
 
         return $colabs;
 

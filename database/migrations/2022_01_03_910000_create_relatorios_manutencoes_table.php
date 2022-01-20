@@ -14,7 +14,7 @@ class CreateRelatoriosManutencoesTable extends Migration
     public function up()
     {
         Schema::create('relatorios__manutencoes', function (Blueprint $table) {
-            $table->id('id_rel_manut');
+            $table->id('id');
             $table->timestamps();
             $table->string('caminho_relatorio');
             $table->unsignedBigInteger('fk_usuario');

@@ -14,7 +14,7 @@ class CreateManutencoesTable extends Migration
     public function up()
     {
         Schema::create('manutencoes', function (Blueprint $table) {
-            $table->id('id_manutencao');
+            $table->id('id');
             $table->timestamps();
             $table->string('observacao');
             $table->string('custo_total');
@@ -22,9 +22,9 @@ class CreateManutencoesTable extends Migration
             $table->unsignedBigInteger('fk_oficina');
             $table->unsignedBigInteger('fk_servico');
 
-            $table->foreign('fk_veiculo')->references('id_veiculo')->on('veiculos');
-            $table->foreign('fk_oficina')->references('id_oficina')->on('oficinas');
-            $table->foreign('fk_servico')->references('id_servico')->on('servicos');
+            $table->foreign('fk_veiculo')->references('id')->on('veiculos');
+            $table->foreign('fk_oficina')->references('id')->on('oficinas');
+            $table->foreign('fk_servico')->references('id')->on('servicos');
 
         });
     }

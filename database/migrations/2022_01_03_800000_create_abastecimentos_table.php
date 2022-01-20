@@ -14,7 +14,7 @@ class CreateAbastecimentosTable extends Migration
     public function up()
     {
         Schema::create('abastecimentos', function (Blueprint $table) {
-            $table->id('id_abastecimento');
+            $table->id('id');
             $table->timestamps();
             $table->float('preco_litro');
             $table->integer('litros_abast');
@@ -22,8 +22,8 @@ class CreateAbastecimentosTable extends Migration
             $table->unsignedBigInteger('fk_posto');
             $table->unsignedBigInteger('fk_veiculo');
 
-            $table->foreign('fk_posto')->references('id_posto')->on('postos');
-            $table->foreign('fk_veiculo')->references('id_veiculo')->on('veiculos');
+            $table->foreign('fk_posto')->references('id')->on('postos');
+            $table->foreign('fk_veiculo')->references('id')->on('veiculos');
 
         });
     }

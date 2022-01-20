@@ -14,13 +14,9 @@ class CreatePostosTable extends Migration
     public function up()
     {
         Schema::create('postos', function (Blueprint $table) {
-            $table->id('id_posto');
+            $table->id('id');
             $table->timestamps();
             $table->string('nome_posto');
-            $table->unsignedBigInteger('fk_endereco');
-
-            $table->foreign('fk_endereco')->references('id_endereco')->on('enderecos');
-
 
         });
     }

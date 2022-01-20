@@ -14,7 +14,7 @@ class CreateRelatoriosTrocasOleosTable extends Migration
     public function up()
     {
         Schema::create('relatorios__trocas__oleos', function (Blueprint $table) {
-            $table->id('id_rel_troc');
+            $table->id('id');
             $table->timestamps();
             $table->string('caminho_relatorio');
             $table->unsignedBigInteger('fk_usuario');

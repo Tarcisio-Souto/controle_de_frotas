@@ -14,16 +14,19 @@ class CreateTrocasOleosTable extends Migration
     public function up()
     {
         Schema::create('trocas__oleos', function (Blueprint $table) {
-            $table->id('id_troc_oleo');
+            
+            $table->id('id');
             $table->timestamps();
             $table->string('nome_oleo');
             $table->tinyInteger('filtro_oleo');
             $table->tinyInteger('filtro_combustivel');
+            $table->integer('km_troca');
+            $table->integer('km_prox_troca');
             $table->unsignedBigInteger('fk_oficina');
+            $table->unsignedBigInteger('fk_veiculo');            
 
-            $table->foreign('fk_oficina')->references('id_oficina')->on('oficinas');
-
-
+            $table->foreign('fk_oficina')->references('id')->on('oficinas');
+            $table->foreign('fk_veiculo')->references('id')->on('veiculos');
 
         });
     }

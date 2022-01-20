@@ -33,6 +33,59 @@
                 <li><Link href="/colaborador/lista"><i class="fas fa-search icons-menu"></i>Pesquisar</Link></li>
               </ul>
             </li>
+
+            <li class="dropdown">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown"
+                ><i class="fas fa-building icons-menu"></i>Empresas</a
+              >
+              <ul class="dropdown-menu animated fadeInLeft" role="menu">
+                <!--<div class="dropdown-header">Ferramentas</div>-->
+                <li><Link href="/empresas/cadastro"><i class="fas fa-user-plus icons-menu"></i>Cadastrar</Link></li>
+                <li><Link href="#empresas/lista"><i class="fas fa-search icons-menu"></i>Pesquisar</Link></li>
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown"
+                ><i class="fas fa-car icons-menu"></i>Veículos</a
+              >
+              <ul class="dropdown-menu animated fadeInLeft" role="menu">
+                <!--<div class="dropdown-header">Ferramentas</div>-->
+                <li><Link href="#veiculos/cadastro"><i class="fas fa-plus-circle icons-menu"></i>Cadastrar</Link></li>
+                <li><Link href="#veiculos/lista"><i class="fas fa-search icons-menu"></i>Pesquisar</Link></li>
+                <li><Link href="#fabricantes/lista"><i class="fas fa-industry icons-menu"></i>Fabricantes</Link></li>
+                <li><Link href="#modelos/lista"><i class="fas fa-copyright icons-menu"></i>Modelos</Link></li>              
+                <li><Link href="#servicos/lista"><i class="fas fa-cogs icons-menu"></i>Serviços</Link></li>
+                <li><Link href="#manutencoes/lista"><i class="fas fa-tools icons-menu"></i>Manutenções</Link></li>
+                <li><Link href="#abastecimentos/lista"><i class="fas fa-gas-pump icons-menu"></i>Abastecimentos</Link></li>
+                <li><Link href="#trocas-oleo/lista"><i class="fas fa-oil-can icons-menu"></i>Trocas de Óleo</Link></li>
+                
+              </ul>
+            </li>
+           
+            <li class="dropdown">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown"
+                ><i class="fas fa-wrench icons-menu"></i>Oficinas</a
+              >
+              <ul class="dropdown-menu animated fadeInLeft" role="menu">
+                <!--<div class="dropdown-header">Ferramentas</div>-->
+                <li><Link href="#oficinas/cadastro"><i class="fas fa-user-plus icons-menu"></i>Cadastrar</Link></li>
+                <li><Link href="#oficinas/lista"><i class="fas fa-search icons-menu"></i>Pesquisar</Link></li>
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown"
+                ><i class="fas fa-gas-pump icons-menu"></i>Postos</a
+              >
+              <ul class="dropdown-menu animated fadeInLeft" role="menu">
+                <!--<div class="dropdown-header">Ferramentas</div>-->
+                <li><Link href="#postos/cadastro"><i class="fas fa-user-plus icons-menu"></i>Cadastrar</Link></li>
+                <li><Link href="#postos/lista"><i class="fas fa-search icons-menu"></i>Pesquisar</Link></li>
+              </ul>
+            </li>
+
+
             <li><Link href="#sobre"><i class="fas fa-info-circle icons-menu"></i>Sobre</Link></li>            
             <li>
               <Link href="#sair"><i class="fas fa-sign-out-alt icons-menu"></i>Sair</Link>

@@ -14,7 +14,7 @@ class CreateOficinasTable extends Migration
     public function up()
     {
         Schema::create('oficinas', function (Blueprint $table) {
-            $table->id('id_oficina');
+            $table->id('id');
             $table->timestamps();
             $table->string('nome_oficina');
         });

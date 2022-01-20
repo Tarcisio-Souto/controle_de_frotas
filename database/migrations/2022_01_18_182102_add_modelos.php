@@ -15,7 +15,7 @@ class AddModelos extends Migration
     public function up()
     {
         DB::table('modelos')->insert(array(
-
+        
             ['nome_modelo' => 'Symbol',
             'created_at' => '2021-09-21 11:09:00',
             'updated_at' => '2021-09-21 11:09:00',
@@ -60,7 +60,7 @@ class AddModelos extends Migration
             'created_at' => '2021-09-21 11:09:00',
             'updated_at' => '2021-09-21 11:09:00',
             'fk_fabricante' => 3]            
-
+            
         ));
     }
 
