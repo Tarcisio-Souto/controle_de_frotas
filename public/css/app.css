@@ -12387,3 +12387,9 @@ a[href*="#contact"]::before {
 .fa-trash-alt {
     cursor: pointer;
 }
+
+.btnNovo {
+    position: relative;
+    top: 20px;
+    margin-bottom: 45px;
+}

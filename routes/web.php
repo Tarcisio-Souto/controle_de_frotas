@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OficinasController;
 use App\Http\Controllers\PostosController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\FabricantesController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -53,3 +54,13 @@ Route::get('/posto/visualizar/{id}', [PostosController::class, 'show'])->name('p
 Route::get('/posto/editar/{id}', [PostosController::class, 'edit'])->name('posto.editar');
 Route::post('/posto/update/{id}', [PostosController::class, 'update'])->name('posto.atualizar');
 Route::post('/posto/deletar/{id}', [PostosController::class, 'destroy'])->name('posto.deletar');
+
+/* Fabricantes */
+
+Route::get('/fabricantes/cadastro', [FabricantesController::class, 'create'])->name('fabricantes.cadastro');
+Route::post('/fabricantes/registrar', [FabricantesController::class, 'store'])->name('fabricantes.registrar');
+Route::get('/fabricantes/lista', [FabricantesController::class, 'index'])->name('fabricantes.lista');
+Route::get('/fabricante/visualizar/{id}', [FabricantesController::class, 'show'])->name('fabricante.mostrar');
+Route::get('/fabricante/editar/{id}', [FabricantesController::class, 'edit'])->name('fabricante.editar');
+Route::post('/fabricante/update/{id}', [FabricantesController::class, 'update'])->name('fabricante.atualizar');
+Route::post('/fabricante/deletar/{id}', [FabricantesController::class, 'destroy'])->name('fabricante.deletar');

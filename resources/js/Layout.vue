@@ -53,7 +53,7 @@
                 <!--<div class="dropdown-header">Ferramentas</div>-->
                 <li><Link href="#veiculos/cadastro"><i class="fas fa-plus-circle icons-menu"></i>Cadastrar</Link></li>
                 <li><Link href="#veiculos/lista"><i class="fas fa-search icons-menu"></i>Pesquisar</Link></li>
-                <li><Link href="#fabricantes/lista"><i class="fas fa-industry icons-menu"></i>Fabricantes</Link></li>
+                <li><Link href="/fabricantes/lista"><i class="fas fa-industry icons-menu"></i>Fabricantes</Link></li>
                 <li><Link href="#modelos/lista"><i class="fas fa-copyright icons-menu"></i>Modelos</Link></li>              
                 <li><Link href="#servicos/lista"><i class="fas fa-cogs icons-menu"></i>Serviços</Link></li>
                 <li><Link href="#manutencoes/lista"><i class="fas fa-tools icons-menu"></i>Manutenções</Link></li>
