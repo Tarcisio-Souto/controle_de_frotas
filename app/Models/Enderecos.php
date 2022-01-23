@@ -9,4 +9,9 @@ use Illuminate\Support\Facades\DB;
 class Enderecos extends Model
 {
     use HasFactory;
+
+    
+
+
+
 }

@@ -9,7 +9,7 @@
     <div class="row">
       <div class="col-md-4"></div>
       <div class="col-md-4" align="center">
-        <h4>Cadastro de Colaborador</h4>
+        <h4>Cadastro de Empresa</h4>
       </div>
       <div class="col-md-4"></div>
     </div>
@@ -19,16 +19,17 @@
     <div class="row">
       <div class="col-md-12">
         <form
-          v-for="colab in colab"
-          :key="colab.id_usuario"
+          v-for="empresa in empresa"
+          :key="empresa.id"
           @submit.prevent="sendForm"
           enctype="multipart/form-data"
         >
-          <input type="hidden" v-model="colab.us_id" />          
+          <input type="hidden" v-model="empresa.id" />
+          <input type="hidden" v-model="empresa.fk_endereco">          
           <br /><br />
-          <h4><span style="font-weight: bold">Dados Pessoais</span></h4>
+          <h4><span style="font-weight: bold">Dados Cadastrais</span></h4>
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-6">
               <label for="inputNome">Nome</label>
               <div class="input-group">
                 <div class="input-group-prepend">
@@ -51,8 +52,8 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-4">
-              <label for="inputCpf">CPF</label>
+            <div class="col-md-6">
+              <label for="inputCnpj">CNPJ</label>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
@@ -61,236 +62,18 @@
                 </div>
                 <input
                   type="text"
-                  id="inputCpf"
+                  id="inputCnpj"
                   class="form-control"
-                  v-model="form.cpf"
-                  v-mask="'###.###.###-##'"
+                  v-model="form.cnpj"
+                  v-mask="'##.###.###/####-##'"
                 />
               </div>
-              <div v-for="(erro, cpf) in errors" :key="cpf">
-                <div v-if="cpf == 'cpf'">
+              <div v-for="(erro, cnpj) in errors" :key="cnpj">
+                <div v-if="cnpj == 'cnpj'">
                   <span v-if="erro != ''" class="errors-label-notification">
                     <i class="fas fa-exclamation-circle"></i>{{ erro }}
                   </span>
                 </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <label for="inputSexo">Sexo</label>
-              <div class="row">
-                <div class="col-md-12">
-                  <div
-                    class="form-check form-check-inline"
-                    v-if="colab.sexo == 'm'"
-                  >
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="exampleRadios"
-                      id="inputSexo1"
-                      value="m"
-                      v-model="form.sexo"
-                      checked
-                    />
-                    <label class="form-check-label" for="exampleRadios1">
-                      Masculino
-                    </label>
-                  </div>
-                  <div class="form-check form-check-inline" v-else>
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="exampleRadios"
-                      id="inputSexo1"
-                      value="m"
-                      v-model="form.sexo"
-                    />
-                    <label class="form-check-label" for="exampleRadios1">
-                      Masculino
-                    </label>
-                  </div>
-
-                  <div
-                    class="form-check form-check-inline"
-                    v-if="colab.sexo == 'f'"
-                  >
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="exampleRadios"
-                      id="inputSexo2"
-                      value="f"
-                      v-model="form.sexo"
-                      checked
-                    />
-                    <label class="form-check-label" for="exampleRadios2">
-                      Feminino
-                    </label>
-                  </div>
-                  <div class="form-check form-check-inline" v-else>
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="exampleRadios"
-                      id="inputSexo2"
-                      value="f"
-                      v-model="form.sexo"
-                    />
-                    <label class="form-check-label" for="exampleRadios1">
-                      Feminino
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <br />
-          <div class="row">
-            <div class="col-md-4">
-              <label for="inputIdade">Idade</label>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">
-                    <i class="fas fa-birthday-cake"></i>
-                  </div>
-                </div>
-                <input
-                  type="text"
-                  id="inputIdade"
-                  class="form-control"
-                  v-model="form.idade"
-                />
-              </div>
-              <div v-for="(erro, idade) in errors" :key="idade">
-                <div v-if="idade == 'idade'">
-                  <span v-if="erro != ''" class="errors-label-notification">
-                    <i class="fas fa-exclamation-circle"></i>{{ erro }}
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <label for="inputEmail">Email Particular</label>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">@</div>
-                </div>
-                <input
-                  type="email"
-                  id="inputEmail"
-                  class="form-control"
-                  v-model="form.email_part"
-                />
-              </div>
-            </div>
-            <div class="col-md-4">
-              <label for="inputEmailInst">Email Institucional</label>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">@</div>
-                </div>
-                <input
-                  type="email"
-                  id="inputEmailInst"
-                  class="form-control"
-                  v-model="form.email_inst"
-                />
-              </div>
-            </div>
-          </div>
-          <br />
-          <div class="row">
-            <div class="col-md-4">
-              <label for="inputEmpresa">Empresa</label>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">
-                    <i class="fas fa-building"></i>
-                  </div>
-                </div>
-                <select
-                  id="inputEmpresa"
-                  class="form-control"
-                  name="txtEmpresa"
-                >
-                  <option selected>{{ form.empresa }}</option>
-                </select>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <label for="inputCargo">Cargo</label>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">
-                    <i class="fas fa-briefcase"></i>
-                  </div>
-                </div>
-                <select id="inputCargo" v-model="form.cargo" class="form-control" name="txtCargo">
-                  <option selected :value="form.cargo" style="background-color:gainsboro">{{ form.cargo }}</option>
-                  <option
-                    v-for="cargo in cargos"
-                    :key="cargo.id"
-                    :value="cargo.nome"
-                  >
-                    {{ cargo.nome }}
-                  </option>
-                </select>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <label for="inputDataAdmissao">Data de Admissão</label>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">
-                    <i class="fas fa-calendar-alt"></i>
-                  </div>
-                </div>
-                <input
-                  key=""
-                  type="text"
-                  id="inputDataAdmissao"
-                  class="form-control"
-                  v-model="form.data_adm"
-                  v-mask="'##/##/####'"              
-                />
-              </div>
-            </div>
-          </div>
-          <br />
-          <div class="row">
-            <div class="col-md-6">
-              <label for="inputCelular">Celular</label>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">
-                    <i class="fas fa-mobile-alt"></i>
-                  </div>
-                </div>
-                <input
-                  type="text"
-                  id="inputCelular"
-                  class="form-control"
-                  v-mask="['(##) #####-####', '(##) ####-####']"
-                  v-model="form.celular"
-                />
-              </div>
-            </div>
-            <div class="col-md-6">
-              <label for="inputTelRecado">Telefone (recado)</label>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">
-                    <i class="fas fa-phone"></i>
-                  </div>
-                </div>
-                <input
-                  type="text"
-                  id="inputTelRecado"
-                  class="form-control"
-                  name="txtTelRec"
-                  v-mask="['(##) #####-####', '(##) ####-####']"
-                  v-model="form.tel_rec"
-                />
               </div>
             </div>
           </div>
@@ -381,7 +164,7 @@
                   </div>
                 </div>
                 <select id="inputEstado" class="form-control" name="txtEstado">
-                  <option selected>{{ colab.uf }}</option>
+                  <option selected>{{ empresa.uf }}</option>
                   <option value="">Selecione o estado</option>
                   <option value="Acre">Acre</option>
                   <option value="Alagoas">Alagoas</option>
@@ -468,9 +251,7 @@ export default {
   },
   props: {
     errors: Object,
-    cargos: Array,
-    empresas: Array,
-    colab: Array
+    empresa: Array,
   },
 
   data: () => {
@@ -478,19 +259,9 @@ export default {
       form: {
         id: null,
         nome: null,
-        cpf: null,
-        idade: null,
-        sexo: null,
-        email_part: null,
-        email_inst: null,
-        empresa: null,
-        cargo: null,
-        data_adm: null,
-        celular: null,
-        tel_rec: null,
-        //senha: null,
-        //confirm_senha: null,
+        cnpj: null,
 
+        fk_endereco: null,
         logradouro: null,
         numero: null,
         bairro: null,
@@ -503,52 +274,39 @@ export default {
   },
 
   created() {
-    
-    this.form.id = this.$page.props.colab[0].us_id,
-    this.form.nome = this.$page.props.colab[0].nome_colab,
-    this.form.cpf = this.$page.props.colab[0].cpf,
-    this.form.idade = this.$page.props.colab[0].idade,
-    this.form.sexo = this.$page.props.colab[0].sexo,
-    this.form.email_part = this.$page.props.colab[0].email,
-    this.form.email_inst = this.$page.props.colab[0].email_inst,
-    this.form.empresa = this.$page.props.colab[0].nome_emp,
-    this.form.cargo = this.$page.props.colab[0].nome_cg,
-    this.form.data_adm = this.$page.props.colab[0].dt_adm_format,
-    this.form.celular = this.$page.props.colab[0].celular,
-    this.form.tel_rec = this.$page.props.colab[0].tel_recado,
-    this.form.logradouro = this.$page.props.colab[0].logradouro,
-    this.form.numero = this.$page.props.colab[0].numero,
-    this.form.bairro = this.$page.props.colab[0].bairro,
-    this.form.cidade = this.$page.props.colab[0].cidade,
-    this.form.estado = this.$page.props.colab[0].uf,
-    this.form.cep = this.$page.props.colab[0].cep
-
+    (this.form.id = this.$page.props.empresa[0].id),
+      (this.form.nome = this.$page.props.empresa[0].nome),
+      (this.form.cnpj = this.$page.props.empresa[0].cnpj),
+      (this.form.fk_endereco = this.$page.props.empresa[0].fk_endereco),
+      (this.form.logradouro = this.$page.props.empresa[0].logradouro),
+      (this.form.numero = this.$page.props.empresa[0].numero),
+      (this.form.bairro = this.$page.props.empresa[0].bairro),
+      (this.form.cidade = this.$page.props.empresa[0].cidade),
+      (this.form.estado = this.$page.props.empresa[0].uf),
+      (this.form.cep = this.$page.props.empresa[0].cep);
   },
 
   methods: {
     sendForm() {
-      this.$inertia.post("/colaborador/update/"+this.form.id,
-        this.form,
-        {
-          forceFormData: true,
-          preserveScroll: false,
-          _token: this.$page.props.csrf_token,
-          _method: "PUT",
-          onSuccess: () => {
-            bootbox.alert({
-              centerVertical: true,
-              backdrop: true,
-              closeButton: false,
-              size: "large",
-              title:
-                "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
-              message:
-                "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" +
-                "<span style='font-weight:bold; position: relative; top: 5px;'>Cadastro atualizado com sucesso!</span>",
-            });
-          },
-        }
-      );
+      this.$inertia.post("/empresa/update/" + this.form.id, this.form, {
+        forceFormData: true,
+        preserveScroll: false,
+        _token: this.$page.props.csrf_token,
+        _method: "PUT",
+        onSuccess: () => {
+          bootbox.alert({
+            centerVertical: true,
+            backdrop: true,
+            closeButton: false,
+            size: "large",
+            title:
+              "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+            message:
+              "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" +
+              "<span style='font-weight:bold; position: relative; top: 5px;'>Cadastro atualizado com sucesso!</span>",
+          });
+        },
+      });
     },
   },
 };

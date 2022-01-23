@@ -235,7 +235,8 @@ class UsersController extends Controller
             $user->save();
 
             $colabs = $user::listarColaboradores();
-            return Inertia::render('Users/ListAllUsers.vue', ['colabs' => $colabs])->with('success', 'Atualizações registradas com sucesso!');          
+            return Redirect::route('colaboradores.lista', ['colabs' => $colabs]);
+
 
         }
         

@@ -26,3 +26,8 @@ Route::post('/colaborador/deletar/{id}', [UsersController::class, 'destroy'])->n
 
 Route::get('/empresas/cadastro', [EmpresasController::class, 'create'])->name('empresas.cadastro');
 Route::post('/empresas/registrar', [EmpresasController::class, 'store'])->name('empresas.registrar');
+Route::get('/empresas/lista', [EmpresasController::class, 'index'])->name('empresas.lista');
+Route::get('/empresa/visualizar/{id}', [EmpresasController::class, 'show'])->name('empresa.mostrar');
+Route::get('/empresa/editar/{id}', [EmpresasController::class, 'edit'])->name('empresa.editar');
+Route::post('/empresa/update/{id}', [EmpresasController::class, 'update'])->name('empresa.atualizar');
+Route::post('/empresa/deletar/{id}', [EmpresasController::class, 'destroy'])->name('empresa.deletar');

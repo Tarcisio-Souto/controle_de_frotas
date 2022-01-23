@@ -75,9 +75,12 @@ class EmpresasController extends Controller
      * @param  \App\Models\Empresas  $empresas
      * @return \Illuminate\Http\Response
      */
-    public function show(Empresas $empresas)
+    public function show($id)
     {
-        //
+    
+        $empresa = Empresas::showEmpresa($id);
+        return Inertia::render('Empresas/ViewEmpresa.vue', ['empresa' => $empresa]);
+
     }
 
     /**
@@ -86,9 +89,10 @@ class EmpresasController extends Controller
      * @param  \App\Models\Empresas  $empresas
      * @return \Illuminate\Http\Response
      */
-    public function edit(Empresas $empresas)
+    public function edit($id)
     {
-        //
+        $empresa = Empresas::showEmpresa($id);
+        return Inertia::render('Empresas/EditEmpresa.vue', ['empresa' => $empresa]);
     }
 
     /**
@@ -100,7 +104,30 @@ class EmpresasController extends Controller
      */
     public function update(Request $request, Empresas $empresas)
     {
-        //
+        
+        $empresa = Empresas::find($request->id);
+        //dd($request->all());
+
+        $address = Enderecos::find($request->fk_endereco);
+
+        $address->bairro = $request->bairro;
+        $address->cep = $request->cep;
+        $address->cidade = $request->cidade;
+        $address->logradouro = $request->logradouro;
+        $address->numero = $request->numero;
+        $address->uf = $request->estado;
+        $address->save();
+
+        $empresa->nome = $request->nome;
+        $empresa->cnpj = $request->cnpj;
+        $empresa->fk_endereco = $request->fk_endereco;
+
+        $empresa->save();
+
+        $empresas = Empresas::all();
+        return Inertia::render('Empresas/ListAllEmpresas.vue', ['empresas' => $empresas])->with('success', 'Atualizações registradas com sucesso!');          
+
+
     }
 
     /**
@@ -109,8 +136,11 @@ class EmpresasController extends Controller
      * @param  \App\Models\Empresas  $empresas
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Empresas $empresas)
-    {
-        //
+    public function destroy($id)
+    {        
+        DB::table('empresas')->delete($id);
+        $empresas = Empresas::all();
+        return Redirect::route('empresas.lista', ['empresas' => $empresas]);
+
     }
 }

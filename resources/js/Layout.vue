@@ -41,7 +41,7 @@
               <ul class="dropdown-menu animated fadeInLeft" role="menu">
                 <!--<div class="dropdown-header">Ferramentas</div>-->
                 <li><Link href="/empresas/cadastro"><i class="fas fa-user-plus icons-menu"></i>Cadastrar</Link></li>
-                <li><Link href="#empresas/lista"><i class="fas fa-search icons-menu"></i>Pesquisar</Link></li>
+                <li><Link href="/empresas/lista"><i class="fas fa-search icons-menu"></i>Pesquisar</Link></li>
               </ul>
             </li>
 
