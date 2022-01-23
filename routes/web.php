@@ -4,7 +4,9 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EmpresasController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OficinasController;
 use App\Http\Controllers\UsersController;
+use App\Models\Oficinas;
 use Illuminate\Support\Facades\Route;
 
 
@@ -13,6 +15,7 @@ Route::get('/about', [AboutController::class, 'index']);
 Route::get('/contact', [ContactController::class, 'index']);
 
 /* Colaboradores */
+
 Route::get('/colaborador/cadastro', [UsersController::class, 'create'])->name('colaborador.cadastro');
 Route::post('/colaborador/registrar', [UsersController::class, 'store']);
 Route::get('/colaborador/lista', [UsersController::class, 'listarUsuarios'])->name('colaboradores.lista');
@@ -20,7 +23,6 @@ Route::get('/colaborador/visualizar/{id}', [UsersController::class, 'show'])->na
 Route::get('/colaborador/editar/{id}', [UsersController::class, 'edit'])->name('colaborador.editar');
 Route::post('/colaborador/update/{id}', [UsersController::class, 'update'])->name('colaborador.atualizar');
 Route::post('/colaborador/deletar/{id}', [UsersController::class, 'destroy'])->name('colaborador.deletar');
-
 
 /* Empresas */
 
@@ -31,3 +33,14 @@ Route::get('/empresa/visualizar/{id}', [EmpresasController::class, 'show'])->nam
 Route::get('/empresa/editar/{id}', [EmpresasController::class, 'edit'])->name('empresa.editar');
 Route::post('/empresa/update/{id}', [EmpresasController::class, 'update'])->name('empresa.atualizar');
 Route::post('/empresa/deletar/{id}', [EmpresasController::class, 'destroy'])->name('empresa.deletar');
+
+/* Oficinas */
+
+Route::get('/oficinas/cadastro', [OficinasController::class, 'create'])->name('oficinas.cadastro');
+Route::post('/oficinas/registrar', [OficinasController::class, 'store'])->name('oficinas.registrar');
+Route::get('/oficinas/lista', [OficinasController::class, 'index'])->name('oficinas.lista');
+Route::get('/oficina/visualizar/{id}', [OficinasController::class, 'show'])->name('oficina.mostrar');
+Route::get('/oficina/editar/{id}', [OficinasController::class, 'edit'])->name('oficina.editar');
+Route::post('/oficina/update/{id}', [OficinasController::class, 'update'])->name('oficina.atualizar');
+Route::post('/oficina/deletar/{id}', [OficinasController::class, 'destroy'])->name('oficina.deletar');
+

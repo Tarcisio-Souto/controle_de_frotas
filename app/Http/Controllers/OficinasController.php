@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Oficinas;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
+use Inertia\Inertia;
 
 class OficinasController extends Controller
 {
@@ -14,7 +17,8 @@ class OficinasController extends Controller
      */
     public function index()
     {
-        //
+        $oficinas = Oficinas::all();
+        return Inertia::render('Oficinas/ListAllOficinas.vue', ['oficinas' => $oficinas]);
     }
 
     /**
@@ -24,7 +28,7 @@ class OficinasController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('Oficinas/AddOficina.vue');
     }
 
     /**
@@ -35,7 +39,13 @@ class OficinasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $oficina = new Oficinas();
+
+        $oficina->nome_oficina = $request->nome;
+        
+        $oficina->save();
+        return Redirect::route('oficinas.cadastro')->with('success', 'Oficina registrada com sucesso!');            
+
     }
 
     /**
@@ -44,9 +54,10 @@ class OficinasController extends Controller
      * @param  \App\Models\Oficinas  $oficinas
      * @return \Illuminate\Http\Response
      */
-    public function show(Oficinas $oficinas)
+    public function show($id)
     {
-        //
+        $oficina = Oficinas::showOficina($id);
+        return Inertia::render('Oficinas/ViewOficina.vue', ['oficina' => $oficina]);
     }
 
     /**
@@ -55,9 +66,13 @@ class OficinasController extends Controller
      * @param  \App\Models\Oficinas  $oficinas
      * @return \Illuminate\Http\Response
      */
-    public function edit(Oficinas $oficinas)
+    public function edit($id)
     {
-        //
+        $oficina = Oficinas::showOficina($id);
+
+        //dd($oficina[0]->nome_oficina);
+
+        return Inertia::render('Oficinas/EditOficina.vue', ['oficina' => $oficina]);
     }
 
     /**
@@ -69,7 +84,15 @@ class OficinasController extends Controller
      */
     public function update(Request $request, Oficinas $oficinas)
     {
-        //
+        $oficina = Oficinas::find($request->id);
+        $oficina->nome_oficina = $request->nome;
+        $oficina->save();
+
+        $oficinas = Oficinas::all();
+        return Redirect::route('oficinas.lista', ['oficinas' => $oficinas])->with('success', 'Atualizações registradas com sucesso!');;
+
+
+
     }
 
     /**
@@ -78,8 +101,10 @@ class OficinasController extends Controller
      * @param  \App\Models\Oficinas  $oficinas
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Oficinas $oficinas)
+    public function destroy($id)
     {
-        //
+        DB::table('oficinas')->delete($id);
+        $oficinas = Oficinas::all();
+        return Redirect::route('oficinas.lista', ['oficinas' => $oficinas]);
     }
 }
