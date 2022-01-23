@@ -5,8 +5,8 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EmpresasController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OficinasController;
+use App\Http\Controllers\PostosController;
 use App\Http\Controllers\UsersController;
-use App\Models\Oficinas;
 use Illuminate\Support\Facades\Route;
 
 
@@ -44,3 +44,12 @@ Route::get('/oficina/editar/{id}', [OficinasController::class, 'edit'])->name('o
 Route::post('/oficina/update/{id}', [OficinasController::class, 'update'])->name('oficina.atualizar');
 Route::post('/oficina/deletar/{id}', [OficinasController::class, 'destroy'])->name('oficina.deletar');
 
+/* Postos */
+
+Route::get('/postos/cadastro', [PostosController::class, 'create'])->name('postos.cadastro');
+Route::post('/postos/registrar', [PostosController::class, 'store'])->name('postos.registrar');
+Route::get('/postos/lista', [PostosController::class, 'index'])->name('postos.lista');
+Route::get('/posto/visualizar/{id}', [PostosController::class, 'show'])->name('posto.mostrar');
+Route::get('/posto/editar/{id}', [PostosController::class, 'edit'])->name('posto.editar');
+Route::post('/posto/update/{id}', [PostosController::class, 'update'])->name('posto.atualizar');
+Route::post('/posto/deletar/{id}', [PostosController::class, 'destroy'])->name('posto.deletar');

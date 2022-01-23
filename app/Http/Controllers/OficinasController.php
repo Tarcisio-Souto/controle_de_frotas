@@ -89,7 +89,7 @@ class OficinasController extends Controller
         $oficina->save();
 
         $oficinas = Oficinas::all();
-        return Redirect::route('oficinas.lista', ['oficinas' => $oficinas])->with('success', 'Atualizações registradas com sucesso!');;
+        return Redirect::route('oficinas.lista', ['oficinas' => $oficinas])->with('success', 'Atualizações registradas com sucesso!');
 
 
 
