@@ -8,6 +8,7 @@ use App\Http\Controllers\OficinasController;
 use App\Http\Controllers\PostosController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\FabricantesController;
+use App\Http\Controllers\ServicosController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -64,3 +65,13 @@ Route::get('/fabricante/visualizar/{id}', [FabricantesController::class, 'show']
 Route::get('/fabricante/editar/{id}', [FabricantesController::class, 'edit'])->name('fabricante.editar');
 Route::post('/fabricante/update/{id}', [FabricantesController::class, 'update'])->name('fabricante.atualizar');
 Route::post('/fabricante/deletar/{id}', [FabricantesController::class, 'destroy'])->name('fabricante.deletar');
+
+/* Serviços */
+
+Route::get('/servicos/cadastro', [ServicosController::class, 'create'])->name('servicos.cadastro');
+Route::post('/servicos/registrar', [ServicosController::class, 'store'])->name('servicos.registrar');
+Route::get('/servicos/lista', [ServicosController::class, 'index'])->name('servicos.lista');
+Route::get('/servico/visualizar/{id}', [ServicosController::class, 'show'])->name('servico.mostrar');
+Route::get('/servico/editar/{id}', [ServicosController::class, 'edit'])->name('servico.editar');
+Route::post('/servico/update/{id}', [ServicosController::class, 'update'])->name('servico.atualizar');
+Route::post('/servico/deletar/{id}', [ServicosController::class, 'destroy'])->name('servico.deletar');
