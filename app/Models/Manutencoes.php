@@ -12,14 +12,11 @@ class Manutencoes extends Model
 
     public static function getManutencoes(){
 
-        /*$manutencoes = DB::table('manutencoes as man')
+        $manutencoes = DB::table('manutencoes as man')
         ->join('veiculos as vc', 'vc.id', '=', 'man.fk_veiculo')
         ->join('oficinas as of', 'of.id', '=', 'man.fk_oficina')
         ->join('servicos as serv', 'serv.id', '=', 'man.fk_servico')
-        ->select('*')
-        ->get();*/
-
-        $manutencoes = DB::table('manutencoes as man')
+        ->join('modelos as mod', 'mod.id', '=', 'vc.fk_modelo')
         ->select('*')
         ->get();
 

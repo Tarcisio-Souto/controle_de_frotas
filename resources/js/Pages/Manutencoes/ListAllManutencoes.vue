@@ -8,30 +8,30 @@
       >
         <thead>
           <tr>
-            <th>Nome</th>
-            <th>Cargo</th>
-            <th>Filial</th>
-            <th width="25">Email</th>
+            <th>Modelo</th>
+            <th>Placa</th>
+            <th>Data da Manutenção</th>
+            <th width="25">Serviço</th>
             <th>Ações</th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="colab in colabs" :key="colab.us_id" :value="colab.us_id">
-            <td>{{ colab.nome_colab }}</td>
-            <td>{{ colab.nome_cg }}</td>
-            <td>{{ colab.nome_emp }}</td>
-            <td>{{ colab.email_inst }}</td>
+          <tr v-for="manutencao in colabs" :key="manutencao.id" :value="manutencao.id">
+            <td>{{ manutencao.nome_modelo }}</td>
+            <td>{{ manutencao.placa }}</td>
+            <td>{{ manutencao.data_manutencao }}</td>
+            <td>{{ manutencao.descricao_servicos }}</td>
             <td align="center">
-              <Link :href="'/colaborador/visualizar/' + colab.us_id"
+              <Link :href="'/manutencao/visualizar/' + manutencao.id"
                 ><i class="fas fa-eye"></i
               ></Link>
-              <Link :href="'/colaborador/editar/' + colab.us_id"
+              <Link :href="'/manutencao/editar/' + manutencao.id"
                 ><i class="fas fa-edit"></i
               ></Link>              
               <span
                 ><i
                   class="fas fa-trash-alt"
-                  @click="sendForm(colab.us_id)"
+                  @click="sendForm(manutencao.id)"
                 ></i
               ></span>
             </td>
@@ -39,10 +39,10 @@
         </tbody>
         <tfoot>
           <tr>
-            <th>Nome</th>
-            <th>Cargo</th>
-            <th>Filial</th>
-            <th>Email</th>
+            <th>Modelo</th>
+            <th>Placa</th>
+            <th>Data da Manutenção</th>
+            <th width="25">Serviço</th>
             <th>Ações</th>
           </tr>
         </tfoot>
@@ -68,7 +68,7 @@ export default {
     Link,
   },
   props: {
-    colabs: Array,
+    manutencoes: Array,
   },
 
   data: () => {
@@ -81,7 +81,6 @@ export default {
 
   methods: {
     sendForm(id) {
-      //:href="'/colaborador/deletar/'+colab.us_id"
 
       var v = this;
 
@@ -94,7 +93,7 @@ export default {
           "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
         message:
           "<i class='fas fa-exclamation-circle' style='color:red'></i></i>&nbsp&nbsp" +
-          "<span style='font-weight:bold; position: relative; top: 5px;'>Deletar usuário?</span>",
+          "<span style='font-weight:bold; position: relative; top: 5px;'>Deletar manutenção?</span>",
         buttons: {
           cancel: {
             label: '<i class="fa fa-times"></i> Não',
@@ -106,27 +105,12 @@ export default {
         },
         callback: function (result) {
           if (result == true) {
-            v.$inertia.post("/colaborador/deletar/"+id, {
+            v.$inertia.post("/manutencao/deletar/"+id, {
               forceFormData: true,
               preserveScroll: false,
               _token: v.$page.props.csrf_token,
             });
 
-            //var url = '/colaborador/deletar/'+id;
-            //window.location.href = url;
-            //window.location = '/colaborador/deletar/'+id;
-            /*
-            $.ajax({
-              url: "/colaborador/deletar/" + id,
-              method: "GET",
-              headers: {
-                "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
-              },
-              success: function () {
-                /*window.location.href = '/colaborador/deletar/'+id;
-                $( "#myTable" ).load( "/colaboradores/lista #myTable" );
-              },
-            });*/
           }
         },
       });

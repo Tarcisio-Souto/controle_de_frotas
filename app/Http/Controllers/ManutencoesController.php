@@ -18,9 +18,6 @@ class ManutencoesController extends Controller
     public function index()
     {
         $manutencoes = Manutencoes::getManutencoes();
-
-        dd($manutencoes);
-
         return Inertia::render('Manutencoes/ListAllManutencoes.vue', ['manutencoes' => $manutencoes]);
     }
 

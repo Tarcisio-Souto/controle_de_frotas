@@ -18,6 +18,7 @@ class CreateManutencoesTable extends Migration
             $table->timestamps();
             $table->string('observacao');
             $table->string('custo_total');
+            $table->date('data_manutencao');
             $table->unsignedBigInteger('fk_veiculo');
             $table->unsignedBigInteger('fk_oficina');
             $table->unsignedBigInteger('fk_servico');
