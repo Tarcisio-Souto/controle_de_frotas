@@ -8,8 +8,10 @@ use App\Http\Controllers\OficinasController;
 use App\Http\Controllers\PostosController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\FabricantesController;
+use App\Http\Controllers\ManutencoesController;
 use App\Http\Controllers\ServicosController;
 use Illuminate\Support\Facades\Route;
+
 
 
 Route::get('/', [HomeController::class, 'index']);
@@ -75,3 +77,13 @@ Route::get('/servico/visualizar/{id}', [ServicosController::class, 'show'])->nam
 Route::get('/servico/editar/{id}', [ServicosController::class, 'edit'])->name('servico.editar');
 Route::post('/servico/update/{id}', [ServicosController::class, 'update'])->name('servico.atualizar');
 Route::post('/servico/deletar/{id}', [ServicosController::class, 'destroy'])->name('servico.deletar');
+
+/* Manutenções */
+
+Route::get('/manutencoes/cadastro', [ManutencoesController::class, 'create'])->name('manutencoes.cadastro');
+Route::post('/manutencoes/registrar', [ManutencoesController::class, 'store'])->name('manutencoes.registrar');
+Route::get('/manutencoes/lista', [ManutencoesController::class, 'index'])->name('manutencoes.lista');
+Route::get('/manutencao/visualizar/{id}', [ManutencoesController::class, 'show'])->name('manutencao.mostrar');
+Route::get('/manutencao/editar/{id}', [ManutencoesController::class, 'edit'])->name('manutencao.editar');
+Route::post('/manutencao/update/{id}', [ManutencoesController::class, 'update'])->name('manutencao.atualizar');
+Route::post('/manutencao/deletar/{id}', [ManutencoesController::class, 'destroy'])->name('manutencao.deletar');
