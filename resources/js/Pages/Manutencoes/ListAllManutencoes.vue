@@ -1,6 +1,9 @@
 <template>
   <layout>
     <div class="table-responsive-lg">
+
+      <Link :href="'/manutencoes/cadastro'" class="btn btn-success btnNovo">Novo</Link>
+
       <table
         id="myTable"
         class="table table-striped table-bordered table-hover"
@@ -16,7 +19,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="manutencao in colabs" :key="manutencao.id" :value="manutencao.id">
+          <tr v-for="manutencao in manutencoes" :key="manutencao.id" :value="manutencao.id">
             <td>{{ manutencao.nome_modelo }}</td>
             <td>{{ manutencao.placa }}</td>
             <td>{{ manutencao.data_manutencao }}</td>

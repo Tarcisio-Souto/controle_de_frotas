@@ -17,10 +17,22 @@ class Manutencoes extends Model
         ->join('oficinas as of', 'of.id', '=', 'man.fk_oficina')
         ->join('servicos as serv', 'serv.id', '=', 'man.fk_servico')
         ->join('modelos as mod', 'mod.id', '=', 'vc.fk_modelo')
-        ->select('*')
+        ->select('*',
+        DB::raw('strftime("%d/%m/%Y", man.data_manutencao) as data_manutencao'))
         ->get();
 
         return $manutencoes;
+
+    }
+
+    public static function getVeiculos() {
+
+        $veiculos = DB::table('veiculos as vc')
+        ->join('modelos as mod', 'mod.id', '=', 'vc.fk_modelo')
+        ->select('mod.nome_modelo', 'vc.placa')
+        ->get();
+
+        return $veiculos;
 
     }
 

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Manutencoes;
+use App\Models\Oficinas;
+use App\Models\Servicos;
+use App\Models\Veiculos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
@@ -28,7 +31,13 @@ class ManutencoesController extends Controller
      */
     public function create()
     {
-        return Inertia::render('Oficinas/AddManutencoes.vue');
+        $veiculos = Manutencoes::getVeiculos();
+        $oficinas = Oficinas::all();
+        $servicos = Servicos::all();
+
+        return Inertia::render('Manutencoes/AddManutencao.vue', 
+        ['veiculos' => $veiculos, 'oficinas' => $oficinas, 'servicos' => $servicos]);
+
     }
 
     /**
