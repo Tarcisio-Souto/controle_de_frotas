@@ -13,8 +13,8 @@
           <tr>
             <th>Modelo</th>
             <th>Placa</th>
-            <th>Data da Manutenção</th>
-            <th width="25">Serviço</th>
+            <th>Serviço</th>
+            <th>Data da Manutenção</th>            
             <th>Ações</th>
           </tr>
         </thead>
@@ -22,19 +22,19 @@
           <tr v-for="manutencao in manutencoes" :key="manutencao.id" :value="manutencao.id">
             <td>{{ manutencao.nome_modelo }}</td>
             <td>{{ manutencao.placa }}</td>
-            <td>{{ manutencao.data_manutencao }}</td>
             <td>{{ manutencao.descricao_servicos }}</td>
+            <td>{{ manutencao.data_manutencao }}</td>            
             <td align="center">
-              <Link :href="'/manutencao/visualizar/' + manutencao.id"
+              <Link :href="'/manutencao/visualizar/' + manutencao.id_man"
                 ><i class="fas fa-eye"></i
               ></Link>
-              <Link :href="'/manutencao/editar/' + manutencao.id"
+              <Link :href="'/manutencao/editar/' + manutencao.id_man"
                 ><i class="fas fa-edit"></i
               ></Link>              
               <span
                 ><i
                   class="fas fa-trash-alt"
-                  @click="sendForm(manutencao.id)"
+                  @click="sendForm(manutencao.id_man)"
                 ></i
               ></span>
             </td>
@@ -44,8 +44,8 @@
           <tr>
             <th>Modelo</th>
             <th>Placa</th>
-            <th>Data da Manutenção</th>
-            <th width="25">Serviço</th>
+            <th>Serviço</th>
+            <th>Data da Manutenção</th>            
             <th>Ações</th>
           </tr>
         </tfoot>

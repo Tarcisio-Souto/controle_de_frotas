@@ -4118,7 +4118,7 @@ __webpack_require__.r(__webpack_exports__);
             closeButton: false,
             size: "large",
             title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
-            message: "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Colaborador registrado com sucesso!</span>"
+            message: "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Manutenção registrada com sucesso!</span>"
           });
           $("#inputVeiculo").val("");
           $("#inputOficina").val("");
@@ -4972,295 +4972,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -5270,12 +4981,7 @@ __webpack_require__.r(__webpack_exports__);
     Link: _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_1__.Link
   },
   props: {
-    errors: Object,
-
-    /*cargos: Array,
-    empresas: Array*/
-    colab: Array,
-    foto_colab: String
+    manutencao: Array
   },
   methods: {
     sendForm: function sendForm() {
@@ -5283,22 +4989,6 @@ __webpack_require__.r(__webpack_exports__);
         forceFormData: true,
         preserveScroll: false,
         _token: this.$page.props.csrf_token
-        /*onSuccess: () => {
-          bootbox.alert({
-            centerVertical: true,
-            backdrop: true,
-            closeButton: false,
-            size: "large",
-            title:
-              "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
-            message:
-              "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" +
-              "<span style='font-weight:bold; position: relative; top: 5px;'>Colaborador registrado com sucesso!</span>",
-          });
-                  
-          
-        },*/
-
       });
     }
   }
@@ -38176,7 +37866,7 @@ var render = function () {
             _c("div", { staticClass: "row" }, [
               _c("div", { staticClass: "col-md-8" }, [
                 _c("label", { attrs: { for: "exampleFormControlTextarea1" } }, [
-                  _vm._v("Observacoes"),
+                  _vm._v("Observações"),
                 ]),
                 _c("br"),
                 _vm._v(" "),
@@ -39518,9 +39208,9 @@ var render = function () {
                 _vm._v(" "),
                 _c("th", [_vm._v("Placa")]),
                 _vm._v(" "),
-                _c("th", [_vm._v("Data da Manutenção")]),
+                _c("th", [_vm._v("Serviço")]),
                 _vm._v(" "),
-                _c("th", { attrs: { width: "25" } }, [_vm._v("Serviço")]),
+                _c("th", [_vm._v("Data da Manutenção")]),
                 _vm._v(" "),
                 _c("th", [_vm._v("Ações")]),
               ]),
@@ -39537,9 +39227,9 @@ var render = function () {
                     _vm._v(" "),
                     _c("td", [_vm._v(_vm._s(manutencao.placa))]),
                     _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(manutencao.data_manutencao))]),
-                    _vm._v(" "),
                     _c("td", [_vm._v(_vm._s(manutencao.descricao_servicos))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(manutencao.data_manutencao))]),
                     _vm._v(" "),
                     _c(
                       "td",
@@ -39549,7 +39239,8 @@ var render = function () {
                           "Link",
                           {
                             attrs: {
-                              href: "/manutencao/visualizar/" + manutencao.id,
+                              href:
+                                "/manutencao/visualizar/" + manutencao.id_man,
                             },
                           },
                           [_c("i", { staticClass: "fas fa-eye" })]
@@ -39559,7 +39250,7 @@ var render = function () {
                           "Link",
                           {
                             attrs: {
-                              href: "/manutencao/editar/" + manutencao.id,
+                              href: "/manutencao/editar/" + manutencao.id_man,
                             },
                           },
                           [_c("i", { staticClass: "fas fa-edit" })]
@@ -39570,7 +39261,7 @@ var render = function () {
                             staticClass: "fas fa-trash-alt",
                             on: {
                               click: function ($event) {
-                                return _vm.sendForm(manutencao.id)
+                                return _vm.sendForm(manutencao.id_man)
                               },
                             },
                           }),
@@ -39590,9 +39281,9 @@ var render = function () {
                 _vm._v(" "),
                 _c("th", [_vm._v("Placa")]),
                 _vm._v(" "),
-                _c("th", [_vm._v("Data da Manutenção")]),
+                _c("th", [_vm._v("Serviço")]),
                 _vm._v(" "),
-                _c("th", { attrs: { width: "25" } }, [_vm._v("Serviço")]),
+                _c("th", [_vm._v("Data da Manutenção")]),
                 _vm._v(" "),
                 _c("th", [_vm._v("Ações")]),
               ]),
@@ -39652,7 +39343,7 @@ var render = function () {
       _c("div", { staticClass: "col-md-4" }),
       _vm._v(" "),
       _c("div", { staticClass: "col-md-4", attrs: { align: "center" } }, [
-        _c("h4", [_vm._v("Cadastro de Colaborador")]),
+        _c("h4", [_vm._v("Cadastro de Manutenção")]),
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "col-md-4" }),
@@ -39666,336 +39357,74 @@ var render = function () {
       _c(
         "div",
         { staticClass: "col-md-12" },
-        _vm._l(_vm.colab, function (colab) {
-          return _c("form", { key: colab.us_id }, [
+        _vm._l(_vm.manutencao, function (manutencao) {
+          return _c("form", { key: manutencao.id }, [
             _c("br"),
             _c("br"),
             _vm._v(" "),
             _c("h4", [
               _c("span", { staticStyle: { "font-weight": "bold" } }, [
-                _vm._v("Dados Pessoais"),
+                _vm._v("Registro"),
               ]),
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "row" }, [
-              _c(
-                "div",
-                { staticClass: "col-md-4" },
-                [
-                  _c("label", { attrs: { for: "inputNome" } }, [
-                    _vm._v("Nome"),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "input-group" }, [
-                    _c("div", { staticClass: "input-group-prepend" }, [
-                      _c("div", { staticClass: "input-group-text" }, [
-                        _c("i", { staticClass: "fas fa-user" }),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c("input", {
-                      staticClass: "form-control",
-                      attrs: { type: "text", id: "inputNome", disabled: "" },
-                      domProps: { value: colab.nome_colab },
-                    }),
-                  ]),
-                  _vm._v(" "),
-                  _vm._l(_vm.errors, function (erro, nome) {
-                    return _c("div", { key: nome }, [
-                      nome == "nome"
-                        ? _c("div", [
-                            erro != ""
-                              ? _c(
-                                  "span",
-                                  { staticClass: "errors-label-notification" },
-                                  [
-                                    _c("i", {
-                                      staticClass: "fas fa-exclamation-circle",
-                                    }),
-                                    _vm._v(_vm._s(erro) + "\n                "),
-                                  ]
-                                )
-                              : _vm._e(),
-                          ])
-                        : _vm._e(),
-                    ])
-                  }),
-                ],
-                2
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "col-md-4" },
-                [
-                  _c("label", { attrs: { for: "inputCpf" } }, [_vm._v("CPF")]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "input-group" }, [
-                    _c("div", { staticClass: "input-group-prepend" }, [
-                      _c("div", { staticClass: "input-group-text" }, [
-                        _c("i", { staticClass: "fas fa-id-card" }),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "mask",
-                          rawName: "v-mask",
-                          value: "###.###.###-##",
-                          expression: "'###.###.###-##'",
-                        },
-                      ],
-                      staticClass: "form-control",
-                      attrs: { type: "text", id: "inputCpf", disabled: "" },
-                      domProps: { value: colab.cpf },
-                    }),
-                  ]),
-                  _vm._v(" "),
-                  _vm._l(_vm.errors, function (erro, cpf) {
-                    return _c("div", { key: cpf }, [
-                      cpf == "cpf"
-                        ? _c("div", [
-                            erro != ""
-                              ? _c(
-                                  "span",
-                                  { staticClass: "errors-label-notification" },
-                                  [
-                                    _c("i", {
-                                      staticClass: "fas fa-exclamation-circle",
-                                    }),
-                                    _vm._v(_vm._s(erro) + "\n                "),
-                                  ]
-                                )
-                              : _vm._e(),
-                          ])
-                        : _vm._e(),
-                    ])
-                  }),
-                ],
-                2
-              ),
-              _vm._v(" "),
               _c("div", { staticClass: "col-md-4" }, [
-                _c("label", { attrs: { for: "inputSexo" } }, [_vm._v("Sexo")]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    colab.sexo == "m"
-                      ? _c(
-                          "div",
-                          { staticClass: "form-check form-check-inline" },
-                          [
-                            _c("input", {
-                              staticClass: "form-check-input",
-                              attrs: {
-                                type: "radio",
-                                name: "exampleRadios",
-                                id: "inputSexo1",
-                                value: "m",
-                                checked: "",
-                                disabled: "",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c(
-                              "label",
-                              {
-                                staticClass: "form-check-label",
-                                attrs: { for: "exampleRadios1" },
-                              },
-                              [
-                                _vm._v(
-                                  "\n                    Masculino\n                  "
-                                ),
-                              ]
-                            ),
-                          ]
-                        )
-                      : _c(
-                          "div",
-                          { staticClass: "form-check form-check-inline" },
-                          [
-                            _c("input", {
-                              staticClass: "form-check-input",
-                              attrs: {
-                                type: "radio",
-                                name: "exampleRadios",
-                                id: "inputSexo1",
-                                value: "m",
-                                disabled: "",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c(
-                              "label",
-                              {
-                                staticClass: "form-check-label",
-                                attrs: { for: "exampleRadios1" },
-                              },
-                              [
-                                _vm._v(
-                                  "\n                    Masculino\n                  "
-                                ),
-                              ]
-                            ),
-                          ]
-                        ),
-                    _vm._v(" "),
-                    colab.sexo == "f"
-                      ? _c(
-                          "div",
-                          { staticClass: "form-check form-check-inline" },
-                          [
-                            _c("input", {
-                              staticClass: "form-check-input",
-                              attrs: {
-                                type: "radio",
-                                name: "exampleRadios",
-                                id: "inputSexo2",
-                                value: "f",
-                                checked: "",
-                                disabled: "",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c(
-                              "label",
-                              {
-                                staticClass: "form-check-label",
-                                attrs: { for: "exampleRadios2" },
-                              },
-                              [
-                                _vm._v(
-                                  "\n                    Feminino\n                  "
-                                ),
-                              ]
-                            ),
-                          ]
-                        )
-                      : _c(
-                          "div",
-                          { staticClass: "form-check form-check-inline" },
-                          [
-                            _c("input", {
-                              staticClass: "form-check-input",
-                              attrs: {
-                                type: "radio",
-                                name: "exampleRadios",
-                                id: "inputSexo2",
-                                value: "f",
-                                disabled: "",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c(
-                              "label",
-                              {
-                                staticClass: "form-check-label",
-                                attrs: { for: "exampleRadios1" },
-                              },
-                              [
-                                _vm._v(
-                                  "\n                    Feminino\n                  "
-                                ),
-                              ]
-                            ),
-                          ]
-                        ),
-                  ]),
-                ]),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("br"),
-            _vm._v(" "),
-            _c("div", { staticClass: "row" }, [
-              _c(
-                "div",
-                { staticClass: "col-md-4" },
-                [
-                  _c("label", { attrs: { for: "inputIdade" } }, [
-                    _vm._v("Idade"),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "input-group" }, [
-                    _c("div", { staticClass: "input-group-prepend" }, [
-                      _c("div", { staticClass: "input-group-text" }, [
-                        _c("i", { staticClass: "fas fa-birthday-cake" }),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c("input", {
-                      staticClass: "form-control",
-                      attrs: { type: "text", id: "inputIdade", disabled: "" },
-                      domProps: { value: colab.idade },
-                    }),
-                  ]),
-                  _vm._v(" "),
-                  _vm._l(_vm.errors, function (erro, idade) {
-                    return _c("div", { key: idade }, [
-                      idade == "idade"
-                        ? _c("div", [
-                            erro != ""
-                              ? _c(
-                                  "span",
-                                  { staticClass: "errors-label-notification" },
-                                  [
-                                    _c("i", {
-                                      staticClass: "fas fa-exclamation-circle",
-                                    }),
-                                    _vm._v(_vm._s(erro) + "\n                "),
-                                  ]
-                                )
-                              : _vm._e(),
-                          ])
-                        : _vm._e(),
-                    ])
-                  }),
-                ],
-                2
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-4" }, [
-                _c("label", { attrs: { for: "inputEmail" } }, [
-                  _vm._v("Email Particular"),
+                _c("label", { attrs: { for: "inputVeiculo" } }, [
+                  _vm._v("Veículo (modelo / placa)"),
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "input-group" }, [
                   _c("div", { staticClass: "input-group-prepend" }, [
                     _c("div", { staticClass: "input-group-text" }, [
-                      _vm._v("@"),
+                      _c("i", { staticClass: "fas fa-user" }),
                     ]),
                   ]),
                   _vm._v(" "),
                   _c("input", {
                     staticClass: "form-control",
-                    attrs: { type: "email", id: "inputEmail", disabled: "" },
-                    domProps: { value: colab.email },
+                    attrs: { type: "text", id: "inputVeiculo", disabled: "" },
+                    domProps: { value: manutencao.nome_modelo },
                   }),
                 ]),
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "col-md-4" }, [
-                _c("label", { attrs: { for: "inputEmailInst" } }, [
-                  _vm._v("Email Institucional"),
+                _c("label", { attrs: { for: "inputOficina" } }, [
+                  _vm._v("Oficina"),
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "input-group" }, [
                   _c("div", { staticClass: "input-group-prepend" }, [
                     _c("div", { staticClass: "input-group-text" }, [
-                      _vm._v("@"),
+                      _c("i", { staticClass: "fas fa-user" }),
                     ]),
                   ]),
                   _vm._v(" "),
                   _c("input", {
                     staticClass: "form-control",
-                    attrs: {
-                      type: "email",
-                      id: "inputEmailInst",
-                      disabled: "",
-                    },
-                    domProps: { value: colab.email_inst },
+                    attrs: { type: "text", id: "inputOficina", disabled: "" },
+                    domProps: { value: manutencao.nome_oficina },
+                  }),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("label", { attrs: { for: "inputServico" } }, [
+                  _vm._v("Serviço"),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "input-group" }, [
+                  _c("div", { staticClass: "input-group-prepend" }, [
+                    _c("div", { staticClass: "input-group-text" }, [
+                      _c("i", { staticClass: "fas fa-user" }),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: { type: "text", id: "inputServico", disabled: "" },
+                    domProps: { value: manutencao.descricao_servicos },
                   }),
                 ]),
               ]),
@@ -40005,338 +39434,73 @@ var render = function () {
             _vm._v(" "),
             _c("div", { staticClass: "row" }, [
               _c("div", { staticClass: "col-md-4" }, [
-                _c("label", { attrs: { for: "inputEmpresa" } }, [
-                  _vm._v("Empresa"),
+                _c("label", { attrs: { for: "inputDataManutencao" } }, [
+                  _vm._v("Data da Manutenção"),
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "input-group" }, [
                   _c("div", { staticClass: "input-group-prepend" }, [
                     _c("div", { staticClass: "input-group-text" }, [
-                      _c("i", { staticClass: "fas fa-building" }),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "select",
-                    {
-                      staticClass: "form-control",
-                      attrs: {
-                        id: "inputEmpresa",
-                        name: "txtEmpresa",
-                        disabled: "",
-                      },
-                    },
-                    [
-                      _c("option", { attrs: { selected: "" } }, [
-                        _vm._v(_vm._s(colab.nome_emp)),
-                      ]),
-                    ]
-                  ),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-4" }, [
-                _c("label", { attrs: { for: "inputCargo" } }, [
-                  _vm._v("Cargo"),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "input-group" }, [
-                  _c("div", { staticClass: "input-group-prepend" }, [
-                    _c("div", { staticClass: "input-group-text" }, [
-                      _c("i", { staticClass: "fas fa-briefcase" }),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "select",
-                    {
-                      staticClass: "form-control",
-                      attrs: {
-                        id: "inputCargo",
-                        name: "txtCargo",
-                        disabled: "",
-                      },
-                    },
-                    [_c("option", [_vm._v(_vm._s(colab.nome_cg))])]
-                  ),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-4" }, [
-                _c("label", { attrs: { for: "inputDataAdmissao" } }, [
-                  _vm._v("Data de Admissão"),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "input-group" }, [
-                  _c("div", { staticClass: "input-group-prepend" }, [
-                    _c("div", { staticClass: "input-group-text" }, [
-                      _c("i", { staticClass: "fas fa-calendar-alt" }),
+                      _c("i", { staticClass: "fas fa-birthday-cake" }),
                     ]),
                   ]),
                   _vm._v(" "),
                   _c("input", {
-                    directives: [
-                      {
-                        name: "mask",
-                        rawName: "v-mask",
-                        value: "##/##/####",
-                        expression: "'##/##/####'",
-                      },
-                    ],
-                    key: "",
                     staticClass: "form-control",
                     attrs: {
                       type: "text",
-                      id: "inputDataAdmissao",
+                      id: "inputDataManutencao",
                       disabled: "",
                     },
-                    domProps: { value: colab.dt_adm_format },
+                    domProps: { value: manutencao.data_manutencao },
                   }),
                 ]),
               ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("label", { attrs: { for: "inputCusto" } }, [
+                  _vm._v("Custo"),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "input-group" }, [
+                  _c("div", { staticClass: "input-group-prepend" }, [
+                    _c("div", { staticClass: "input-group-text" }, [
+                      _c("i", { staticClass: "fas fa-birthday-cake" }),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: { type: "text", id: "inputCusto", disabled: "" },
+                    domProps: { value: manutencao.custo_total },
+                  }),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }),
             ]),
             _vm._v(" "),
             _c("br"),
             _vm._v(" "),
             _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-md-6" }, [
-                _c("label", { attrs: { for: "inputCelular" } }, [
-                  _vm._v("Celular"),
+              _c("div", { staticClass: "col-md-8" }, [
+                _c("label", { attrs: { for: "exampleFormControlTextarea1" } }, [
+                  _vm._v("Observações"),
                 ]),
+                _c("br"),
                 _vm._v(" "),
-                _c("div", { staticClass: "input-group" }, [
-                  _c("div", { staticClass: "input-group-prepend" }, [
-                    _c("div", { staticClass: "input-group-text" }, [
-                      _c("i", { staticClass: "fas fa-mobile-alt" }),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "mask",
-                        rawName: "v-mask",
-                        value: ["(##) #####-####", "(##) ####-####"],
-                        expression: "['(##) #####-####', '(##) ####-####']",
-                      },
-                    ],
-                    staticClass: "form-control",
-                    attrs: { type: "text", id: "inputCelular", disabled: "" },
-                    domProps: { value: colab.celular },
-                  }),
-                ]),
+                _c("textarea", {
+                  staticClass: "form-control",
+                  attrs: {
+                    id: "exampleFormControlTextarea1",
+                    rows: "3",
+                    disabled: "",
+                  },
+                  domProps: { value: manutencao.observacao },
+                }),
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "col-md-6" }, [
-                _c("label", { attrs: { for: "inputTelRecado" } }, [
-                  _vm._v("Telefone (recado)"),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "input-group" }, [
-                  _c("div", { staticClass: "input-group-prepend" }, [
-                    _c("div", { staticClass: "input-group-text" }, [
-                      _c("i", { staticClass: "fas fa-phone" }),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "mask",
-                        rawName: "v-mask",
-                        value: ["(##) #####-####", "(##) ####-####"],
-                        expression: "['(##) #####-####', '(##) ####-####']",
-                      },
-                    ],
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "text",
-                      id: "inputTelRecado",
-                      name: "txtTelRec",
-                      disabled: "",
-                    },
-                    domProps: { value: colab.tel_recado },
-                  }),
-                ]),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("br"),
-            _c("br"),
-            _vm._v(" "),
-            _c("h4", [
-              _c("span", { staticStyle: { "font-weight": "bold" } }, [
-                _vm._v("Endereço"),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("hr"),
-            _vm._v(" "),
-            _c("br"),
-            _vm._v(" "),
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-md-6" }, [
-                _c("label", { attrs: { for: "inputLogradouro" } }, [
-                  _vm._v("Logradouro"),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "input-group" }, [
-                  _c("div", { staticClass: "input-group-prepend" }, [
-                    _c("div", { staticClass: "input-group-text" }, [
-                      _c("i", { staticClass: "fas fa-road" }),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "text",
-                      id: "inputLogradouro",
-                      placeholder: "Rua, Av., Rod.",
-                      name: "txtLogradouro",
-                      disabled: "",
-                    },
-                    domProps: { value: colab.logradouro },
-                  }),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-2" }, [
-                _c("label", { attrs: { for: "inputNumero" } }, [
-                  _vm._v("Número"),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "input-group" }, [
-                  _c("div", { staticClass: "input-group-prepend" }, [
-                    _c("div", { staticClass: "input-group-text" }, [
-                      _vm._v("Nº"),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "text",
-                      id: "inputNumero",
-                      placeholder: "Número",
-                      name: "txtNumero",
-                      disabled: "",
-                    },
-                    domProps: { value: colab.numero },
-                  }),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-4" }, [
-                _c("label", { attrs: { for: "inputBairro" } }, [
-                  _vm._v("Bairro"),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "input-group" }, [
-                  _c("div", { staticClass: "input-group-prepend" }, [
-                    _c("div", { staticClass: "input-group-text" }, [
-                      _c("i", { staticClass: "fas fa-home" }),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "text",
-                      id: "inputBairro",
-                      placeholder: "Informe o bairro",
-                      name: "txtBairro",
-                      disabled: "",
-                    },
-                    domProps: { value: colab.bairro },
-                  }),
-                ]),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("br"),
-            _vm._v(" "),
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-md-4" }, [
-                _c("label", { attrs: { for: "inputCidade" } }, [
-                  _vm._v("Cidade"),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "input-group" }, [
-                  _c("div", { staticClass: "input-group-prepend" }, [
-                    _c("div", { staticClass: "input-group-text" }, [
-                      _c("i", { staticClass: "fas fa-city" }),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "text",
-                      id: "inputCidade",
-                      placeholder: "Informe a cidade",
-                      name: "txtCidade",
-                      disabled: "",
-                    },
-                    domProps: { value: colab.cidade },
-                  }),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-4" }, [
-                _c("label", { attrs: { for: "inputEstado" } }, [
-                  _vm._v("Estado"),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "input-group" }, [
-                  _c("div", { staticClass: "input-group-prepend" }, [
-                    _c("div", { staticClass: "input-group-text" }, [
-                      _c("i", { staticClass: "fas fa-flag" }),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "select",
-                    {
-                      staticClass: "form-control",
-                      attrs: {
-                        id: "inputEstado",
-                        name: "txtEstado",
-                        disabled: "",
-                      },
-                    },
-                    [
-                      _c("option", { attrs: { selected: "" } }, [
-                        _vm._v(_vm._s(colab.uf)),
-                      ]),
-                    ]
-                  ),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-4" }, [
-                _c("label", { attrs: { for: "inputCep" } }, [_vm._v("CEP")]),
-                _vm._v(" "),
-                _c("div", { staticClass: "input-group" }, [
-                  _c("div", { staticClass: "input-group-prepend" }, [
-                    _c("div", { staticClass: "input-group-text" }, [
-                      _vm._v("CEP"),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "text",
-                      id: "inputCep",
-                      placeholder: "Informe o CEP",
-                      name: "txtCep",
-                      disabled: "",
-                    },
-                    domProps: { value: colab.cep },
-                  }),
-                ]),
-              ]),
+              _c("div", { staticClass: "col-md-4" }),
             ]),
             _vm._v(" "),
             _c("br"),
@@ -40351,7 +39515,9 @@ var render = function () {
                     "Link",
                     {
                       staticClass: "btn btn-warning",
-                      attrs: { href: "/colaborador/editar/" + colab.us_id },
+                      attrs: {
+                        href: "/manutencao/editar/" + manutencao.id_man,
+                      },
                     },
                     [_vm._v("Editar")]
                   ),

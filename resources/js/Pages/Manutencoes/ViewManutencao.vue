@@ -9,7 +9,7 @@
     <div class="row">
       <div class="col-md-4"></div>
       <div class="col-md-4" align="center">
-        <h4>Cadastro de Colaborador</h4>
+        <h4>Cadastro de Manutenção</h4>
       </div>
       <div class="col-md-4"></div>
     </div>
@@ -18,12 +18,12 @@
     <br />
     <div class="row">
       <div class="col-md-12">
-        <form v-for="colab in colab" :key="colab.us_id">          
+        <form v-for="manutencao in manutencao" :key="manutencao.id">          
           <br /><br />
-          <h4><span style="font-weight: bold">Dados Pessoais</span></h4>
+          <h4><span style="font-weight: bold">Registro</span></h4>
           <div class="row">
             <div class="col-md-4">
-              <label for="inputNome">Nome</label>
+              <label for="inputVeiculo">Veículo (modelo / placa)</label>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
@@ -32,118 +32,53 @@
                 </div>
                 <input
                   type="text"
-                  id="inputNome"
+                  id="inputVeiculo"
                   class="form-control"
-                  :value="colab.nome_colab"
+                  :value="manutencao.nome_modelo"
                   disabled
                 />
-              </div>
-              <div v-for="(erro, nome) in errors" :key="nome">
-                <div v-if="nome == 'nome'">
-                  <span v-if="erro != ''" class="errors-label-notification">
-                    <i class="fas fa-exclamation-circle"></i>{{ erro }}
-                  </span>
-                </div>
-              </div>
+              </div>              
             </div>
             <div class="col-md-4">
-              <label for="inputCpf">CPF</label>
+              <label for="inputOficina">Oficina</label>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
-                    <i class="fas fa-id-card"></i>
+                    <i class="fas fa-user"></i>
                   </div>
                 </div>
                 <input
                   type="text"
-                  id="inputCpf"
+                  id="inputOficina"
                   class="form-control"
-                  :value="colab.cpf"
-                  v-mask="'###.###.###-##'"
+                  :value="manutencao.nome_oficina"
                   disabled
                 />
-              </div>
-              <div v-for="(erro, cpf) in errors" :key="cpf">
-                <div v-if="cpf == 'cpf'">
-                  <span v-if="erro != ''" class="errors-label-notification">
-                    <i class="fas fa-exclamation-circle"></i>{{ erro }}
-                  </span>
-                </div>
-              </div>
+              </div>              
             </div>
             <div class="col-md-4">
-              <label for="inputSexo">Sexo</label>
-              <div class="row">
-                <div class="col-md-12">
-                  <div
-                    class="form-check form-check-inline"
-                    v-if="colab.sexo == 'm'"
-                  >
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="exampleRadios"
-                      id="inputSexo1"
-                      value="m"
-                      checked
-                      disabled
-                    />
-                    <label class="form-check-label" for="exampleRadios1">
-                      Masculino
-                    </label>
-                  </div>
-                  <div class="form-check form-check-inline" v-else>
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="exampleRadios"
-                      id="inputSexo1"
-                      value="m"
-                      disabled
-                    />
-                    <label class="form-check-label" for="exampleRadios1">
-                      Masculino
-                    </label>
-                  </div>
-
-                  <div
-                    class="form-check form-check-inline"
-                    v-if="colab.sexo == 'f'"
-                  >
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="exampleRadios"
-                      id="inputSexo2"
-                      value="f"
-                      checked
-                      disabled
-                    />
-                    <label class="form-check-label" for="exampleRadios2">
-                      Feminino
-                    </label>
-                  </div>
-                  <div class="form-check form-check-inline" v-else>
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="exampleRadios"
-                      id="inputSexo2"
-                      value="f"
-                      disabled
-                    />
-                    <label class="form-check-label" for="exampleRadios1">
-                      Feminino
-                    </label>
+              <label for="inputServico">Serviço</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <i class="fas fa-user"></i>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
+                <input
+                  type="text"
+                  id="inputServico"
+                  class="form-control"
+                  :value="manutencao.descricao_servicos"
+                  disabled
+                />
+              </div>              
+            </div>            
+          </div>          
           <br />
+
           <div class="row">
             <div class="col-md-4">
-              <label for="inputIdade">Idade</label>
+              <label for="inputDataManutencao">Data da Manutenção</label>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
@@ -152,273 +87,49 @@
                 </div>
                 <input
                   type="text"
-                  id="inputIdade"
+                  id="inputDataManutencao"
                   class="form-control"
-                  :value="colab.idade"
+                  :value="manutencao.data_manutencao"
                   disabled
                 />
-              </div>
-              <div v-for="(erro, idade) in errors" :key="idade">
-                <div v-if="idade == 'idade'">
-                  <span v-if="erro != ''" class="errors-label-notification">
-                    <i class="fas fa-exclamation-circle"></i>{{ erro }}
-                  </span>
-                </div>
-              </div>
+              </div>              
             </div>
+
             <div class="col-md-4">
-              <label for="inputEmail">Email Particular</label>
+              <label for="inputCusto">Custo</label>
               <div class="input-group">
                 <div class="input-group-prepend">
-                  <div class="input-group-text">@</div>
+                  <div class="input-group-text">
+                    <i class="fas fa-birthday-cake"></i>
+                  </div>
                 </div>
                 <input
-                  type="email"
-                  id="inputEmail"
+                  type="text"
+                  id="inputCusto"
                   class="form-control"
-                  :value="colab.email"
+                  :value="manutencao.custo_total"
                   disabled
                 />
-              </div>
+              </div>              
             </div>
-            <div class="col-md-4">
-              <label for="inputEmailInst">Email Institucional</label>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">@</div>
-                </div>
-                <input
-                  type="email"
-                  id="inputEmailInst"
-                  class="form-control"
-                  :value="colab.email_inst"
-                  disabled
-                />
-              </div>
-            </div>
+            
+            <div class="col-md-4"></div>
+            
           </div>
-          <br />
+
+          <br>
           <div class="row">
-            <div class="col-md-4">
-              <label for="inputEmpresa">Empresa</label>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">
-                    <i class="fas fa-building"></i>
-                  </div>
-                </div>
-                <select
-                  id="inputEmpresa"
-                  class="form-control"
-                  name="txtEmpresa"
-                  disabled
-                >
-                  <option selected>{{ colab.nome_emp }}</option>
-                </select>
-              </div>
+            <div class="col-md-8">
+               <label for="exampleFormControlTextarea1">Observações</label><br>
+              <textarea class="form-control" id="exampleFormControlTextarea1" :value="manutencao.observacao" rows="3" disabled></textarea>
             </div>
-            <div class="col-md-4">
-              <label for="inputCargo">Cargo</label>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">
-                    <i class="fas fa-briefcase"></i>
-                  </div>
-                </div>
-                <select
-                  id="inputCargo"
-                  class="form-control"
-                  name="txtCargo"
-                  disabled
-                >
-                  <option>{{ colab.nome_cg }}</option>
-                </select>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <label for="inputDataAdmissao">Data de Admissão</label>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">
-                    <i class="fas fa-calendar-alt"></i>
-                  </div>
-                </div>
-                <input
-                  key=""
-                  type="text"
-                  id="inputDataAdmissao"
-                  class="form-control"
-                  :value="colab.dt_adm_format"
-                  v-mask="'##/##/####'"
-                  disabled
-                />
-              </div>
-            </div>
+            <div class="col-md-4"></div>
           </div>
-          <br />
-          <div class="row">
-            <div class="col-md-6">
-              <label for="inputCelular">Celular</label>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">
-                    <i class="fas fa-mobile-alt"></i>
-                  </div>
-                </div>
-                <input
-                  type="text"
-                  id="inputCelular"
-                  class="form-control"
-                  v-mask="['(##) #####-####', '(##) ####-####']"
-                  :value="colab.celular"
-                  disabled
-                />
-              </div>
-            </div>
-            <div class="col-md-6">
-              <label for="inputTelRecado">Telefone (recado)</label>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">
-                    <i class="fas fa-phone"></i>
-                  </div>
-                </div>
-                <input
-                  type="text"
-                  id="inputTelRecado"
-                  class="form-control"
-                  name="txtTelRec"
-                  v-mask="['(##) #####-####', '(##) ####-####']"
-                  :value="colab.tel_recado"
-                  disabled
-                />
-              </div>
-            </div>
-          </div>
-          <br /><br />
-          <h4><span style="font-weight: bold">Endereço</span></h4>
-          <hr />
-          <br />
-          <div class="row">
-            <div class="col-md-6">
-              <label for="inputLogradouro">Logradouro</label>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">
-                    <i class="fas fa-road"></i>
-                  </div>
-                </div>
-                <input
-                  type="text"
-                  id="inputLogradouro"
-                  class="form-control"
-                  placeholder="Rua, Av., Rod."
-                  name="txtLogradouro"
-                  :value="colab.logradouro"
-                  disabled
-                />
-              </div>
-            </div>
-            <div class="col-md-2">
-              <label for="inputNumero">Número</label>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">Nº</div>
-                </div>
-                <input
-                  type="text"
-                  id="inputNumero"
-                  class="form-control"
-                  placeholder="Número"
-                  name="txtNumero"
-                  :value="colab.numero"
-                  disabled
-                />
-              </div>
-            </div>
-            <div class="col-md-4">
-              <label for="inputBairro">Bairro</label>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">
-                    <i class="fas fa-home"></i>
-                  </div>
-                </div>
-                <input
-                  type="text"
-                  id="inputBairro"
-                  class="form-control"
-                  placeholder="Informe o bairro"
-                  name="txtBairro"
-                  :value="colab.bairro"
-                  disabled
-                />
-              </div>
-            </div>
-          </div>
-          <br />
-          <div class="row">
-            <div class="col-md-4">
-              <label for="inputCidade">Cidade</label>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">
-                    <i class="fas fa-city"></i>
-                  </div>
-                </div>
-                <input
-                  type="text"
-                  id="inputCidade"
-                  class="form-control"
-                  placeholder="Informe a cidade"
-                  name="txtCidade"
-                  :value="colab.cidade"
-                  disabled
-                />
-              </div>
-            </div>
-            <div class="col-md-4">
-              <label for="inputEstado">Estado</label>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">
-                    <i class="fas fa-flag"></i>
-                  </div>
-                </div>
-                <select
-                  id="inputEstado"
-                  class="form-control"
-                  name="txtEstado"
-                  disabled
-                >
-                  <option selected>{{ colab.uf }}</option>
-                </select>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <label for="inputCep">CEP</label>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">CEP</div>
-                </div>
-                <input
-                  type="text"
-                  id="inputCep"
-                  class="form-control"
-                  placeholder="Informe o CEP"
-                  name="txtCep"
-                  :value="colab.cep"
-                  disabled
-                />
-              </div>
-            </div>
-          </div>
+
           <br /><br />
           <div class="row">
             <div class="col-md-12">
-              <Link :href="'/colaborador/editar/'+colab.us_id" class="btn btn-warning">Editar</Link>
-              <!--<Link href="" class="btn btn-danger btnDeletar">Deletarr</Link>-->
-              
+              <Link :href="'/manutencao/editar/'+manutencao.id_man" class="btn btn-warning">Editar</Link>              
             </div>
           </div>
         </form>
@@ -444,11 +155,7 @@ export default {
     Link,
   },
   props: {
-    errors: Object,
-    /*cargos: Array,
-    empresas: Array*/
-    colab: Array,
-    foto_colab: String,
+    manutencao: Array,
   },
   methods: {
     sendForm() {
@@ -457,21 +164,7 @@ export default {
         preserveScroll: false,
         _token: this.$page.props.csrf_token,
 
-        /*onSuccess: () => {
-          bootbox.alert({
-            centerVertical: true,
-            backdrop: true,
-            closeButton: false,
-            size: "large",
-            title:
-              "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
-            message:
-              "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" +
-              "<span style='font-weight:bold; position: relative; top: 5px;'>Colaborador registrado com sucesso!</span>",
-          });
-                  
-          
-        },*/
+        
       });
     },
   },

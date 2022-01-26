@@ -143,7 +143,7 @@
           <br>
           <div class="row">
             <div class="col-md-8">
-               <label for="exampleFormControlTextarea1">Observacoes</label><br>
+               <label for="exampleFormControlTextarea1">Observações</label><br>
               <textarea class="form-control" id="exampleFormControlTextarea1" v-model="form.observacao" rows="3"></textarea>
             </div>
             <div class="col-md-4"></div>
@@ -213,7 +213,7 @@ export default {
               "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
             message:
               "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" +
-              "<span style='font-weight:bold; position: relative; top: 5px;'>Colaborador registrado com sucesso!</span>",
+              "<span style='font-weight:bold; position: relative; top: 5px;'>Manutenção registrada com sucesso!</span>",
           });
 
           

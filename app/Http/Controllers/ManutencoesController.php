@@ -48,51 +48,72 @@ class ManutencoesController extends Controller
      */
     public function store(Request $request)
     {
-        /*$manutencao = new Manutencoes();
 
-        $manutencao->nome_oficina = $request->nome;
+        $manutencao = new Manutencoes();
+
+        $manutencao->fk_veiculo = $request->veiculo;
+        $manutencao->fk_oficina = $request->oficina;
+        $manutencao->fk_servico = $request->servico;
+        $manutencao->custo_total = $request->veiculo;
+        $manutencao->observacao = $request->observacao;
         
-        $oficina->save();
-        return Redirect::route('oficinas.cadastro')->with('success', 'Oficina registrada com sucesso!');            */
+
+        $data = explode("/",$request->data_manutencao);
+        $dia = $data[0];
+        $mes = $data[1];
+        $ano = $data[2];            
+        $data_formatada = $ano.'-'.$mes.'-'.$dia;
+
+        $data_old = date($data_formatada);
+        $manutencao->data_manutencao = $data_old;   
+        $manutencao->save();
+
+        return Redirect::route('manutencoes.cadastro')->with('success', 'Manutenção registrada com sucesso!');
 
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Oficinas  $oficinas
+     * @param  \App\Models\Manutencoes  $manutencoes
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        /*$oficina = Oficinas::showOficina($id);
-        return Inertia::render('Oficinas/ViewOficina.vue', ['oficina' => $oficina]);*/
+        $manutencao = Manutencoes::showManutencao($id);
+        return Inertia::render('Manutencoes/ViewManutencao.vue', ['manutencao' => $manutencao]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Oficinas  $oficinas
+     * @param  \App\Models\Manutencoes  $manutencoes
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        /*$oficina = Oficinas::showOficina($id);
+        $manutencao = Manutencoes::showManutencao($id);
+        $veiculos = Manutencoes::getVeiculos();
+        $oficinas = Oficinas::all();
+        $servicos = Servicos::all();
 
-        //dd($oficina[0]->nome_oficina);
-
-        return Inertia::render('Oficinas/EditOficina.vue', ['oficina' => $oficina]);*/
+        //dd($manutencao);
+        return Inertia::render('Manutencoes/EditManutencao.vue', 
+        ['manutencao' => $manutencao, 'oficinas' => $oficinas, 'servicos' => $servicos, 
+        'veiculos' => $veiculos]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Oficinas  $oficinas
+     * @param  \App\Models\Manutencoes  $manutencoes
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Manutencoes $manutencoes)
     {
+        dd($request->all());
+
         /*$oficina = Oficinas::find($request->id);
         $oficina->nome_oficina = $request->nome;
         $oficina->save();
@@ -105,7 +126,7 @@ class ManutencoesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Oficinas  $oficinas
+     * @param  \App\Models\Manutencoes  $manutencoes
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
