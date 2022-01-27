@@ -16,9 +16,8 @@ class CreateAbastecimentosTable extends Migration
         Schema::create('abastecimentos', function (Blueprint $table) {
             $table->id('id');
             $table->timestamps();
-            $table->float('preco_litro');
-            $table->integer('litros_abast');
             $table->float('custo_total');
+            $table->date('data_abastecimento');
             $table->unsignedBigInteger('fk_posto');
             $table->unsignedBigInteger('fk_veiculo');
 

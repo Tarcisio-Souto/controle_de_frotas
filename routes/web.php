@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AbastecimentosController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EmpresasController;
@@ -87,3 +88,13 @@ Route::get('/manutencao/visualizar/{id}', [ManutencoesController::class, 'show']
 Route::get('/manutencao/editar/{id}', [ManutencoesController::class, 'edit'])->name('manutencao.editar');
 Route::post('/manutencao/update/{id}', [ManutencoesController::class, 'update'])->name('manutencao.atualizar');
 Route::post('/manutencao/deletar/{id}', [ManutencoesController::class, 'destroy'])->name('manutencao.deletar');
+
+/* Abastecimentos */
+
+Route::get('/abastecimentos/cadastro', [AbastecimentosController::class, 'create'])->name('abastecimentos.cadastro');
+Route::post('/abastecimentos/registrar', [AbastecimentosController::class, 'store'])->name('abastecimentos.registrar');
+Route::get('/abastecimentos/lista', [AbastecimentosController::class, 'index'])->name('abastecimentos.lista');
+Route::get('/abastecimento/visualizar/{id}', [AbastecimentosController::class, 'show'])->name('abastecimento.mostrar');
+Route::get('/abastecimento/editar/{id}', [AbastecimentosController::class, 'edit'])->name('abastecimento.editar');
+Route::post('/abastecimento/update/{id}', [AbastecimentosController::class, 'update'])->name('abastecimento.atualizar');
+Route::post('/abastecimento/deletar/{id}', [AbastecimentosController::class, 'destroy'])->name('abastecimento.deletar');
