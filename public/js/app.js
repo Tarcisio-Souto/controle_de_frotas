@@ -4314,298 +4314,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -4616,43 +4324,32 @@ __webpack_require__.r(__webpack_exports__);
   },
   props: {
     errors: Object,
-    cargos: Array,
-    empresas: Array,
-    colab: Array
+    servicos: Array,
+    oficinas: Array,
+    veiculos: Array,
+    manutencao: Array
   },
   data: function data() {
     return {
       form: {
         id: null,
-        nome: null,
-        cpf: null,
-        idade: null,
-        sexo: null,
-        email_part: null,
-        email_inst: null,
-        empresa: null,
-        cargo: null,
-        data_adm: null,
-        celular: null,
-        tel_rec: null,
-        //senha: null,
-        //confirm_senha: null,
-        logradouro: null,
-        numero: null,
-        bairro: null,
-        cidade: null,
-        estado: null,
-        cep: null,
+        veiculo: null,
+        fk_veiculo: null,
+        oficina: null,
+        servico: null,
+        data_manutencao: null,
+        custo: null,
+        observacao: null,
         preserveState: true
       }
     };
   },
   created: function created() {
-    this.form.id = this.$page.props.colab[0].us_id, this.form.nome = this.$page.props.colab[0].nome_colab, this.form.cpf = this.$page.props.colab[0].cpf, this.form.idade = this.$page.props.colab[0].idade, this.form.sexo = this.$page.props.colab[0].sexo, this.form.email_part = this.$page.props.colab[0].email, this.form.email_inst = this.$page.props.colab[0].email_inst, this.form.empresa = this.$page.props.colab[0].nome_emp, this.form.cargo = this.$page.props.colab[0].nome_cg, this.form.data_adm = this.$page.props.colab[0].dt_adm_format, this.form.celular = this.$page.props.colab[0].celular, this.form.tel_rec = this.$page.props.colab[0].tel_recado, this.form.logradouro = this.$page.props.colab[0].logradouro, this.form.numero = this.$page.props.colab[0].numero, this.form.bairro = this.$page.props.colab[0].bairro, this.form.cidade = this.$page.props.colab[0].cidade, this.form.estado = this.$page.props.colab[0].uf, this.form.cep = this.$page.props.colab[0].cep;
+    this.form.id = this.$page.props.manutencao[0].id_man, this.form.veiculo = this.$page.props.manutencao[0].nome_modelo, this.form.fk_veiculo = this.$page.props.manutencao[0].fk_modelo, this.form.oficina = this.$page.props.manutencao[0].nome_oficina, this.form.servico = this.$page.props.manutencao[0].descricao_servicos, this.form.data_manutencao = this.$page.props.manutencao[0].data_manutencao, this.form.custo = this.$page.props.manutencao[0].custo_total, this.form.observacao = this.$page.props.manutencao[0].observacao;
   },
   methods: {
     sendForm: function sendForm() {
-      this.$inertia.post("/colaborador/update/" + this.form.id, this.form, {
+      this.$inertia.post("/manutencao/update/" + this.form.id, this.form, {
         forceFormData: true,
         preserveScroll: false,
         _token: this.$page.props.csrf_token,
@@ -37965,7 +37662,7 @@ var render = function () {
       _c("div", { staticClass: "col-md-4" }),
       _vm._v(" "),
       _c("div", { staticClass: "col-md-4", attrs: { align: "center" } }, [
-        _c("h4", [_vm._v("Cadastro de Colaborador")]),
+        _c("h4", [_vm._v("Cadastro de Manutenção")]),
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "col-md-4" }),
@@ -37976,1166 +37673,446 @@ var render = function () {
     _c("br"),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
-      _c(
-        "div",
-        { staticClass: "col-md-12" },
-        _vm._l(_vm.colab, function (colab) {
-          return _c(
-            "form",
-            {
-              key: colab.id_usuario,
-              attrs: { enctype: "multipart/form-data" },
-              on: {
-                submit: function ($event) {
-                  $event.preventDefault()
-                  return _vm.sendForm.apply(null, arguments)
-                },
+      _c("div", { staticClass: "col-md-12" }, [
+        _c(
+          "form",
+          {
+            attrs: { enctype: "multipart/form-data" },
+            on: {
+              submit: function ($event) {
+                $event.preventDefault()
+                return _vm.sendForm.apply(null, arguments)
               },
             },
-            [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: colab.us_id,
-                    expression: "colab.us_id",
-                  },
-                ],
-                attrs: { type: "hidden" },
-                domProps: { value: colab.us_id },
-                on: {
-                  input: function ($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(colab, "us_id", $event.target.value)
-                  },
+          },
+          [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.manutencao.id_man,
+                  expression: "manutencao.id_man",
                 },
-              }),
-              _vm._v(" "),
-              _c("br"),
-              _c("br"),
-              _vm._v(" "),
-              _c("h4", [
-                _c("span", { staticStyle: { "font-weight": "bold" } }, [
-                  _vm._v("Dados Pessoais"),
-                ]),
+              ],
+              attrs: { type: "hidden" },
+              domProps: { value: _vm.manutencao.id_man },
+              on: {
+                input: function ($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.manutencao, "id_man", $event.target.value)
+                },
+              },
+            }),
+            _vm._v(" "),
+            _c("br"),
+            _c("br"),
+            _vm._v(" "),
+            _c("h4", [
+              _c("span", { staticStyle: { "font-weight": "bold" } }, [
+                _vm._v("Registro"),
               ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c(
-                  "div",
-                  { staticClass: "col-md-4" },
-                  [
-                    _c("label", { attrs: { for: "inputNome" } }, [
-                      _vm._v("Nome"),
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("div", { staticClass: "input-group-prepend" }, [
-                        _c("div", { staticClass: "input-group-text" }, [
-                          _c("i", { staticClass: "fas fa-user" }),
-                        ]),
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.form.nome,
-                            expression: "form.nome",
-                          },
-                        ],
-                        staticClass: "form-control",
-                        attrs: { type: "text", id: "inputNome" },
-                        domProps: { value: _vm.form.nome },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(_vm.form, "nome", $event.target.value)
-                          },
-                        },
-                      }),
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.errors, function (erro, nome) {
-                      return _c("div", { key: nome }, [
-                        nome == "nome"
-                          ? _c("div", [
-                              erro != ""
-                                ? _c(
-                                    "span",
-                                    {
-                                      staticClass: "errors-label-notification",
-                                    },
-                                    [
-                                      _c("i", {
-                                        staticClass:
-                                          "fas fa-exclamation-circle",
-                                      }),
-                                      _vm._v(
-                                        _vm._s(erro) + "\n                "
-                                      ),
-                                    ]
-                                  )
-                                : _vm._e(),
-                            ])
-                          : _vm._e(),
-                      ])
-                    }),
-                  ],
-                  2
-                ),
+            ]),
+            _c("br"),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("label", { attrs: { for: "inputVeiculo" } }, [
+                  _vm._v("Veículo (modelo / placa)"),
+                ]),
                 _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "col-md-4" },
-                  [
-                    _c("label", { attrs: { for: "inputCpf" } }, [
-                      _vm._v("CPF"),
+                _c("div", { staticClass: "input-group" }, [
+                  _c("div", { staticClass: "input-group-prepend" }, [
+                    _c("div", { staticClass: "input-group-text" }, [
+                      _c("i", { staticClass: "fas fa-briefcase" }),
                     ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("div", { staticClass: "input-group-prepend" }, [
-                        _c("div", { staticClass: "input-group-text" }, [
-                          _c("i", { staticClass: "fas fa-id-card" }),
-                        ]),
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.form.cpf,
-                            expression: "form.cpf",
-                          },
-                          {
-                            name: "mask",
-                            rawName: "v-mask",
-                            value: "###.###.###-##",
-                            expression: "'###.###.###-##'",
-                          },
-                        ],
-                        staticClass: "form-control",
-                        attrs: { type: "text", id: "inputCpf" },
-                        domProps: { value: _vm.form.cpf },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(_vm.form, "cpf", $event.target.value)
-                          },
-                        },
-                      }),
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.errors, function (erro, cpf) {
-                      return _c("div", { key: cpf }, [
-                        cpf == "cpf"
-                          ? _c("div", [
-                              erro != ""
-                                ? _c(
-                                    "span",
-                                    {
-                                      staticClass: "errors-label-notification",
-                                    },
-                                    [
-                                      _c("i", {
-                                        staticClass:
-                                          "fas fa-exclamation-circle",
-                                      }),
-                                      _vm._v(
-                                        _vm._s(erro) + "\n                "
-                                      ),
-                                    ]
-                                  )
-                                : _vm._e(),
-                            ])
-                          : _vm._e(),
-                      ])
-                    }),
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-4" }, [
-                  _c("label", { attrs: { for: "inputSexo" } }, [
-                    _vm._v("Sexo"),
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "row" }, [
-                    _c("div", { staticClass: "col-md-12" }, [
-                      colab.sexo == "m"
-                        ? _c(
-                            "div",
-                            { staticClass: "form-check form-check-inline" },
-                            [
-                              _c("input", {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.form.sexo,
-                                    expression: "form.sexo",
-                                  },
-                                ],
-                                staticClass: "form-check-input",
-                                attrs: {
-                                  type: "radio",
-                                  name: "exampleRadios",
-                                  id: "inputSexo1",
-                                  value: "m",
-                                  checked: "",
-                                },
-                                domProps: {
-                                  checked: _vm._q(_vm.form.sexo, "m"),
-                                },
-                                on: {
-                                  change: function ($event) {
-                                    return _vm.$set(_vm.form, "sexo", "m")
-                                  },
-                                },
-                              }),
-                              _vm._v(" "),
-                              _c(
-                                "label",
-                                {
-                                  staticClass: "form-check-label",
-                                  attrs: { for: "exampleRadios1" },
-                                },
-                                [
-                                  _vm._v(
-                                    "\n                    Masculino\n                  "
-                                  ),
-                                ]
-                              ),
-                            ]
-                          )
-                        : _c(
-                            "div",
-                            { staticClass: "form-check form-check-inline" },
-                            [
-                              _c("input", {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.form.sexo,
-                                    expression: "form.sexo",
-                                  },
-                                ],
-                                staticClass: "form-check-input",
-                                attrs: {
-                                  type: "radio",
-                                  name: "exampleRadios",
-                                  id: "inputSexo1",
-                                  value: "m",
-                                },
-                                domProps: {
-                                  checked: _vm._q(_vm.form.sexo, "m"),
-                                },
-                                on: {
-                                  change: function ($event) {
-                                    return _vm.$set(_vm.form, "sexo", "m")
-                                  },
-                                },
-                              }),
-                              _vm._v(" "),
-                              _c(
-                                "label",
-                                {
-                                  staticClass: "form-check-label",
-                                  attrs: { for: "exampleRadios1" },
-                                },
-                                [
-                                  _vm._v(
-                                    "\n                    Masculino\n                  "
-                                  ),
-                                ]
-                              ),
-                            ]
-                          ),
-                      _vm._v(" "),
-                      colab.sexo == "f"
-                        ? _c(
-                            "div",
-                            { staticClass: "form-check form-check-inline" },
-                            [
-                              _c("input", {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.form.sexo,
-                                    expression: "form.sexo",
-                                  },
-                                ],
-                                staticClass: "form-check-input",
-                                attrs: {
-                                  type: "radio",
-                                  name: "exampleRadios",
-                                  id: "inputSexo2",
-                                  value: "f",
-                                  checked: "",
-                                },
-                                domProps: {
-                                  checked: _vm._q(_vm.form.sexo, "f"),
-                                },
-                                on: {
-                                  change: function ($event) {
-                                    return _vm.$set(_vm.form, "sexo", "f")
-                                  },
-                                },
-                              }),
-                              _vm._v(" "),
-                              _c(
-                                "label",
-                                {
-                                  staticClass: "form-check-label",
-                                  attrs: { for: "exampleRadios2" },
-                                },
-                                [
-                                  _vm._v(
-                                    "\n                    Feminino\n                  "
-                                  ),
-                                ]
-                              ),
-                            ]
-                          )
-                        : _c(
-                            "div",
-                            { staticClass: "form-check form-check-inline" },
-                            [
-                              _c("input", {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.form.sexo,
-                                    expression: "form.sexo",
-                                  },
-                                ],
-                                staticClass: "form-check-input",
-                                attrs: {
-                                  type: "radio",
-                                  name: "exampleRadios",
-                                  id: "inputSexo2",
-                                  value: "f",
-                                },
-                                domProps: {
-                                  checked: _vm._q(_vm.form.sexo, "f"),
-                                },
-                                on: {
-                                  change: function ($event) {
-                                    return _vm.$set(_vm.form, "sexo", "f")
-                                  },
-                                },
-                              }),
-                              _vm._v(" "),
-                              _c(
-                                "label",
-                                {
-                                  staticClass: "form-check-label",
-                                  attrs: { for: "exampleRadios1" },
-                                },
-                                [
-                                  _vm._v(
-                                    "\n                    Feminino\n                  "
-                                  ),
-                                ]
-                              ),
-                            ]
-                          ),
-                    ]),
-                  ]),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("br"),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c(
-                  "div",
-                  { staticClass: "col-md-4" },
-                  [
-                    _c("label", { attrs: { for: "inputIdade" } }, [
-                      _vm._v("Idade"),
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "input-group" }, [
-                      _c("div", { staticClass: "input-group-prepend" }, [
-                        _c("div", { staticClass: "input-group-text" }, [
-                          _c("i", { staticClass: "fas fa-birthday-cake" }),
-                        ]),
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.form.idade,
-                            expression: "form.idade",
-                          },
-                        ],
-                        staticClass: "form-control",
-                        attrs: { type: "text", id: "inputIdade" },
-                        domProps: { value: _vm.form.idade },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(_vm.form, "idade", $event.target.value)
-                          },
-                        },
-                      }),
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.errors, function (erro, idade) {
-                      return _c("div", { key: idade }, [
-                        idade == "idade"
-                          ? _c("div", [
-                              erro != ""
-                                ? _c(
-                                    "span",
-                                    {
-                                      staticClass: "errors-label-notification",
-                                    },
-                                    [
-                                      _c("i", {
-                                        staticClass:
-                                          "fas fa-exclamation-circle",
-                                      }),
-                                      _vm._v(
-                                        _vm._s(erro) + "\n                "
-                                      ),
-                                    ]
-                                  )
-                                : _vm._e(),
-                            ])
-                          : _vm._e(),
-                      ])
-                    }),
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-4" }, [
-                  _c("label", { attrs: { for: "inputEmail" } }, [
-                    _vm._v("Email Particular"),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "input-group" }, [
-                    _c("div", { staticClass: "input-group-prepend" }, [
-                      _c("div", { staticClass: "input-group-text" }, [
-                        _vm._v("@"),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c("input", {
+                  _c(
+                    "select",
+                    {
                       directives: [
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.form.email_part,
-                          expression: "form.email_part",
+                          value: _vm.form.fk_veiculo,
+                          expression: "form.fk_veiculo",
                         },
                       ],
                       staticClass: "form-control",
-                      attrs: { type: "email", id: "inputEmail" },
-                      domProps: { value: _vm.form.email_part },
+                      attrs: { id: "inputVeiculo", name: "txtVeiculo" },
                       on: {
-                        input: function ($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.form, "email_part", $event.target.value)
+                        change: function ($event) {
+                          var $$selectedVal = Array.prototype.filter
+                            .call($event.target.options, function (o) {
+                              return o.selected
+                            })
+                            .map(function (o) {
+                              var val = "_value" in o ? o._value : o.value
+                              return val
+                            })
+                          _vm.$set(
+                            _vm.form,
+                            "fk_veiculo",
+                            $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
+                          )
                         },
                       },
-                    }),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-4" }, [
-                  _c("label", { attrs: { for: "inputEmailInst" } }, [
-                    _vm._v("Email Institucional"),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "input-group" }, [
-                    _c("div", { staticClass: "input-group-prepend" }, [
-                      _c("div", { staticClass: "input-group-text" }, [
-                        _vm._v("@"),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
+                    },
+                    [
+                      _c(
+                        "option",
                         {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.form.email_inst,
-                          expression: "form.email_inst",
+                          staticStyle: { "background-color": "gainsboro" },
+                          attrs: { selected: "" },
+                          domProps: { value: _vm.form.veiculo },
                         },
-                      ],
-                      staticClass: "form-control",
-                      attrs: { type: "email", id: "inputEmailInst" },
-                      domProps: { value: _vm.form.email_inst },
-                      on: {
-                        input: function ($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.form, "email_inst", $event.target.value)
-                        },
-                      },
-                    }),
-                  ]),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("br"),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-md-4" }, [
-                  _c("label", { attrs: { for: "inputEmpresa" } }, [
-                    _vm._v("Empresa"),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "input-group" }, [
-                    _c("div", { staticClass: "input-group-prepend" }, [
-                      _c("div", { staticClass: "input-group-text" }, [
-                        _c("i", { staticClass: "fas fa-building" }),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "select",
-                      {
-                        staticClass: "form-control",
-                        attrs: { id: "inputEmpresa", name: "txtEmpresa" },
-                      },
-                      [
-                        _c("option", { attrs: { selected: "" } }, [
-                          _vm._v(_vm._s(_vm.form.empresa)),
-                        ]),
-                      ]
-                    ),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-4" }, [
-                  _c("label", { attrs: { for: "inputCargo" } }, [
-                    _vm._v("Cargo"),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "input-group" }, [
-                    _c("div", { staticClass: "input-group-prepend" }, [
-                      _c("div", { staticClass: "input-group-text" }, [
-                        _c("i", { staticClass: "fas fa-briefcase" }),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "select",
-                      {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.form.cargo,
-                            expression: "form.cargo",
-                          },
-                        ],
-                        staticClass: "form-control",
-                        attrs: { id: "inputCargo", name: "txtCargo" },
-                        on: {
-                          change: function ($event) {
-                            var $$selectedVal = Array.prototype.filter
-                              .call($event.target.options, function (o) {
-                                return o.selected
-                              })
-                              .map(function (o) {
-                                var val = "_value" in o ? o._value : o.value
-                                return val
-                              })
-                            _vm.$set(
-                              _vm.form,
-                              "cargo",
-                              $event.target.multiple
-                                ? $$selectedVal
-                                : $$selectedVal[0]
-                            )
-                          },
-                        },
-                      },
-                      [
-                        _c(
+                        [_vm._v(_vm._s(_vm.form.veiculo))]
+                      ),
+                      _vm._v(" "),
+                      _vm._l(_vm.veiculos, function (veiculo) {
+                        return _c(
                           "option",
                           {
-                            staticStyle: { "background-color": "gainsboro" },
-                            attrs: { selected: "" },
-                            domProps: { value: _vm.form.cargo },
+                            key: veiculo.id,
+                            domProps: { value: veiculo.nome_modelo },
                           },
-                          [_vm._v(_vm._s(_vm.form.cargo))]
-                        ),
-                        _vm._v(" "),
-                        _vm._l(_vm.cargos, function (cargo) {
-                          return _c(
-                            "option",
-                            { key: cargo.id, domProps: { value: cargo.nome } },
-                            [
-                              _vm._v(
-                                "\n                  " +
-                                  _vm._s(cargo.nome) +
-                                  "\n                "
-                              ),
-                            ]
-                          )
-                        }),
-                      ],
-                      2
-                    ),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-4" }, [
-                  _c("label", { attrs: { for: "inputDataAdmissao" } }, [
-                    _vm._v("Data de Admissão"),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "input-group" }, [
-                    _c("div", { staticClass: "input-group-prepend" }, [
-                      _c("div", { staticClass: "input-group-text" }, [
-                        _c("i", { staticClass: "fas fa-calendar-alt" }),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.form.data_adm,
-                          expression: "form.data_adm",
-                        },
-                        {
-                          name: "mask",
-                          rawName: "v-mask",
-                          value: "##/##/####",
-                          expression: "'##/##/####'",
-                        },
-                      ],
-                      key: "",
-                      staticClass: "form-control",
-                      attrs: { type: "text", id: "inputDataAdmissao" },
-                      domProps: { value: _vm.form.data_adm },
-                      on: {
-                        input: function ($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.form, "data_adm", $event.target.value)
-                        },
-                      },
-                    }),
-                  ]),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("br"),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-md-6" }, [
-                  _c("label", { attrs: { for: "inputCelular" } }, [
-                    _vm._v("Celular"),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "input-group" }, [
-                    _c("div", { staticClass: "input-group-prepend" }, [
-                      _c("div", { staticClass: "input-group-text" }, [
-                        _c("i", { staticClass: "fas fa-mobile-alt" }),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "mask",
-                          rawName: "v-mask",
-                          value: ["(##) #####-####", "(##) ####-####"],
-                          expression: "['(##) #####-####', '(##) ####-####']",
-                        },
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.form.celular,
-                          expression: "form.celular",
-                        },
-                      ],
-                      staticClass: "form-control",
-                      attrs: { type: "text", id: "inputCelular" },
-                      domProps: { value: _vm.form.celular },
-                      on: {
-                        input: function ($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.form, "celular", $event.target.value)
-                        },
-                      },
-                    }),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-6" }, [
-                  _c("label", { attrs: { for: "inputTelRecado" } }, [
-                    _vm._v("Telefone (recado)"),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "input-group" }, [
-                    _c("div", { staticClass: "input-group-prepend" }, [
-                      _c("div", { staticClass: "input-group-text" }, [
-                        _c("i", { staticClass: "fas fa-phone" }),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "mask",
-                          rawName: "v-mask",
-                          value: ["(##) #####-####", "(##) ####-####"],
-                          expression: "['(##) #####-####', '(##) ####-####']",
-                        },
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.form.tel_rec,
-                          expression: "form.tel_rec",
-                        },
-                      ],
-                      staticClass: "form-control",
-                      attrs: {
-                        type: "text",
-                        id: "inputTelRecado",
-                        name: "txtTelRec",
-                      },
-                      domProps: { value: _vm.form.tel_rec },
-                      on: {
-                        input: function ($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.form, "tel_rec", $event.target.value)
-                        },
-                      },
-                    }),
-                  ]),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("br"),
-              _c("br"),
-              _vm._v(" "),
-              _c("h4", [
-                _c("span", { staticStyle: { "font-weight": "bold" } }, [
-                  _vm._v("Endereço"),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("hr"),
-              _vm._v(" "),
-              _c("br"),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-md-6" }, [
-                  _c("label", { attrs: { for: "inputLogradouro" } }, [
-                    _vm._v("Logradouro"),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "input-group" }, [
-                    _c("div", { staticClass: "input-group-prepend" }, [
-                      _c("div", { staticClass: "input-group-text" }, [
-                        _c("i", { staticClass: "fas fa-road" }),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.form.logradouro,
-                          expression: "form.logradouro",
-                        },
-                      ],
-                      staticClass: "form-control",
-                      attrs: {
-                        type: "text",
-                        id: "inputLogradouro",
-                        placeholder: "Rua, Av., Rod.",
-                        name: "txtLogradouro",
-                      },
-                      domProps: { value: _vm.form.logradouro },
-                      on: {
-                        input: function ($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.form, "logradouro", $event.target.value)
-                        },
-                      },
-                    }),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-2" }, [
-                  _c("label", { attrs: { for: "inputNumero" } }, [
-                    _vm._v("Número"),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "input-group" }, [
-                    _c("div", { staticClass: "input-group-prepend" }, [
-                      _c("div", { staticClass: "input-group-text" }, [
-                        _vm._v("Nº"),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.form.numero,
-                          expression: "form.numero",
-                        },
-                      ],
-                      staticClass: "form-control",
-                      attrs: {
-                        type: "text",
-                        id: "inputNumero",
-                        placeholder: "Número",
-                        name: "txtNumero",
-                      },
-                      domProps: { value: _vm.form.numero },
-                      on: {
-                        input: function ($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.form, "numero", $event.target.value)
-                        },
-                      },
-                    }),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-4" }, [
-                  _c("label", { attrs: { for: "inputBairro" } }, [
-                    _vm._v("Bairro"),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "input-group" }, [
-                    _c("div", { staticClass: "input-group-prepend" }, [
-                      _c("div", { staticClass: "input-group-text" }, [
-                        _c("i", { staticClass: "fas fa-home" }),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.form.bairro,
-                          expression: "form.bairro",
-                        },
-                      ],
-                      staticClass: "form-control",
-                      attrs: {
-                        type: "text",
-                        id: "inputBairro",
-                        placeholder: "Informe o bairro",
-                        name: "txtBairro",
-                      },
-                      domProps: { value: _vm.form.bairro },
-                      on: {
-                        input: function ($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.form, "bairro", $event.target.value)
-                        },
-                      },
-                    }),
-                  ]),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("br"),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-md-4" }, [
-                  _c("label", { attrs: { for: "inputCidade" } }, [
-                    _vm._v("Cidade"),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "input-group" }, [
-                    _c("div", { staticClass: "input-group-prepend" }, [
-                      _c("div", { staticClass: "input-group-text" }, [
-                        _c("i", { staticClass: "fas fa-city" }),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.form.cidade,
-                          expression: "form.cidade",
-                        },
-                      ],
-                      staticClass: "form-control",
-                      attrs: {
-                        type: "text",
-                        id: "inputCidade",
-                        placeholder: "Informe a cidade",
-                        name: "txtCidade",
-                      },
-                      domProps: { value: _vm.form.cidade },
-                      on: {
-                        input: function ($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.form, "cidade", $event.target.value)
-                        },
-                      },
-                    }),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-4" }, [
-                  _c("label", { attrs: { for: "inputEstado" } }, [
-                    _vm._v("Estado"),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "input-group" }, [
-                    _c("div", { staticClass: "input-group-prepend" }, [
-                      _c("div", { staticClass: "input-group-text" }, [
-                        _c("i", { staticClass: "fas fa-flag" }),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "select",
-                      {
-                        staticClass: "form-control",
-                        attrs: { id: "inputEstado", name: "txtEstado" },
-                      },
-                      [
-                        _c("option", { attrs: { selected: "" } }, [
-                          _vm._v(_vm._s(colab.uf)),
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "" } }, [
-                          _vm._v("Selecione o estado"),
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "Acre" } }, [
-                          _vm._v("Acre"),
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "Alagoas" } }, [
-                          _vm._v("Alagoas"),
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "Amapá" } }, [
-                          _vm._v("Amapá"),
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "Amazonas" } }, [
-                          _vm._v("Amazonas"),
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "Bahia" } }, [
-                          _vm._v("Bahia"),
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "Ceará" } }, [
-                          _vm._v("Ceará"),
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "Distrito Federal" } }, [
-                          _vm._v("Distrito Federal"),
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "Espírito Santo" } }, [
-                          _vm._v("Espírito Santo"),
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "Goiás" } }, [
-                          _vm._v("Goiás"),
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "Maranhão" } }, [
-                          _vm._v("Maranhão"),
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "Mato Grosso" } }, [
-                          _vm._v("Mato Grosso"),
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "option",
-                          { attrs: { value: "Mato Grosso do Sul" } },
-                          [_vm._v("Mato Grosso do Sul")]
-                        ),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "Minas Gerais" } }, [
-                          _vm._v("Minas Gerais"),
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "Pará" } }, [
-                          _vm._v("Pará"),
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "Paraíba" } }, [
-                          _vm._v("Paraíba"),
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "Paraná" } }, [
-                          _vm._v("Paraná"),
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "Pernambuco" } }, [
-                          _vm._v("Pernambuco"),
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "Piauí" } }, [
-                          _vm._v("Piauí"),
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "Rio de Janeiro" } }, [
-                          _vm._v("Rio de Janeiro"),
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "option",
-                          { attrs: { value: "Rio Grande do Norte" } },
                           [
                             _vm._v(
-                              "\n                  Rio Grande do Norte\n                "
+                              "\n                  " +
+                                _vm._s(
+                                  veiculo.nome_modelo + " / " + veiculo.placa
+                                ) +
+                                "\n                "
                             ),
                           ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "option",
-                          { attrs: { value: "Rio Grande do Sul" } },
-                          [_vm._v("Rio Grande do Sul")]
-                        ),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "Rondônia" } }, [
-                          _vm._v("Rondônia"),
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "Roraima" } }, [
-                          _vm._v("Roraima"),
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "Santa Catarina" } }, [
-                          _vm._v("Santa Catarina"),
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "São Paulo" } }, [
-                          _vm._v("São Paulo"),
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "Sergipe" } }, [
-                          _vm._v("Sergipe"),
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "Tocantins" } }, [
-                          _vm._v("Tocantins"),
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "Estrangeiro" } }, [
-                          _vm._v("Estrangeiro"),
-                        ]),
-                      ]
-                    ),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-4" }, [
-                  _c("label", { attrs: { for: "inputCep" } }, [_vm._v("CEP")]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "input-group" }, [
-                    _c("div", { staticClass: "input-group-prepend" }, [
-                      _c("div", { staticClass: "input-group-text" }, [
-                        _vm._v("CEP"),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.form.cep,
-                          expression: "form.cep",
-                        },
-                      ],
-                      staticClass: "form-control",
-                      attrs: {
-                        type: "text",
-                        id: "inputCep",
-                        placeholder: "Informe o CEP",
-                        name: "txtCep",
-                      },
-                      domProps: { value: _vm.form.cep },
-                      on: {
-                        input: function ($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.form, "cep", $event.target.value)
-                        },
-                      },
-                    }),
-                  ]),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("br"),
-              _c("br"),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-md-12" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-success btnCadastrar",
-                      attrs: { type: "submit" },
-                    },
-                    [_vm._v("\n              Alterar\n            ")]
+                        )
+                      }),
+                    ],
+                    2
                   ),
                 ]),
               ]),
-            ]
-          )
-        }),
-        0
-      ),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("label", { attrs: { for: "inputOficina" } }, [
+                  _vm._v("Oficina"),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "input-group" }, [
+                  _c("div", { staticClass: "input-group-prepend" }, [
+                    _c("div", { staticClass: "input-group-text" }, [
+                      _c("i", { staticClass: "fas fa-briefcase" }),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "select",
+                    {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.oficina,
+                          expression: "form.oficina",
+                        },
+                      ],
+                      staticClass: "form-control",
+                      attrs: { id: "inputOficina", name: "txtOficina" },
+                      on: {
+                        change: function ($event) {
+                          var $$selectedVal = Array.prototype.filter
+                            .call($event.target.options, function (o) {
+                              return o.selected
+                            })
+                            .map(function (o) {
+                              var val = "_value" in o ? o._value : o.value
+                              return val
+                            })
+                          _vm.$set(
+                            _vm.form,
+                            "oficina",
+                            $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
+                          )
+                        },
+                      },
+                    },
+                    [
+                      _c(
+                        "option",
+                        {
+                          staticStyle: { "background-color": "gainsboro" },
+                          attrs: { selected: "" },
+                          domProps: { value: _vm.form.oficina },
+                        },
+                        [_vm._v(_vm._s(_vm.form.oficina))]
+                      ),
+                      _vm._v(" "),
+                      _vm._l(_vm.oficinas, function (oficina) {
+                        return _c(
+                          "option",
+                          {
+                            key: oficina.id,
+                            domProps: { value: oficina.nome_oficina },
+                          },
+                          [
+                            _vm._v(
+                              "\n                  " +
+                                _vm._s(oficina.nome_oficina) +
+                                "\n                "
+                            ),
+                          ]
+                        )
+                      }),
+                    ],
+                    2
+                  ),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("label", { attrs: { for: "inputServico" } }, [
+                  _vm._v("Serviço"),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "input-group" }, [
+                  _c("div", { staticClass: "input-group-prepend" }, [
+                    _c("div", { staticClass: "input-group-text" }, [
+                      _c("i", { staticClass: "fas fa-briefcase" }),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "select",
+                    {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.servico,
+                          expression: "form.servico",
+                        },
+                      ],
+                      staticClass: "form-control",
+                      attrs: { id: "inputServico", name: "txtServico" },
+                      on: {
+                        change: function ($event) {
+                          var $$selectedVal = Array.prototype.filter
+                            .call($event.target.options, function (o) {
+                              return o.selected
+                            })
+                            .map(function (o) {
+                              var val = "_value" in o ? o._value : o.value
+                              return val
+                            })
+                          _vm.$set(
+                            _vm.form,
+                            "servico",
+                            $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
+                          )
+                        },
+                      },
+                    },
+                    [
+                      _c(
+                        "option",
+                        {
+                          staticStyle: { "background-color": "gainsboro" },
+                          attrs: { selected: "" },
+                          domProps: { value: _vm.form.servico },
+                        },
+                        [_vm._v(_vm._s(_vm.form.servico))]
+                      ),
+                      _vm._v(" "),
+                      _vm._l(_vm.servicos, function (servico) {
+                        return _c(
+                          "option",
+                          {
+                            key: servico.id,
+                            domProps: { value: servico.descricao_servicos },
+                          },
+                          [
+                            _vm._v(
+                              "\n                  " +
+                                _vm._s(servico.descricao_servicos) +
+                                "\n                "
+                            ),
+                          ]
+                        )
+                      }),
+                    ],
+                    2
+                  ),
+                ]),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("br"),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("label", { attrs: { for: "inputDataManutencao" } }, [
+                  _vm._v("Data da Manutenção"),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "input-group" }, [
+                  _c("div", { staticClass: "input-group-prepend" }, [
+                    _c("div", { staticClass: "input-group-text" }, [
+                      _c("i", { staticClass: "fas fa-calendar-alt" }),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.data_manutencao,
+                        expression: "form.data_manutencao",
+                      },
+                      {
+                        name: "mask",
+                        rawName: "v-mask",
+                        value: "##/##/####",
+                        expression: "'##/##/####'",
+                      },
+                    ],
+                    key: "",
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      id: "inputDataManutencao",
+                      name: "txtDataManutencao",
+                    },
+                    domProps: { value: _vm.form.data_manutencao },
+                    on: {
+                      input: function ($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.form,
+                          "data_manutencao",
+                          $event.target.value
+                        )
+                      },
+                    },
+                  }),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("label", { attrs: { for: "inputCusto" } }, [
+                  _vm._v("Custo"),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "input-group" }, [
+                  _c("div", { staticClass: "input-group-prepend" }, [
+                    _c("div", { staticClass: "input-group-text" }, [
+                      _c("i", { staticClass: "fas fa-id-card" }),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.custo,
+                        expression: "form.custo",
+                      },
+                      {
+                        name: "mask",
+                        rawName: "v-mask",
+                        value: [
+                          "R$ ##.##",
+                          "R$ ###.###",
+                          "R$ #.###,##",
+                          "R$ ##.###,##",
+                        ],
+                        expression:
+                          "['R$ ##.##', 'R$ ###.###', 'R$ #.###,##', 'R$ ##.###,##']",
+                      },
+                    ],
+                    staticClass: "form-control",
+                    attrs: { type: "text", id: "inputCusto", name: "txtCusto" },
+                    domProps: { value: _vm.form.custo },
+                    on: {
+                      input: function ($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.form, "custo", $event.target.value)
+                      },
+                    },
+                  }),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }),
+            ]),
+            _vm._v(" "),
+            _c("br"),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-8" }, [
+                _c("label", { attrs: { for: "exampleFormControlTextarea1" } }, [
+                  _vm._v("Observações"),
+                ]),
+                _c("br"),
+                _vm._v(" "),
+                _c("textarea", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.observacao,
+                      expression: "form.observacao",
+                    },
+                  ],
+                  staticClass: "form-control",
+                  attrs: { id: "exampleFormControlTextarea1", rows: "3" },
+                  domProps: { value: _vm.form.observacao },
+                  on: {
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.form, "observacao", $event.target.value)
+                    },
+                  },
+                }),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }),
+            ]),
+            _vm._v(" "),
+            _c("br"),
+            _c("br"),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-12" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-success btnCadastrar",
+                    attrs: { type: "submit" },
+                  },
+                  [_vm._v("\n              Alterar\n            ")]
+                ),
+              ]),
+            ]),
+          ]
+        ),
+      ]),
     ]),
     _vm._v(" "),
     _c("br"),

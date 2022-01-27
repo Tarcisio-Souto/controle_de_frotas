@@ -98,6 +98,7 @@ class ManutencoesController extends Controller
         $servicos = Servicos::all();
 
         //dd($manutencao);
+
         return Inertia::render('Manutencoes/EditManutencao.vue', 
         ['manutencao' => $manutencao, 'oficinas' => $oficinas, 'servicos' => $servicos, 
         'veiculos' => $veiculos]);
@@ -110,16 +111,37 @@ class ManutencoesController extends Controller
      * @param  \App\Models\Manutencoes  $manutencoes
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Manutencoes $manutencoes)
+    public function update(Request $request)
     {
+
         dd($request->all());
 
-        /*$oficina = Oficinas::find($request->id);
-        $oficina->nome_oficina = $request->nome;
-        $oficina->save();
+        $manutencao = Manutencoes::find($request->id);
+        $manutencao->observacao = $request->observacao;
+        $manutencao->custo_total = $request->custo;
 
-        $oficinas = Oficinas::all();
-        return Redirect::route('oficinas.lista', ['oficinas' => $oficinas])->with('success', 'Atualizações registradas com sucesso!');*/
+        $data = explode("/",$request->data_manutencao);
+        $dia = $data[0];
+        $mes = $data[1];
+        $ano = $data[2];            
+        $data_formatada = $ano.'-'.$mes.'-'.$dia;
+
+        $data_old = date($data_formatada);
+        $manutencao->data_manutencao = $data_old;
+
+        //$veiculo = Veiculos::where('', '=', $request->veiculo);
+        //$manutencao->fk_veiculo = $veiculo->id;
+
+        $oficina = Oficinas::where('nome_oficina', '=', $request->oficina)->first();
+        $manutencao->fk_oficina = $oficina->id;
+
+        $servico = Servicos::where('descricao_servicos', '=', $request->servico)->first();
+        $manutencao->fk_servico = $servico->id;
+
+        $manutencao->save();
+
+        $manutencoes = Manutencoes::all();
+        return Redirect::route('manutencoes.lista', ['manutencoes' => $manutencoes])->with('success', 'Atualizações registradas com sucesso!');
 
     }
 
