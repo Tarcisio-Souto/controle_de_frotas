@@ -4334,7 +4334,6 @@ __webpack_require__.r(__webpack_exports__);
       form: {
         id: null,
         veiculo: null,
-        fk_veiculo: null,
         oficina: null,
         servico: null,
         data_manutencao: null,
@@ -4345,7 +4344,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   created: function created() {
-    this.form.id = this.$page.props.manutencao[0].id_man, this.form.veiculo = this.$page.props.manutencao[0].nome_modelo, this.form.fk_veiculo = this.$page.props.manutencao[0].fk_modelo, this.form.oficina = this.$page.props.manutencao[0].nome_oficina, this.form.servico = this.$page.props.manutencao[0].descricao_servicos, this.form.data_manutencao = this.$page.props.manutencao[0].data_manutencao, this.form.custo = this.$page.props.manutencao[0].custo_total, this.form.observacao = this.$page.props.manutencao[0].observacao;
+    this.form.id = this.$page.props.manutencao[0].id_man, this.form.veiculo = this.$page.props.manutencao[0].nome_modelo + ' / ' + this.$page.props.manutencao[0].placa, this.form.oficina = this.$page.props.manutencao[0].nome_oficina, this.form.servico = this.$page.props.manutencao[0].descricao_servicos, this.form.data_manutencao = this.$page.props.manutencao[0].data_manutencao, this.form.custo = this.$page.props.manutencao[0].custo_total, this.form.observacao = this.$page.props.manutencao[0].observacao;
   },
   methods: {
     sendForm: function sendForm() {
@@ -37737,8 +37736,8 @@ var render = function () {
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.form.fk_veiculo,
-                          expression: "form.fk_veiculo",
+                          value: _vm.form.veiculo,
+                          expression: "form.veiculo",
                         },
                       ],
                       staticClass: "form-control",
@@ -37755,7 +37754,7 @@ var render = function () {
                             })
                           _vm.$set(
                             _vm.form,
-                            "fk_veiculo",
+                            "veiculo",
                             $event.target.multiple
                               ? $$selectedVal
                               : $$selectedVal[0]
@@ -37779,7 +37778,10 @@ var render = function () {
                           "option",
                           {
                             key: veiculo.id,
-                            domProps: { value: veiculo.nome_modelo },
+                            domProps: {
+                              value:
+                                veiculo.nome_modelo + " / " + veiculo.placa,
+                            },
                           },
                           [
                             _vm._v(

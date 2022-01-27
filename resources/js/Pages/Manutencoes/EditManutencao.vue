@@ -35,12 +35,12 @@
                     <i class="fas fa-briefcase"></i>
                   </div>
                 </div>
-                <select id="inputVeiculo" v-model="form.fk_veiculo" class="form-control" name="txtVeiculo">
+                <select id="inputVeiculo" v-model="form.veiculo" class="form-control" name="txtVeiculo">
                   <option selected :value="form.veiculo" style="background-color:gainsboro">{{ form.veiculo }}</option>
                   <option
                     v-for="veiculo in veiculos"
                     :key="veiculo.id"
-                    :value="veiculo.nome_modelo"
+                    :value="veiculo.nome_modelo + ' / ' + veiculo.placa"
                   >
                     {{ veiculo.nome_modelo + ' / ' + veiculo.placa }}
                   </option>
@@ -187,7 +187,6 @@ export default {
       form: {
         id: null,
         veiculo: null,
-        fk_veiculo: null,
         oficina: null,
         servico: null,
         data_manutencao: null,
@@ -202,8 +201,10 @@ export default {
   created() {
     
     this.form.id = this.$page.props.manutencao[0].id_man,
-    this.form.veiculo = this.$page.props.manutencao[0].nome_modelo,
-    this.form.fk_veiculo = this.$page.props.manutencao[0].fk_modelo,
+
+    this.form.veiculo = this.$page.props.manutencao[0].nome_modelo 
+    + ' / ' + this.$page.props.manutencao[0].placa,
+
     this.form.oficina = this.$page.props.manutencao[0].nome_oficina,
     this.form.servico = this.$page.props.manutencao[0].descricao_servicos,
     this.form.data_manutencao = this.$page.props.manutencao[0].data_manutencao,

@@ -97,8 +97,6 @@ class ManutencoesController extends Controller
         $oficinas = Oficinas::all();
         $servicos = Servicos::all();
 
-        //dd($manutencao);
-
         return Inertia::render('Manutencoes/EditManutencao.vue', 
         ['manutencao' => $manutencao, 'oficinas' => $oficinas, 'servicos' => $servicos, 
         'veiculos' => $veiculos]);
@@ -114,7 +112,7 @@ class ManutencoesController extends Controller
     public function update(Request $request)
     {
 
-        dd($request->all());
+        //dd($request->all());
 
         $manutencao = Manutencoes::find($request->id);
         $manutencao->observacao = $request->observacao;
@@ -129,8 +127,10 @@ class ManutencoesController extends Controller
         $data_old = date($data_formatada);
         $manutencao->data_manutencao = $data_old;
 
-        //$veiculo = Veiculos::where('', '=', $request->veiculo);
-        //$manutencao->fk_veiculo = $veiculo->id;
+        $aux_veiculo = explode('/', $request->veiculo);
+        $placa = trim($aux_veiculo[1]);        
+        $veiculo = Veiculos::where('placa', '=', $placa)->first();
+        $manutencao->fk_veiculo = $veiculo->id;
 
         $oficina = Oficinas::where('nome_oficina', '=', $request->oficina)->first();
         $manutencao->fk_oficina = $oficina->id;
@@ -153,8 +153,8 @@ class ManutencoesController extends Controller
      */
     public function destroy($id)
     {
-        /*DB::table('oficinas')->delete($id);
-        $oficinas = Oficinas::all();
-        return Redirect::route('oficinas.lista', ['oficinas' => $oficinas]);*/
+        DB::table('manutencoes')->delete($id);
+        $manutencoes = Manutencoes::all();
+        return Redirect::route('manutencoes.lista', ['manutencoes' => $manutencoes]);
     }
 }
