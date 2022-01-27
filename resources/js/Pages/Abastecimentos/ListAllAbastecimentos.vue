@@ -11,30 +11,32 @@
       >
         <thead>
           <tr>
-            <th>Modelo</th>
-            <th>Placa</th>
-            <th>Serviço</th>
-            <th>Data da Manutenção</th>            
+            <th>Veículo</th>
+            <th>Placa</th>            
+            <th>Empresa</th>
+            <th>Data do Abastecimento</th>
+            <th>Custo</th>            
             <th>Ações</th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="manutencao in manutencoes" :key="manutencao.id" :value="manutencao.id">
-            <td>{{ manutencao.nome_modelo }}</td>
-            <td>{{ manutencao.placa }}</td>
-            <td>{{ manutencao.descricao_servicos }}</td>
-            <td>{{ manutencao.data_manutencao }}</td>            
+          <tr v-for="abastecimento in abastecimentos" :key="abastecimento.id" :value="abastecimento.id">
+            <td>{{ abastecimento.nome_modelo }}</td>
+            <td>{{ abastecimento.placa }}</td>            
+            <td>{{ abastecimento.nome }}</td>
+            <td>{{ abastecimento.data_abastecimento }}</td>
+            <td>{{ abastecimento.custo_total }}</td>     
             <td align="center">
-              <Link :href="'/manutencao/visualizar/' + manutencao.id_man"
+              <Link :href="'/abastecimento/visualizar/' + abastecimento.id_ab"
                 ><i class="fas fa-eye"></i
               ></Link>
-              <Link :href="'/manutencao/editar/' + manutencao.id_man"
+              <Link :href="'/abastecimento/editar/' + abastecimento.id_ab"
                 ><i class="fas fa-edit"></i
               ></Link>              
               <span
                 ><i
                   class="fas fa-trash-alt"
-                  @click="sendForm(manutencao.id_man)"
+                  @click="sendForm(abastecimento.id_ab)"
                 ></i
               ></span>
             </td>
@@ -42,10 +44,11 @@
         </tbody>
         <tfoot>
           <tr>
-            <th>Modelo</th>
-            <th>Placa</th>
-            <th>Serviço</th>
-            <th>Data da Manutenção</th>            
+            <th>Veículo</th>
+            <th>Placa</th>            
+            <th>Empresa</th>
+            <th>Data do Abastecimento</th>
+            <th>Custo</th>            
             <th>Ações</th>
           </tr>
         </tfoot>
@@ -71,7 +74,7 @@ export default {
     Link,
   },
   props: {
-    manutencoes: Array,
+    abastecimentos: Array,
   },
 
   data: () => {
@@ -96,7 +99,7 @@ export default {
           "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
         message:
           "<i class='fas fa-exclamation-circle' style='color:red'></i></i>&nbsp&nbsp" +
-          "<span style='font-weight:bold; position: relative; top: 5px;'>Deletar manutenção?</span>",
+          "<span style='font-weight:bold; position: relative; top: 5px;'>Deletar abastecimento?</span>",
         buttons: {
           cancel: {
             label: '<i class="fa fa-times"></i> Não',
@@ -108,7 +111,7 @@ export default {
         },
         callback: function (result) {
           if (result == true) {
-            v.$inertia.post("/manutencao/deletar/"+id, {
+            v.$inertia.post("/abastecimento/deletar/"+id, {
               forceFormData: true,
               preserveScroll: false,
               _token: v.$page.props.csrf_token,

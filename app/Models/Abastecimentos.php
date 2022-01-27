@@ -15,11 +15,13 @@ class Abastecimentos extends Model
         $abastecimentos = DB::table('abastecimentos as ab')
         ->join('veiculos as vc', 'vc.id', '=', 'ab.fk_veiculo')
         ->join('postos as pt', 'pt.id', '=', 'ab.fk_posto')
-        ->select('ab.id as id_ab', '*')
+        ->join('modelos as md', 'md.id', '=', 'vc.fk_modelo')
+        ->join('empresas as emp', 'emp.id', '=', 'vc.fk_empresa')
+        ->select('ab.id as id_ab', '*',
+        DB::raw('strftime("%d/%m/%Y", ab.data_abastecimento) as data_abastecimento'))
         ->get();
 
         return $abastecimentos;
-
 
     }
 
@@ -32,6 +34,23 @@ class Abastecimentos extends Model
         ->get();
 
         return $veiculos;
+
+    }
+
+
+    public static function showAbastecimento($id) {
+
+        $abastecimento = DB::table('abastecimentos as ab')
+        ->join('veiculos as vc', 'vc.id', '=', 'ab.fk_veiculo')
+        ->join('postos as pt', 'pt.id', '=', 'ab.fk_posto')
+        ->join('modelos as md', 'md.id', '=', 'vc.fk_modelo')
+        ->select('ab.id as id_ab', '*',
+        DB::raw('strftime("%d/%m/%Y", ab.data_abastecimento) as data_abastecimento'))
+        ->where('ab.id', '=', $id)
+        ->get();
+
+        return $abastecimento;
+
 
     }
 

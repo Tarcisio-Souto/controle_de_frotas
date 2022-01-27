@@ -2792,6 +2792,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 
 
@@ -2801,7 +2804,7 @@ __webpack_require__.r(__webpack_exports__);
     Link: _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_1__.Link
   },
   props: {
-    manutencoes: Array
+    abastecimentos: Array
   },
   data: function data() {
     return {
@@ -2819,7 +2822,7 @@ __webpack_require__.r(__webpack_exports__);
         closeButton: false,
         size: "large",
         title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
-        message: "<i class='fas fa-exclamation-circle' style='color:red'></i></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Deletar manutenção?</span>",
+        message: "<i class='fas fa-exclamation-circle' style='color:red'></i></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Deletar abastecimento?</span>",
         buttons: {
           cancel: {
             label: '<i class="fa fa-times"></i> Não'
@@ -2831,7 +2834,7 @@ __webpack_require__.r(__webpack_exports__);
         },
         callback: function callback(result) {
           if (result == true) {
-            v.$inertia.post("/manutencao/deletar/" + id, {
+            v.$inertia.post("/abastecimento/deletar/" + id, {
               forceFormData: true,
               preserveScroll: false,
               _token: v.$page.props.csrf_token
@@ -2985,35 +2988,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -3023,15 +2997,16 @@ __webpack_require__.r(__webpack_exports__);
     Link: _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_1__.Link
   },
   props: {
-    manutencao: Array
+    abastecimento: Array
   },
   methods: {
     sendForm: function sendForm() {
-      this.$inertia.post("/colaborador/registrar", this.form, {
+      /*this.$inertia.post("/abastecimento/registrar", this.form, {
         forceFormData: true,
         preserveScroll: false,
-        _token: this.$page.props.csrf_token
-      });
+        _token: this.$page.props.csrf_token,
+          
+      });*/
     }
   }
 });
@@ -36572,13 +36547,15 @@ var render = function () {
           [
             _c("thead", [
               _c("tr", [
-                _c("th", [_vm._v("Modelo")]),
+                _c("th", [_vm._v("Veículo")]),
                 _vm._v(" "),
                 _c("th", [_vm._v("Placa")]),
                 _vm._v(" "),
-                _c("th", [_vm._v("Serviço")]),
+                _c("th", [_vm._v("Empresa")]),
                 _vm._v(" "),
-                _c("th", [_vm._v("Data da Manutenção")]),
+                _c("th", [_vm._v("Data do Abastecimento")]),
+                _vm._v(" "),
+                _c("th", [_vm._v("Custo")]),
                 _vm._v(" "),
                 _c("th", [_vm._v("Ações")]),
               ]),
@@ -36586,18 +36563,22 @@ var render = function () {
             _vm._v(" "),
             _c(
               "tbody",
-              _vm._l(_vm.manutencoes, function (manutencao) {
+              _vm._l(_vm.abastecimentos, function (abastecimento) {
                 return _c(
                   "tr",
-                  { key: manutencao.id, attrs: { value: manutencao.id } },
+                  { key: abastecimento.id, attrs: { value: abastecimento.id } },
                   [
-                    _c("td", [_vm._v(_vm._s(manutencao.nome_modelo))]),
+                    _c("td", [_vm._v(_vm._s(abastecimento.nome_modelo))]),
                     _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(manutencao.placa))]),
+                    _c("td", [_vm._v(_vm._s(abastecimento.placa))]),
                     _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(manutencao.descricao_servicos))]),
+                    _c("td", [_vm._v(_vm._s(abastecimento.nome))]),
                     _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(manutencao.data_manutencao))]),
+                    _c("td", [
+                      _vm._v(_vm._s(abastecimento.data_abastecimento)),
+                    ]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(abastecimento.custo_total))]),
                     _vm._v(" "),
                     _c(
                       "td",
@@ -36608,7 +36589,8 @@ var render = function () {
                           {
                             attrs: {
                               href:
-                                "/manutencao/visualizar/" + manutencao.id_man,
+                                "/abastecimento/visualizar/" +
+                                abastecimento.id_ab,
                             },
                           },
                           [_c("i", { staticClass: "fas fa-eye" })]
@@ -36618,7 +36600,8 @@ var render = function () {
                           "Link",
                           {
                             attrs: {
-                              href: "/manutencao/editar/" + manutencao.id_man,
+                              href:
+                                "/abastecimento/editar/" + abastecimento.id_ab,
                             },
                           },
                           [_c("i", { staticClass: "fas fa-edit" })]
@@ -36629,7 +36612,7 @@ var render = function () {
                             staticClass: "fas fa-trash-alt",
                             on: {
                               click: function ($event) {
-                                return _vm.sendForm(manutencao.id_man)
+                                return _vm.sendForm(abastecimento.id_ab)
                               },
                             },
                           }),
@@ -36645,13 +36628,15 @@ var render = function () {
             _vm._v(" "),
             _c("tfoot", [
               _c("tr", [
-                _c("th", [_vm._v("Modelo")]),
+                _c("th", [_vm._v("Veículo")]),
                 _vm._v(" "),
                 _c("th", [_vm._v("Placa")]),
                 _vm._v(" "),
-                _c("th", [_vm._v("Serviço")]),
+                _c("th", [_vm._v("Empresa")]),
                 _vm._v(" "),
-                _c("th", [_vm._v("Data da Manutenção")]),
+                _c("th", [_vm._v("Data do Abastecimento")]),
+                _vm._v(" "),
+                _c("th", [_vm._v("Custo")]),
                 _vm._v(" "),
                 _c("th", [_vm._v("Ações")]),
               ]),
@@ -36711,7 +36696,7 @@ var render = function () {
       _c("div", { staticClass: "col-md-4" }),
       _vm._v(" "),
       _c("div", { staticClass: "col-md-4", attrs: { align: "center" } }, [
-        _c("h4", [_vm._v("Cadastro de Manutenção")]),
+        _c("h4", [_vm._v("Cadastro de Abastecimento")]),
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "col-md-4" }),
@@ -36725,8 +36710,8 @@ var render = function () {
       _c(
         "div",
         { staticClass: "col-md-12" },
-        _vm._l(_vm.manutencao, function (manutencao) {
-          return _c("form", { key: manutencao.id }, [
+        _vm._l(_vm.abastecimento, function (abastecimento) {
+          return _c("form", { key: abastecimento.id }, [
             _c("br"),
             _c("br"),
             _vm._v(" "),
@@ -36737,7 +36722,7 @@ var render = function () {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-md-4" }, [
+              _c("div", { staticClass: "col-md-6" }, [
                 _c("label", { attrs: { for: "inputVeiculo" } }, [
                   _vm._v("Veículo (modelo / placa)"),
                 ]),
@@ -36752,14 +36737,14 @@ var render = function () {
                   _c("input", {
                     staticClass: "form-control",
                     attrs: { type: "text", id: "inputVeiculo", disabled: "" },
-                    domProps: { value: manutencao.nome_modelo },
+                    domProps: { value: abastecimento.nome_modelo },
                   }),
                 ]),
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "col-md-4" }, [
-                _c("label", { attrs: { for: "inputOficina" } }, [
-                  _vm._v("Oficina"),
+              _c("div", { staticClass: "col-md-6" }, [
+                _c("label", { attrs: { for: "inputPosto" } }, [
+                  _vm._v("Posto"),
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "input-group" }, [
@@ -36771,28 +36756,8 @@ var render = function () {
                   _vm._v(" "),
                   _c("input", {
                     staticClass: "form-control",
-                    attrs: { type: "text", id: "inputOficina", disabled: "" },
-                    domProps: { value: manutencao.nome_oficina },
-                  }),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-4" }, [
-                _c("label", { attrs: { for: "inputServico" } }, [
-                  _vm._v("Serviço"),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "input-group" }, [
-                  _c("div", { staticClass: "input-group-prepend" }, [
-                    _c("div", { staticClass: "input-group-text" }, [
-                      _c("i", { staticClass: "fas fa-user" }),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: { type: "text", id: "inputServico", disabled: "" },
-                    domProps: { value: manutencao.descricao_servicos },
+                    attrs: { type: "text", id: "inputPosto", disabled: "" },
+                    domProps: { value: abastecimento.nome_posto },
                   }),
                 ]),
               ]),
@@ -36801,30 +36766,6 @@ var render = function () {
             _c("br"),
             _vm._v(" "),
             _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-md-4" }, [
-                _c("label", { attrs: { for: "inputDataManutencao" } }, [
-                  _vm._v("Data da Manutenção"),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "input-group" }, [
-                  _c("div", { staticClass: "input-group-prepend" }, [
-                    _c("div", { staticClass: "input-group-text" }, [
-                      _c("i", { staticClass: "fas fa-birthday-cake" }),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "text",
-                      id: "inputDataManutencao",
-                      disabled: "",
-                    },
-                    domProps: { value: manutencao.data_manutencao },
-                  }),
-                ]),
-              ]),
-              _vm._v(" "),
               _c("div", { staticClass: "col-md-4" }, [
                 _c("label", { attrs: { for: "inputCusto" } }, [
                   _vm._v("Custo"),
@@ -36840,51 +36781,45 @@ var render = function () {
                   _c("input", {
                     staticClass: "form-control",
                     attrs: { type: "text", id: "inputCusto", disabled: "" },
-                    domProps: { value: manutencao.custo_total },
+                    domProps: { value: abastecimento.custo_total },
                   }),
                 ]),
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "col-md-4" }),
-            ]),
-            _vm._v(" "),
-            _c("br"),
-            _vm._v(" "),
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-md-8" }, [
-                _c("label", { attrs: { for: "exampleFormControlTextarea1" } }, [
-                  _vm._v("Observações"),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("label", { attrs: { for: "inputDataAbastecimento" } }, [
+                  _vm._v("Data do Abastecimento"),
                 ]),
-                _c("br"),
                 _vm._v(" "),
-                _c("textarea", {
-                  staticClass: "form-control",
-                  attrs: {
-                    id: "exampleFormControlTextarea1",
-                    rows: "3",
-                    disabled: "",
-                  },
-                  domProps: { value: manutencao.observacao },
-                }),
+                _c("div", { staticClass: "input-group" }, [
+                  _c("div", { staticClass: "input-group-prepend" }, [
+                    _c("div", { staticClass: "input-group-text" }, [
+                      _c("i", { staticClass: "fas fa-birthday-cake" }),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      id: "inputDataAbastecimento",
+                      disabled: "",
+                    },
+                    domProps: { value: abastecimento.data_abastecimento },
+                  }),
+                ]),
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "col-md-4" }),
-            ]),
-            _vm._v(" "),
-            _c("br"),
-            _c("br"),
-            _vm._v(" "),
-            _c("div", { staticClass: "row" }, [
               _c(
                 "div",
-                { staticClass: "col-md-12" },
+                { staticClass: "col-md-4" },
                 [
                   _c(
                     "Link",
                     {
                       staticClass: "btn btn-warning",
                       attrs: {
-                        href: "/manutencao/editar/" + manutencao.id_man,
+                        href: "/abastecimento/editar/" + abastecimento.id_ab,
                       },
                     },
                     [_vm._v("Editar")]

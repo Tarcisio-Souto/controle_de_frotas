@@ -9,7 +9,7 @@
     <div class="row">
       <div class="col-md-4"></div>
       <div class="col-md-4" align="center">
-        <h4>Cadastro de Manutenção</h4>
+        <h4>Cadastro de Abastecimento</h4>
       </div>
       <div class="col-md-4"></div>
     </div>
@@ -18,11 +18,11 @@
     <br />
     <div class="row">
       <div class="col-md-12">
-        <form v-for="manutencao in manutencao" :key="manutencao.id">          
+        <form v-for="abastecimento in abastecimento" :key="abastecimento.id">          
           <br /><br />
           <h4><span style="font-weight: bold">Registro</span></h4>
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-6">
               <label for="inputVeiculo">Veículo (modelo / placa)</label>
               <div class="input-group">
                 <div class="input-group-prepend">
@@ -34,13 +34,13 @@
                   type="text"
                   id="inputVeiculo"
                   class="form-control"
-                  :value="manutencao.nome_modelo"
+                  :value="abastecimento.nome_modelo"
                   disabled
                 />
               </div>              
             </div>
-            <div class="col-md-4">
-              <label for="inputOficina">Oficina</label>
+            <div class="col-md-6">
+              <label for="inputPosto">Posto</label>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
@@ -49,51 +49,17 @@
                 </div>
                 <input
                   type="text"
-                  id="inputOficina"
+                  id="inputPosto"
                   class="form-control"
-                  :value="manutencao.nome_oficina"
+                  :value="abastecimento.nome_posto"
                   disabled
                 />
               </div>              
-            </div>
-            <div class="col-md-4">
-              <label for="inputServico">Serviço</label>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">
-                    <i class="fas fa-user"></i>
-                  </div>
-                </div>
-                <input
-                  type="text"
-                  id="inputServico"
-                  class="form-control"
-                  :value="manutencao.descricao_servicos"
-                  disabled
-                />
-              </div>              
-            </div>            
+            </div>                      
           </div>          
           <br />
 
           <div class="row">
-            <div class="col-md-4">
-              <label for="inputDataManutencao">Data da Manutenção</label>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">
-                    <i class="fas fa-birthday-cake"></i>
-                  </div>
-                </div>
-                <input
-                  type="text"
-                  id="inputDataManutencao"
-                  class="form-control"
-                  :value="manutencao.data_manutencao"
-                  disabled
-                />
-              </div>              
-            </div>
 
             <div class="col-md-4">
               <label for="inputCusto">Custo</label>
@@ -107,31 +73,36 @@
                   type="text"
                   id="inputCusto"
                   class="form-control"
-                  :value="manutencao.custo_total"
+                  :value="abastecimento.custo_total"
                   disabled
                 />
               </div>              
             </div>
-            
-            <div class="col-md-4"></div>
+
+            <div class="col-md-4">
+              <label for="inputDataAbastecimento">Data do Abastecimento</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <i class="fas fa-birthday-cake"></i>
+                  </div>
+                </div>
+                <input
+                  type="text"
+                  id="inputDataAbastecimento"
+                  class="form-control"
+                  :value="abastecimento.data_abastecimento"
+                  disabled
+                />
+              </div>              
+            </div>
+
+            <div class="col-md-4">
+              <Link :href="'/abastecimento/editar/'+abastecimento.id_ab" class="btn btn-warning">Editar</Link>              
+            </div>
             
           </div>
 
-          <br>
-          <div class="row">
-            <div class="col-md-8">
-               <label for="exampleFormControlTextarea1">Observações</label><br>
-              <textarea class="form-control" id="exampleFormControlTextarea1" :value="manutencao.observacao" rows="3" disabled></textarea>
-            </div>
-            <div class="col-md-4"></div>
-          </div>
-
-          <br /><br />
-          <div class="row">
-            <div class="col-md-12">
-              <Link :href="'/manutencao/editar/'+manutencao.id_man" class="btn btn-warning">Editar</Link>              
-            </div>
-          </div>
         </form>
       </div>
     </div>
@@ -155,17 +126,17 @@ export default {
     Link,
   },
   props: {
-    manutencao: Array,
+    abastecimento: Array,
   },
   methods: {
     sendForm() {
-      this.$inertia.post("/colaborador/registrar", this.form, {
+      /*this.$inertia.post("/abastecimento/registrar", this.form, {
         forceFormData: true,
         preserveScroll: false,
         _token: this.$page.props.csrf_token,
 
         
-      });
+      });*/
     },
   },
 };

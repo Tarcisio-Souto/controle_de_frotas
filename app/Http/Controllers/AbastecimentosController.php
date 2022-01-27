@@ -71,7 +71,8 @@ class AbastecimentosController extends Controller
      */
     public function show($id)
     {
-        //
+        $abastecimento = Abastecimentos::showAbastecimento($id);
+        return Inertia::render('Abastecimentos/ViewAbastecimento.vue', ['abastecimento' => $abastecimento]);
     }
 
     /**
@@ -82,7 +83,13 @@ class AbastecimentosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $abastecimento = Abastecimentos::showAbastecimento($id);
+        $veiculos = Abastecimentos::getVeiculos();
+        $postos = Postos::all();
+        return Inertia::render('Abastecimentos/EditAbastecimento.vue', 
+        ['abastecimento' => $abastecimento, 'veiculos' => $veiculos, 'postos' => $postos]);
+
+
     }
 
     /**
