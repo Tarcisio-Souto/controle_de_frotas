@@ -6,6 +6,7 @@ use App\Models\Abastecimentos;
 use App\Models\Postos;
 use App\Models\Veiculos;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 
@@ -83,9 +84,11 @@ class AbastecimentosController extends Controller
      */
     public function edit($id)
     {
+        
         $abastecimento = Abastecimentos::showAbastecimento($id);
         $veiculos = Abastecimentos::getVeiculos();
         $postos = Postos::all();
+
         return Inertia::render('Abastecimentos/EditAbastecimento.vue', 
         ['abastecimento' => $abastecimento, 'veiculos' => $veiculos, 'postos' => $postos]);
 
@@ -99,9 +102,34 @@ class AbastecimentosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        
+        $abastecimento = Abastecimentos::find($request->id);
+        $abastecimento->custo_total = $request->custo;
+
+        $data = explode("/",$request->data_abastecimento);
+        $dia = $data[0];
+        $mes = $data[1];
+        $ano = $data[2];            
+        $data_formatada = $ano.'-'.$mes.'-'.$dia;
+
+        $data_old = date($data_formatada);
+        $abastecimento->data_abastecimento = $data_old;
+
+        $aux_veiculo = explode('/', $request->veiculo);
+        $placa = trim($aux_veiculo[1]);        
+        $veiculo = Veiculos::where('placa', '=', $placa)->first();
+        $abastecimento->fk_veiculo = $veiculo->id;
+
+        $posto = Postos::where('nome_posto', '=', $request->posto)->first();
+        $abastecimento->fk_posto = $posto->id;
+
+        $abastecimento->save();
+
+        $abastecimento = Abastecimentos::all();
+        return Redirect::route('abastecimentos.lista', ['abastecimento' => $abastecimento])->with('success', 'Atualizações registradas com sucesso!');
+
     }
 
     /**
@@ -112,6 +140,8 @@ class AbastecimentosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('abastecimentos')->delete($id);
+        $abastecimentos = Abastecimentos::all();
+        return Redirect::route('manutencoes.lista', ['abastecimentos' => $abastecimentos]);
     }
 }

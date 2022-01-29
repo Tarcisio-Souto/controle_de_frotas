@@ -9,7 +9,7 @@
     <div class="row">
       <div class="col-md-4"></div>
       <div class="col-md-4" align="center">
-        <h4>Cadastro de Manutenção</h4>
+        <h4>Cadastro de Abastecimento</h4>
       </div>
       <div class="col-md-4"></div>
     </div>
@@ -22,12 +22,12 @@
           @submit.prevent="sendForm"
           enctype="multipart/form-data"
         >
-          <input type="hidden" v-model="manutencao.id_man" />          
+          <input type="hidden" v-model="abastecimento.id" />          
           <br /><br />
           <h4><span style="font-weight: bold">Registro</span></h4><br>
           <div class="row">
 
-            <div class="col-md-4">
+            <div class="col-md-6">
               <label for="inputVeiculo">Veículo (modelo / placa)</label>
               <div class="input-group">
                 <div class="input-group-prepend">
@@ -48,70 +48,36 @@
               </div>
             </div>
 
-            <div class="col-md-4">
-              <label for="inputOficina">Oficina</label>
+            <div class="col-md-6">
+              <label for="inputPosto">Posto</label>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
                     <i class="fas fa-briefcase"></i>
                   </div>
                 </div>
-                <select id="inputOficina" v-model="form.oficina" class="form-control" name="txtOficina">
-                  <option selected :value="form.oficina" style="background-color:gainsboro">{{ form.oficina }}</option>
+                <select
+                  id="inputPosto"
+                  class="form-control"
+                  v-model="form.posto"
+                  name="txtPosto"
+                >
+                  <option selected :value="form.posto" style="background-color:gainsboro">{{ form.posto }}</option>
                   <option
-                    v-for="oficina in oficinas"
-                    :key="oficina.id"
-                    :value="oficina.nome_oficina"
+                    v-for="posto in postos"
+                    :key="posto.id"
+                    :value="posto.nome_posto"
                   >
-                    {{ oficina.nome_oficina }}
+                    {{ posto.nome_posto }}
                   </option>
                 </select>
               </div>
-            </div>
-
-            <div class="col-md-4">
-              <label for="inputServico">Serviço</label>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">
-                    <i class="fas fa-briefcase"></i>
-                  </div>
-                </div>
-                <select id="inputServico" v-model="form.servico" class="form-control" name="txtServico">
-                  <option selected :value="form.servico" style="background-color:gainsboro">{{ form.servico }}</option>
-                  <option
-                    v-for="servico in servicos"
-                    :key="servico.id"
-                    :value="servico.descricao_servicos"
-                  >
-                    {{ servico.descricao_servicos }}
-                  </option>
-                </select>
-              </div>
-            </div>            
+            </div>  
           </div>
           <br />
 
           <div class="row">
-            <div class="col-md-4">
-              <label for="inputDataManutencao">Data da Manutenção</label>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">
-                    <i class="fas fa-calendar-alt"></i>
-                  </div>
-                </div>
-                <input
-                  key=""
-                  type="text"
-                  id="inputDataManutencao"
-                  class="form-control"
-                  v-model="form.data_manutencao"
-                  name="txtDataManutencao"
-                  v-mask="'##/##/####'"
-                />
-              </div>
-            </div>
+            
             <div class="col-md-4">
               <label for="inputCusto">Custo</label>
               <div class="input-group">
@@ -130,26 +96,33 @@
                 />
               </div>
             </div>
-            <div class="col-md-4"></div>          
-          </div>
 
-          <br>
-          <div class="row">
-            <div class="col-md-8">
-               <label for="exampleFormControlTextarea1">Observações</label><br>
-              <textarea class="form-control" id="exampleFormControlTextarea1" v-model="form.observacao" rows="3"></textarea>
-            </div>
-            <div class="col-md-4"></div>
-          </div>
-          
-          <br /><br />
+            <div class="col-md-4">
+              <label for="inputDataAbastecimento">Data do Abastecimento</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <i class="fas fa-calendar-alt"></i>
+                  </div>
+                </div>
+                <input
+                  key=""
+                  type="text"
+                  id="inputDataAbastecimento"
+                  class="form-control"
+                  v-model="form.data_abastecimento"
+                  name="txtDataAbastecimento"
+                  v-mask="'##/##/####'"
+                />
+              </div>
+            </div> 
 
-          <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-4">
               <button type="submit" class="btn btn-success btnCadastrar">
                 Alterar
               </button>
-            </div>
+            </div> 
+
           </div>
         </form>
       </div>
@@ -176,10 +149,9 @@ export default {
   },
   props: {
     errors: Object,
-    servicos: Array,
-    oficinas: Array,
+    postos: Array,
     veiculos: Array,
-    manutencao: Array
+    abastecimento: Array
   },
 
   data: () => {
@@ -187,11 +159,9 @@ export default {
       form: {
         id: null,
         veiculo: null,
-        oficina: null,
-        servico: null,
-        data_manutencao: null,
+        posto: null,
+        data_abastecimento: null,
         custo: null,
-        observacao: null,
 
         preserveState: true,
       },
@@ -200,22 +170,20 @@ export default {
 
   created() {
     
-    this.form.id = this.$page.props.manutencao[0].id_man,
+    this.form.id = this.$page.props.abastecimento[0].id_ab,
 
-    this.form.veiculo = this.$page.props.manutencao[0].nome_modelo 
-    + ' / ' + this.$page.props.manutencao[0].placa,
+    this.form.veiculo = this.$page.props.abastecimento[0].nome_modelo 
+    + ' / ' + this.$page.props.abastecimento[0].placa,
 
-    this.form.oficina = this.$page.props.manutencao[0].nome_oficina,
-    this.form.servico = this.$page.props.manutencao[0].descricao_servicos,
-    this.form.data_manutencao = this.$page.props.manutencao[0].data_manutencao,
-    this.form.custo = this.$page.props.manutencao[0].custo_total,
-    this.form.observacao = this.$page.props.manutencao[0].observacao    
+    this.form.posto = this.$page.props.abastecimento[0].nome_posto,
+    this.form.data_abastecimento = this.$page.props.abastecimento[0].data_abastecimento,    
+    this.form.custo = this.$page.props.abastecimento[0].custo_total    
 
   },
 
   methods: {
     sendForm() {
-      this.$inertia.post("/manutencao/update/"+this.form.id,
+      this.$inertia.post("/abastecimento/update/"+this.form.id,
         this.form,
         {
           forceFormData: true,

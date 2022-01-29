@@ -46,7 +46,7 @@ class Abastecimentos extends Model
         ->join('modelos as md', 'md.id', '=', 'vc.fk_modelo')
         ->select('ab.id as id_ab', '*',
         DB::raw('strftime("%d/%m/%Y", ab.data_abastecimento) as data_abastecimento'))
-        ->where('ab.id', '=', $id)
+        ->where('id_ab', '=', $id)
         ->get();
 
         return $abastecimento;
