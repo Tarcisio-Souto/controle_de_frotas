@@ -84,7 +84,8 @@ class TrocasOleoController extends Controller
      */
     public function show($id)
     {
-        //
+        $troca = Trocas_Oleos::showTroca($id);
+        return Inertia::render('Trocas_Oleo/ViewTrocaOleo.vue', ['troca' => $troca]);
     }
 
     /**

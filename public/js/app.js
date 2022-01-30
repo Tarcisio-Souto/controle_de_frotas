@@ -7544,7 +7544,7 @@ __webpack_require__.r(__webpack_exports__);
         },
         callback: function callback(result) {
           if (result == true) {
-            v.$inertia.post("/troca/deletar/" + id, {
+            v.$inertia.post("/troca-oleo/deletar/" + id, {
               forceFormData: true,
               preserveScroll: false,
               _token: v.$page.props.csrf_token
@@ -7698,6 +7698,203 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -7707,7 +7904,7 @@ __webpack_require__.r(__webpack_exports__);
     Link: _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_1__.Link
   },
   props: {
-    abastecimento: Array
+    troca: Array
   },
   methods: {
     sendForm: function sendForm() {
@@ -9019,6 +9216,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layout_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../Layout.vue */ "./resources/js/Layout.vue");
 /* harmony import */ var _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-vue */ "./node_modules/@inertiajs/inertia-vue/dist/index.js");
 /* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+//
+//
 //
 //
 //
@@ -44699,14 +44898,20 @@ var render = function () {
                         _c(
                           "Link",
                           {
-                            attrs: { href: "/troca/visualizar/" + troca.to_id },
+                            attrs: {
+                              href: "/troca-oleo/visualizar/" + troca.to_id,
+                            },
                           },
                           [_c("i", { staticClass: "fas fa-eye" })]
                         ),
                         _vm._v(" "),
                         _c(
                           "Link",
-                          { attrs: { href: "/troca/editar/" + troca.to_id } },
+                          {
+                            attrs: {
+                              href: "/troca-oleo/editar/" + troca.to_id,
+                            },
+                          },
                           [_c("i", { staticClass: "fas fa-edit" })]
                         ),
                         _vm._v(" "),
@@ -44799,7 +45004,7 @@ var render = function () {
       _c("div", { staticClass: "col-md-4" }),
       _vm._v(" "),
       _c("div", { staticClass: "col-md-4", attrs: { align: "center" } }, [
-        _c("h4", [_vm._v("Cadastro de Abastecimento")]),
+        _c("h4", [_vm._v("Cadastro de Troca de Óleo")]),
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "col-md-4" }),
@@ -44813,8 +45018,8 @@ var render = function () {
       _c(
         "div",
         { staticClass: "col-md-12" },
-        _vm._l(_vm.abastecimento, function (abastecimento) {
-          return _c("form", { key: abastecimento.id }, [
+        _vm._l(_vm.troca, function (troca) {
+          return _c("form", { key: troca.to_id }, [
             _c("br"),
             _c("br"),
             _vm._v(" "),
@@ -44823,9 +45028,10 @@ var render = function () {
                 _vm._v("Registro"),
               ]),
             ]),
+            _c("br"),
             _vm._v(" "),
             _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-md-6" }, [
+              _c("div", { staticClass: "col-md-4" }, [
                 _c("label", { attrs: { for: "inputVeiculo" } }, [
                   _vm._v("Veículo (modelo / placa)"),
                 ]),
@@ -44833,34 +45039,89 @@ var render = function () {
                 _c("div", { staticClass: "input-group" }, [
                   _c("div", { staticClass: "input-group-prepend" }, [
                     _c("div", { staticClass: "input-group-text" }, [
-                      _c("i", { staticClass: "fas fa-user" }),
+                      _c("i", { staticClass: "fas fa-building" }),
                     ]),
                   ]),
                   _vm._v(" "),
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: { type: "text", id: "inputVeiculo", disabled: "" },
-                    domProps: { value: abastecimento.nome_modelo },
-                  }),
+                  _c(
+                    "select",
+                    {
+                      staticClass: "form-control",
+                      attrs: {
+                        id: "inputVeiculo",
+                        name: "txtVeiculo",
+                        disabled: "",
+                      },
+                    },
+                    [
+                      _c("option", { attrs: { selected: "" } }, [
+                        _vm._v(_vm._s(troca.nome_modelo + " / " + troca.placa)),
+                      ]),
+                    ]
+                  ),
                 ]),
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "col-md-6" }, [
-                _c("label", { attrs: { for: "inputPosto" } }, [
-                  _vm._v("Posto"),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("label", { attrs: { for: "inputOficina" } }, [
+                  _vm._v("Oficina"),
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "input-group" }, [
                   _c("div", { staticClass: "input-group-prepend" }, [
                     _c("div", { staticClass: "input-group-text" }, [
-                      _c("i", { staticClass: "fas fa-user" }),
+                      _c("i", { staticClass: "fas fa-building" }),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "select",
+                    {
+                      staticClass: "form-control",
+                      attrs: {
+                        id: "inputOficina",
+                        name: "txtOficina",
+                        disabled: "",
+                      },
+                    },
+                    [
+                      _c("option", { attrs: { selected: "" } }, [
+                        _vm._v(_vm._s(troca.nome_oficina)),
+                      ]),
+                    ]
+                  ),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("label", { attrs: { for: "inputDataTroca" } }, [
+                  _vm._v("Data da Troca"),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "input-group" }, [
+                  _c("div", { staticClass: "input-group-prepend" }, [
+                    _c("div", { staticClass: "input-group-text" }, [
+                      _c("i", { staticClass: "fas fa-calendar-alt" }),
                     ]),
                   ]),
                   _vm._v(" "),
                   _c("input", {
+                    directives: [
+                      {
+                        name: "mask",
+                        rawName: "v-mask",
+                        value: "##/##/####",
+                        expression: "'##/##/####'",
+                      },
+                    ],
+                    key: "",
                     staticClass: "form-control",
-                    attrs: { type: "text", id: "inputPosto", disabled: "" },
-                    domProps: { value: abastecimento.nome_posto },
+                    attrs: {
+                      type: "text",
+                      id: "inputDataTroca",
+                      name: "txtDataTroca",
+                    },
+                    domProps: { value: troca.data_troca_format },
                   }),
                 ]),
               ]),
@@ -44870,34 +45131,14 @@ var render = function () {
             _vm._v(" "),
             _c("div", { staticClass: "row" }, [
               _c("div", { staticClass: "col-md-4" }, [
-                _c("label", { attrs: { for: "inputCusto" } }, [
-                  _vm._v("Custo"),
+                _c("label", { attrs: { for: "inputNomeOleo" } }, [
+                  _vm._v("Nome do Óleo"),
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "input-group" }, [
                   _c("div", { staticClass: "input-group-prepend" }, [
                     _c("div", { staticClass: "input-group-text" }, [
-                      _c("i", { staticClass: "fas fa-birthday-cake" }),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: { type: "text", id: "inputCusto", disabled: "" },
-                    domProps: { value: abastecimento.custo_total },
-                  }),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-4" }, [
-                _c("label", { attrs: { for: "inputDataAbastecimento" } }, [
-                  _vm._v("Data do Abastecimento"),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "input-group" }, [
-                  _c("div", { staticClass: "input-group-prepend" }, [
-                    _c("div", { staticClass: "input-group-text" }, [
-                      _c("i", { staticClass: "fas fa-birthday-cake" }),
+                      _c("i", { staticClass: "fas fa-id-card" }),
                     ]),
                   ]),
                   _vm._v(" "),
@@ -44905,25 +45146,329 @@ var render = function () {
                     staticClass: "form-control",
                     attrs: {
                       type: "text",
-                      id: "inputDataAbastecimento",
-                      disabled: "",
+                      id: "inputNomeOleo",
+                      name: "txtNomeOleo",
                     },
-                    domProps: { value: abastecimento.data_abastecimento },
+                    domProps: { value: troca.nome_oleo },
                   }),
                 ]),
               ]),
               _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("label", { attrs: { for: "inputFiltroOleo" } }, [
+                  _vm._v("Filtro de Óleo"),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  troca.filtro_oleo == "1"
+                    ? _c("div", { staticClass: "col-md-12" }, [
+                        _c(
+                          "div",
+                          { staticClass: "form-check form-check-inline" },
+                          [
+                            _c("input", {
+                              staticClass: "form-check-input",
+                              attrs: {
+                                type: "radio",
+                                id: "inputFiltroOleo1",
+                                value: "1",
+                                checked: "",
+                                disabled: "",
+                              },
+                            }),
+                            _vm._v(" "),
+                            _c("label", { staticClass: "form-check-label" }, [
+                              _vm._v(
+                                "\n                    Trocado\n                  "
+                              ),
+                            ]),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "form-check form-check-inline" },
+                          [
+                            _c("input", {
+                              staticClass: "form-check-input",
+                              attrs: {
+                                type: "radio",
+                                id: "inputFiltroOleo2",
+                                value: "0",
+                                disabled: "",
+                              },
+                            }),
+                            _vm._v(" "),
+                            _c("label", { staticClass: "form-check-label" }, [
+                              _vm._v(
+                                "\n                    Não trocado\n                  "
+                              ),
+                            ]),
+                          ]
+                        ),
+                      ])
+                    : troca.filtro_oleo == "0"
+                    ? _c("div", { staticClass: "col-md-12" }, [
+                        _c(
+                          "div",
+                          { staticClass: "form-check form-check-inline" },
+                          [
+                            _c("input", {
+                              staticClass: "form-check-input",
+                              attrs: {
+                                type: "radio",
+                                id: "inputFiltroOleo1",
+                                value: "1",
+                                disabled: "",
+                              },
+                            }),
+                            _vm._v(" "),
+                            _c("label", { staticClass: "form-check-label" }, [
+                              _vm._v(
+                                "\n                    Trocado\n                  "
+                              ),
+                            ]),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "form-check form-check-inline" },
+                          [
+                            _c("input", {
+                              staticClass: "form-check-input",
+                              attrs: {
+                                type: "radio",
+                                id: "inputFiltroOleo2",
+                                value: "0",
+                                checked: "",
+                                disabled: "",
+                              },
+                            }),
+                            _vm._v(" "),
+                            _c("label", { staticClass: "form-check-label" }, [
+                              _vm._v(
+                                "\n                    Não trocado\n                  "
+                              ),
+                            ]),
+                          ]
+                        ),
+                      ])
+                    : _vm._e(),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("label", { attrs: { for: "inputCombustivel" } }, [
+                  _vm._v("Filtro de Combustível"),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  troca.filtro_combustivel == "1"
+                    ? _c("div", { staticClass: "col-md-12" }, [
+                        _c(
+                          "div",
+                          { staticClass: "form-check form-check-inline" },
+                          [
+                            _c("input", {
+                              staticClass: "form-check-input",
+                              attrs: {
+                                type: "radio",
+                                id: "inputCombustivel1",
+                                value: "1",
+                                checked: "",
+                                disabled: "",
+                              },
+                            }),
+                            _vm._v(" "),
+                            _c("label", { staticClass: "form-check-label" }, [
+                              _vm._v(
+                                "\n                    Trocado\n                  "
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "form-check form-check-inline" },
+                              [
+                                _c("input", {
+                                  staticClass: "form-check-input",
+                                  attrs: {
+                                    type: "radio",
+                                    id: "inputCombustivel2",
+                                    value: "0",
+                                    disabled: "",
+                                  },
+                                }),
+                                _vm._v(" "),
+                                _c(
+                                  "label",
+                                  { staticClass: "form-check-label" },
+                                  [
+                                    _vm._v(
+                                      "\n                      Não trocado\n                    "
+                                    ),
+                                  ]
+                                ),
+                              ]
+                            ),
+                          ]
+                        ),
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  troca.filtro_combustivel == "0"
+                    ? _c("div", { staticClass: "col-md-12" }, [
+                        _c(
+                          "div",
+                          { staticClass: "form-check form-check-inline" },
+                          [
+                            _c("input", {
+                              staticClass: "form-check-input",
+                              attrs: {
+                                type: "radio",
+                                id: "inputCombustivel1",
+                                value: "1",
+                                disabled: "",
+                              },
+                            }),
+                            _vm._v(" "),
+                            _c("label", { staticClass: "form-check-label" }, [
+                              _vm._v(
+                                "\n                    Trocado\n                  "
+                              ),
+                            ]),
+                            _vm._v(
+                              "\n                               \n                  "
+                            ),
+                            _c(
+                              "div",
+                              { staticClass: "form-check form-check-inline" },
+                              [
+                                _c("input", {
+                                  staticClass: "form-check-input",
+                                  attrs: {
+                                    type: "radio",
+                                    id: "inputCombustivel2",
+                                    value: "0",
+                                    checked: "",
+                                    disabled: "",
+                                  },
+                                }),
+                                _vm._v(" "),
+                                _c(
+                                  "label",
+                                  { staticClass: "form-check-label" },
+                                  [
+                                    _vm._v(
+                                      "\n                      Não trocado\n                    "
+                                    ),
+                                  ]
+                                ),
+                              ]
+                            ),
+                          ]
+                        ),
+                      ])
+                    : _vm._e(),
+                ]),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("br"),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("label", { attrs: { for: "inputKmTroca" } }, [
+                  _vm._v("KM Troca"),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "input-group" }, [
+                  _c("div", { staticClass: "input-group-prepend" }, [
+                    _c("div", { staticClass: "input-group-text" }, [
+                      _c("i", { staticClass: "fas fa-id-card" }),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      id: "inputKmTroca",
+                      name: "txtKmTroca",
+                    },
+                    domProps: { value: troca.km_troca },
+                  }),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("label", { attrs: { for: "inputKmProxTroca" } }, [
+                  _vm._v("KM Próxima Troca"),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "input-group" }, [
+                  _c("div", { staticClass: "input-group-prepend" }, [
+                    _c("div", { staticClass: "input-group-text" }, [
+                      _c("i", { staticClass: "fas fa-id-card" }),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      id: "inputKmProxTroca",
+                      name: "txtKmProxTroca",
+                      disabled: "",
+                    },
+                    domProps: { value: troca.km_prox_troca },
+                  }),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("label", { attrs: { for: "inputCusto" } }, [
+                  _vm._v("Custo"),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "input-group" }, [
+                  _c("div", { staticClass: "input-group-prepend" }, [
+                    _c("div", { staticClass: "input-group-text" }, [
+                      _c("i", { staticClass: "fas fa-id-card" }),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      id: "inputCusto",
+                      name: "txtCusto",
+                      disabled: "",
+                    },
+                    domProps: { value: troca.custo_total },
+                  }),
+                ]),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("br"),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-4" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }),
+              _vm._v(" "),
               _c(
                 "div",
-                { staticClass: "col-md-4" },
+                { staticClass: "col-md-4", attrs: { align: "right" } },
                 [
                   _c(
                     "Link",
                     {
                       staticClass: "btn btn-warning",
-                      attrs: {
-                        href: "/abastecimento/editar/" + abastecimento.id_ab,
-                      },
+                      attrs: { href: "/troca-oleo/editar/" + troca.to_id },
                     },
                     [_vm._v("Editar")]
                   ),
@@ -48344,9 +48889,13 @@ var render = function () {
             _c("br"),
             _vm._v(" "),
             _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-4" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }),
+              _vm._v(" "),
               _c(
                 "div",
-                { staticClass: "col-md-12" },
+                { staticClass: "col-md-4" },
                 [
                   _c(
                     "Link",

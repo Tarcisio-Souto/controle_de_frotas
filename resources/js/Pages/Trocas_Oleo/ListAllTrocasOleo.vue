@@ -27,10 +27,10 @@
             <td>{{ troca.data_troca_format }}</td>
             <td>{{ troca.custo_total }}</td>     
             <td align="center">
-              <Link :href="'/troca/visualizar/' + troca.to_id"
+              <Link :href="'/troca-oleo/visualizar/' + troca.to_id"
                 ><i class="fas fa-eye"></i
               ></Link>
-              <Link :href="'/troca/editar/' + troca.to_id"
+              <Link :href="'/troca-oleo/editar/' + troca.to_id"
                 ><i class="fas fa-edit"></i
               ></Link>              
               <span
@@ -111,7 +111,7 @@ export default {
         },
         callback: function (result) {
           if (result == true) {
-            v.$inertia.post("/troca/deletar/"+id, {
+            v.$inertia.post("/troca-oleo/deletar/"+id, {
               forceFormData: true,
               preserveScroll: false,
               _token: v.$page.props.csrf_token,

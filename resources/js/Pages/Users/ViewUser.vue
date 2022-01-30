@@ -415,7 +415,9 @@
           </div>
           <br /><br />
           <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-4"></div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
               <Link :href="'/colaborador/editar/'+colab.us_id" class="btn btn-warning">Editar</Link>
               <!--<Link href="" class="btn btn-danger btnDeletar">Deletarr</Link>-->
               
