@@ -10,6 +10,8 @@ class Trocas_Oleos extends Model
 {
     use HasFactory;
 
+    protected $table = 'trocas_oleos';
+
     public static function listAllTrocas() {
         
         $trocas = DB::table('trocas_oleos as to')
@@ -22,6 +24,17 @@ class Trocas_Oleos extends Model
         ->get();
 
         return $trocas;
+
+    }
+
+    public static function getVeiculos() {
+
+        $veiculos = DB::table('veiculos as vc')
+        ->join('modelos as mod', 'mod.id', '=', 'vc.fk_modelo')
+        ->select('vc.id', 'mod.nome_modelo', 'vc.placa')
+        ->get();
+
+        return $veiculos;
 
     }
 

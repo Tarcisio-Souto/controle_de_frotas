@@ -22,7 +22,7 @@
           <h4><span style="font-weight: bold">Registro</span></h4><br>
 
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
               <label for="inputVeiculo">Veículo (modelo / placa)</label>
               <div class="input-group">
                 <div class="input-group-prepend">
@@ -47,8 +47,9 @@
                 </select>
               </div>
             </div>
-            <div class="col-md-6">
-              <label for="inputPosto">Posto</label>
+            
+            <div class="col-md-4">
+              <label for="inputOficina">Oficina</label>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
@@ -56,25 +57,170 @@
                   </div>
                 </div>
                 <select
-                  id="inputPosto"
+                  id="inputOficina"
                   class="form-control"
-                  v-model="form.posto"
-                  name="txtPosto"
+                  v-model="form.oficina"
+                  name="txtOficina"
                 >
-                  <option>Selecione o Posto</option>
+                  <option>Selecione a Oficina</option>
                   <option
-                    v-for="posto in postos"
-                    :key="posto.id"
-                    :value="posto.id"
+                    v-for="oficina in oficinas"
+                    :key="oficina.id"
+                    :value="oficina.id"
                   >
-                    {{ posto.nome_posto }}
+                    {{ oficina.nome_oficina }}
                   </option>
                 </select>
               </div>
-            </div>            
+            </div>  
+
+            <div class="col-md-4">
+              <label for="inputDataTroca">Data da Troca</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <i class="fas fa-calendar-alt"></i>
+                  </div>
+                </div>
+                <input
+                  key=""
+                  type="text"
+                  id="inputDataTroca"
+                  class="form-control"
+                  v-model="form.data_troca"
+                  name="txtDataTroca"
+                  v-mask="'##/##/####'"
+                />
+              </div>
+            </div>
+          </div>
+          
+          <br>
+          <div class="row">
+
+            <div class="col-md-4">
+              <label for="inputNomeOleo">Nome do Óleo</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <i class="fas fa-id-card"></i>
+                  </div>
+                </div>
+                <input
+                  type="text"
+                  id="inputNomeOleo"
+                  class="form-control"
+                  v-model="form.nome_oleo"
+                  name="txtNomeOleo"
+                />
+              </div>
+            </div> 
+
+            <div class="col-md-4">
+              <label for="inputFiltroOleo">Filtro de Óleo</label>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="inputFiltroOleo1"
+                    value="1"
+                    v-model="form.filtro_oleo"
+                  />
+                  <label class="form-check-label">
+                    Trocado
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="inputFiltroOleo2"
+                    v-model="form.filtro_oleo"
+                    value="0"
+                  />
+                  <label class="form-check-label">
+                    Não trocado
+                  </label>
+                </div>
+                </div>                
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="inputCombustivel">Filtro de Combustível</label>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="inputCombustivel1"
+                    value="1"
+                    v-model="form.filtro_combustivel"
+                  />
+                  <label class="form-check-label">
+                    Trocado
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="inputCombustivel2"
+                    v-model="form.filtro_combustivel"
+                    value="0"
+                  />
+                  <label class="form-check-label">
+                    Não trocado
+                  </label>
+                </div>
+                </div>                
+              </div>
+            </div>
+
           </div>
           <br>
           <div class="row">
+            
+            <div class="col-md-4">
+              <label for="inputKmTroca">KM Troca</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <i class="fas fa-id-card"></i>
+                  </div>
+                </div>
+                <input
+                  type="text"
+                  id="inputKmTroca"
+                  class="form-control"
+                  v-model="form.km_troca"
+                  name="txtKmTroca"
+                />
+              </div>
+            </div> 
+
+            <div class="col-md-4">
+              <label for="inputKmProxTroca">KM Próxima Troca</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <i class="fas fa-id-card"></i>
+                  </div>
+                </div>
+                <input
+                  type="text"
+                  id="inputKmProxTroca"
+                  class="form-control"
+                  v-model="form.km_prox_troca"
+                  name="txtKmProxTroca"
+                />
+              </div>
+            </div>   
+
+
             <div class="col-md-4">
               <label for="inputCusto">Custo</label>
               <div class="input-group">
@@ -92,27 +238,13 @@
                   v-mask="['R$ ##.##', 'R$ ###.###', 'R$ #.###,##', 'R$ ##.###,##']"
                 />
               </div>
-            </div>    
-            
-            <div class="col-md-4">
-              <label for="inputDataManutencao">Data do Abastecimento</label>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">
-                    <i class="fas fa-calendar-alt"></i>
-                  </div>
-                </div>
-                <input
-                  key=""
-                  type="text"
-                  id="inputDataAbastecimento"
-                  class="form-control"
-                  v-model="form.data_abastecimento"
-                  name="txtDataAbastecimento"
-                  v-mask="'##/##/####'"
-                />
-              </div>
-            </div> 
+            </div>             
+          
+          </div>   
+          <br>
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4"></div>
             <div class="col-md-4">
               <button type="submit" class="btn btn-success btnCadastrar">
                 Cadastrar
@@ -141,16 +273,21 @@ export default {
   },
   props: {
     errors: Object,
-    postos: Array,
+    oficinas: Array,
     veiculos: Array
   },
   data: () => {
     return {
       form: {
         veiculo: null,
-        posto: null,
-        data_abastecimento: null,
+        oficina: null,
+        nome_oleo: null,
+        data_troca: null,
         custo: null,
+        km_troca: null,
+        km_prox_troca: null,
+        filtro_oleo: null,
+        filtro_combustivel: null,
         
         preserveState: true,
       },
@@ -158,7 +295,7 @@ export default {
   },
   methods: {
     sendForm() {
-      this.$inertia.post("/abastecimentos/registrar", this.form, {
+      this.$inertia.post("/trocas-oleo/registrar", this.form, {
         forceFormData: true,
         preserveScroll: false,
         _token: this.$page.props.csrf_token,
@@ -172,14 +309,22 @@ export default {
               "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
             message:
               "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" +
-              "<span style='font-weight:bold; position: relative; top: 5px;'>Abastecimento registrado com sucesso!</span>",
+              "<span style='font-weight:bold; position: relative; top: 5px;'>Troca de Óleo registrada com sucesso!</span>",
           });
 
           
           $("#inputVeiculo").val("");
-          $("#inputPosto").val("");
+          $("#inputOficina").val("");
+          $("#inputDataTroca").val("");
+          $("#inputNomeOleo").val("");
+
+          $("#inputFiltroOleo1").prop('checked', false);
+          $("#inputFiltroOleo2").prop('checked', false);
+          $("#inputCombustivel1").prop('checked', false);
+          $("#inputCombustivel2").prop('checked', false);
+          $("#inputKmTroca").val("");
+          $("#inputKmProxTroca").val("");
           $("#inputCusto").val("");
-          $("#inputDataAbastecimento").val("");
                    
           
         },

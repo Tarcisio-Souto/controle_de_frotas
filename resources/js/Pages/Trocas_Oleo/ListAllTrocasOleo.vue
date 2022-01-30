@@ -111,7 +111,7 @@ export default {
         },
         callback: function (result) {
           if (result == true) {
-            v.$inertia.post("/abastecimento/deletar/"+id, {
+            v.$inertia.post("/troca/deletar/"+id, {
               forceFormData: true,
               preserveScroll: false,
               _token: v.$page.props.csrf_token,

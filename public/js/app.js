@@ -7027,6 +7027,138 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -7035,23 +7167,28 @@ __webpack_require__.r(__webpack_exports__);
   },
   props: {
     errors: Object,
-    postos: Array,
+    oficinas: Array,
     veiculos: Array
   },
   data: function data() {
     return {
       form: {
         veiculo: null,
-        posto: null,
-        data_abastecimento: null,
+        oficina: null,
+        nome_oleo: null,
+        data_troca: null,
         custo: null,
+        km_troca: null,
+        km_prox_troca: null,
+        filtro_oleo: null,
+        filtro_combustivel: null,
         preserveState: true
       }
     };
   },
   methods: {
     sendForm: function sendForm() {
-      this.$inertia.post("/abastecimentos/registrar", this.form, {
+      this.$inertia.post("/trocas-oleo/registrar", this.form, {
         forceFormData: true,
         preserveScroll: false,
         _token: this.$page.props.csrf_token,
@@ -7062,12 +7199,19 @@ __webpack_require__.r(__webpack_exports__);
             closeButton: false,
             size: "large",
             title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
-            message: "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Abastecimento registrado com sucesso!</span>"
+            message: "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Troca de Óleo registrada com sucesso!</span>"
           });
           $("#inputVeiculo").val("");
-          $("#inputPosto").val("");
+          $("#inputOficina").val("");
+          $("#inputDataTroca").val("");
+          $("#inputNomeOleo").val("");
+          $("#inputFiltroOleo1").prop('checked', false);
+          $("#inputFiltroOleo2").prop('checked', false);
+          $("#inputCombustivel1").prop('checked', false);
+          $("#inputCombustivel2").prop('checked', false);
+          $("#inputKmTroca").val("");
+          $("#inputKmProxTroca").val("");
           $("#inputCusto").val("");
-          $("#inputDataAbastecimento").val("");
         }
       });
     }
@@ -7400,7 +7544,7 @@ __webpack_require__.r(__webpack_exports__);
         },
         callback: function callback(result) {
           if (result == true) {
-            v.$inertia.post("/abastecimento/deletar/" + id, {
+            v.$inertia.post("/troca/deletar/" + id, {
               forceFormData: true,
               preserveScroll: false,
               _token: v.$page.props.csrf_token
@@ -43533,7 +43677,7 @@ var render = function () {
             _c("br"),
             _vm._v(" "),
             _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-md-6" }, [
+              _c("div", { staticClass: "col-md-4" }, [
                 _c("label", { attrs: { for: "inputVeiculo" } }, [
                   _vm._v("Veículo (modelo / placa)"),
                 ]),
@@ -43604,9 +43748,9 @@ var render = function () {
                 ]),
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "col-md-6" }, [
-                _c("label", { attrs: { for: "inputPosto" } }, [
-                  _vm._v("Posto"),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("label", { attrs: { for: "inputOficina" } }, [
+                  _vm._v("Oficina"),
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "input-group" }, [
@@ -43623,12 +43767,12 @@ var render = function () {
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.form.posto,
-                          expression: "form.posto",
+                          value: _vm.form.oficina,
+                          expression: "form.oficina",
                         },
                       ],
                       staticClass: "form-control",
-                      attrs: { id: "inputPosto", name: "txtPosto" },
+                      attrs: { id: "inputOficina", name: "txtOficina" },
                       on: {
                         change: function ($event) {
                           var $$selectedVal = Array.prototype.filter
@@ -43641,7 +43785,7 @@ var render = function () {
                             })
                           _vm.$set(
                             _vm.form,
-                            "posto",
+                            "oficina",
                             $event.target.multiple
                               ? $$selectedVal
                               : $$selectedVal[0]
@@ -43650,16 +43794,16 @@ var render = function () {
                       },
                     },
                     [
-                      _c("option", [_vm._v("Selecione o Posto")]),
+                      _c("option", [_vm._v("Selecione a Oficina")]),
                       _vm._v(" "),
-                      _vm._l(_vm.postos, function (posto) {
+                      _vm._l(_vm.oficinas, function (oficina) {
                         return _c(
                           "option",
-                          { key: posto.id, domProps: { value: posto.id } },
+                          { key: oficina.id, domProps: { value: oficina.id } },
                           [
                             _vm._v(
                               "\n                  " +
-                                _vm._s(posto.nome_posto) +
+                                _vm._s(oficina.nome_oficina) +
                                 "\n                "
                             ),
                           ]
@@ -43670,11 +43814,330 @@ var render = function () {
                   ),
                 ]),
               ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("label", { attrs: { for: "inputDataTroca" } }, [
+                  _vm._v("Data da Troca"),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "input-group" }, [
+                  _c("div", { staticClass: "input-group-prepend" }, [
+                    _c("div", { staticClass: "input-group-text" }, [
+                      _c("i", { staticClass: "fas fa-calendar-alt" }),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.data_troca,
+                        expression: "form.data_troca",
+                      },
+                      {
+                        name: "mask",
+                        rawName: "v-mask",
+                        value: "##/##/####",
+                        expression: "'##/##/####'",
+                      },
+                    ],
+                    key: "",
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      id: "inputDataTroca",
+                      name: "txtDataTroca",
+                    },
+                    domProps: { value: _vm.form.data_troca },
+                    on: {
+                      input: function ($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.form, "data_troca", $event.target.value)
+                      },
+                    },
+                  }),
+                ]),
+              ]),
             ]),
             _vm._v(" "),
             _c("br"),
             _vm._v(" "),
             _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("label", { attrs: { for: "inputNomeOleo" } }, [
+                  _vm._v("Nome do Óleo"),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "input-group" }, [
+                  _c("div", { staticClass: "input-group-prepend" }, [
+                    _c("div", { staticClass: "input-group-text" }, [
+                      _c("i", { staticClass: "fas fa-id-card" }),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.nome_oleo,
+                        expression: "form.nome_oleo",
+                      },
+                    ],
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      id: "inputNomeOleo",
+                      name: "txtNomeOleo",
+                    },
+                    domProps: { value: _vm.form.nome_oleo },
+                    on: {
+                      input: function ($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.form, "nome_oleo", $event.target.value)
+                      },
+                    },
+                  }),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("label", { attrs: { for: "inputFiltroOleo" } }, [
+                  _vm._v("Filtro de Óleo"),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-12" }, [
+                    _c("div", { staticClass: "form-check form-check-inline" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.filtro_oleo,
+                            expression: "form.filtro_oleo",
+                          },
+                        ],
+                        staticClass: "form-check-input",
+                        attrs: {
+                          type: "radio",
+                          id: "inputFiltroOleo1",
+                          value: "1",
+                        },
+                        domProps: {
+                          checked: _vm._q(_vm.form.filtro_oleo, "1"),
+                        },
+                        on: {
+                          change: function ($event) {
+                            return _vm.$set(_vm.form, "filtro_oleo", "1")
+                          },
+                        },
+                      }),
+                      _vm._v(" "),
+                      _c("label", { staticClass: "form-check-label" }, [
+                        _vm._v("\n                  Trocado\n                "),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-check form-check-inline" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.filtro_oleo,
+                            expression: "form.filtro_oleo",
+                          },
+                        ],
+                        staticClass: "form-check-input",
+                        attrs: {
+                          type: "radio",
+                          id: "inputFiltroOleo2",
+                          value: "0",
+                        },
+                        domProps: {
+                          checked: _vm._q(_vm.form.filtro_oleo, "0"),
+                        },
+                        on: {
+                          change: function ($event) {
+                            return _vm.$set(_vm.form, "filtro_oleo", "0")
+                          },
+                        },
+                      }),
+                      _vm._v(" "),
+                      _c("label", { staticClass: "form-check-label" }, [
+                        _vm._v(
+                          "\n                  Não trocado\n                "
+                        ),
+                      ]),
+                    ]),
+                  ]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("label", { attrs: { for: "inputCombustivel" } }, [
+                  _vm._v("Filtro de Combustível"),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-12" }, [
+                    _c("div", { staticClass: "form-check form-check-inline" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.filtro_combustivel,
+                            expression: "form.filtro_combustivel",
+                          },
+                        ],
+                        staticClass: "form-check-input",
+                        attrs: {
+                          type: "radio",
+                          id: "inputCombustivel1",
+                          value: "1",
+                        },
+                        domProps: {
+                          checked: _vm._q(_vm.form.filtro_combustivel, "1"),
+                        },
+                        on: {
+                          change: function ($event) {
+                            return _vm.$set(_vm.form, "filtro_combustivel", "1")
+                          },
+                        },
+                      }),
+                      _vm._v(" "),
+                      _c("label", { staticClass: "form-check-label" }, [
+                        _vm._v("\n                  Trocado\n                "),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-check form-check-inline" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.filtro_combustivel,
+                            expression: "form.filtro_combustivel",
+                          },
+                        ],
+                        staticClass: "form-check-input",
+                        attrs: {
+                          type: "radio",
+                          id: "inputCombustivel2",
+                          value: "0",
+                        },
+                        domProps: {
+                          checked: _vm._q(_vm.form.filtro_combustivel, "0"),
+                        },
+                        on: {
+                          change: function ($event) {
+                            return _vm.$set(_vm.form, "filtro_combustivel", "0")
+                          },
+                        },
+                      }),
+                      _vm._v(" "),
+                      _c("label", { staticClass: "form-check-label" }, [
+                        _vm._v(
+                          "\n                  Não trocado\n                "
+                        ),
+                      ]),
+                    ]),
+                  ]),
+                ]),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("br"),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("label", { attrs: { for: "inputKmTroca" } }, [
+                  _vm._v("KM Troca"),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "input-group" }, [
+                  _c("div", { staticClass: "input-group-prepend" }, [
+                    _c("div", { staticClass: "input-group-text" }, [
+                      _c("i", { staticClass: "fas fa-id-card" }),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.km_troca,
+                        expression: "form.km_troca",
+                      },
+                    ],
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      id: "inputKmTroca",
+                      name: "txtKmTroca",
+                    },
+                    domProps: { value: _vm.form.km_troca },
+                    on: {
+                      input: function ($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.form, "km_troca", $event.target.value)
+                      },
+                    },
+                  }),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("label", { attrs: { for: "inputKmProxTroca" } }, [
+                  _vm._v("KM Próxima Troca"),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "input-group" }, [
+                  _c("div", { staticClass: "input-group-prepend" }, [
+                    _c("div", { staticClass: "input-group-text" }, [
+                      _c("i", { staticClass: "fas fa-id-card" }),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.km_prox_troca,
+                        expression: "form.km_prox_troca",
+                      },
+                    ],
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      id: "inputKmProxTroca",
+                      name: "txtKmProxTroca",
+                    },
+                    domProps: { value: _vm.form.km_prox_troca },
+                    on: {
+                      input: function ($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.form, "km_prox_troca", $event.target.value)
+                      },
+                    },
+                  }),
+                ]),
+              ]),
+              _vm._v(" "),
               _c("div", { staticClass: "col-md-4" }, [
                 _c("label", { attrs: { for: "inputCusto" } }, [
                   _vm._v("Custo"),
@@ -43722,57 +44185,14 @@ var render = function () {
                   }),
                 ]),
               ]),
+            ]),
+            _vm._v(" "),
+            _c("br"),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-4" }),
               _vm._v(" "),
-              _c("div", { staticClass: "col-md-4" }, [
-                _c("label", { attrs: { for: "inputDataManutencao" } }, [
-                  _vm._v("Data do Abastecimento"),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "input-group" }, [
-                  _c("div", { staticClass: "input-group-prepend" }, [
-                    _c("div", { staticClass: "input-group-text" }, [
-                      _c("i", { staticClass: "fas fa-calendar-alt" }),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.form.data_abastecimento,
-                        expression: "form.data_abastecimento",
-                      },
-                      {
-                        name: "mask",
-                        rawName: "v-mask",
-                        value: "##/##/####",
-                        expression: "'##/##/####'",
-                      },
-                    ],
-                    key: "",
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "text",
-                      id: "inputDataAbastecimento",
-                      name: "txtDataAbastecimento",
-                    },
-                    domProps: { value: _vm.form.data_abastecimento },
-                    on: {
-                      input: function ($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.form,
-                          "data_abastecimento",
-                          $event.target.value
-                        )
-                      },
-                    },
-                  }),
-                ]),
-              ]),
+              _c("div", { staticClass: "col-md-4" }),
               _vm._v(" "),
               _c("div", { staticClass: "col-md-4" }, [
                 _c(
