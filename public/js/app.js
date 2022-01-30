@@ -7373,6 +7373,190 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -7383,28 +7567,33 @@ __webpack_require__.r(__webpack_exports__);
   },
   props: {
     errors: Object,
-    postos: Array,
+    oficinas: Array,
     veiculos: Array,
-    abastecimento: Array
+    troca: Array
   },
   data: function data() {
     return {
       form: {
         id: null,
         veiculo: null,
-        posto: null,
-        data_abastecimento: null,
+        oficina: null,
+        data_troca: null,
+        nome_oleo: null,
+        filtro_oleo: null,
+        filtro_combustivel: null,
+        km_troca: null,
+        km_prox_troca: null,
         custo: null,
         preserveState: true
       }
     };
   },
   created: function created() {
-    this.form.id = this.$page.props.abastecimento[0].id_ab, this.form.veiculo = this.$page.props.abastecimento[0].nome_modelo + ' / ' + this.$page.props.abastecimento[0].placa, this.form.posto = this.$page.props.abastecimento[0].nome_posto, this.form.data_abastecimento = this.$page.props.abastecimento[0].data_abastecimento, this.form.custo = this.$page.props.abastecimento[0].custo_total;
+    this.form.id = this.$page.props.troca[0].to_id, this.form.veiculo = this.$page.props.troca[0].nome_modelo + ' / ' + this.$page.props.troca[0].placa, this.form.oficina = this.$page.props.troca[0].nome_oficina, this.form.data_troca = this.$page.props.troca[0].data_troca_format, this.form.custo = this.$page.props.troca[0].custo_total, this.form.nome_oleo = this.$page.props.troca[0].nome_oleo, this.form.filtro_oleo = this.$page.props.troca[0].filtro_oleo, this.form.filtro_combustivel = this.$page.props.troca[0].filtro_combustivel, this.form.km_troca = this.$page.props.troca[0].km_troca, this.form.km_prox_troca = this.$page.props.troca[0].km_prox_troca;
   },
   methods: {
     sendForm: function sendForm() {
-      this.$inertia.post("/abastecimento/update/" + this.form.id, this.form, {
+      this.$inertia.post("/troca-oleo/update/" + this.form.id, this.form, {
         forceFormData: true,
         preserveScroll: false,
         _token: this.$page.props.csrf_token,
@@ -7581,7 +7770,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layout_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../Layout.vue */ "./resources/js/Layout.vue");
 /* harmony import */ var _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-vue */ "./node_modules/@inertiajs/inertia-vue/dist/index.js");
 /* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
-//
 //
 //
 //
@@ -44458,7 +44646,7 @@ var render = function () {
       _c("div", { staticClass: "col-md-4" }),
       _vm._v(" "),
       _c("div", { staticClass: "col-md-4", attrs: { align: "center" } }, [
-        _c("h4", [_vm._v("Cadastro de Abastecimento")]),
+        _c("h4", [_vm._v("Edição de Troca de Óleo")]),
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "col-md-4" }),
@@ -44487,18 +44675,18 @@ var render = function () {
                 {
                   name: "model",
                   rawName: "v-model",
-                  value: _vm.abastecimento.id,
-                  expression: "abastecimento.id",
+                  value: _vm.troca.to_id,
+                  expression: "troca.to_id",
                 },
               ],
               attrs: { type: "hidden" },
-              domProps: { value: _vm.abastecimento.id },
+              domProps: { value: _vm.troca.to_id },
               on: {
                 input: function ($event) {
                   if ($event.target.composing) {
                     return
                   }
-                  _vm.$set(_vm.abastecimento, "id", $event.target.value)
+                  _vm.$set(_vm.troca, "to_id", $event.target.value)
                 },
               },
             }),
@@ -44514,7 +44702,7 @@ var render = function () {
             _c("br"),
             _vm._v(" "),
             _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-md-6" }, [
+              _c("div", { staticClass: "col-md-4" }, [
                 _c("label", { attrs: { for: "inputVeiculo" } }, [
                   _vm._v("Veículo (modelo / placa)"),
                 ]),
@@ -44597,9 +44785,9 @@ var render = function () {
                 ]),
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "col-md-6" }, [
-                _c("label", { attrs: { for: "inputPosto" } }, [
-                  _vm._v("Posto"),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("label", { attrs: { for: "inputOficina" } }, [
+                  _vm._v("Oficina"),
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "input-group" }, [
@@ -44616,12 +44804,12 @@ var render = function () {
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.form.posto,
-                          expression: "form.posto",
+                          value: _vm.form.oficina,
+                          expression: "form.oficina",
                         },
                       ],
                       staticClass: "form-control",
-                      attrs: { id: "inputPosto", name: "txtPosto" },
+                      attrs: { id: "inputOficina", name: "txtOficina" },
                       on: {
                         change: function ($event) {
                           var $$selectedVal = Array.prototype.filter
@@ -44634,7 +44822,7 @@ var render = function () {
                             })
                           _vm.$set(
                             _vm.form,
-                            "posto",
+                            "oficina",
                             $event.target.multiple
                               ? $$selectedVal
                               : $$selectedVal[0]
@@ -44648,22 +44836,22 @@ var render = function () {
                         {
                           staticStyle: { "background-color": "gainsboro" },
                           attrs: { selected: "" },
-                          domProps: { value: _vm.form.posto },
+                          domProps: { value: _vm.form.oficina },
                         },
-                        [_vm._v(_vm._s(_vm.form.posto))]
+                        [_vm._v(_vm._s(_vm.form.oficina))]
                       ),
                       _vm._v(" "),
-                      _vm._l(_vm.postos, function (posto) {
+                      _vm._l(_vm.oficinas, function (oficina) {
                         return _c(
                           "option",
                           {
-                            key: posto.id,
-                            domProps: { value: posto.nome_posto },
+                            key: oficina.id,
+                            domProps: { value: oficina.nome_oficina },
                           },
                           [
                             _vm._v(
                               "\n                  " +
-                                _vm._s(posto.nome_posto) +
+                                _vm._s(oficina.nome_oficina) +
                                 "\n                "
                             ),
                           ]
@@ -44674,11 +44862,542 @@ var render = function () {
                   ),
                 ]),
               ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("label", { attrs: { for: "inputDataTroca" } }, [
+                  _vm._v("Data da Troca"),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "input-group" }, [
+                  _c("div", { staticClass: "input-group-prepend" }, [
+                    _c("div", { staticClass: "input-group-text" }, [
+                      _c("i", { staticClass: "fas fa-calendar-alt" }),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.data_troca,
+                        expression: "form.data_troca",
+                      },
+                      {
+                        name: "mask",
+                        rawName: "v-mask",
+                        value: "##/##/####",
+                        expression: "'##/##/####'",
+                      },
+                    ],
+                    key: "",
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      id: "inputDataTroca",
+                      name: "txtDataTroca",
+                    },
+                    domProps: { value: _vm.form.data_troca },
+                    on: {
+                      input: function ($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.form, "data_troca", $event.target.value)
+                      },
+                    },
+                  }),
+                ]),
+              ]),
             ]),
             _vm._v(" "),
             _c("br"),
             _vm._v(" "),
             _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("label", { attrs: { for: "inputNomeOleo" } }, [
+                  _vm._v("Nome do Óleo"),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "input-group" }, [
+                  _c("div", { staticClass: "input-group-prepend" }, [
+                    _c("div", { staticClass: "input-group-text" }, [
+                      _c("i", { staticClass: "fas fa-id-card" }),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.nome_oleo,
+                        expression: "form.nome_oleo",
+                      },
+                    ],
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      id: "inputNomeOleo",
+                      name: "txtNomeOleo",
+                    },
+                    domProps: { value: _vm.form.nome_oleo },
+                    on: {
+                      input: function ($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.form, "nome_oleo", $event.target.value)
+                      },
+                    },
+                  }),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("label", { attrs: { for: "inputFiltroOleo" } }, [
+                  _vm._v("Filtro de Óleo"),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _vm.troca.filtro_oleo == "1"
+                    ? _c("div", { staticClass: "col-md-12" }, [
+                        _c(
+                          "div",
+                          { staticClass: "form-check form-check-inline" },
+                          [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.form.filtro_oleo,
+                                  expression: "form.filtro_oleo",
+                                },
+                              ],
+                              staticClass: "form-check-input",
+                              attrs: {
+                                type: "radio",
+                                id: "inputFiltroOleo1",
+                                value: "1",
+                                checked: "",
+                              },
+                              domProps: {
+                                checked: _vm._q(_vm.form.filtro_oleo, "1"),
+                              },
+                              on: {
+                                change: function ($event) {
+                                  return _vm.$set(_vm.form, "filtro_oleo", "1")
+                                },
+                              },
+                            }),
+                            _vm._v(" "),
+                            _c("label", { staticClass: "form-check-label" }, [
+                              _vm._v(
+                                "\n                    Trocado\n                  "
+                              ),
+                            ]),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "form-check form-check-inline" },
+                          [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.form.filtro_oleo,
+                                  expression: "form.filtro_oleo",
+                                },
+                              ],
+                              staticClass: "form-check-input",
+                              attrs: {
+                                type: "radio",
+                                id: "inputFiltroOleo2",
+                                value: "0",
+                              },
+                              domProps: {
+                                checked: _vm._q(_vm.form.filtro_oleo, "0"),
+                              },
+                              on: {
+                                change: function ($event) {
+                                  return _vm.$set(_vm.form, "filtro_oleo", "0")
+                                },
+                              },
+                            }),
+                            _vm._v(" "),
+                            _c("label", { staticClass: "form-check-label" }, [
+                              _vm._v(
+                                "\n                    Não trocado\n                  "
+                              ),
+                            ]),
+                          ]
+                        ),
+                      ])
+                    : _c("div", { staticClass: "col-md-12" }, [
+                        _c(
+                          "div",
+                          { staticClass: "form-check form-check-inline" },
+                          [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.form.filtro_oleo,
+                                  expression: "form.filtro_oleo",
+                                },
+                              ],
+                              staticClass: "form-check-input",
+                              attrs: {
+                                type: "radio",
+                                id: "inputFiltroOleo1",
+                                value: "1",
+                              },
+                              domProps: {
+                                checked: _vm._q(_vm.form.filtro_oleo, "1"),
+                              },
+                              on: {
+                                change: function ($event) {
+                                  return _vm.$set(_vm.form, "filtro_oleo", "1")
+                                },
+                              },
+                            }),
+                            _vm._v(" "),
+                            _c("label", { staticClass: "form-check-label" }, [
+                              _vm._v(
+                                "\n                    Trocado\n                  "
+                              ),
+                            ]),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "form-check form-check-inline" },
+                          [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.form.filtro_oleo,
+                                  expression: "form.filtro_oleo",
+                                },
+                              ],
+                              staticClass: "form-check-input",
+                              attrs: {
+                                type: "radio",
+                                id: "inputFiltroOleo2",
+                                value: "0",
+                                checked: "",
+                              },
+                              domProps: {
+                                checked: _vm._q(_vm.form.filtro_oleo, "0"),
+                              },
+                              on: {
+                                change: function ($event) {
+                                  return _vm.$set(_vm.form, "filtro_oleo", "0")
+                                },
+                              },
+                            }),
+                            _vm._v(" "),
+                            _c("label", { staticClass: "form-check-label" }, [
+                              _vm._v(
+                                "\n                    Não trocado\n                  "
+                              ),
+                            ]),
+                          ]
+                        ),
+                      ]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("label", { attrs: { for: "inputCombustivel" } }, [
+                  _vm._v("Filtro de Combustível"),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _vm.troca.filtro_combustivel == "1"
+                    ? _c("div", { staticClass: "col-md-12" }, [
+                        _c(
+                          "div",
+                          { staticClass: "form-check form-check-inline" },
+                          [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.form.filtro_combustivel,
+                                  expression: "form.filtro_combustivel",
+                                },
+                              ],
+                              staticClass: "form-check-input",
+                              attrs: {
+                                type: "radio",
+                                id: "inputCombustivel1",
+                                value: "1",
+                                checked: "",
+                                disabled: "",
+                              },
+                              domProps: {
+                                checked: _vm._q(
+                                  _vm.form.filtro_combustivel,
+                                  "1"
+                                ),
+                              },
+                              on: {
+                                change: function ($event) {
+                                  return _vm.$set(
+                                    _vm.form,
+                                    "filtro_combustivel",
+                                    "1"
+                                  )
+                                },
+                              },
+                            }),
+                            _vm._v(" "),
+                            _c("label", { staticClass: "form-check-label" }, [
+                              _vm._v(
+                                "\n                    Trocado\n                  "
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "form-check form-check-inline" },
+                              [
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.form.filtro_combustivel,
+                                      expression: "form.filtro_combustivel",
+                                    },
+                                  ],
+                                  staticClass: "form-check-input",
+                                  attrs: {
+                                    type: "radio",
+                                    id: "inputCombustivel2",
+                                    value: "0",
+                                    disabled: "",
+                                  },
+                                  domProps: {
+                                    checked: _vm._q(
+                                      _vm.form.filtro_combustivel,
+                                      "0"
+                                    ),
+                                  },
+                                  on: {
+                                    change: function ($event) {
+                                      return _vm.$set(
+                                        _vm.form,
+                                        "filtro_combustivel",
+                                        "0"
+                                      )
+                                    },
+                                  },
+                                }),
+                                _vm._v(" "),
+                                _c(
+                                  "label",
+                                  { staticClass: "form-check-label" },
+                                  [
+                                    _vm._v(
+                                      "\n                      Não trocado\n                    "
+                                    ),
+                                  ]
+                                ),
+                              ]
+                            ),
+                          ]
+                        ),
+                      ])
+                    : _c("div", { staticClass: "col-md-12" }, [
+                        _c(
+                          "div",
+                          { staticClass: "form-check form-check-inline" },
+                          [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.form.filtro_combustivel,
+                                  expression: "form.filtro_combustivel",
+                                },
+                              ],
+                              staticClass: "form-check-input",
+                              attrs: {
+                                type: "radio",
+                                id: "inputCombustivel1",
+                                value: "1",
+                              },
+                              domProps: {
+                                checked: _vm._q(
+                                  _vm.form.filtro_combustivel,
+                                  "1"
+                                ),
+                              },
+                              on: {
+                                change: function ($event) {
+                                  return _vm.$set(
+                                    _vm.form,
+                                    "filtro_combustivel",
+                                    "1"
+                                  )
+                                },
+                              },
+                            }),
+                            _vm._v(" "),
+                            _c("label", { staticClass: "form-check-label" }, [
+                              _vm._v(
+                                "\n                    Trocado\n                  "
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "form-check form-check-inline" },
+                              [
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.form.filtro_combustivel,
+                                      expression: "form.filtro_combustivel",
+                                    },
+                                  ],
+                                  staticClass: "form-check-input",
+                                  attrs: {
+                                    type: "radio",
+                                    id: "inputCombustivel2",
+                                    value: "0",
+                                    checked: "",
+                                  },
+                                  domProps: {
+                                    checked: _vm._q(
+                                      _vm.form.filtro_combustivel,
+                                      "0"
+                                    ),
+                                  },
+                                  on: {
+                                    change: function ($event) {
+                                      return _vm.$set(
+                                        _vm.form,
+                                        "filtro_combustivel",
+                                        "0"
+                                      )
+                                    },
+                                  },
+                                }),
+                                _vm._v(" "),
+                                _c(
+                                  "label",
+                                  { staticClass: "form-check-label" },
+                                  [
+                                    _vm._v(
+                                      "\n                      Não trocado\n                    "
+                                    ),
+                                  ]
+                                ),
+                              ]
+                            ),
+                          ]
+                        ),
+                      ]),
+                ]),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("label", { attrs: { for: "inputKmTroca" } }, [
+                  _vm._v("KM Troca"),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "input-group" }, [
+                  _c("div", { staticClass: "input-group-prepend" }, [
+                    _c("div", { staticClass: "input-group-text" }, [
+                      _c("i", { staticClass: "fas fa-id-card" }),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.km_troca,
+                        expression: "form.km_troca",
+                      },
+                    ],
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      id: "inputKmTroca",
+                      name: "txtKmTroca",
+                    },
+                    domProps: { value: _vm.form.km_troca },
+                    on: {
+                      input: function ($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.form, "km_troca", $event.target.value)
+                      },
+                    },
+                  }),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("label", { attrs: { for: "inputKmProxTroca" } }, [
+                  _vm._v("KM Próxima Troca"),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "input-group" }, [
+                  _c("div", { staticClass: "input-group-prepend" }, [
+                    _c("div", { staticClass: "input-group-text" }, [
+                      _c("i", { staticClass: "fas fa-id-card" }),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.km_prox_troca,
+                        expression: "form.km_prox_troca",
+                      },
+                    ],
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      id: "inputKmProxTroca",
+                      name: "txtKmProxTroca",
+                    },
+                    domProps: { value: _vm.form.km_prox_troca },
+                    on: {
+                      input: function ($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.form, "km_prox_troca", $event.target.value)
+                      },
+                    },
+                  }),
+                ]),
+              ]),
+              _vm._v(" "),
               _c("div", { staticClass: "col-md-4" }, [
                 _c("label", { attrs: { for: "inputCusto" } }, [
                   _vm._v("Custo"),
@@ -44726,57 +45445,14 @@ var render = function () {
                   }),
                 ]),
               ]),
+            ]),
+            _vm._v(" "),
+            _c("br"),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-4" }),
               _vm._v(" "),
-              _c("div", { staticClass: "col-md-4" }, [
-                _c("label", { attrs: { for: "inputDataAbastecimento" } }, [
-                  _vm._v("Data do Abastecimento"),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "input-group" }, [
-                  _c("div", { staticClass: "input-group-prepend" }, [
-                    _c("div", { staticClass: "input-group-text" }, [
-                      _c("i", { staticClass: "fas fa-calendar-alt" }),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.form.data_abastecimento,
-                        expression: "form.data_abastecimento",
-                      },
-                      {
-                        name: "mask",
-                        rawName: "v-mask",
-                        value: "##/##/####",
-                        expression: "'##/##/####'",
-                      },
-                    ],
-                    key: "",
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "text",
-                      id: "inputDataAbastecimento",
-                      name: "txtDataAbastecimento",
-                    },
-                    domProps: { value: _vm.form.data_abastecimento },
-                    on: {
-                      input: function ($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.form,
-                          "data_abastecimento",
-                          $event.target.value
-                        )
-                      },
-                    },
-                  }),
-                ]),
-              ]),
+              _c("div", { staticClass: "col-md-4" }),
               _vm._v(" "),
               _c("div", { staticClass: "col-md-4" }, [
                 _c(

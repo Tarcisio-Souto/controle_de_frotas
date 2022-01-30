@@ -6,6 +6,7 @@ use App\Models\Oficinas;
 use App\Models\Trocas_Oleos;
 use App\Models\Veiculos;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 
@@ -96,7 +97,16 @@ class TrocasOleoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $troca = Trocas_Oleos::showTroca($id);
+
+        //dd($troca);
+
+        $veiculos = Trocas_Oleos::getVeiculos();
+        $oficinas = Oficinas::all();
+
+        return Inertia::render('Trocas_Oleo/EditTrocaOleo.vue', 
+        ['troca' => $troca, 'veiculos' => $veiculos, 'oficinas' => $oficinas]);
+
     }
 
     /**
@@ -106,9 +116,39 @@ class TrocasOleoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $troca = Trocas_Oleos::find($request->id);
+        $troca->km_troca = $request->km_troca;
+        $troca->km_prox_troca = $request->km_prox_troca;
+        $troca->filtro_oleo = $request->filtro_oleo;
+        $troca->filtro_combustivel = $request->filtro_combustivel;
+        $troca->nome_oleo = $request->nome_oleo;
+        $troca->custo_total = $request->custo;
+
+        $data = explode("/",$request->data_troca);
+        $dia = $data[0];
+        $mes = $data[1];
+        $ano = $data[2];            
+        $data_formatada = $ano.'-'.$mes.'-'.$dia;
+
+        $data_old = date($data_formatada);
+        $troca->data_troca = $data_old;
+
+        $aux_veiculo = explode('/', $request->veiculo);
+        $placa = trim($aux_veiculo[1]);        
+        $veiculo = Veiculos::where('placa', '=', $placa)->first();
+        $troca->fk_veiculo = $veiculo->id;
+
+        $oficina = Oficinas::where('nome_oficina', '=', $request->oficina)->first();
+        $troca->fk_oficina = $oficina->id;
+
+        $troca->save();
+
+        $trocas = Trocas_Oleos::all();
+        return Redirect::route('trocas-oleo.lista', ['trocas' => $trocas])->with('success', 'Atualizações registradas com sucesso!');
+
+
     }
 
     /**
@@ -118,7 +158,9 @@ class TrocasOleoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-        //
+    {        
+        DB::table('trocas_oleos')->delete($id);
+        $trocas = Trocas_Oleos::all();
+        return Redirect::route('trocas-oleo.lista', ['trocas' => $trocas]);
     }
 }
