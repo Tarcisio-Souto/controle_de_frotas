@@ -88,7 +88,7 @@
 
             <li><Link href="#sobre"><i class="fas fa-info-circle icons-menu"></i>Sobre</Link></li>            
             <li>
-              <Link href="#sair"><i class="fas fa-sign-out-alt icons-menu"></i>Sair</Link>
+              <Link href="/logout"><i class="fas fa-sign-out-alt icons-menu"></i>Sair</Link>
             </li>
           </ul>
         </nav>
