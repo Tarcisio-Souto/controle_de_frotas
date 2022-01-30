@@ -11,6 +11,7 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\FabricantesController;
 use App\Http\Controllers\ManutencoesController;
 use App\Http\Controllers\ServicosController;
+use App\Http\Controllers\TrocasOleoController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -98,3 +99,13 @@ Route::get('/abastecimento/visualizar/{id}', [AbastecimentosController::class, '
 Route::get('/abastecimento/editar/{id}', [AbastecimentosController::class, 'edit'])->name('abastecimento.editar');
 Route::post('/abastecimento/update/{id}', [AbastecimentosController::class, 'update'])->name('abastecimento.atualizar');
 Route::post('/abastecimento/deletar/{id}', [AbastecimentosController::class, 'destroy'])->name('abastecimento.deletar');
+
+/* Trocas de Óleo */
+
+Route::get('/trocas-oleo/cadastro', [TrocasOleoController::class, 'create'])->name('trocas-oleo.cadastro');
+Route::post('/trocas-oleo/registrar', [TrocasOleoController::class, 'store'])->name('trocas-oleo.registrar');
+Route::get('/trocas-oleo/lista', [TrocasOleoController::class, 'index'])->name('trocas-oleo.lista');
+Route::get('/troca-oleo/visualizar/{id}', [TrocasOleoController::class, 'show'])->name('troca-oleo.mostrar');
+Route::get('/troca-oleo/editar/{id}', [TrocasOleoController::class, 'edit'])->name('troca-oleo.editar');
+Route::post('/troca-oleo/update/{id}', [TrocasOleoController::class, 'update'])->name('troca-oleo.atualizar');
+Route::post('/troca-oleo/deletar/{id}', [TrocasOleoController::class, 'destroy'])->name('troca-oleo.deletar');

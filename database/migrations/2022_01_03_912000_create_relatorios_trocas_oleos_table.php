@@ -13,7 +13,7 @@ class CreateRelatoriosTrocasOleosTable extends Migration
      */
     public function up()
     {
-        Schema::create('relatorios__trocas__oleos', function (Blueprint $table) {
+        Schema::create('relatorios_trocas_oleos', function (Blueprint $table) {
             $table->id('id');
             $table->timestamps();
             $table->string('caminho_relatorio');
@@ -32,6 +32,6 @@ class CreateRelatoriosTrocasOleosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('relatorios__trocas__oleos');
+        Schema::dropIfExists('relatorios_trocas_oleos');
     }
 }

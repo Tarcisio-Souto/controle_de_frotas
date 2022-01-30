@@ -58,7 +58,7 @@
                 <li><Link href="/servicos/lista"><i class="fas fa-cogs icons-menu"></i>Serviços</Link></li>
                 <li><Link href="/manutencoes/lista"><i class="fas fa-tools icons-menu"></i>Manutenções</Link></li>
                 <li><Link href="/abastecimentos/lista"><i class="fas fa-gas-pump icons-menu"></i>Abastecimentos</Link></li>
-                <li><Link href="#trocas-oleo/lista"><i class="fas fa-oil-can icons-menu"></i>Trocas de Óleo</Link></li>
+                <li><Link href="/trocas-oleo/lista"><i class="fas fa-oil-can icons-menu"></i>Trocas de Óleo</Link></li>
                 
               </ul>
             </li>

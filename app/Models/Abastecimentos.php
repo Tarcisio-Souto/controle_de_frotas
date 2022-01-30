@@ -12,6 +12,15 @@ class Abastecimentos extends Model
 
     public static function listAllAbastecimentos() {
 
+        /*$trocas = DB::table('trocas_oleos as to')
+        ->join('veiculos as vc', '=', 'vc.id', 'to.fk_veiculo')
+        ->join('oficinas as of', '=', 'of.id', 'to.fk_oficina')
+        ->join('modelos as md', 'md.id', '=', 'vc.fk_modelo')
+        ->join('empresas as emp', 'emp.id', '=', 'vc.fk_empresa')
+        ->select('to.id as to_id', '*')
+        ->get();
+        */
+        
         $abastecimentos = DB::table('abastecimentos as ab')
         ->join('veiculos as vc', 'vc.id', '=', 'ab.fk_veiculo')
         ->join('postos as pt', 'pt.id', '=', 'ab.fk_posto')
@@ -20,6 +29,8 @@ class Abastecimentos extends Model
         ->select('ab.id as id_ab', '*',
         DB::raw('strftime("%d/%m/%Y", ab.data_abastecimento) as data_abastecimento'))
         ->get();
+        
+
 
         return $abastecimentos;
 

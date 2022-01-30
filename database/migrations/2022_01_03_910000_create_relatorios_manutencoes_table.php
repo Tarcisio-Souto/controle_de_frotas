@@ -13,7 +13,7 @@ class CreateRelatoriosManutencoesTable extends Migration
      */
     public function up()
     {
-        Schema::create('relatorios__manutencoes', function (Blueprint $table) {
+        Schema::create('relatorios_manutencoes', function (Blueprint $table) {
             $table->id('id');
             $table->timestamps();
             $table->string('caminho_relatorio');
@@ -31,6 +31,6 @@ class CreateRelatoriosManutencoesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('relatorios__manutencoes');
+        Schema::dropIfExists('relatorios_manutencoes');
     }
 }

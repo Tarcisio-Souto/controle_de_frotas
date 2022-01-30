@@ -13,7 +13,7 @@ class CreateTrocasOleosTable extends Migration
      */
     public function up()
     {
-        Schema::create('trocas__oleos', function (Blueprint $table) {
+        Schema::create('trocas_oleos', function (Blueprint $table) {
             
             $table->id('id');
             $table->timestamps();
@@ -22,6 +22,8 @@ class CreateTrocasOleosTable extends Migration
             $table->tinyInteger('filtro_combustivel');
             $table->integer('km_troca');
             $table->integer('km_prox_troca');
+            $table->float('custo_total');
+            $table->date('data_troca');
             $table->unsignedBigInteger('fk_oficina');
             $table->unsignedBigInteger('fk_veiculo');            
 
@@ -38,6 +40,6 @@ class CreateTrocasOleosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('trocas__oleos');
+        Schema::dropIfExists('trocas_oleos');
     }
 }

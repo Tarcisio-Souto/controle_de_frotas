@@ -13,7 +13,7 @@ class CreateRelatoriosAbastecimentosTable extends Migration
      */
     public function up()
     {
-        Schema::create('relatorios__abastecimentos', function (Blueprint $table) {
+        Schema::create('relatorios_abastecimentos', function (Blueprint $table) {
             $table->id('id');
             $table->timestamps();
             $table->string('caminho_relatorio');
