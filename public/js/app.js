@@ -4625,6 +4625,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     errors: Object
@@ -40916,12 +40924,15 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "row" }, [
-    _c("div", { staticClass: "col-md-3" }),
+    _c("div", { staticClass: "col-md-4" }),
     _vm._v(" "),
-    _c("div", { staticClass: "col-md-6" }, [
+    _c("div", { staticClass: "col-md-4 box-login" }, [
+      _vm._m(0),
+      _vm._v(" "),
       _c(
         "form",
         {
+          staticClass: "form-login",
           on: {
             submit: function ($event) {
               $event.preventDefault()
@@ -40984,17 +40995,42 @@ var render = function () {
           _vm._v(" "),
           _c(
             "button",
-            { staticClass: "btn btn-primary", attrs: { type: "submit" } },
+            {
+              staticClass: "btn btn-primary btnEntrar",
+              attrs: { type: "submit" },
+            },
             [_vm._v("Entrar")]
           ),
         ]
       ),
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "col-md-3" }),
+    _c("div", { staticClass: "col-md-4" }),
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-3" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-6", attrs: { align: "center" } }, [
+        _c("img", {
+          attrs: {
+            src: "http://vitoriahospitalar.com.br/2017/wp-content/uploads/2017/09/logo-vitoria-hospitalar-204.png",
+            alt: "VH Logo",
+          },
+        }),
+        _vm._v(" "),
+        _c("h4", [_vm._v("VH Veículos")]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-3" }),
+    ])
+  },
+]
 render._withStripped = true
 
 

@@ -17,9 +17,7 @@ class LoginController extends Controller
         {
             return Redirect::route('home');
         } else {
-
             return Inertia::render('Login.vue');
-
         }        
 
     }

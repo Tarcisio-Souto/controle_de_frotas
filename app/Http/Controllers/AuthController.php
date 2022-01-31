@@ -14,7 +14,7 @@ class AuthController extends Controller
 
         $user = User::where('cpf', $req->cpf)->where('senha', $req->senha)->first();       
 
-        if ($user) // se verdade existe um usuário com essas informações
+        if ($user) // se existir um usuário com essas informações
         {
             Auth::login($user); //efetuando a operação de autenticação
         }

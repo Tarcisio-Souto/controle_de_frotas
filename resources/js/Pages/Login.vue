@@ -1,8 +1,16 @@
 <template>
     <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
-            <form @submit.prevent="sendForm">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 box-login">
+            <div class="row">
+              <div class="col-md-3"></div>
+              <div class="col-md-6" align="center">
+                <img src="http://vitoriahospitalar.com.br/2017/wp-content/uploads/2017/09/logo-vitoria-hospitalar-204.png" alt="VH Logo">
+                <h4>VH Veículos</h4>
+              </div>
+              <div class="col-md-3"></div>
+            </div>            
+            <form @submit.prevent="sendForm" class="form-login">
                 <div class="form-group">
                     <label for="inputCpf">CPF</label>
                     <input type="text" class="form-control"  v-model="form.cpf">
@@ -11,10 +19,10 @@
                     <label for="inputPassword">Senha</label>
                     <input type="password" class="form-control" v-model="form.senha">
                 </div>
-                <button type="submit" class="btn btn-primary">Entrar</button>
+                <button type="submit" class="btn btn-primary btnEntrar">Entrar</button>
             </form>
         </div>
-        <div class="col-md-3"></div>
+        <div class="col-md-4"></div>
     </div>    
 </template>
 

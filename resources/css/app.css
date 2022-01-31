@@ -546,3 +546,43 @@ a[href*="#contact"]::before {
     top: 20px;
     margin-bottom: 45px;
 }
+
+.box-login {
+    position: relative;
+    top: 100px;
+    /*padding: 0 170px !important;*/
+    height: 450px;
+}
+
+.box-login h4 {
+    text-align: center;
+    position: relative;
+    top: 45px;
+}
+
+.form-login {
+    position: relative;
+    top: 80px;
+}
+
+
+/*
+.vh-logo-login {
+    position: relative;
+    top: 20px;
+    /*margin-left: 75px;
+    margin-bottom: 30px;
+}
+*/
+
+@media screen and (max-width: 700px) {
+    .box-login {
+        padding: 0 100px !important;
+    }
+}
+
+.btnEntrar {
+    position: relative;
+    top: 30px !important;
+    width: 100%;
+}
