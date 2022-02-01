@@ -4633,6 +4633,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     errors: Object
@@ -40927,7 +40937,48 @@ var render = function () {
     _c("div", { staticClass: "col-md-4" }),
     _vm._v(" "),
     _c("div", { staticClass: "col-md-4 box-login" }, [
-      _vm._m(0),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-3" }),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "col-md-6", attrs: { align: "center" } },
+          [
+            _c("img", {
+              attrs: {
+                src: "http://vitoriahospitalar.com.br/2017/wp-content/uploads/2017/09/logo-vitoria-hospitalar-204.png",
+                alt: "VH Logo",
+              },
+            }),
+            _vm._v(" "),
+            _c("h4", [_vm._v("VH Veículos")]),
+            _vm._v(" "),
+            _vm._l(_vm.errors, function (erro, login) {
+              return _c("div", { key: login, staticClass: "error-login" }, [
+                login == "login"
+                  ? _c("div", [
+                      erro != ""
+                        ? _c(
+                            "span",
+                            { staticClass: "errors-label-notification" },
+                            [
+                              _c("i", {
+                                staticClass: "fas fa-exclamation-circle",
+                              }),
+                              _vm._v(_vm._s(erro) + "\n                "),
+                            ]
+                          )
+                        : _vm._e(),
+                    ])
+                  : _vm._e(),
+              ])
+            }),
+          ],
+          2
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-3" }),
+      ]),
       _vm._v(" "),
       _c(
         "form",
@@ -41008,29 +41059,7 @@ var render = function () {
     _c("div", { staticClass: "col-md-4" }),
   ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-3" }),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-6", attrs: { align: "center" } }, [
-        _c("img", {
-          attrs: {
-            src: "http://vitoriahospitalar.com.br/2017/wp-content/uploads/2017/09/logo-vitoria-hospitalar-204.png",
-            alt: "VH Logo",
-          },
-        }),
-        _vm._v(" "),
-        _c("h4", [_vm._v("VH Veículos")]),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-3" }),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

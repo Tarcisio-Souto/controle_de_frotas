@@ -7,6 +7,16 @@
               <div class="col-md-6" align="center">
                 <img src="http://vitoriahospitalar.com.br/2017/wp-content/uploads/2017/09/logo-vitoria-hospitalar-204.png" alt="VH Logo">
                 <h4>VH Veículos</h4>
+
+                <div class="error-login" v-for="(erro, login) in errors" :key="login">
+                  <div v-if="login == 'login'">
+                    <span v-if="erro != ''" class="errors-label-notification">
+                      <i class="fas fa-exclamation-circle"></i>{{ erro }}
+                    </span>
+                  </div>
+                </div>
+
+
               </div>
               <div class="col-md-3"></div>
             </div>            

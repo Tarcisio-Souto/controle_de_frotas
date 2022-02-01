@@ -15,13 +15,15 @@ class AddRoot extends Migration
      */
     public function up()
     {        
-              
+        
+        $senha = 'supernes';
 
-        DB::table('users')->insert(
+        DB::table('users')->insert(            
+
             array(                
                 'nome' => 'Tarcisio dos Santos Souto',
                 'email' => 'tss.labsi@gmail.com',
-                'senha' => Hash::make('supernes'),
+                'senha' => Hash::make($senha),
                 'celular' => '27995901992',
                 'cpf' => '14014147703',
                 'dt_admissao' => '2021-09-13 08:00:00',
