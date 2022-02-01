@@ -12,6 +12,7 @@ use App\Http\Controllers\PostosController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\FabricantesController;
 use App\Http\Controllers\ManutencoesController;
+use App\Http\Controllers\MultasController;
 use App\Http\Controllers\ServicosController;
 use App\Http\Controllers\TrocasOleoController;
 use Illuminate\Support\Facades\Auth;
@@ -122,6 +123,16 @@ Route::get('/troca-oleo/visualizar/{id}', [TrocasOleoController::class, 'show'])
 Route::get('/troca-oleo/editar/{id}', [TrocasOleoController::class, 'edit'])->name('troca-oleo.editar')->middleware('auth');
 Route::post('/troca-oleo/update/{id}', [TrocasOleoController::class, 'update'])->name('troca-oleo.atualizar')->middleware('auth');
 Route::post('/troca-oleo/deletar/{id}', [TrocasOleoController::class, 'destroy'])->name('troca-oleo.deletar')->middleware('auth');
+
+/* Multas */
+
+Route::get('/multas/cadastro', [MultasController::class, 'create'])->name('multas.cadastro')->middleware('auth');
+Route::post('/multas/registrar', [MultasController::class, 'store'])->name('multas.registrar')->middleware('auth');
+Route::get('/multas/lista', [MultasController::class, 'index'])->name('multas.lista')->middleware('auth');
+Route::get('/multa/visualizar/{id}', [MultasController::class, 'show'])->name('multa.mostrar')->middleware('auth');
+Route::get('/multa/editar/{id}', [MultasController::class, 'edit'])->name('multa.editar')->middleware('auth');
+Route::post('/multa/update/{id}', [MultasController::class, 'update'])->name('multa.atualizar')->middleware('auth');
+Route::post('/multa/deletar/{id}', [MultasController::class, 'destroy'])->name('multa.deletar')->middleware('auth');
 
 
 //Auth::routes();
