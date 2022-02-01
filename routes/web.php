@@ -15,6 +15,7 @@ use App\Http\Controllers\ManutencoesController;
 use App\Http\Controllers\MultasController;
 use App\Http\Controllers\ServicosController;
 use App\Http\Controllers\TrocasOleoController;
+use App\Http\Controllers\VeiculosController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -133,6 +134,16 @@ Route::get('/multa/visualizar/{id}', [MultasController::class, 'show'])->name('m
 Route::get('/multa/editar/{id}', [MultasController::class, 'edit'])->name('multa.editar')->middleware('auth');
 Route::post('/multa/update/{id}', [MultasController::class, 'update'])->name('multa.atualizar')->middleware('auth');
 Route::post('/multa/deletar/{id}', [MultasController::class, 'destroy'])->name('multa.deletar')->middleware('auth');
+
+/* Veículos */
+
+Route::get('/veiculos/cadastro', [VeiculosController::class, 'create'])->name('veiculos.cadastro')->middleware('auth');
+Route::post('/veiculos/registrar', [VeiculosController::class, 'store'])->name('veiculos.registrar')->middleware('auth');
+Route::get('/veiculos/lista', [VeiculosController::class, 'index'])->name('veiculos.lista')->middleware('auth');
+Route::get('/veiculo/visualizar/{id}', [VeiculosController::class, 'show'])->name('veiculo.mostrar')->middleware('auth');
+Route::get('/veiculo/editar/{id}', [VeiculosController::class, 'edit'])->name('veiculo.editar')->middleware('auth');
+Route::post('/veiculo/update/{id}', [VeiculosController::class, 'update'])->name('veiculo.atualizar')->middleware('auth');
+Route::post('/veiculo/deletar/{id}', [VeiculosController::class, 'destroy'])->name('veiculo.deletar')->middleware('auth');
 
 
 //Auth::routes();

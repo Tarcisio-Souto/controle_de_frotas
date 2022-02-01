@@ -130,7 +130,6 @@ class MultasController extends Controller
         $multas = Multas::all();
         return Redirect::route('multas.lista', ['multas' => $multas])->with('success', 'Atualizações registradas com sucesso!');
 
-
     }
 
     /**
