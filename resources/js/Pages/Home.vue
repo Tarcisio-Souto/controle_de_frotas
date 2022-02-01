@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-md-12">
         <H1>Bem-vindo!</H1>
-        <p>Olá, {{ user[0].nome }}!</p>
+        <p>Olá, {{ user }}!</p>
       </div>
     </div>    
   </layout>
@@ -20,7 +20,7 @@
       Layout,
     },
     props: {
-      user: Array,
+      user: String,
     },
   }
 </script>

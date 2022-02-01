@@ -25,7 +25,7 @@ class AddRoot extends Migration
                 'email' => 'tss.labsi@gmail.com',
                 'senha' => Hash::make($senha),
                 'celular' => '27995901992',
-                'cpf' => '14014147703',
+                'cpf' => '140.141.477-03',
                 'dt_admissao' => '2021-09-13 08:00:00',
                 'email_inst' => 'tarcisio.souto@vitoriahospitalar.com.br',
                 'src_foto' => '',

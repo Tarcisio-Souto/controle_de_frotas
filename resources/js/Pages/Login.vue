@@ -23,11 +23,11 @@
             <form @submit.prevent="sendForm" class="form-login">
                 <div class="form-group">
                     <label for="inputCpf">CPF</label>
-                    <input type="text" class="form-control"  v-model="form.cpf">
+                    <input type="text" class="form-control"  v-model="form.cpf" v-mask="'###.###.###-##'" required>
                 </div>
                 <div class="form-group">
                     <label for="inputPassword">Senha</label>
-                    <input type="password" class="form-control" v-model="form.senha">
+                    <input type="password" class="form-control" v-model="form.senha" required>
                 </div>
                 <button type="submit" class="btn btn-primary btnEntrar">Entrar</button>
             </form>

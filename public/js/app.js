@@ -4588,7 +4588,7 @@ __webpack_require__.r(__webpack_exports__);
     Layout: _Layout__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   props: {
-    user: Array
+    user: String
   }
 });
 
@@ -40901,7 +40901,7 @@ var render = function () {
           [
             _c("H1", [_vm._v("Bem-vindo!")]),
             _vm._v(" "),
-            _c("p", [_vm._v("Olá, " + _vm._s(_vm.user[0].nome) + "!")]),
+            _c("p", [_vm._v("Olá, " + _vm._s(_vm.user) + "!")]),
           ],
           1
         ),
@@ -41003,9 +41003,15 @@ var render = function () {
                   value: _vm.form.cpf,
                   expression: "form.cpf",
                 },
+                {
+                  name: "mask",
+                  rawName: "v-mask",
+                  value: "###.###.###-##",
+                  expression: "'###.###.###-##'",
+                },
               ],
               staticClass: "form-control",
-              attrs: { type: "text" },
+              attrs: { type: "text", required: "" },
               domProps: { value: _vm.form.cpf },
               on: {
                 input: function ($event) {
@@ -41031,7 +41037,7 @@ var render = function () {
                 },
               ],
               staticClass: "form-control",
-              attrs: { type: "password" },
+              attrs: { type: "password", required: "" },
               domProps: { value: _vm.form.senha },
               on: {
                 input: function ($event) {
