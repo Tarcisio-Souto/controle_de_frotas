@@ -22,6 +22,19 @@ class Veiculos extends Model
 
     }
 
+    public static function showVeiculo($id) {
+
+        $veiculo = DB::table('veiculos as vc')
+        ->join('modelos as mod', 'mod.id', '=', 'vc.fk_modelo')
+        ->join('empresas as emp', 'emp.id', '=', 'vc.fk_empresa')
+        ->select('*', 'vc.id as vc_id')
+        ->where('vc_id', '=', $id)
+        ->get();
+
+        return $veiculo;
+
+    }
+
 
 
 

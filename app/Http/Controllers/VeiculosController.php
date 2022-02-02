@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Empresas;
+use App\Models\Modelos;
 use App\Models\Veiculos;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Inertia\Inertia;
 
 class VeiculosController extends Controller
 {
@@ -15,7 +19,7 @@ class VeiculosController extends Controller
     public function index()
     {
         $veiculos = Veiculos::listAllVeiculos();
-        
+        return Inertia::render('Veiculos/ListAllVeiculos.vue', ['veiculos' => $veiculos]);
     }
 
     /**
@@ -25,7 +29,9 @@ class VeiculosController extends Controller
      */
     public function create()
     {
-        //
+        $empresas = Empresas::all();
+        $modelos = Modelos::all();
+        return Inertia::render('Veiculos/AddVeiculo.vue', ['empresas' => $empresas, 'modelos' => $modelos]);
     }
 
     /**
@@ -36,7 +42,21 @@ class VeiculosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request->all());
+
+        $veiculo = new Veiculos();
+
+        $veiculo->fk_modelo = $request->modelo;
+        $veiculo->fk_empresa = $request->empresa;
+        $veiculo->placa = $request->placa;
+        $veiculo->quilometragem = $request->km;
+        $veiculo->tipo = $request->tipo;
+        $veiculo->ano = $request->ano;
+
+        $veiculo->save();
+
+        return Redirect::route('veiculos.cadastro')->with('success', 'Veiculo registrado com sucesso!');
+
     }
 
     /**
@@ -47,7 +67,11 @@ class VeiculosController extends Controller
      */
     public function show($id)
     {
-        //
+
+        $veiculo = Veiculos::showVeiculo($id);
+        //dd($veiculo);
+        return Inertia::render('Veiculos/ViewVeiculo.vue', ['veiculo' => $veiculo]);
+
     }
 
     /**
@@ -58,7 +82,14 @@ class VeiculosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $veiculo = Veiculos::find($id)->first();
+        $empresas = Empresas::all();
+        $modelos = Modelos::all();
+
+        return Inertia::render('Veiculos/EditVeiculo.vue', 
+        []);
+
+
     }
 
     /**

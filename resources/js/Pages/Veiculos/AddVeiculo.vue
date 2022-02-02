@@ -9,7 +9,7 @@
     <div class="row">
       <div class="col-md-4"></div>
       <div class="col-md-4" align="center">
-        <h4>Cadastrar Manutenção</h4>
+        <h4>Cadastrar Veículo</h4>
       </div>
       <div class="col-md-4"></div>
     </div>
@@ -23,7 +23,7 @@
 
           <div class="row">
             <div class="col-md-4">
-              <label for="inputVeiculo">Veículo (modelo / placa)</label>
+              <label for="inputModelo">Modelo</label>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
@@ -31,77 +31,65 @@
                   </div>
                 </div>
                 <select
-                  id="inputVeiculo"
+                  id="inputModelo"
                   class="form-control"
-                  v-model="form.veiculo"
-                  name="txtVeiculo"
+                  v-model="form.modelo"
+                  name="txtModelo"
                 >
                   <option selected>Selecione o veículo</option>
                   <option
-                    v-for="veiculo in veiculos"
-                    :key="veiculo.id"
-                    :value="veiculo.id"
+                    v-for="modelo in modelos"
+                    :key="modelo.id"
+                    :value="modelo.id"
                   >
-                    {{ veiculo.nome_modelo + ' / ' + veiculo.placa }}
+                    {{ modelo.nome_modelo }}
                   </option>
                 </select>
               </div>
             </div>
+
             <div class="col-md-4">
-              <label for="inputOficina">Oficina</label>
+              <label for="inputPlaca">Placa</label>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
-                    <i class="fas fa-briefcase"></i>
+                    <i class="fas fa-id-card"></i>
                   </div>
                 </div>
-                <select
-                  id="inputOficina"
+                <input
+                  type="text"
+                  id="inputPlaca"
                   class="form-control"
-                  v-model="form.oficina"
-                  name="txtOficina"
-                >
-                  <option>Selecione a oficina</option>
-                  <option
-                    v-for="oficina in oficinas"
-                    :key="oficina.id"
-                    :value="oficina.id"
-                  >
-                    {{ oficina.nome_oficina }}
-                  </option>
-                </select>
+                  v-model="form.placa"
+                  name="txtPlaca"
+                />
               </div>
             </div>
+
             <div class="col-md-4">
-              <label for="inputServico">Serviço</label>
+              <label for="inputAno">Ano</label>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
-                    <i class="fas fa-briefcase"></i>
+                    <i class="fas fa-id-card"></i>
                   </div>
                 </div>
-                <select
-                  id="inputServico"
+                <input
+                  type="text"
+                  id="inputAno"
                   class="form-control"
-                  v-model="form.servico"
-                  name="txtServico"
-                >
-                  <option>Selecione o Serviço</option>
-                  <option
-                    v-for="servico in servicos"
-                    :key="servico.id"
-                    :value="servico.id"
-                  >
-                    {{ servico.descricao_servicos }}
-                  </option>
-                </select>
+                  v-model="form.ano"
+                  name="txtPlaca"
+                  v-mask="['####']"
+                />
               </div>
-            </div>
+            </div>            
           </div>
           <br>
+
           <div class="row">
             <div class="col-md-4">
-              <label for="inputDataManutencao">Data da Manutenção</label>
+              <label for="inputTipo">Tipo</label>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
@@ -111,47 +99,70 @@
                 <input
                   key=""
                   type="text"
-                  id="inputDataManutencao"
+                  id="inputTipo"
                   class="form-control"
-                  v-model="form.data_manutencao"
-                  name="txtDataManutencao"
-                  v-mask="'##/##/####'"
+                  v-model="form.tipo"
+                  name="txtTipo"
+                  placeholder="Ex.: leve, médio..."
                 />
               </div>
             </div>
+
             <div class="col-md-4">
-              <label for="inputCusto">Custo</label>
+              <label for="inputKm">Quilometragem</label>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
-                    <i class="fas fa-id-card"></i>
+                    <i class="fas fa-calendar-alt"></i>
                   </div>
                 </div>
                 <input
+                  key=""
                   type="text"
-                  id="inputCusto"
+                  id="inputKm"
                   class="form-control"
-                  v-model="form.custo"
-                  name="txtCusto"
-                  v-mask="['R$ ##.##', 'R$ ###.###', 'R$ #.###,##', 'R$ ##.###,##']"
+                  v-model="form.km"
+                  name="txtKm"
+                  v-mask="'######'"
                 />
               </div>
             </div>
-            <div class="col-md-4"></div>          
-          </div>
 
-          <br>
-          <div class="row">
-            <div class="col-md-8">
-               <label for="exampleFormControlTextarea1">Observações</label><br>
-              <textarea class="form-control" id="exampleFormControlTextarea1" v-model="form.observacao" rows="3"></textarea>
-            </div>
-            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <label for="inputEmpresa">Empresa</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <i class="fas fa-building"></i>
+                  </div>
+                </div>
+                <select
+                  id="inputEmpresa"
+                  class="form-control"
+                  v-model="form.empresa"
+                  name="txtEmpresa"
+                >
+                  <option selected>Selecione a empresa</option>
+                  <option
+                    v-for="empresa in empresas"
+                    :key="empresa.id"
+                    :value="empresa.id"
+                  >
+                  
+                    {{ empresa.nome }}
+
+                  </option>
+                </select>
+              </div>
+            </div>        
           </div>
+          <br>
           
           <br /><br />
           <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-4"></div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
               <button type="submit" class="btn btn-success btnCadastrar">
                 Cadastrar
               </button>
@@ -179,19 +190,18 @@ export default {
   },
   props: {
     errors: Object,
-    servicos: Array,
-    oficinas: Array,
-    veiculos: Array
+    modelos: Array,
+    empresas: Array,
   },
   data: () => {
     return {
       form: {
-        veiculo: null,
-        oficina: null,
-        servico: null,
-        data_manutencao: null,
-        custo: null,
-        observacao: null,
+        modelo: null,
+        empresa: null,
+        placa: null,
+        ano: null,
+        tipo: null,
+        km: null,        
         
         preserveState: true,
       },
@@ -199,7 +209,7 @@ export default {
   },
   methods: {
     sendForm() {
-      this.$inertia.post("/manutencoes/registrar", this.form, {
+      this.$inertia.post("/veiculos/registrar", this.form, {
         forceFormData: true,
         preserveScroll: false,
         _token: this.$page.props.csrf_token,
@@ -213,17 +223,14 @@ export default {
               "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
             message:
               "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" +
-              "<span style='font-weight:bold; position: relative; top: 5px;'>Manutenção registrada com sucesso!</span>",
+              "<span style='font-weight:bold; position: relative; top: 5px;'>Veículo registrado com sucesso!</span>",
           });
-
-          
-          $("#inputVeiculo").val("");
-          $("#inputOficina").val("");
-          $("#inputServico").val("");
-          $("#inputDataManutencao").val("");
-          $("#inputCusto").val("");
-          $("#exampleFormControlTextarea1").val("");
-                   
+                    
+          $("#inputPlaca").val("");
+          $("#inputAno").val("");
+          $("#inputTipo").val("");
+          $("#inputKm").val("");
+          $("option:selected").prop("selected", false);           
           
         },
       });

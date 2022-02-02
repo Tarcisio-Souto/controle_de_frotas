@@ -14,7 +14,7 @@
             <th>Modelo</th>
             <th>Placa</th>
             <th>Empresa</th>
-            <th>Quilometragem</th>            
+            <th>Quilometragem</th>
             <th>Ações</th>
           </tr>
         </thead>
