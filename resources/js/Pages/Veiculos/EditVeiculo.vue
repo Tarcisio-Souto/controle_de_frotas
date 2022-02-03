@@ -9,7 +9,7 @@
     <div class="row">
       <div class="col-md-4"></div>
       <div class="col-md-4" align="center">
-        <h4>Cadastro de Manutenção</h4>
+        <h4>Alterar Veículo</h4>
       </div>
       <div class="col-md-4"></div>
     </div>
@@ -21,80 +21,73 @@
         <form
           @submit.prevent="sendForm"
           enctype="multipart/form-data"
-        >
-          <input type="hidden" v-model="manutencao.id_man" />          
+        >        
           <br /><br />
           <h4><span style="font-weight: bold">Registro</span></h4><br>
           <div class="row">
-
             <div class="col-md-4">
-              <label for="inputVeiculo">Veículo (modelo / placa)</label>
+              <label for="inputModelo">Modelo</label>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
-                    <i class="fas fa-briefcase"></i>
+                    <i class="fas fa-building"></i>
                   </div>
                 </div>
-                <select id="inputVeiculo" v-model="form.veiculo" class="form-control" name="txtVeiculo">
-                  <option selected :value="form.veiculo" style="background-color:gainsboro">{{ form.veiculo }}</option>
+                <select id="inputVeiculo" v-model="form.modelo" class="form-control" name="txtVeiculo">
+                  <option selected :value="form.modelo" style="background-color:gainsboro">{{ form.modelo }}</option>
                   <option
-                    v-for="veiculo in veiculos"
-                    :key="veiculo.id"
-                    :value="veiculo.nome_modelo + ' / ' + veiculo.placa"
+                    v-for="modelo in modelos"
+                    :key="modelo.id"
+                    :value="modelo.nome_modelo"
                   >
-                    {{ veiculo.nome_modelo + ' / ' + veiculo.placa }}
+                    {{ modelo.nome_modelo }}
                   </option>
                 </select>
               </div>
             </div>
 
             <div class="col-md-4">
-              <label for="inputOficina">Oficina</label>
+              <label for="inputPlaca">Placa</label>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
-                    <i class="fas fa-briefcase"></i>
+                    <i class="fas fa-id-card"></i>
                   </div>
                 </div>
-                <select id="inputOficina" v-model="form.oficina" class="form-control" name="txtOficina">
-                  <option selected :value="form.oficina" style="background-color:gainsboro">{{ form.oficina }}</option>
-                  <option
-                    v-for="oficina in oficinas"
-                    :key="oficina.id"
-                    :value="oficina.nome_oficina"
-                  >
-                    {{ oficina.nome_oficina }}
-                  </option>
-                </select>
+                <input
+                  type="text"
+                  id="inputPlaca"
+                  class="form-control"
+                  v-model="form.placa"
+                  name="txtPlaca"
+                />
               </div>
             </div>
 
             <div class="col-md-4">
-              <label for="inputServico">Serviço</label>
+              <label for="inputAno">Ano</label>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
-                    <i class="fas fa-briefcase"></i>
+                    <i class="fas fa-id-card"></i>
                   </div>
                 </div>
-                <select id="inputServico" v-model="form.servico" class="form-control" name="txtServico">
-                  <option selected :value="form.servico" style="background-color:gainsboro">{{ form.servico }}</option>
-                  <option
-                    v-for="servico in servicos"
-                    :key="servico.id"
-                    :value="servico.descricao_servicos"
-                  >
-                    {{ servico.descricao_servicos }}
-                  </option>
-                </select>
+                <input
+                  type="text"
+                  id="inputAno"
+                  class="form-control"
+                  v-model="form.ano"
+                  name="txtPlaca"
+                  v-mask="['####']"
+                />
               </div>
             </div>            
           </div>
-          <br />
+          <br>
 
           <div class="row">
             <div class="col-md-4">
-              <label for="inputDataManutencao">Data da Manutenção</label>
+              <label for="inputTipo">Tipo</label>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
@@ -104,50 +97,67 @@
                 <input
                   key=""
                   type="text"
-                  id="inputDataManutencao"
+                  id="inputTipo"
                   class="form-control"
-                  v-model="form.data_manutencao"
-                  name="txtDataManutencao"
-                  v-mask="'##/##/####'"
+                  v-model="form.tipo"
+                  name="txtTipo"
+                  placeholder="Ex.: leve, médio..."
                 />
               </div>
             </div>
+
             <div class="col-md-4">
-              <label for="inputCusto">Custo</label>
+              <label for="inputKm">Quilometragem</label>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
-                    <i class="fas fa-id-card"></i>
+                    <i class="fas fa-calendar-alt"></i>
                   </div>
                 </div>
                 <input
+                  key=""
                   type="text"
-                  id="inputCusto"
+                  id="inputKm"
                   class="form-control"
-                  v-model="form.custo"
-                  name="txtCusto"
-                  v-mask="['R$ ##.##', 'R$ ###.###', 'R$ #.###,##', 'R$ ##.###,##']"
+                  v-model="form.km"
+                  name="txtKm"
+                  v-mask="'######'"
                 />
               </div>
             </div>
-            <div class="col-md-4"></div>          
-          </div>
 
-          <br>
-          <div class="row">
-            <div class="col-md-8">
-               <label for="exampleFormControlTextarea1">Observações</label><br>
-              <textarea class="form-control" id="exampleFormControlTextarea1" v-model="form.observacao" rows="3"></textarea>
-            </div>
-            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <label for="inputEmpresa">Empresa</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <i class="fas fa-building"></i>
+                  </div>
+                </div>
+                <select id="inputEmpresa" v-model="form.empresa" class="form-control" name="txtEmpresa">
+                  <option selected :value="form.empresa" style="background-color:gainsboro">{{ form.empresa }}</option>
+                  <option
+                    v-for="empresa in empresas"
+                    :key="empresa.id"
+                    :value="empresa.nome"
+                  >
+                  
+                    {{ empresa.nome }}
+
+                  </option>
+                </select>
+              </div>
+            </div>        
           </div>
+          <br>
           
           <br /><br />
-
           <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-4"></div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
               <button type="submit" class="btn btn-success btnCadastrar">
-                Alterar
+                Cadastrar
               </button>
             </div>
           </div>
@@ -176,22 +186,21 @@ export default {
   },
   props: {
     errors: Object,
-    servicos: Array,
-    oficinas: Array,
-    veiculos: Array,
-    manutencao: Array
+    modelos: Array,
+    empresas: Array,
+    veiculo: Array
   },
 
   data: () => {
     return {
       form: {
         id: null,
-        veiculo: null,
-        oficina: null,
-        servico: null,
-        data_manutencao: null,
-        custo: null,
-        observacao: null,
+        modelo: null,
+        empresa: null,
+        placa: null,
+        ano: null,
+        tipo: null,
+        km: null,  
 
         preserveState: true,
       },
@@ -200,22 +209,20 @@ export default {
 
   created() {
     
-    this.form.id = this.$page.props.manutencao[0].id_man,
+    this.form.id = this.$page.props.veiculo[0].vc_id,
+    this.form.modelo = this.$page.props.veiculo[0].nome_modelo,
 
-    this.form.veiculo = this.$page.props.manutencao[0].nome_modelo 
-    + ' / ' + this.$page.props.manutencao[0].placa,
-
-    this.form.oficina = this.$page.props.manutencao[0].nome_oficina,
-    this.form.servico = this.$page.props.manutencao[0].descricao_servicos,
-    this.form.data_manutencao = this.$page.props.manutencao[0].data_manutencao,
-    this.form.custo = this.$page.props.manutencao[0].custo_total,
-    this.form.observacao = this.$page.props.manutencao[0].observacao    
+    this.form.empresa = this.$page.props.veiculo[0].nome,
+    this.form.placa = this.$page.props.veiculo[0].placa,
+    this.form.ano = this.$page.props.veiculo[0].ano,
+    this.form.tipo = this.$page.props.veiculo[0].tipo,
+    this.form.km = this.$page.props.veiculo[0].quilometragem    
 
   },
 
   methods: {
     sendForm() {
-      this.$inertia.post("/manutencao/update/"+this.form.id,
+      this.$inertia.post("/veiculo/update/"+this.form.id,
         this.form,
         {
           forceFormData: true,

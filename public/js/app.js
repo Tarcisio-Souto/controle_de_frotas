@@ -11088,6 +11088,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -11098,31 +11108,30 @@ __webpack_require__.r(__webpack_exports__);
   },
   props: {
     errors: Object,
-    servicos: Array,
-    oficinas: Array,
-    veiculos: Array,
-    manutencao: Array
+    modelos: Array,
+    empresas: Array,
+    veiculo: Array
   },
   data: function data() {
     return {
       form: {
         id: null,
-        veiculo: null,
-        oficina: null,
-        servico: null,
-        data_manutencao: null,
-        custo: null,
-        observacao: null,
+        modelo: null,
+        empresa: null,
+        placa: null,
+        ano: null,
+        tipo: null,
+        km: null,
         preserveState: true
       }
     };
   },
   created: function created() {
-    this.form.id = this.$page.props.manutencao[0].id_man, this.form.veiculo = this.$page.props.manutencao[0].nome_modelo + ' / ' + this.$page.props.manutencao[0].placa, this.form.oficina = this.$page.props.manutencao[0].nome_oficina, this.form.servico = this.$page.props.manutencao[0].descricao_servicos, this.form.data_manutencao = this.$page.props.manutencao[0].data_manutencao, this.form.custo = this.$page.props.manutencao[0].custo_total, this.form.observacao = this.$page.props.manutencao[0].observacao;
+    this.form.id = this.$page.props.veiculo[0].vc_id, this.form.modelo = this.$page.props.veiculo[0].nome_modelo, this.form.empresa = this.$page.props.veiculo[0].nome, this.form.placa = this.$page.props.veiculo[0].placa, this.form.ano = this.$page.props.veiculo[0].ano, this.form.tipo = this.$page.props.veiculo[0].tipo, this.form.km = this.$page.props.veiculo[0].quilometragem;
   },
   methods: {
     sendForm: function sendForm() {
-      this.$inertia.post("/manutencao/update/" + this.form.id, this.form, {
+      this.$inertia.post("/veiculo/update/" + this.form.id, this.form, {
         forceFormData: true,
         preserveScroll: false,
         _token: this.$page.props.csrf_token,
@@ -53501,7 +53510,7 @@ var render = function () {
       _c("div", { staticClass: "col-md-4" }),
       _vm._v(" "),
       _c("div", { staticClass: "col-md-4", attrs: { align: "center" } }, [
-        _c("h4", [_vm._v("Cadastro de Manutenção")]),
+        _c("h4", [_vm._v("Alterar Veículo")]),
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "col-md-4" }),
@@ -53525,27 +53534,6 @@ var render = function () {
             },
           },
           [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.manutencao.id_man,
-                  expression: "manutencao.id_man",
-                },
-              ],
-              attrs: { type: "hidden" },
-              domProps: { value: _vm.manutencao.id_man },
-              on: {
-                input: function ($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.manutencao, "id_man", $event.target.value)
-                },
-              },
-            }),
-            _vm._v(" "),
             _c("br"),
             _c("br"),
             _vm._v(" "),
@@ -53558,14 +53546,14 @@ var render = function () {
             _vm._v(" "),
             _c("div", { staticClass: "row" }, [
               _c("div", { staticClass: "col-md-4" }, [
-                _c("label", { attrs: { for: "inputVeiculo" } }, [
-                  _vm._v("Veículo (modelo / placa)"),
+                _c("label", { attrs: { for: "inputModelo" } }, [
+                  _vm._v("Modelo"),
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "input-group" }, [
                   _c("div", { staticClass: "input-group-prepend" }, [
                     _c("div", { staticClass: "input-group-text" }, [
-                      _c("i", { staticClass: "fas fa-briefcase" }),
+                      _c("i", { staticClass: "fas fa-building" }),
                     ]),
                   ]),
                   _vm._v(" "),
@@ -53576,8 +53564,8 @@ var render = function () {
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.form.veiculo,
-                          expression: "form.veiculo",
+                          value: _vm.form.modelo,
+                          expression: "form.modelo",
                         },
                       ],
                       staticClass: "form-control",
@@ -53594,7 +53582,7 @@ var render = function () {
                             })
                           _vm.$set(
                             _vm.form,
-                            "veiculo",
+                            "modelo",
                             $event.target.multiple
                               ? $$selectedVal
                               : $$selectedVal[0]
@@ -53608,27 +53596,22 @@ var render = function () {
                         {
                           staticStyle: { "background-color": "gainsboro" },
                           attrs: { selected: "" },
-                          domProps: { value: _vm.form.veiculo },
+                          domProps: { value: _vm.form.modelo },
                         },
-                        [_vm._v(_vm._s(_vm.form.veiculo))]
+                        [_vm._v(_vm._s(_vm.form.modelo))]
                       ),
                       _vm._v(" "),
-                      _vm._l(_vm.veiculos, function (veiculo) {
+                      _vm._l(_vm.modelos, function (modelo) {
                         return _c(
                           "option",
                           {
-                            key: veiculo.id,
-                            domProps: {
-                              value:
-                                veiculo.nome_modelo + " / " + veiculo.placa,
-                            },
+                            key: modelo.id,
+                            domProps: { value: modelo.nome_modelo },
                           },
                           [
                             _vm._v(
                               "\n                  " +
-                                _vm._s(
-                                  veiculo.nome_modelo + " / " + veiculo.placa
-                                ) +
+                                _vm._s(modelo.nome_modelo) +
                                 "\n                "
                             ),
                           ]
@@ -53641,219 +53624,8 @@ var render = function () {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "col-md-4" }, [
-                _c("label", { attrs: { for: "inputOficina" } }, [
-                  _vm._v("Oficina"),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "input-group" }, [
-                  _c("div", { staticClass: "input-group-prepend" }, [
-                    _c("div", { staticClass: "input-group-text" }, [
-                      _c("i", { staticClass: "fas fa-briefcase" }),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "select",
-                    {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.form.oficina,
-                          expression: "form.oficina",
-                        },
-                      ],
-                      staticClass: "form-control",
-                      attrs: { id: "inputOficina", name: "txtOficina" },
-                      on: {
-                        change: function ($event) {
-                          var $$selectedVal = Array.prototype.filter
-                            .call($event.target.options, function (o) {
-                              return o.selected
-                            })
-                            .map(function (o) {
-                              var val = "_value" in o ? o._value : o.value
-                              return val
-                            })
-                          _vm.$set(
-                            _vm.form,
-                            "oficina",
-                            $event.target.multiple
-                              ? $$selectedVal
-                              : $$selectedVal[0]
-                          )
-                        },
-                      },
-                    },
-                    [
-                      _c(
-                        "option",
-                        {
-                          staticStyle: { "background-color": "gainsboro" },
-                          attrs: { selected: "" },
-                          domProps: { value: _vm.form.oficina },
-                        },
-                        [_vm._v(_vm._s(_vm.form.oficina))]
-                      ),
-                      _vm._v(" "),
-                      _vm._l(_vm.oficinas, function (oficina) {
-                        return _c(
-                          "option",
-                          {
-                            key: oficina.id,
-                            domProps: { value: oficina.nome_oficina },
-                          },
-                          [
-                            _vm._v(
-                              "\n                  " +
-                                _vm._s(oficina.nome_oficina) +
-                                "\n                "
-                            ),
-                          ]
-                        )
-                      }),
-                    ],
-                    2
-                  ),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-4" }, [
-                _c("label", { attrs: { for: "inputServico" } }, [
-                  _vm._v("Serviço"),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "input-group" }, [
-                  _c("div", { staticClass: "input-group-prepend" }, [
-                    _c("div", { staticClass: "input-group-text" }, [
-                      _c("i", { staticClass: "fas fa-briefcase" }),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "select",
-                    {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.form.servico,
-                          expression: "form.servico",
-                        },
-                      ],
-                      staticClass: "form-control",
-                      attrs: { id: "inputServico", name: "txtServico" },
-                      on: {
-                        change: function ($event) {
-                          var $$selectedVal = Array.prototype.filter
-                            .call($event.target.options, function (o) {
-                              return o.selected
-                            })
-                            .map(function (o) {
-                              var val = "_value" in o ? o._value : o.value
-                              return val
-                            })
-                          _vm.$set(
-                            _vm.form,
-                            "servico",
-                            $event.target.multiple
-                              ? $$selectedVal
-                              : $$selectedVal[0]
-                          )
-                        },
-                      },
-                    },
-                    [
-                      _c(
-                        "option",
-                        {
-                          staticStyle: { "background-color": "gainsboro" },
-                          attrs: { selected: "" },
-                          domProps: { value: _vm.form.servico },
-                        },
-                        [_vm._v(_vm._s(_vm.form.servico))]
-                      ),
-                      _vm._v(" "),
-                      _vm._l(_vm.servicos, function (servico) {
-                        return _c(
-                          "option",
-                          {
-                            key: servico.id,
-                            domProps: { value: servico.descricao_servicos },
-                          },
-                          [
-                            _vm._v(
-                              "\n                  " +
-                                _vm._s(servico.descricao_servicos) +
-                                "\n                "
-                            ),
-                          ]
-                        )
-                      }),
-                    ],
-                    2
-                  ),
-                ]),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("br"),
-            _vm._v(" "),
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-md-4" }, [
-                _c("label", { attrs: { for: "inputDataManutencao" } }, [
-                  _vm._v("Data da Manutenção"),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "input-group" }, [
-                  _c("div", { staticClass: "input-group-prepend" }, [
-                    _c("div", { staticClass: "input-group-text" }, [
-                      _c("i", { staticClass: "fas fa-calendar-alt" }),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.form.data_manutencao,
-                        expression: "form.data_manutencao",
-                      },
-                      {
-                        name: "mask",
-                        rawName: "v-mask",
-                        value: "##/##/####",
-                        expression: "'##/##/####'",
-                      },
-                    ],
-                    key: "",
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "text",
-                      id: "inputDataManutencao",
-                      name: "txtDataManutencao",
-                    },
-                    domProps: { value: _vm.form.data_manutencao },
-                    on: {
-                      input: function ($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.form,
-                          "data_manutencao",
-                          $event.target.value
-                        )
-                      },
-                    },
-                  }),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-4" }, [
-                _c("label", { attrs: { for: "inputCusto" } }, [
-                  _vm._v("Custo"),
+                _c("label", { attrs: { for: "inputPlaca" } }, [
+                  _vm._v("Placa"),
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "input-group" }, [
@@ -53868,87 +53640,249 @@ var render = function () {
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.form.custo,
-                        expression: "form.custo",
-                      },
-                      {
-                        name: "mask",
-                        rawName: "v-mask",
-                        value: [
-                          "R$ ##.##",
-                          "R$ ###.###",
-                          "R$ #.###,##",
-                          "R$ ##.###,##",
-                        ],
-                        expression:
-                          "['R$ ##.##', 'R$ ###.###', 'R$ #.###,##', 'R$ ##.###,##']",
+                        value: _vm.form.placa,
+                        expression: "form.placa",
                       },
                     ],
                     staticClass: "form-control",
-                    attrs: { type: "text", id: "inputCusto", name: "txtCusto" },
-                    domProps: { value: _vm.form.custo },
+                    attrs: { type: "text", id: "inputPlaca", name: "txtPlaca" },
+                    domProps: { value: _vm.form.placa },
                     on: {
                       input: function ($event) {
                         if ($event.target.composing) {
                           return
                         }
-                        _vm.$set(_vm.form, "custo", $event.target.value)
+                        _vm.$set(_vm.form, "placa", $event.target.value)
                       },
                     },
                   }),
                 ]),
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "col-md-4" }),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("label", { attrs: { for: "inputAno" } }, [_vm._v("Ano")]),
+                _vm._v(" "),
+                _c("div", { staticClass: "input-group" }, [
+                  _c("div", { staticClass: "input-group-prepend" }, [
+                    _c("div", { staticClass: "input-group-text" }, [
+                      _c("i", { staticClass: "fas fa-id-card" }),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.ano,
+                        expression: "form.ano",
+                      },
+                      {
+                        name: "mask",
+                        rawName: "v-mask",
+                        value: ["####"],
+                        expression: "['####']",
+                      },
+                    ],
+                    staticClass: "form-control",
+                    attrs: { type: "text", id: "inputAno", name: "txtPlaca" },
+                    domProps: { value: _vm.form.ano },
+                    on: {
+                      input: function ($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.form, "ano", $event.target.value)
+                      },
+                    },
+                  }),
+                ]),
+              ]),
             ]),
             _vm._v(" "),
             _c("br"),
             _vm._v(" "),
             _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-md-8" }, [
-                _c("label", { attrs: { for: "exampleFormControlTextarea1" } }, [
-                  _vm._v("Observações"),
-                ]),
-                _c("br"),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("label", { attrs: { for: "inputTipo" } }, [_vm._v("Tipo")]),
                 _vm._v(" "),
-                _c("textarea", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.form.observacao,
-                      expression: "form.observacao",
+                _c("div", { staticClass: "input-group" }, [
+                  _c("div", { staticClass: "input-group-prepend" }, [
+                    _c("div", { staticClass: "input-group-text" }, [
+                      _c("i", { staticClass: "fas fa-calendar-alt" }),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.tipo,
+                        expression: "form.tipo",
+                      },
+                    ],
+                    key: "",
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      id: "inputTipo",
+                      name: "txtTipo",
+                      placeholder: "Ex.: leve, médio...",
                     },
-                  ],
-                  staticClass: "form-control",
-                  attrs: { id: "exampleFormControlTextarea1", rows: "3" },
-                  domProps: { value: _vm.form.observacao },
-                  on: {
-                    input: function ($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.form, "observacao", $event.target.value)
+                    domProps: { value: _vm.form.tipo },
+                    on: {
+                      input: function ($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.form, "tipo", $event.target.value)
+                      },
                     },
-                  },
-                }),
+                  }),
+                ]),
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "col-md-4" }),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("label", { attrs: { for: "inputKm" } }, [
+                  _vm._v("Quilometragem"),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "input-group" }, [
+                  _c("div", { staticClass: "input-group-prepend" }, [
+                    _c("div", { staticClass: "input-group-text" }, [
+                      _c("i", { staticClass: "fas fa-calendar-alt" }),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.km,
+                        expression: "form.km",
+                      },
+                      {
+                        name: "mask",
+                        rawName: "v-mask",
+                        value: "######",
+                        expression: "'######'",
+                      },
+                    ],
+                    key: "",
+                    staticClass: "form-control",
+                    attrs: { type: "text", id: "inputKm", name: "txtKm" },
+                    domProps: { value: _vm.form.km },
+                    on: {
+                      input: function ($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.form, "km", $event.target.value)
+                      },
+                    },
+                  }),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("label", { attrs: { for: "inputEmpresa" } }, [
+                  _vm._v("Empresa"),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "input-group" }, [
+                  _c("div", { staticClass: "input-group-prepend" }, [
+                    _c("div", { staticClass: "input-group-text" }, [
+                      _c("i", { staticClass: "fas fa-building" }),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "select",
+                    {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.empresa,
+                          expression: "form.empresa",
+                        },
+                      ],
+                      staticClass: "form-control",
+                      attrs: { id: "inputEmpresa", name: "txtEmpresa" },
+                      on: {
+                        change: function ($event) {
+                          var $$selectedVal = Array.prototype.filter
+                            .call($event.target.options, function (o) {
+                              return o.selected
+                            })
+                            .map(function (o) {
+                              var val = "_value" in o ? o._value : o.value
+                              return val
+                            })
+                          _vm.$set(
+                            _vm.form,
+                            "empresa",
+                            $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
+                          )
+                        },
+                      },
+                    },
+                    [
+                      _c(
+                        "option",
+                        {
+                          staticStyle: { "background-color": "gainsboro" },
+                          attrs: { selected: "" },
+                          domProps: { value: _vm.form.empresa },
+                        },
+                        [_vm._v(_vm._s(_vm.form.empresa))]
+                      ),
+                      _vm._v(" "),
+                      _vm._l(_vm.empresas, function (empresa) {
+                        return _c(
+                          "option",
+                          {
+                            key: empresa.id,
+                            domProps: { value: empresa.nome },
+                          },
+                          [
+                            _vm._v(
+                              "\n                \n                  " +
+                                _vm._s(empresa.nome) +
+                                "\n\n                "
+                            ),
+                          ]
+                        )
+                      }),
+                    ],
+                    2
+                  ),
+                ]),
+              ]),
             ]),
+            _vm._v(" "),
+            _c("br"),
             _vm._v(" "),
             _c("br"),
             _c("br"),
             _vm._v(" "),
             _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-md-12" }, [
+              _c("div", { staticClass: "col-md-4" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }, [
                 _c(
                   "button",
                   {
                     staticClass: "btn btn-success btnCadastrar",
                     attrs: { type: "submit" },
                   },
-                  [_vm._v("\n              Alterar\n            ")]
+                  [_vm._v("\n              Cadastrar\n            ")]
                 ),
               ]),
             ]),

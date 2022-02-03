@@ -6,6 +6,7 @@ use App\Models\Empresas;
 use App\Models\Modelos;
 use App\Models\Veiculos;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 
@@ -69,7 +70,6 @@ class VeiculosController extends Controller
     {
 
         $veiculo = Veiculos::showVeiculo($id);
-        //dd($veiculo);
         return Inertia::render('Veiculos/ViewVeiculo.vue', ['veiculo' => $veiculo]);
 
     }
@@ -82,12 +82,12 @@ class VeiculosController extends Controller
      */
     public function edit($id)
     {
-        $veiculo = Veiculos::find($id)->first();
+        $veiculo = Veiculos::showVeiculo($id);
         $empresas = Empresas::all();
         $modelos = Modelos::all();
 
         return Inertia::render('Veiculos/EditVeiculo.vue', 
-        []);
+        ['veiculo' => $veiculo, 'empresas' => $empresas, 'modelos' => $modelos]);
 
 
     }
@@ -99,9 +99,27 @@ class VeiculosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        //dd($request->all());
+
+        $veiculo = Veiculos::find($request->id)->first();
+        $veiculo->placa = $request->placa;
+        $veiculo->quilometragem = $request->km;
+        $veiculo->ano = $request->ano;
+
+        $empresa = Empresas::where('nome', '=', $request->empresa)->first();
+        $veiculo->fk_empresa = $empresa->id;
+
+        $modelo = Modelos::where('nome_modelo', '=', $request->modelo)->first();
+        $veiculo->fk_modelo = $modelo->id;
+
+        $veiculo->save();
+
+        $veiculos = Veiculos::listAllVeiculos();
+        return Redirect::route('veiculos.lista', ['veiculos' => $veiculos])->with('success', 'Atualizações registradas com sucesso!');
+
+
     }
 
     /**
@@ -112,6 +130,8 @@ class VeiculosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('veiculos')->delete($id);
+        $veiculos = Veiculos::listAllVeiculos();
+        return Redirect::route('veiculos.lista', ['veiculos' => $veiculos]);
     }
 }
