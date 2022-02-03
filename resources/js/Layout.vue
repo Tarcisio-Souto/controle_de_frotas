@@ -49,7 +49,7 @@
               <a href="" class="dropdown-toggle" data-toggle="dropdown"
                 ><i class="fas fa-car icons-menu"></i>Veículos</a
               >
-              <ul class="dropdown-menu animated fadeInLeft" role="menu">
+              <ul class="dropdown-menu animated fadeInLeft menuVeiculos" role="menu">
                 <!--<div class="dropdown-header">Ferramentas</div>-->
                 <li><Link href="#veiculos/cadastro"><i class="fas fa-plus-circle icons-menu"></i>Cadastrar</Link></li>
                 <li><Link href="/veiculos/lista"><i class="fas fa-search icons-menu"></i>Pesquisar</Link></li>

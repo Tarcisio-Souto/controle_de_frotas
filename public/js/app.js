@@ -2765,6 +2765,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 
 
@@ -5219,6 +5222,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 
 
@@ -5879,6 +5885,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layout_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../Layout.vue */ "./resources/js/Layout.vue");
 /* harmony import */ var _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-vue */ "./node_modules/@inertiajs/inertia-vue/dist/index.js");
 /* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+//
+//
+//
 //
 //
 //
@@ -8404,6 +8413,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layout_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../Layout.vue */ "./resources/js/Layout.vue");
 /* harmony import */ var _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-vue */ "./node_modules/@inertiajs/inertia-vue/dist/index.js");
 /* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+//
+//
+//
 //
 //
 //
@@ -39062,7 +39074,8 @@ var render = function () {
                 _c(
                   "ul",
                   {
-                    staticClass: "dropdown-menu animated fadeInLeft",
+                    staticClass:
+                      "dropdown-menu animated fadeInLeft menuVeiculos",
                     attrs: { role: "menu" },
                   },
                   [
@@ -40146,6 +40159,18 @@ var render = function () {
             attrs: { href: "/abastecimentos/cadastro" },
           },
           [_vm._v("Novo")]
+        ),
+        _vm._v(" "),
+        _c(
+          "Link",
+          {
+            staticClass: "btn btn-success btnRelatorio",
+            attrs: { href: "#abastecimentos/relatorio" },
+          },
+          [
+            _c("i", { staticClass: "fas fa-file-excel fa-sm" }),
+            _vm._v("Relatórios\n    "),
+          ]
         ),
         _vm._v(" "),
         _c(
@@ -44152,6 +44177,18 @@ var render = function () {
         ),
         _vm._v(" "),
         _c(
+          "Link",
+          {
+            staticClass: "btn btn-success btnRelatorio",
+            attrs: { href: "#manutencoes/relatorio" },
+          },
+          [
+            _c("i", { staticClass: "fas fa-file-excel fa-sm" }),
+            _vm._v("Relatórios\n    "),
+          ]
+        ),
+        _vm._v(" "),
+        _c(
           "table",
           {
             staticClass: "table table-striped table-bordered table-hover",
@@ -45260,6 +45297,18 @@ var render = function () {
             attrs: { href: "/multas/cadastro" },
           },
           [_vm._v("Novo")]
+        ),
+        _vm._v(" "),
+        _c(
+          "Link",
+          {
+            staticClass: "btn btn-success btnRelatorio",
+            attrs: { href: "#multas/relatorio" },
+          },
+          [
+            _c("i", { staticClass: "fas fa-file-excel fa-sm" }),
+            _vm._v("Relatórios\n    "),
+          ]
         ),
         _vm._v(" "),
         _c(
@@ -48985,6 +49034,18 @@ var render = function () {
             attrs: { href: "/trocas-oleo/cadastro" },
           },
           [_vm._v("Novo")]
+        ),
+        _vm._v(" "),
+        _c(
+          "Link",
+          {
+            staticClass: "btn btn-success btnRelatorio",
+            attrs: { href: "#trocas-oleo/relatorio" },
+          },
+          [
+            _c("i", { staticClass: "fas fa-file-excel fa-sm" }),
+            _vm._v("Relatórios\n    "),
+          ]
         ),
         _vm._v(" "),
         _c(

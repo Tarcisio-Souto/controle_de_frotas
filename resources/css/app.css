@@ -545,6 +545,7 @@ a[href*="#contact"]::before {
     position: relative;
     top: 20px;
     margin-bottom: 45px;
+    margin-right: 10px;
 }
 
 .box-login {
@@ -580,4 +581,26 @@ a[href*="#contact"]::before {
     position: relative;
     top: 30px !important;
     width: 100%;
+}
+
+.btnRelatorio {
+    position: relative;
+    top: 20px;
+    margin-bottom: 45px;
+}
+
+.btnRelatorio i {
+    position: relative;
+    top: -1px;
+    margin-right: 7px;
+    height: 8px;
+}
+
+.menuVeiculos {
+    text-align: left !important;
+}
+
+.menuVeiculos i {
+    position: relative;
+    margin-left: 20px !important;
 }

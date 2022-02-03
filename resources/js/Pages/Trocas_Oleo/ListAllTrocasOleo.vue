@@ -3,6 +3,9 @@
     <div class="table-responsive-lg">
 
       <Link :href="'/trocas-oleo/cadastro'" class="btn btn-success btnNovo">Novo</Link>
+      <Link :href="'#trocas-oleo/relatorio'" class="btn btn-success btnRelatorio">
+        <i class="fas fa-file-excel fa-sm"></i>Relatórios
+      </Link> 
 
       <table
         id="myTable"
