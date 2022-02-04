@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\MultasExport;
 use App\Models\Multas;
 use App\Models\TiposInfracoes;
 use App\Models\Veiculos;
@@ -9,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
+use Maatwebsite\Excel\Facades\Excel;
 
 class MultasController extends Controller
 {
@@ -20,7 +22,6 @@ class MultasController extends Controller
     public function index()
     {
         $multas = Multas::listAllMultas();
-        //dd($multas);
         return Inertia::render('Multas/ListAllMultas.vue', ['multas' => $multas]);
     }
 
@@ -144,4 +145,14 @@ class MultasController extends Controller
         $multas = Multas::all();
         return Redirect::route('multas.lista', ['multas' => $multas]);
     }
+
+
+    
+    public function getAllMultas()
+    {
+        return Excel::download(new MultasExport, 'multas.xlsx');
+    }
+
+
+
 }

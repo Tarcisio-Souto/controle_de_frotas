@@ -45300,10 +45300,10 @@ var render = function () {
         ),
         _vm._v(" "),
         _c(
-          "Link",
+          "a",
           {
             staticClass: "btn btn-success btnRelatorio",
-            attrs: { href: "#multas/relatorio" },
+            attrs: { href: "/multas/relatorios" },
           },
           [
             _c("i", { staticClass: "fas fa-file-excel fa-sm" }),
