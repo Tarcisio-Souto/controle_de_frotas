@@ -51,7 +51,7 @@
               >
               <ul class="dropdown-menu animated fadeInLeft menuVeiculos" role="menu">
                 <!--<div class="dropdown-header">Ferramentas</div>-->
-                <li><Link href="#veiculos/cadastro"><i class="fas fa-plus-circle icons-menu"></i>Cadastrar</Link></li>
+                <li><Link href="/veiculos/cadastro"><i class="fas fa-plus-circle icons-menu"></i>Cadastrar</Link></li>
                 <li><Link href="/veiculos/lista"><i class="fas fa-search icons-menu"></i>Pesquisar</Link></li>
                 <li><Link href="/fabricantes/lista"><i class="fas fa-industry icons-menu"></i>Fabricantes</Link></li>
                 <li><Link href="/multas/lista"><i class="fas fa-traffic-light icons-menu"></i>Multas</Link></li>              

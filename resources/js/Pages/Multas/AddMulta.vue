@@ -48,7 +48,7 @@
               </div>
             </div>
             <div class="col-md-6">
-              <label for="inputPosto">Tipos de Infrações</label>
+              <label for="inputInfracao">Tipos de Infrações</label>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
@@ -179,6 +179,7 @@ export default {
           $("#inputMulta").val("");
           $("#inputCusto").val("");
           $("#inputDataMulta").val("");
+          $("option:selected").prop("selected", false); 
                    
           
         },

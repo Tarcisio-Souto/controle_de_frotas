@@ -1,11 +1,12 @@
 <template>
   <layout>
     <div class="table-responsive-lg">
-
-      <Link :href="'/multas/cadastro'" class="btn btn-success btnNovo">Novo</Link>
+      <Link :href="'/multas/cadastro'" class="btn btn-success btnNovo"
+        >Novo</Link
+      >
       <a href="/multas/relatorios" class="btn btn-success btnRelatorio">
         <i class="fas fa-file-excel fa-sm"></i>Relatórios
-      </a> 
+      </a>
 
       <table
         id="myTable"
@@ -19,30 +20,27 @@
             <th>Empresa</th>
             <th>Tipo de Infração</th>
             <th>Data da Multa</th>
-            <th>Valor</th>            
+            <th>Valor</th>
             <th>Ações</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="multa in multas" :key="multa.mul_id" :value="multa.mul_id">
             <td>{{ multa.nome_modelo }}</td>
-            <td>{{ multa.placa }}</td>            
+            <td>{{ multa.placa }}</td>
             <td>{{ multa.nome }}</td>
             <td>{{ multa.descricao_infracao }}</td>
             <td>{{ multa.data_multa }}</td>
-            <td>{{ multa.custo_total }}</td>     
+            <td>{{ 'R$ ' + multa.custo_total }}</td>
             <td align="center">
               <Link :href="'/multa/visualizar/' + multa.mul_id"
                 ><i class="fas fa-eye"></i
               ></Link>
               <Link :href="'/multa/editar/' + multa.mul_id"
                 ><i class="fas fa-edit"></i
-              ></Link>              
+              ></Link>
               <span
-                ><i
-                  class="fas fa-trash-alt"
-                  @click="sendForm(multa.mul_id)"
-                ></i
+                ><i class="fas fa-trash-alt" @click="sendForm(multa.mul_id)"></i
               ></span>
             </td>
           </tr>
@@ -50,11 +48,11 @@
         <tfoot>
           <tr>
             <th>Veículo</th>
-            <th>Placa</th>            
+            <th>Placa</th>
             <th>Empresa</th>
             <th>Tipo de Infração</th>
             <th>Data da Multa</th>
-            <th>Valor</th>            
+            <th>Valor</th>
             <th>Ações</th>
           </tr>
         </tfoot>
@@ -93,7 +91,6 @@ export default {
 
   methods: {
     sendForm(id) {
-
       var v = this;
 
       bootbox.confirm({
@@ -117,12 +114,11 @@ export default {
         },
         callback: function (result) {
           if (result == true) {
-            v.$inertia.post("/multa/deletar/"+id, {
+            v.$inertia.post("/multa/deletar/" + id, {
               forceFormData: true,
               preserveScroll: false,
               _token: v.$page.props.csrf_token,
             });
-
           }
         },
       });

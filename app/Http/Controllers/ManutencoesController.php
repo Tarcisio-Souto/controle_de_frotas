@@ -116,7 +116,10 @@ class ManutencoesController extends Controller
 
         $manutencao = Manutencoes::find($request->id);
         $manutencao->observacao = $request->observacao;
-        $manutencao->custo_total = $request->custo;
+
+        $aux_custo = explode(' ', $request->custo);
+        $custo = (float) $aux_custo[1];
+        $manutencao->custo_total = $custo;
 
         $data = explode("/",$request->data_manutencao);
         $dia = $data[0];

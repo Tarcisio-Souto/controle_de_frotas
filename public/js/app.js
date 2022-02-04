@@ -5657,6 +5657,7 @@ __webpack_require__.r(__webpack_exports__);
           $("#inputMulta").val("");
           $("#inputCusto").val("");
           $("#inputDataMulta").val("");
+          $("option:selected").prop("selected", false);
         }
       });
     }
@@ -5885,8 +5886,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layout_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../Layout.vue */ "./resources/js/Layout.vue");
 /* harmony import */ var _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-vue */ "./node_modules/@inertiajs/inertia-vue/dist/index.js");
 /* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
-//
-//
 //
 //
 //
@@ -39082,7 +39081,7 @@ var render = function () {
                     _c(
                       "li",
                       [
-                        _c("Link", { attrs: { href: "#veiculos/cadastro" } }, [
+                        _c("Link", { attrs: { href: "/veiculos/cadastro" } }, [
                           _c("i", {
                             staticClass: "fas fa-plus-circle icons-menu",
                           }),
@@ -40214,7 +40213,9 @@ var render = function () {
                       _vm._v(_vm._s(abastecimento.data_abastecimento)),
                     ]),
                     _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(abastecimento.custo_total))]),
+                    _c("td", [
+                      _vm._v(_vm._s("R$ " + abastecimento.custo_total)),
+                    ]),
                     _vm._v(" "),
                     _c(
                       "td",
@@ -44678,7 +44679,7 @@ var render = function () {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "col-md-6" }, [
-                _c("label", { attrs: { for: "inputPosto" } }, [
+                _c("label", { attrs: { for: "inputInfracao" } }, [
                   _vm._v("Tipos de Infrações"),
                 ]),
                 _vm._v(" "),
@@ -45354,7 +45355,7 @@ var render = function () {
                     _vm._v(" "),
                     _c("td", [_vm._v(_vm._s(multa.data_multa))]),
                     _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(multa.custo_total))]),
+                    _c("td", [_vm._v(_vm._s("R$ " + multa.custo_total))]),
                     _vm._v(" "),
                     _c(
                       "td",
@@ -49087,7 +49088,7 @@ var render = function () {
                     _vm._v(" "),
                     _c("td", [_vm._v(_vm._s(troca.data_troca_format))]),
                     _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(troca.custo_total))]),
+                    _c("td", [_vm._v(_vm._s("R$ " + troca.custo_total))]),
                     _vm._v(" "),
                     _c(
                       "td",

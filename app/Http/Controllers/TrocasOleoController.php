@@ -69,7 +69,10 @@ class TrocasOleoController extends Controller
         $troca_oleo->filtro_combustivel = $request->filtro_combustivel;
         $troca_oleo->km_troca = $request->km_troca;
         $troca_oleo->km_prox_troca = $request->km_prox_troca;
-        $troca_oleo->custo_total = $request->custo;
+
+        $aux_custo = explode(' ', $request->custo);
+        $custo = (float) $aux_custo[1];
+        $troca_oleo->custo_total = $custo;
 
         $troca_oleo->save();
 
@@ -124,7 +127,10 @@ class TrocasOleoController extends Controller
         $troca->filtro_oleo = $request->filtro_oleo;
         $troca->filtro_combustivel = $request->filtro_combustivel;
         $troca->nome_oleo = $request->nome_oleo;
-        $troca->custo_total = $request->custo;
+       
+        $aux_custo = explode(' ', $request->custo);
+        $custo = (float) $aux_custo[1];
+        $troca->custo_total = $custo;
 
         $data = explode("/",$request->data_troca);
         $dia = $data[0];

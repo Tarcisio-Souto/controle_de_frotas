@@ -28,7 +28,7 @@
             <td>{{ troca.placa }}</td>            
             <td>{{ troca.nome }}</td>
             <td>{{ troca.data_troca_format }}</td>
-            <td>{{ troca.custo_total }}</td>     
+            <td>{{ 'R$ ' + troca.custo_total }}</td>     
             <td align="center">
               <Link :href="'/troca-oleo/visualizar/' + troca.to_id"
                 ><i class="fas fa-eye"></i

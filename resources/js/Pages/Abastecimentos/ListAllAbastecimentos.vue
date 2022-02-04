@@ -28,7 +28,7 @@
             <td>{{ abastecimento.placa }}</td>            
             <td>{{ abastecimento.nome }}</td>
             <td>{{ abastecimento.data_abastecimento }}</td>
-            <td>{{ abastecimento.custo_total }}</td>     
+            <td>{{ 'R$ ' + abastecimento.custo_total }}</td>     
             <td align="center">
               <Link :href="'/abastecimento/visualizar/' + abastecimento.id_ab"
                 ><i class="fas fa-eye"></i

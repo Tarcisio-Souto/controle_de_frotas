@@ -45,10 +45,14 @@ class MultasController extends Controller
      */
     public function store(Request $request)
     {
+
         $multa = new Multas();
         $multa->fk_veiculo = $request->veiculo;
         $multa->fk_infracao = $request->infracao;
-        $multa->custo_total = $request->custo;
+
+        $aux_custo = explode(' ', $request->custo);
+        $custo = (float) $aux_custo[1];
+        $multa->custo_total = $custo;
 
         $data = explode("/",$request->data_multa);
         $dia = $data[0];
@@ -107,7 +111,10 @@ class MultasController extends Controller
         //dd($request->all());
 
         $multa = Multas::find($request->id);
-        $multa->custo_total = $request->custo;
+
+        $aux_custo = explode(' ', $request->custo);
+        $custo = (float) $aux_custo[1];
+        $multa->custo_total = $custo;
 
         $data = explode("/",$request->data_multa);
         $dia = $data[0];
@@ -147,7 +154,7 @@ class MultasController extends Controller
     }
 
 
-    
+
     public function getAllMultas()
     {
         return Excel::download(new MultasExport, 'multas.xlsx');

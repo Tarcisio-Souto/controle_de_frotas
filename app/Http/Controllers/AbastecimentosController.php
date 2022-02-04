@@ -47,7 +47,10 @@ class AbastecimentosController extends Controller
 
         $abastecimento->fk_veiculo = $request->veiculo;
         $abastecimento->fk_posto = $request->posto;
-        $abastecimento->custo_total = $request->custo;
+
+        $aux_custo = explode(' ', $request->custo);
+        $custo = (float) $aux_custo[1];
+        $abastecimento->custo_total = $custo;
 
         $data = explode("/", $request->data_abastecimento);
         $dia = $data[0];
@@ -106,7 +109,9 @@ class AbastecimentosController extends Controller
     {
         
         $abastecimento = Abastecimentos::find($request->id);
-        $abastecimento->custo_total = $request->custo;
+        $aux_custo = explode(' ', $request->custo);
+        $custo = (float) $aux_custo[1];
+        $abastecimento->custo_total = $custo;
 
         $data = explode("/",$request->data_abastecimento);
         $dia = $data[0];
