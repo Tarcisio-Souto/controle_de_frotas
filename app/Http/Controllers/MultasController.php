@@ -153,11 +153,17 @@ class MultasController extends Controller
         return Redirect::route('multas.lista', ['multas' => $multas]);
     }
 
+    
+    public function selectRelMultas() {
 
+        $infracoes = TiposInfracoes::all();
+        return Inertia::render('Multas/RelatoriosMultas.vue', ['infracoes' => $infracoes]);
+
+    }
 
     public function getAllMultas()
     {
-        return Excel::download(new MultasExport, 'multas.xlsx');
+        return Excel::download(new MultasExport('Kangoo'), 'multas.xlsx');
     }
 
 

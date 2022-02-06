@@ -12451,3 +12451,21 @@ a[href*="#contact"]::before {
     position: relative;
     margin-left: 20px !important;
 }
+
+.row-2-rel-multas {
+    position: relative;
+    top: 35px;
+}
+
+.btrGerarRel {
+    position: relative;
+    top: 24px;
+}
+
+.legend-rel {
+    font-weight: 500;
+}
+
+.box-rel-1 {
+    border: 1px solid black;
+}

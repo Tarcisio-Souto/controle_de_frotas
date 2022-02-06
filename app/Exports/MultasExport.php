@@ -10,6 +10,13 @@ use Maatwebsite\Excel\Concerns\FromCollection;
 class MultasExport implements FromCollection, WithHeadings
 {
 
+    protected $modelo;
+
+    function __construct($modelo) {
+            $this->modelo = $modelo;
+    }
+
+
     public function headings():array{
         return[
             'Modelo',
@@ -35,9 +42,10 @@ class MultasExport implements FromCollection, WithHeadings
         ->select('md.nome_modelo', 'vc.placa', 'emp.nome', 'ti.descricao_infracao',
         'mul.data_multa', 'mul.custo_total',
         DB::raw('strftime("%d/%m/%Y", mul.data_multa) as data_multa'))
+        ->where('md.nome_modelo', '=', $this->modelo)
         ->get();
 
-        return $multas;        
-        //return Multas::all();
+        return $multas;      
+
     }
 }
