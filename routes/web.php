@@ -160,3 +160,8 @@ Route::get('/manutencoes/relatorio1', [ManutencoesController::class, 'getRelator
 Route::get('/abastecimentos/relatorios', [AbastecimentosController::class, 'selectRelAbastecimentos'])->name('abastecimentos.relatorios')->middleware('auth');
 Route::get('/abastecimentos/relatorio1', [AbastecimentosController::class, 'getRelatorio1'])->name('abastecimentos.relatorio1')->middleware('auth');
 
+/* Relatórios Trocas de Óleo */
+
+Route::get('/trocas-oleo/relatorios', [TrocasOleoController::class, 'selectRelTrocasOleo'])->name('trocas-oleo.relatorios')->middleware('auth');
+Route::get('/trocas-oleo/relatorio1', [TrocasOleoController::class, 'getRelatorio1'])->name('trocas-oleo.relatorio1')->middleware('auth');
+

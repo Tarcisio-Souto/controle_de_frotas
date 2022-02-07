@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\TrocasOleosExport;
 use App\Models\Oficinas;
 use App\Models\Trocas_Oleos;
 use App\Models\Veiculos;
@@ -9,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
+use Maatwebsite\Excel\Facades\Excel;
 
 class TrocasOleoController extends Controller
 {
@@ -169,4 +171,63 @@ class TrocasOleoController extends Controller
         $trocas = Trocas_Oleos::all();
         return Redirect::route('trocas-oleo.lista', ['trocas' => $trocas]);
     }
+
+
+    public function selectRelTrocasOleo() {
+
+        return Inertia::render('Trocas_Oleo/RelatoriosTrocasOleo.vue');
+
+    }
+
+    public function getRelatorio1(Request $req)
+    {
+        
+        $regiao1 = ''; $regiao2 = ''; $regiao3 = ''; 
+        $regiao4 = ''; $regiao5 = ''; $regiao6 = '';
+
+        $periodoFim = null; $periodoIni = null;
+        
+        if ($req->regiao1 != "null")
+            $regiao1 = 'Vitória Hospitalar ES'; 
+        if ($req->regiao2 != "null")
+            $regiao2 = 'Vitória Hospitalar MG';
+        if ($req->regiao3 != "null")
+            $regiao3 = 'Vitória Hospitalar RJ';
+        if ($req->regiao4 != "null")
+            $regiao4 = 'Vitória Hospitalar SP';
+        if ($req->regiao5 != "null")
+            $regiao5 = 'Healthcare Logística RJ';
+        if ($req->regiao6 != "null")
+            $regiao6 = 'Healthcare Logística SP';
+        
+
+        $data = explode("/",$req->periodoIni);
+        $dia = $data[0];
+        $mes = $data[1];
+        $ano = $data[2];            
+        $data_formatada = $ano.'-'.$mes.'-'.$dia;
+    
+        $data_old = date($data_formatada);
+        $periodoIni = $data_old;
+
+        $data = explode("/",$req->periodoFim);
+        $dia = $data[0];
+        $mes = $data[1];
+        $ano = $data[2];            
+        $data_formatada = $ano.'-'.$mes.'-'.$dia;
+    
+        $data_old = date($data_formatada);
+        $periodoFim = $data_old;
+        
+        return Excel::download(new TrocasOleosExport($periodoIni,
+        $periodoFim, $regiao1, $regiao2, $regiao3,
+        $regiao4, $regiao5, $regiao6), 
+        'Relatório_TrocasOleo_Região_Período_Tipo_Serviço.xlsx');
+
+    }
+
+
+
+
+
 }
