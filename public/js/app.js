@@ -5287,6 +5287,256 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Manutencoes/RelatoriosManutencoes.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Manutencoes/RelatoriosManutencoes.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Layout_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../Layout.vue */ "./resources/js/Layout.vue");
+/* harmony import */ var _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-vue */ "./node_modules/@inertiajs/inertia-vue/dist/index.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    Link: _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_1__.Link,
+    Layout: _Layout_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  props: {
+    servicos: Array
+  },
+  data: function data() {
+    return {
+      form: {
+        regiao1: null,
+        regiao2: null,
+        regiao3: null,
+        regiao4: null,
+        regiao5: null,
+        regiao6: null,
+        periodoIni: null,
+        periodoFim: null,
+        servico: null,
+        preserveState: true
+      }
+    };
+  },
+  methods: {
+    sendForm: function sendForm() {
+      window.open("/manutencoes/relatorio1?regiao1=".concat(this.form.regiao1, "\n      &regiao2=").concat(this.form.regiao2, "\n      &regiao3=").concat(this.form.regiao3, "\n      &regiao4=").concat(this.form.regiao4, "\n      &regiao5=").concat(this.form.regiao5, "\n      &regiao6=").concat(this.form.regiao6, "\n      &periodoIni=").concat(this.form.periodoIni, "\n      &periodoFim=").concat(this.form.periodoFim, "\n      &servico=").concat(this.form.servico), '_blank');
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Manutencoes/ViewManutencao.vue?vue&type=script&lang=js&":
 /*!****************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Manutencoes/ViewManutencao.vue?vue&type=script&lang=js& ***!
@@ -6038,6 +6288,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Layout_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../Layout.vue */ "./resources/js/Layout.vue");
 /* harmony import */ var _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-vue */ "./node_modules/@inertiajs/inertia-vue/dist/index.js");
+//
+//
+//
+//
+//
 //
 //
 //
@@ -36469,6 +36724,45 @@ component.options.__file = "resources/js/Pages/Manutencoes/ListAllManutencoes.vu
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Manutencoes/RelatoriosManutencoes.vue":
+/*!******************************************************************!*\
+  !*** ./resources/js/Pages/Manutencoes/RelatoriosManutencoes.vue ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _RelatoriosManutencoes_vue_vue_type_template_id_10799312___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./RelatoriosManutencoes.vue?vue&type=template&id=10799312& */ "./resources/js/Pages/Manutencoes/RelatoriosManutencoes.vue?vue&type=template&id=10799312&");
+/* harmony import */ var _RelatoriosManutencoes_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RelatoriosManutencoes.vue?vue&type=script&lang=js& */ "./resources/js/Pages/Manutencoes/RelatoriosManutencoes.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _RelatoriosManutencoes_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _RelatoriosManutencoes_vue_vue_type_template_id_10799312___WEBPACK_IMPORTED_MODULE_0__.render,
+  _RelatoriosManutencoes_vue_vue_type_template_id_10799312___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Pages/Manutencoes/RelatoriosManutencoes.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Manutencoes/ViewManutencao.vue":
 /*!***********************************************************!*\
   !*** ./resources/js/Pages/Manutencoes/ViewManutencao.vue ***!
@@ -37959,6 +38253,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Manutencoes/RelatoriosManutencoes.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************!*\
+  !*** ./resources/js/Pages/Manutencoes/RelatoriosManutencoes.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RelatoriosManutencoes_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./RelatoriosManutencoes.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Manutencoes/RelatoriosManutencoes.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RelatoriosManutencoes_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Manutencoes/ViewManutencao.vue?vue&type=script&lang=js&":
 /*!************************************************************************************!*\
   !*** ./resources/js/Pages/Manutencoes/ViewManutencao.vue?vue&type=script&lang=js& ***!
@@ -38775,6 +39085,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ListAllManutencoes_vue_vue_type_template_id_62bf1a56___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ListAllManutencoes_vue_vue_type_template_id_62bf1a56___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ListAllManutencoes.vue?vue&type=template&id=62bf1a56& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Manutencoes/ListAllManutencoes.vue?vue&type=template&id=62bf1a56&");
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Manutencoes/RelatoriosManutencoes.vue?vue&type=template&id=10799312&":
+/*!*************************************************************************************************!*\
+  !*** ./resources/js/Pages/Manutencoes/RelatoriosManutencoes.vue?vue&type=template&id=10799312& ***!
+  \*************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RelatoriosManutencoes_vue_vue_type_template_id_10799312___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RelatoriosManutencoes_vue_vue_type_template_id_10799312___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RelatoriosManutencoes_vue_vue_type_template_id_10799312___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./RelatoriosManutencoes.vue?vue&type=template&id=10799312& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Manutencoes/RelatoriosManutencoes.vue?vue&type=template&id=10799312&");
 
 
 /***/ }),
@@ -44523,7 +44850,7 @@ var render = function () {
           "Link",
           {
             staticClass: "btn btn-success btnRelatorio",
-            attrs: { href: "#manutencoes/relatorio" },
+            attrs: { href: "/manutencoes/relatorios" },
           },
           [
             _c("i", { staticClass: "fas fa-file-excel fa-sm" }),
@@ -44648,6 +44975,589 @@ var render = function () {
     _c("br"),
     _c("br"),
     _c("br"),
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Manutencoes/RelatoriosManutencoes.vue?vue&type=template&id=10799312&":
+/*!****************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Manutencoes/RelatoriosManutencoes.vue?vue&type=template&id=10799312& ***!
+  \****************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("layout", [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-4" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-4", attrs: { align: "center" } }, [
+        _c("h4", [_vm._v("Emissão de Relatórios")]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-4" }),
+    ]),
+    _vm._v(" "),
+    _c("hr"),
+    _vm._v(" "),
+    _c("br"),
+    _vm._v(" "),
+    _c(
+      "form",
+      {
+        attrs: { enctype: "multipart/form-data", id: "form-rel-1" },
+        on: {
+          submit: function ($event) {
+            $event.preventDefault()
+            return _vm.sendForm.apply(null, arguments)
+          },
+        },
+      },
+      [
+        _c("p", { staticClass: "legend-rel" }, [
+          _vm._v(
+            "\n      Relatórios de Manutenções (por região, período e tipo de infração)\n    "
+          ),
+        ]),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-6" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-6" }, [
+                _c("div", { staticClass: "form-check" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.regiao1,
+                        expression: "form.regiao1",
+                      },
+                    ],
+                    staticClass: "form-check-input position-static",
+                    attrs: {
+                      type: "checkbox",
+                      id: "regiao1",
+                      value: "Vitória Hospitalar",
+                      "aria-label": "Vitória Hospitalar",
+                    },
+                    domProps: {
+                      checked: Array.isArray(_vm.form.regiao1)
+                        ? _vm._i(_vm.form.regiao1, "Vitória Hospitalar") > -1
+                        : _vm.form.regiao1,
+                    },
+                    on: {
+                      change: function ($event) {
+                        var $$a = _vm.form.regiao1,
+                          $$el = $event.target,
+                          $$c = $$el.checked ? true : false
+                        if (Array.isArray($$a)) {
+                          var $$v = "Vitória Hospitalar",
+                            $$i = _vm._i($$a, $$v)
+                          if ($$el.checked) {
+                            $$i < 0 &&
+                              _vm.$set(_vm.form, "regiao1", $$a.concat([$$v]))
+                          } else {
+                            $$i > -1 &&
+                              _vm.$set(
+                                _vm.form,
+                                "regiao1",
+                                $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                              )
+                          }
+                        } else {
+                          _vm.$set(_vm.form, "regiao1", $$c)
+                        }
+                      },
+                    },
+                  }),
+                  _vm._v(" "),
+                  _c("label", { staticClass: "form-check-label" }, [
+                    _vm._v(" Vitória Hospitalar ES"),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-check" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.regiao2,
+                        expression: "form.regiao2",
+                      },
+                    ],
+                    staticClass: "form-check-input position-static",
+                    attrs: {
+                      type: "checkbox",
+                      id: "regiao2",
+                      value: "2",
+                      "aria-label": "Vitória Hospitalar",
+                    },
+                    domProps: {
+                      checked: Array.isArray(_vm.form.regiao2)
+                        ? _vm._i(_vm.form.regiao2, "2") > -1
+                        : _vm.form.regiao2,
+                    },
+                    on: {
+                      change: function ($event) {
+                        var $$a = _vm.form.regiao2,
+                          $$el = $event.target,
+                          $$c = $$el.checked ? true : false
+                        if (Array.isArray($$a)) {
+                          var $$v = "2",
+                            $$i = _vm._i($$a, $$v)
+                          if ($$el.checked) {
+                            $$i < 0 &&
+                              _vm.$set(_vm.form, "regiao2", $$a.concat([$$v]))
+                          } else {
+                            $$i > -1 &&
+                              _vm.$set(
+                                _vm.form,
+                                "regiao2",
+                                $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                              )
+                          }
+                        } else {
+                          _vm.$set(_vm.form, "regiao2", $$c)
+                        }
+                      },
+                    },
+                  }),
+                  _vm._v(" "),
+                  _c("label", { staticClass: "form-check-label" }, [
+                    _vm._v(" Vitória Hospitalar MG "),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-check" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.regiao3,
+                        expression: "form.regiao3",
+                      },
+                    ],
+                    staticClass: "form-check-input position-static",
+                    attrs: {
+                      type: "checkbox",
+                      id: "regiao3",
+                      value: "3",
+                      "aria-label": "Vitória Hospitalar RJ",
+                    },
+                    domProps: {
+                      checked: Array.isArray(_vm.form.regiao3)
+                        ? _vm._i(_vm.form.regiao3, "3") > -1
+                        : _vm.form.regiao3,
+                    },
+                    on: {
+                      change: function ($event) {
+                        var $$a = _vm.form.regiao3,
+                          $$el = $event.target,
+                          $$c = $$el.checked ? true : false
+                        if (Array.isArray($$a)) {
+                          var $$v = "3",
+                            $$i = _vm._i($$a, $$v)
+                          if ($$el.checked) {
+                            $$i < 0 &&
+                              _vm.$set(_vm.form, "regiao3", $$a.concat([$$v]))
+                          } else {
+                            $$i > -1 &&
+                              _vm.$set(
+                                _vm.form,
+                                "regiao3",
+                                $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                              )
+                          }
+                        } else {
+                          _vm.$set(_vm.form, "regiao3", $$c)
+                        }
+                      },
+                    },
+                  }),
+                  _vm._v(" "),
+                  _c("label", { staticClass: "form-check-label" }, [
+                    _vm._v(" Vitória Hospitalar RJ "),
+                  ]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-6" }, [
+                _c("div", { staticClass: "form-check" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.regiao4,
+                        expression: "form.regiao4",
+                      },
+                    ],
+                    staticClass: "form-check-input position-static",
+                    attrs: {
+                      type: "checkbox",
+                      id: "regiao4",
+                      value: "4",
+                      "aria-label": "Vitória Hospitalar SP",
+                    },
+                    domProps: {
+                      checked: Array.isArray(_vm.form.regiao4)
+                        ? _vm._i(_vm.form.regiao4, "4") > -1
+                        : _vm.form.regiao4,
+                    },
+                    on: {
+                      change: function ($event) {
+                        var $$a = _vm.form.regiao4,
+                          $$el = $event.target,
+                          $$c = $$el.checked ? true : false
+                        if (Array.isArray($$a)) {
+                          var $$v = "4",
+                            $$i = _vm._i($$a, $$v)
+                          if ($$el.checked) {
+                            $$i < 0 &&
+                              _vm.$set(_vm.form, "regiao4", $$a.concat([$$v]))
+                          } else {
+                            $$i > -1 &&
+                              _vm.$set(
+                                _vm.form,
+                                "regiao4",
+                                $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                              )
+                          }
+                        } else {
+                          _vm.$set(_vm.form, "regiao4", $$c)
+                        }
+                      },
+                    },
+                  }),
+                  _vm._v(" "),
+                  _c("label", { staticClass: "form-check-label" }, [
+                    _vm._v(" Vitória Hospitalar SP "),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-check" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.regiao5,
+                        expression: "form.regiao5",
+                      },
+                    ],
+                    staticClass: "form-check-input position-static",
+                    attrs: {
+                      type: "checkbox",
+                      id: "regiao5",
+                      value: "5",
+                      "aria-label": "Healthcare Logística RJ",
+                    },
+                    domProps: {
+                      checked: Array.isArray(_vm.form.regiao5)
+                        ? _vm._i(_vm.form.regiao5, "5") > -1
+                        : _vm.form.regiao5,
+                    },
+                    on: {
+                      change: function ($event) {
+                        var $$a = _vm.form.regiao5,
+                          $$el = $event.target,
+                          $$c = $$el.checked ? true : false
+                        if (Array.isArray($$a)) {
+                          var $$v = "5",
+                            $$i = _vm._i($$a, $$v)
+                          if ($$el.checked) {
+                            $$i < 0 &&
+                              _vm.$set(_vm.form, "regiao5", $$a.concat([$$v]))
+                          } else {
+                            $$i > -1 &&
+                              _vm.$set(
+                                _vm.form,
+                                "regiao5",
+                                $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                              )
+                          }
+                        } else {
+                          _vm.$set(_vm.form, "regiao5", $$c)
+                        }
+                      },
+                    },
+                  }),
+                  _vm._v(" "),
+                  _c("label", { staticClass: "form-check-label" }, [
+                    _vm._v(
+                      "\n                Healthcare Logística RJ\n              "
+                    ),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-check" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.regiao6,
+                        expression: "form.regiao6",
+                      },
+                    ],
+                    staticClass: "form-check-input position-static",
+                    attrs: {
+                      type: "checkbox",
+                      id: "regiao6",
+                      value: "6",
+                      "aria-label": "Healthcare Logística SP",
+                    },
+                    domProps: {
+                      checked: Array.isArray(_vm.form.regiao6)
+                        ? _vm._i(_vm.form.regiao6, "6") > -1
+                        : _vm.form.regiao6,
+                    },
+                    on: {
+                      change: function ($event) {
+                        var $$a = _vm.form.regiao6,
+                          $$el = $event.target,
+                          $$c = $$el.checked ? true : false
+                        if (Array.isArray($$a)) {
+                          var $$v = "6",
+                            $$i = _vm._i($$a, $$v)
+                          if ($$el.checked) {
+                            $$i < 0 &&
+                              _vm.$set(_vm.form, "regiao6", $$a.concat([$$v]))
+                          } else {
+                            $$i > -1 &&
+                              _vm.$set(
+                                _vm.form,
+                                "regiao6",
+                                $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                              )
+                          }
+                        } else {
+                          _vm.$set(_vm.form, "regiao6", $$c)
+                        }
+                      },
+                    },
+                  }),
+                  _vm._v(" "),
+                  _c("label", { staticClass: "form-check-label" }, [
+                    _vm._v(
+                      "\n                Healthcare Logística SP\n              "
+                    ),
+                  ]),
+                ]),
+              ]),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-6" }, [
+            _c("label", { attrs: { for: "inputPeriodoIni" } }, [
+              _vm._v("Período"),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-5" }, [
+                _c("div", { staticClass: "input-group" }, [
+                  _c("div", { staticClass: "input-group-prepend" }, [
+                    _c("div", { staticClass: "input-group-text" }, [
+                      _c("i", { staticClass: "fas fa-calendar-alt" }),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.periodoIni,
+                        expression: "form.periodoIni",
+                      },
+                      {
+                        name: "mask",
+                        rawName: "v-mask",
+                        value: "##/##/####",
+                        expression: "'##/##/####'",
+                      },
+                    ],
+                    key: "",
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      id: "inputPeriodoIni",
+                      name: "txtPeriodoIni",
+                      required: "",
+                    },
+                    domProps: { value: _vm.form.periodoIni },
+                    on: {
+                      input: function ($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.form, "periodoIni", $event.target.value)
+                      },
+                    },
+                  }),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "col-md-2", attrs: { align: "center" } },
+                [_c("p", [_vm._v("até")])]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-5" }, [
+                _c("div", { staticClass: "input-group" }, [
+                  _c("div", { staticClass: "input-group-prepend" }, [
+                    _c("div", { staticClass: "input-group-text" }, [
+                      _c("i", { staticClass: "fas fa-calendar-alt" }),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.periodoFim,
+                        expression: "form.periodoFim",
+                      },
+                      {
+                        name: "mask",
+                        rawName: "v-mask",
+                        value: "##/##/####",
+                        expression: "'##/##/####'",
+                      },
+                    ],
+                    key: "",
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      id: "inputPeriodoFim",
+                      name: "txtPeriodoFim",
+                      required: "",
+                    },
+                    domProps: { value: _vm.form.periodoFim },
+                    on: {
+                      input: function ($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.form, "periodoFim", $event.target.value)
+                      },
+                    },
+                  }),
+                ]),
+              ]),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row row-2-rel-multas" }, [
+            _c("div", { staticClass: "col-md-6" }, [
+              _c("label", { attrs: { for: "inputServicos" } }, [
+                _vm._v("Tipos de Serviços"),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "input-group" }, [
+                _c("div", { staticClass: "input-group-prepend" }, [
+                  _c("div", { staticClass: "input-group-text" }, [
+                    _c("i", { staticClass: "fas fa-briefcase" }),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c(
+                  "select",
+                  {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.servico,
+                        expression: "form.servico",
+                      },
+                    ],
+                    staticClass: "form-control",
+                    attrs: { id: "inputServicos", name: "txtInfracao" },
+                    on: {
+                      change: function ($event) {
+                        var $$selectedVal = Array.prototype.filter
+                          .call($event.target.options, function (o) {
+                            return o.selected
+                          })
+                          .map(function (o) {
+                            var val = "_value" in o ? o._value : o.value
+                            return val
+                          })
+                        _vm.$set(
+                          _vm.form,
+                          "servico",
+                          $event.target.multiple
+                            ? $$selectedVal
+                            : $$selectedVal[0]
+                        )
+                      },
+                    },
+                  },
+                  [
+                    _c("option", { attrs: { value: "null", selected: "" } }, [
+                      _vm._v("Todas"),
+                    ]),
+                    _vm._v(" "),
+                    _vm._l(_vm.servicos, function (servico) {
+                      return _c(
+                        "option",
+                        { key: servico.id, domProps: { value: servico.id } },
+                        [
+                          _vm._v(
+                            "\n                " +
+                              _vm._s(servico.descricao_servicos) +
+                              "\n              "
+                          ),
+                        ]
+                      )
+                    }),
+                  ],
+                  2
+                ),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-6" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-success btrGerarRel",
+                  attrs: { type: "submit" },
+                },
+                [_vm._v("\n            Gerar Relatório\n          ")]
+              ),
+            ]),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("br"),
+        _c("br"),
+        _c("br"),
+        _vm._v(" "),
+        _c("hr"),
+      ]
+    ),
   ])
 }
 var staticRenderFns = []
@@ -67493,6 +68403,8 @@ var map = {
 	"./Manutencoes/EditManutencao.vue": "./resources/js/Pages/Manutencoes/EditManutencao.vue",
 	"./Manutencoes/ListAllManutencoes": "./resources/js/Pages/Manutencoes/ListAllManutencoes.vue",
 	"./Manutencoes/ListAllManutencoes.vue": "./resources/js/Pages/Manutencoes/ListAllManutencoes.vue",
+	"./Manutencoes/RelatoriosManutencoes": "./resources/js/Pages/Manutencoes/RelatoriosManutencoes.vue",
+	"./Manutencoes/RelatoriosManutencoes.vue": "./resources/js/Pages/Manutencoes/RelatoriosManutencoes.vue",
 	"./Manutencoes/ViewManutencao": "./resources/js/Pages/Manutencoes/ViewManutencao.vue",
 	"./Manutencoes/ViewManutencao.vue": "./resources/js/Pages/Manutencoes/ViewManutencao.vue",
 	"./Multas/AddMulta": "./resources/js/Pages/Multas/AddMulta.vue",

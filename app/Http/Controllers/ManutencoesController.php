@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ManutencoesExport;
 use App\Models\Manutencoes;
 use App\Models\Oficinas;
 use App\Models\Servicos;
@@ -10,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ManutencoesController extends Controller
 {
@@ -54,10 +56,13 @@ class ManutencoesController extends Controller
         $manutencao->fk_veiculo = $request->veiculo;
         $manutencao->fk_oficina = $request->oficina;
         $manutencao->fk_servico = $request->servico;
-        $manutencao->custo_total = $request->veiculo;
+
+        $aux_custo = explode(' ', $request->custo);
+        $custo = (float) $aux_custo[1];
+        $manutencao->custo_total = $custo;
+
         $manutencao->observacao = $request->observacao;
         
-
         $data = explode("/",$request->data_manutencao);
         $dia = $data[0];
         $mes = $data[1];
@@ -160,4 +165,68 @@ class ManutencoesController extends Controller
         $manutencoes = Manutencoes::all();
         return Redirect::route('manutencoes.lista', ['manutencoes' => $manutencoes]);
     }
+
+
+    public function selectRelManutencoes() {
+
+        $servicos = Servicos::all();
+        return Inertia::render('Manutencoes/RelatoriosManutencoes.vue', ['servicos' => $servicos]);
+
+    }
+
+    public function getRelatorio1(Request $req)
+    {
+        
+        $regiao1 = ''; $regiao2 = ''; $regiao3 = ''; 
+        $regiao4 = ''; $regiao5 = ''; $regiao6 = '';
+
+        $periodoFim = null; $periodoIni = null;
+        
+        if ($req->regiao1 != "null")
+            $regiao1 = 'Vitória Hospitalar ES'; 
+        if ($req->regiao2 != "null")
+            $regiao2 = 'Vitória Hospitalar MG';
+        if ($req->regiao3 != "null")
+            $regiao3 = 'Vitória Hospitalar RJ';
+        if ($req->regiao4 != "null")
+            $regiao4 = 'Vitória Hospitalar SP';
+        if ($req->regiao5 != "null")
+            $regiao5 = 'Healthcare Logística RJ';
+        if ($req->regiao6 != "null")
+            $regiao6 = 'Healthcare Logística SP';
+        
+
+        $data = explode("/",$req->periodoIni);
+        $dia = $data[0];
+        $mes = $data[1];
+        $ano = $data[2];            
+        $data_formatada = $ano.'-'.$mes.'-'.$dia;
+    
+        $data_old = date($data_formatada);
+        $periodoIni = $data_old;
+
+        $data = explode("/",$req->periodoFim);
+        $dia = $data[0];
+        $mes = $data[1];
+        $ano = $data[2];            
+        $data_formatada = $ano.'-'.$mes.'-'.$dia;
+    
+        $data_old = date($data_formatada);
+        $periodoFim = $data_old;
+
+        
+        return Excel::download(new ManutencoesExport($periodoIni,
+        $periodoFim, $regiao1, $regiao2, $regiao3,
+        $regiao4, $regiao5, $regiao6, $req->servico), 
+        'Relatório_Manutenções_Região_Período_Tipo_Serviço.xlsx');
+
+    }
+
+
+
+
+
+
+
+
 }

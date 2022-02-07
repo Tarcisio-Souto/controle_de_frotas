@@ -17,7 +17,7 @@
       id="form-rel-1"
     >
       <p class="legend-rel">
-        Relatórios de Multas (por região, período e tipo de infração)
+        Relatórios de Manutenções (por região, período e tipo de infração)
       </p>
       <br />
       <div class="row">
@@ -33,7 +33,7 @@
                   aria-label="Vitória Hospitalar"
                   v-model="form.regiao1"
                 />
-                <label class="form-check-label"> Vitória Hospitalar </label>
+                <label class="form-check-label"> Vitória Hospitalar ES</label>
               </div>
 
               <div class="form-check">
@@ -153,7 +153,7 @@
 
         <div class="row row-2-rel-multas">
           <div class="col-md-6">
-            <label for="inputInfracao">Tipos de Infrações</label>
+            <label for="inputServicos">Tipos de Serviços</label>
             <div class="input-group">
               <div class="input-group-prepend">
                 <div class="input-group-text">
@@ -161,18 +161,18 @@
                 </div>
               </div>
               <select
-                id="inputInfracao"
+                id="inputServicos"
                 class="form-control"
-                v-model="form.infracao"
+                v-model="form.servico"
                 name="txtInfracao"
               >
                 <option value="null" selected>Todas</option>
                 <option
-                  v-for="infracao in infracoes"
-                  :key="infracao.id"
-                  :value="infracao.id"
+                  v-for="servico in servicos"
+                  :key="servico.id"
+                  :value="servico.id"
                 >
-                  {{ infracao.descricao_infracao }}
+                  {{ servico.descricao_servicos }}
                 </option>
               </select>
             </div>
@@ -211,7 +211,7 @@ export default {
   },
 
   props: {
-    infracoes: Array,
+    servicos: Array,
   },
 
   data: () => {
@@ -225,7 +225,7 @@ export default {
         regiao6: null,
         periodoIni: null,
         periodoFim: null,
-        infracao: null,
+        servico: null,
 
         preserveState: true,
       },
@@ -235,8 +235,7 @@ export default {
   methods: {
     sendForm() {
       
-
-      window.open(`/multas/relatorio1?regiao1=${this.form.regiao1}
+      window.open(`/manutencoes/relatorio1?regiao1=${this.form.regiao1}
       &regiao2=${this.form.regiao2}
       &regiao3=${this.form.regiao3}
       &regiao4=${this.form.regiao4}
@@ -244,27 +243,8 @@ export default {
       &regiao6=${this.form.regiao6}
       &periodoIni=${this.form.periodoIni}
       &periodoFim=${this.form.periodoFim}
-      &infracao=${this.form.infracao}`, '_blank');
-
-            
-      /*this.$inertia.post("/multas/relatorio1", this.form, {
-        forceFormData: true,
-        preserveScroll: false,
-        _token: this.$page.props.csrf_token,
-        onSuccess: () => {
-
-          $("#regiao1").prop('checked', false);
-          $("#regiao2").prop('checked', false);
-          $("#regiao3").prop('checked', false);
-          $("#regiao4").prop('checked', false);
-          $("#regiao5").prop('checked', false);
-          $("#regiao6").prop('checked', false);
-          $("#periodoIni").val("");
-          $("#periodoFim").val("");
-          $("#infracao").val("");                   
+      &servico=${this.form.servico}`, '_blank');
           
-        },
-      });*/
     },
   },
 };

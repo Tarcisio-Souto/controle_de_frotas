@@ -145,11 +145,15 @@ Route::get('/veiculo/editar/{id}', [VeiculosController::class, 'edit'])->name('v
 Route::post('/veiculo/update/{id}', [VeiculosController::class, 'update'])->name('veiculo.atualizar')->middleware('auth');
 Route::post('/veiculo/deletar/{id}', [VeiculosController::class, 'destroy'])->name('veiculo.deletar')->middleware('auth');
 
-/* Relatórios */
-
-# multas por região + período / custo total de todas as regiões + período
-# custo total por infração + região
+/* Relatórios Multas */
 
 Route::get('/multas/relatorios', [MultasController::class, 'selectRelMultas'])->name('multas.relatorios')->middleware('auth');
 Route::get('/multas/relatorio1', [MultasController::class, 'getRelatorio1'])->name('multas.relatorio1')->middleware('auth');
+
+/* Relatórios Manutenções */
+
+Route::get('/manutencoes/relatorios', [ManutencoesController::class, 'selectRelManutencoes'])->name('manutencoes.relatorios')->middleware('auth');
+Route::get('/manutencoes/relatorio1', [ManutencoesController::class, 'getRelatorio1'])->name('manutencoes.relatorio1')->middleware('auth');
+
+
 
