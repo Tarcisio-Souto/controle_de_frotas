@@ -59,7 +59,12 @@ class AddModelos extends Migration
             ['nome_modelo' => 'Fiorino',
             'created_at' => '2021-09-21 11:09:00',
             'updated_at' => '2021-09-21 11:09:00',
-            'fk_fabricante' => 3]            
+            'fk_fabricante' => 3],
+            
+            ['nome_modelo' => 'Jumpy',
+            'created_at' => '2021-09-21 11:09:00',
+            'updated_at' => '2021-09-21 11:09:00',
+            'fk_fabricante' => 5]
             
         ));
     }

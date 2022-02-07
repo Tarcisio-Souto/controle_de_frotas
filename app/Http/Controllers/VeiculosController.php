@@ -101,9 +101,8 @@ class VeiculosController extends Controller
      */
     public function update(Request $request)
     {
-        //dd($request->all());
 
-        $veiculo = Veiculos::find($request->id)->first();
+        $veiculo = Veiculos::find($request->id);
         $veiculo->placa = $request->placa;
         $veiculo->quilometragem = $request->km;
         $veiculo->ano = $request->ano;
@@ -118,7 +117,6 @@ class VeiculosController extends Controller
 
         $veiculos = Veiculos::listAllVeiculos();
         return Redirect::route('veiculos.lista', ['veiculos' => $veiculos])->with('success', 'Atualizações registradas com sucesso!');
-
 
     }
 

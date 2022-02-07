@@ -17,7 +17,7 @@ class AddEmpresas extends Migration
         
         DB::table('empresas')->insert(array(
 
-            ['nome' => 'Vitória Hospitalar',
+            ['nome' => 'Vitória Hospitalar ES',
             'cnpj' => '39.362.611/0001-15',
             'fk_endereco' => 1,
             'created_at' => '2021-09-21 11:09:00',
@@ -36,6 +36,18 @@ class AddEmpresas extends Migration
             'updated_at' => '2021-09-21 11:09:00'],
 
             ['nome' => 'Vitória Hospitalar RJ',
+            'cnpj' => '32.096.846/0001-63',
+            'fk_endereco' => 1,
+            'created_at' => '2021-09-21 11:09:00',
+            'updated_at' => '2021-09-21 11:09:00'],
+
+            ['nome' => 'Healthcare Logística RJ',
+            'cnpj' => '32.096.846/0001-63',
+            'fk_endereco' => 1,
+            'created_at' => '2021-09-21 11:09:00',
+            'updated_at' => '2021-09-21 11:09:00'],
+
+            ['nome' => 'Healthcare Logística SP',
             'cnpj' => '32.096.846/0001-63',
             'fk_endereco' => 1,
             'created_at' => '2021-09-21 11:09:00',

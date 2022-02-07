@@ -31,6 +31,10 @@ class AddFabricantes extends Migration
 
             ['nome_fabricante' => 'Nissan',
             'created_at' => '2021-09-21 11:09:00',
+            'updated_at' => '2021-09-21 11:09:00'],
+
+            ['nome_fabricante' => 'Citroen',
+            'created_at' => '2021-09-21 11:09:00',
             'updated_at' => '2021-09-21 11:09:00']
 
         ));

@@ -42,12 +42,12 @@ class AddTiposInfracoes extends Migration
                  'updated_at' => '2021-09-21 11:09:00'
              ],
              [
-                'descricao_infracao' => 'Dgir com CHN suspensa ou vencida',
+                'descricao_infracao' => 'Dirigir com CHN suspensa ou vencida',
                 'created_at' => '2021-09-21 11:09:00',
                  'updated_at' => '2021-09-21 11:09:00'
              ],
              [
-                'descricao_infracao' => 'Digigir alcoolizado',
+                'descricao_infracao' => 'Dirigir alcoolizado',
                 'created_at' => '2021-09-21 11:09:00',
                  'updated_at' => '2021-09-21 11:09:00'
              ],
