@@ -18,8 +18,8 @@ class CreateTrocasOleosTable extends Migration
             $table->id('id');
             $table->timestamps();
             $table->string('nome_oleo');
-            $table->tinyInteger('filtro_oleo');
-            $table->tinyInteger('filtro_combustivel');
+            $table->string('filtro_oleo');
+            $table->string('filtro_combustivel');
             $table->integer('km_troca');
             $table->integer('km_prox_troca');
             $table->float('custo_total');

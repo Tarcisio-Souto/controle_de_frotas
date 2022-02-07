@@ -67,8 +67,20 @@ class TrocasOleoController extends Controller
         $data_old = date($data_formatada);
         $troca_oleo->data_troca = $data_old;        
         
-        $troca_oleo->filtro_oleo = $request->filtro_oleo;
-        $troca_oleo->filtro_combustivel = $request->filtro_combustivel;
+
+        if ($request->filtro_oleo == 1) {
+            $troca_oleo->filtro_oleo = "Sim";
+        } else if ($request->filtro_oleo == 0) {
+            $troca_oleo->filtro_oleo = "Não";
+        }
+
+        if ($request->filtro_combustivel == 1) {
+            $troca_oleo->filtro_combustivel = "Sim";
+        } else if ($request->filtro_combustivel == 0) {
+            $troca_oleo->filtro_combustivel = "Não";
+        }        
+        
+
         $troca_oleo->km_troca = $request->km_troca;
         $troca_oleo->km_prox_troca = $request->km_prox_troca;
 
