@@ -155,5 +155,8 @@ Route::get('/multas/relatorio1', [MultasController::class, 'getRelatorio1'])->na
 Route::get('/manutencoes/relatorios', [ManutencoesController::class, 'selectRelManutencoes'])->name('manutencoes.relatorios')->middleware('auth');
 Route::get('/manutencoes/relatorio1', [ManutencoesController::class, 'getRelatorio1'])->name('manutencoes.relatorio1')->middleware('auth');
 
+/* Relatórios Abastecimentos */
 
+Route::get('/abastecimentos/relatorios', [AbastecimentosController::class, 'selectRelAbastecimentos'])->name('abastecimentos.relatorios')->middleware('auth');
+Route::get('/abastecimentos/relatorio1', [AbastecimentosController::class, 'getRelatorio1'])->name('abastecimentos.relatorio1')->middleware('auth');
 

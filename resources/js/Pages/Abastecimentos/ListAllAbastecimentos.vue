@@ -3,7 +3,7 @@
     <div class="table-responsive-lg">
 
       <Link :href="'/abastecimentos/cadastro'" class="btn btn-success btnNovo">Novo</Link>
-      <Link :href="'#abastecimentos/relatorio'" class="btn btn-success btnRelatorio">
+      <Link :href="'/abastecimentos/relatorios'" class="btn btn-success btnRelatorio">
         <i class="fas fa-file-excel fa-sm"></i>Relatórios
       </Link> 
 

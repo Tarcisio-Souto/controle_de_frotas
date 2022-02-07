@@ -47,7 +47,6 @@ class ManutencoesExport implements FromCollection, WithHeadings
         ];
     }
 
-
     /**
     * @return \Illuminate\Support\Collection
     */
@@ -88,7 +87,6 @@ class ManutencoesExport implements FromCollection, WithHeadings
             ->get();
 
         }
-
 
         return $manutencoes;
 
