@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 use Maatwebsite\Excel\Facades\Excel;
+use PhpParser\Node\Expr\Cast\Object_;
 
 class MultasController extends Controller
 {
@@ -161,9 +162,52 @@ class MultasController extends Controller
 
     }
 
-    public function getAllMultas()
+    public function getRelatorio1(Request $req)
     {
-        return Excel::download(new MultasExport('Kangoo'), 'multas.xlsx');
+        
+        $regiao1 = ''; $regiao2 = ''; $regiao3 = ''; 
+        $regiao4 = ''; $regiao5 = ''; $regiao6 = '';
+
+        $periodoFim = null; $periodoIni = null;
+        
+        if ($req->regiao1 != "null")
+            $regiao1 = 'Vitória Hospitalar'; 
+        if ($req->regiao2 != "null")
+            $regiao2 = 'Vitória Hospitalar MG';
+        if ($req->regiao3 != "null")
+            $regiao3 = 'Vitória Hospitalar RJ';
+        if ($req->regiao4 != "null")
+            $regiao4 = 'Vitória Hospitalar SP';
+        if ($req->regiao5 != "null")
+            $regiao5 = 'Healthcare Logística RJ';
+        if ($req->regiao6 != "null")
+            $regiao6 = 'Healthcare Logística SP';
+        
+
+        $data = explode("/",$req->periodoIni);
+        $dia = $data[0];
+        $mes = $data[1];
+        $ano = $data[2];            
+        $data_formatada = $ano.'-'.$mes.'-'.$dia;
+    
+        $data_old = date($data_formatada);
+        $periodoIni = $data_old;
+
+
+        $data = explode("/",$req->periodoFim);
+        $dia = $data[0];
+        $mes = $data[1];
+        $ano = $data[2];            
+        $data_formatada = $ano.'-'.$mes.'-'.$dia;
+    
+        $data_old = date($data_formatada);
+        $periodoFim = $data_old;
+
+        
+        return Excel::download(new MultasExport($periodoIni,
+        $periodoFim, $regiao1, $regiao2, $regiao3,
+        $regiao4, $regiao5, $regiao6, $req->infracao), 
+        'Relatório_Multas_Regiao_Período_Tipo_Infração.xlsx');
     }
 
 

@@ -151,5 +151,5 @@ Route::post('/veiculo/deletar/{id}', [VeiculosController::class, 'destroy'])->na
 # custo total por infração + região
 
 Route::get('/multas/relatorios', [MultasController::class, 'selectRelMultas'])->name('multas.relatorios')->middleware('auth');
-
+Route::get('/multas/relatorio1', [MultasController::class, 'getRelatorio1'])->name('multas.relatorio1')->middleware('auth');
 

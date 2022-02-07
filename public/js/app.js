@@ -6223,6 +6223,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -6240,10 +6252,36 @@ __webpack_require__.r(__webpack_exports__);
         regiao2: null,
         regiao3: null,
         regiao4: null,
+        regiao5: null,
+        regiao6: null,
         periodoIni: null,
+        periodoFim: null,
+        infracao: null,
         preserveState: true
       }
     };
+  },
+  methods: {
+    sendForm: function sendForm() {
+      window.open("/multas/relatorio1?regiao1=".concat(this.form.regiao1, "\n      &regiao2=").concat(this.form.regiao2, "\n      &regiao3=").concat(this.form.regiao3, "\n      &regiao4=").concat(this.form.regiao4, "\n      &regiao5=").concat(this.form.regiao5, "\n      &regiao6=").concat(this.form.regiao6, "\n      &periodoIni=").concat(this.form.periodoIni, "\n      &periodoFim=").concat(this.form.periodoFim, "\n      &infracao=").concat(this.form.infracao), '_blank');
+      /*this.$inertia.post("/multas/relatorio1", this.form, {
+        forceFormData: true,
+        preserveScroll: false,
+        _token: this.$page.props.csrf_token,
+        onSuccess: () => {
+            $("#regiao1").prop('checked', false);
+          $("#regiao2").prop('checked', false);
+          $("#regiao3").prop('checked', false);
+          $("#regiao4").prop('checked', false);
+          $("#regiao5").prop('checked', false);
+          $("#regiao6").prop('checked', false);
+          $("#periodoIni").val("");
+          $("#periodoFim").val("");
+          $("#infracao").val("");                   
+          
+        },
+      });*/
+    }
   }
 });
 
@@ -45785,7 +45823,7 @@ var render = function () {
     _c(
       "form",
       {
-        attrs: { enctype: "multipart/form-data" },
+        attrs: { enctype: "multipart/form-data", id: "form-rel-1" },
         on: {
           submit: function ($event) {
             $event.preventDefault()
@@ -45796,7 +45834,7 @@ var render = function () {
       [
         _c("p", { staticClass: "legend-rel" }, [
           _vm._v(
-            "Relatórios de Multas (por região, período e tipo de infração)"
+            "\n      Relatórios de Multas (por região, período e tipo de infração)\n    "
           ),
         ]),
         _vm._v(" "),
@@ -45819,13 +45857,13 @@ var render = function () {
                     staticClass: "form-check-input position-static",
                     attrs: {
                       type: "checkbox",
-                      id: "blankCheckbox",
-                      value: "1",
+                      id: "regiao1",
+                      value: "Vitória Hospitalar",
                       "aria-label": "Vitória Hospitalar",
                     },
                     domProps: {
                       checked: Array.isArray(_vm.form.regiao1)
-                        ? _vm._i(_vm.form.regiao1, "1") > -1
+                        ? _vm._i(_vm.form.regiao1, "Vitória Hospitalar") > -1
                         : _vm.form.regiao1,
                     },
                     on: {
@@ -45834,7 +45872,7 @@ var render = function () {
                           $$el = $event.target,
                           $$c = $$el.checked ? true : false
                         if (Array.isArray($$a)) {
-                          var $$v = "1",
+                          var $$v = "Vitória Hospitalar",
                             $$i = _vm._i($$a, $$v)
                           if ($$el.checked) {
                             $$i < 0 &&
@@ -45872,7 +45910,7 @@ var render = function () {
                     staticClass: "form-check-input position-static",
                     attrs: {
                       type: "checkbox",
-                      id: "blankCheckbox",
+                      id: "regiao2",
                       value: "2",
                       "aria-label": "Vitória Hospitalar",
                     },
@@ -45925,7 +45963,7 @@ var render = function () {
                     staticClass: "form-check-input position-static",
                     attrs: {
                       type: "checkbox",
-                      id: "blankCheckbox",
+                      id: "regiao3",
                       value: "3",
                       "aria-label": "Vitória Hospitalar RJ",
                     },
@@ -45980,7 +46018,7 @@ var render = function () {
                     staticClass: "form-check-input position-static",
                     attrs: {
                       type: "checkbox",
-                      id: "blankCheckbox",
+                      id: "regiao4",
                       value: "4",
                       "aria-label": "Vitória Hospitalar SP",
                     },
@@ -46033,7 +46071,7 @@ var render = function () {
                     staticClass: "form-check-input position-static",
                     attrs: {
                       type: "checkbox",
-                      id: "blankCheckbox",
+                      id: "regiao5",
                       value: "5",
                       "aria-label": "Healthcare Logística RJ",
                     },
@@ -46088,7 +46126,7 @@ var render = function () {
                     staticClass: "form-check-input position-static",
                     attrs: {
                       type: "checkbox",
-                      id: "blankCheckbox",
+                      id: "regiao6",
                       value: "6",
                       "aria-label": "Healthcare Logística SP",
                     },
@@ -46168,6 +46206,7 @@ var render = function () {
                       type: "text",
                       id: "inputPeriodoIni",
                       name: "txtPeriodoIni",
+                      required: "",
                     },
                     domProps: { value: _vm.form.periodoIni },
                     on: {
@@ -46217,6 +46256,7 @@ var render = function () {
                       type: "text",
                       id: "inputPeriodoFim",
                       name: "txtPeriodoFim",
+                      required: "",
                     },
                     domProps: { value: _vm.form.periodoFim },
                     on: {
@@ -46280,7 +46320,9 @@ var render = function () {
                     },
                   },
                   [
-                    _c("option", [_vm._v("Selecione a Infração")]),
+                    _c("option", { attrs: { value: "null", selected: "" } }, [
+                      _vm._v("Todas"),
+                    ]),
                     _vm._v(" "),
                     _vm._l(_vm.infracoes, function (infracao) {
                       return _c(
@@ -46288,9 +46330,9 @@ var render = function () {
                         { key: infracao.id, domProps: { value: infracao.id } },
                         [
                           _vm._v(
-                            "\n                  " +
+                            "\n                " +
                               _vm._s(infracao.descricao_infracao) +
-                              "\n                "
+                              "\n              "
                           ),
                         ]
                       )
@@ -46308,7 +46350,7 @@ var render = function () {
                   staticClass: "btn btn-success btrGerarRel",
                   attrs: { type: "submit" },
                 },
-                [_vm._v("\n              Gerar Relatório\n            ")]
+                [_vm._v("\n            Gerar Relatório\n          ")]
               ),
             ]),
           ]),
@@ -46317,6 +46359,7 @@ var render = function () {
         _c("br"),
         _c("br"),
         _c("br"),
+        _vm._v(" "),
         _c("hr"),
       ]
     ),
