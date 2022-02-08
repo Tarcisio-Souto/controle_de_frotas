@@ -31,6 +31,7 @@
         "datatables.net-bs4": "^1.11.3",
         "datatables.net-dt": "^1.11.3",
         "vue": "^2.6.14",
+        "vue-google-charts": "^0.3.3",
         "vue-plugin-load-script": "^2.1.0",
         "vue-the-mask": "^0.11.1"
     }

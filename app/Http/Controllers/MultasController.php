@@ -210,6 +210,13 @@ class MultasController extends Controller
         'Relatório_Multas_Regiao_Período_Tipo_Infração.xlsx');
     }
 
+    public function getAnalises() {
+
+        $infracoes = Multas::getMultasToChart();
+        return Inertia::render('Multas/AnalisesMultas.vue', ['infracoes' => $infracoes]);
+
+    }
+
 
 
 }

@@ -622,3 +622,30 @@ a[href*="#contact"]::before {
 .box-rel-1 {
     border: 1px solid black;
 }
+
+.btnAnalises {
+    position: relative;
+    margin-left: 12px;
+    top: -3px;
+}
+
+.icon-chart {
+    position: relative;
+    margin-right: 7px;
+    height: 20px;
+    top: 1px;
+}
+
+.topic-chart {
+    background: #485d9b;
+    background: linear-gradient(to right bottom, #2e4374 50%, #233d8b 50%);
+    border-radius: 10px;
+    padding-left: 50px;
+}
+
+.topic-chart p {
+    font-weight: bold;
+    color: white;
+    position: relative;
+    top: 7px;
+}

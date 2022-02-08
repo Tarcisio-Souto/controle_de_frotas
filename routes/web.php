@@ -165,3 +165,7 @@ Route::get('/abastecimentos/relatorio1', [AbastecimentosController::class, 'getR
 Route::get('/trocas-oleo/relatorios', [TrocasOleoController::class, 'selectRelTrocasOleo'])->name('trocas-oleo.relatorios')->middleware('auth');
 Route::get('/trocas-oleo/relatorio1', [TrocasOleoController::class, 'getRelatorio1'])->name('trocas-oleo.relatorio1')->middleware('auth');
 
+/* Análises Gráficas - Multas */
+
+Route::get('/multas/analises', [MultasController::class, 'getAnalises'])->name('multas.analises')->middleware('auth');
+

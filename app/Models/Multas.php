@@ -53,6 +53,18 @@ class Multas extends Model
     }
 
 
+    public static function getMultasToChart() {
+
+        $infracoes = DB::table('tipos_infracoes as ti')
+        ->leftJoin('multas as mul', 'ti.id', '=', 'mul.fk_infracao')
+        ->groupBy('ti.descricao_infracao')
+        ->select(DB::raw('count(mul.fk_infracao) as qtd, ti.descricao_infracao'))
+        ->get();
+
+        return $infracoes;
+
+    }
+
 
 
 }

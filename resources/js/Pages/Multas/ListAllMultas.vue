@@ -1,21 +1,17 @@
 <template>
   <layout>
     <div class="table-responsive-lg">
-      <Link :href="'/multas/cadastro'" class="btn btn-success btnNovo"
+      <Link :href="'/multas/cadastro'" class="btn btn-primary btnNovo"
         >Novo</Link
       >
       <a href="/multas/relatorios" class="btn btn-success btnRelatorio">
         <i class="fas fa-file-excel fa-sm"></i>Relatórios
       </a>
 
-      <div class="row">
-        
-
-
-
-      </div>
-
-
+      <Link :href="'/multas/analises'" class="btn btn-info btnAnalises"
+        ><i class="fas fa-chart-bar icon-chart"></i>Análises Gráficas</Link
+      >
+      
       <table
         id="myTable"
         class="table table-striped table-bordered table-hover"
@@ -76,9 +72,10 @@
 </template>
 
 <script>
+
 import Layout from "../../Layout.vue";
 import { Link } from "@inertiajs/inertia-vue";
-import { Inertia } from "@inertiajs/inertia";
+
 
 export default {
   components: {
