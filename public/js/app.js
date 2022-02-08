@@ -6208,6 +6208,16 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
     };
+  },
+  created: function created() {
+    /* Abre o display de Gráficos */
+    var v = this;
+    $(function () {
+      $(".fa-caret-down").click(function () {
+        var subGrafico1 = $("#subGrafico1");
+        subGrafico1.slideToggle();
+      });
+    });
   }
 });
 
@@ -47450,7 +47460,10 @@ var render = function () {
     _vm._v(" "),
     _c("div", { staticClass: "row topic-chart" }, [
       _c("div", { staticClass: "col-md-4" }, [
-        _c("p", [_vm._v("Ocorrência de Infrações")]),
+        _c("p", [
+          _c("i", { staticClass: "fas fa-caret-down" }),
+          _vm._v("Ocorrência de Infrações"),
+        ]),
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "col-md-4" }),
@@ -47458,7 +47471,7 @@ var render = function () {
       _c("div", { staticClass: "col-md-4" }),
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "row" }, [
+    _c("div", { staticClass: "row", attrs: { id: "subGrafico1" } }, [
       _c(
         "div",
         { staticClass: "col-md-12" },

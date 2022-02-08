@@ -12496,3 +12496,18 @@ a[href*="#contact"]::before {
     position: relative;
     top: 7px;
 }
+
+.fa-caret-down {
+    position: relative;
+    margin-right: 10px;
+    cursor: pointer;
+    background-color: rgb(183, 193, 194);
+    width: 25px;
+    border-radius: 100%;
+    text-align: center;
+    top: -2px;
+}
+
+.fa-caret-down:hover {
+    opacity: 40%;
+}
