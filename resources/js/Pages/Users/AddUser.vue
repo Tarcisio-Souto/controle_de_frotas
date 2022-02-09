@@ -18,7 +18,7 @@
     <br />
     <div class="row">
       <div class="col-md-12">
-        <form @submit.prevent="sendForm" enctype="multipart/form-data">
+        <form @submit.prevent="sendForm" enctype="multipart/form-data" id="formAddUser">
           <h4><span style="font-weight: bold">Dados Pessoais</span></h4>
           <div class="row">
             <div class="col-md-4">
@@ -530,17 +530,39 @@ export default {
         bairro: null,
         cidade: null,
         estado: null,
-        cep: null,
-        preserveState: true,
+        cep: null
+
       },
     };
   },
   methods: {
     sendForm() {
+
+      var aux_nome = this.form.nome;
+      var aux_cpf = this.form.cpf;
+      var aux_idade = this.form.idade;
+      var aux_sexo = this.form.senha;
+      var aux_email_part = this.form.email_part;
+      var aux_email_inst = this.form.email_inst;
+      var aux_empresa = this.form.empresa;
+      var aux_cargo = this.form.cargo;
+      var aux_data_adm = this.form.data_adm;
+      var aux_celular = this.form.celular;
+      var aux_tel_rec = this.form.tel_rec;
+      var aux_senha = this.form.senha;
+      var aux_confirm_senha = this.form.confirm_senha;
+      var aux_logradouro = this.form.logradouro;
+      var aux_numero = this.form.numero;
+      var aux_bairro = this.form.bairro;
+      var aux_cidade = this.form.cidade;
+      var aux_estado = this.form.estado;
+      var aux_cep = this.form.cep;
+
       this.$inertia.post("/colaborador/registrar", this.form, {
         forceFormData: true,
         preserveScroll: false,
         _token: this.$page.props.csrf_token,
+        preserveState: false,
         onSuccess: () => {
           bootbox.alert({
             centerVertical: true,
@@ -554,30 +576,35 @@ export default {
               "<span style='font-weight:bold; position: relative; top: 5px;'>Colaborador registrado com sucesso!</span>",
           });
 
-          
-          $("#inputNome").val("");
-          $("#inputCpf").val("");
-          $("#inputConfirmSenha").val("");
-          $("#inputSenha").val("");
-          $("#inputCep").val("");
-          $("#inputEstado").val("");
-          $("#inputCidade").val("");
-          $("#inputBairro").val("");
-          $("#inputNumero").val("");
-          $("#inputLogradouro").val("");
-          $("#inputTelRecado").val("");
-          $("#inputCelular").val("");
-          $("#inputDataAdmissao").val("");
-          $("#inputCargo").val("");
-          $("#inputEmpresa").val("");
-          $("#inputIdade").val("");
-          $("#inputEmailInst").val("");
-          $("#inputEmail").val("");
-          $("#inputCpf").val("");
-          $("#inputSexo1").prop('checked', false);
-          $("#inputSexo2").prop('checked', false);          
+
+          $('#formAddUser').reset();
           
         },
+
+        onError: () => {
+
+          $("#inputNome").val(aux_nome);
+          $("#inputCpf").val(aux_cpf);
+          $("#inputConfirmSenha").val(aux_confirm_senha);
+          $("#inputSenha").val(aux_senha);
+          $("#inputCep").val(aux_cep);
+          $("#inputEstado").val(aux_estado);
+          $("#inputCidade").val(aux_cidade);
+          $("#inputBairro").val(aux_bairro);
+          $("#inputNumero").val(aux_numero);
+          $("#inputLogradouro").val(aux_logradouro);
+          $("#inputTelRecado").val(aux_tel_rec);
+          $("#inputCelular").val(aux_celular);
+          $("#inputDataAdmissao").val(aux_data_adm);
+          $("#inputCargo").val(aux_cargo);
+          $("#inputEmpresa").val(aux_empresa);
+          $("#inputIdade").val(aux_idade);
+          $("#inputEmailInst").val(aux_email_part);
+          $("#inputEmail").val(aux_email_inst);
+          
+
+        },
+
       });
     },
   },

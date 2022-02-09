@@ -203,16 +203,24 @@ export default {
         tipo: null,
         km: null,        
         
-        preserveState: true,
       },
     };
   },
   methods: {
     sendForm() {
+
+      var aux_modelo = this.form.modelo;
+      var aux_empresa = this.form.empresa;
+      var aux_placa = this.form.placa;
+      var aux_ano = this.form.ano;
+      var aux_tipo = this.form.tipo;
+      var aux_km = this.form.km;
+
       this.$inertia.post("/veiculos/registrar", this.form, {
         forceFormData: true,
         preserveScroll: false,
         _token: this.$page.props.csrf_token,
+        preserveState: false,
         onSuccess: () => {
           bootbox.alert({
             centerVertical: true,
@@ -226,13 +234,20 @@ export default {
               "<span style='font-weight:bold; position: relative; top: 5px;'>Veículo registrado com sucesso!</span>",
           });
                     
-          $("#inputPlaca").val("");
-          $("#inputAno").val("");
-          $("#inputTipo").val("");
-          $("#inputKm").val("");
-          $("option:selected").prop("selected", false);           
+          $('#formAddUser').reset();   
           
         },
+
+        onError: () => {
+
+          $("#inputPlaca").val(aux_placa);
+          $("#inputAno").val(aux_ano);
+          $("#inputTipo").val(aux_tipo);
+          $("#inputKm").val(aux_km);
+          $("#inputModelo").val(aux_modelo);
+
+        }
+
       });
     },
   },
