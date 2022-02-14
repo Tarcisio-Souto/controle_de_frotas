@@ -2448,17 +2448,21 @@ __webpack_require__.r(__webpack_exports__);
         veiculo: null,
         posto: null,
         data_abastecimento: null,
-        custo: null,
-        preserveState: true
+        custo: null
       }
     };
   },
   methods: {
     sendForm: function sendForm() {
+      var aux_veiculo = this.form.veiculo;
+      var aux_posto = this.form.posto;
+      var aux_data_abastecimento = this.form.data_abastecimento;
+      var aux_custo = this.form.custo;
       this.$inertia.post("/abastecimentos/registrar", this.form, {
         forceFormData: true,
         preserveScroll: false,
         _token: this.$page.props.csrf_token,
+        preserveState: false,
         onSuccess: function onSuccess() {
           bootbox.alert({
             centerVertical: true,
@@ -2468,10 +2472,13 @@ __webpack_require__.r(__webpack_exports__);
             title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
             message: "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Abastecimento registrado com sucesso!</span>"
           });
-          $("#inputVeiculo").val("");
-          $("#inputPosto").val("");
-          $("#inputCusto").val("");
-          $("#inputDataAbastecimento").val("");
+          $("#formAddAbastecimento").reset();
+        },
+        onError: function onError() {
+          $("#inputVeiculo").val(aux_veiculo);
+          $("#inputPosto").val(aux_posto);
+          $("#inputCusto").val(aux_custo);
+          $("#inputDataAbastecimento").val(aux_data_abastecimento);
         }
       });
     }
@@ -5099,17 +5106,23 @@ __webpack_require__.r(__webpack_exports__);
         servico: null,
         data_manutencao: null,
         custo: null,
-        observacao: null,
-        preserveState: true
+        observacao: null
       }
     };
   },
   methods: {
     sendForm: function sendForm() {
+      var aux_veiculo = this.form.veiculo;
+      var aux_oficina = this.form.oficina;
+      var aux_servico = this.form.servico;
+      var aux_data_man = this.form.data_manutencao;
+      var aux_custo = this.form.custo;
+      var aux_observacao = this.form.observacao;
       this.$inertia.post("/manutencoes/registrar", this.form, {
         forceFormData: true,
         preserveScroll: false,
         _token: this.$page.props.csrf_token,
+        preserveState: false,
         onSuccess: function onSuccess() {
           bootbox.alert({
             centerVertical: true,
@@ -5119,12 +5132,15 @@ __webpack_require__.r(__webpack_exports__);
             title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
             message: "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Manutenção registrada com sucesso!</span>"
           });
-          $("#inputVeiculo").val("");
-          $("#inputOficina").val("");
-          $("#inputServico").val("");
-          $("#inputDataManutencao").val("");
-          $("#inputCusto").val("");
-          $("#exampleFormControlTextarea1").val("");
+          $("#formAddManutencao").reset();
+        },
+        onError: function onError() {
+          $("#inputVeiculo").val(aux_veiculo);
+          $("#inputOficina").val(aux_oficina);
+          $("#inputServico").val(aux_servico);
+          $("#inputDataManutencao").val(aux_data_man);
+          $("#inputCusto").val(aux_custo);
+          $("#exampleFormControlTextarea1").val(aux_observacao);
         }
       });
     }
@@ -6106,17 +6122,21 @@ __webpack_require__.r(__webpack_exports__);
         veiculo: null,
         infracao: null,
         data_multa: null,
-        custo: null,
-        preserveState: true
+        custo: null
       }
     };
   },
   methods: {
     sendForm: function sendForm() {
+      var aux_veiculo = this.form.veiculo;
+      var aux_infracao = this.form.infracao;
+      var aux_data_multa = this.form.data_multa;
+      var aux_custo = this.form.custo;
       this.$inertia.post("/multas/registrar", this.form, {
         forceFormData: true,
         preserveScroll: false,
         _token: this.$page.props.csrf_token,
+        preserveState: false,
         onSuccess: function onSuccess() {
           bootbox.alert({
             centerVertical: true,
@@ -6126,11 +6146,13 @@ __webpack_require__.r(__webpack_exports__);
             title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
             message: "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Multa registrada com sucesso!</span>"
           });
-          $("#inputVeiculo").val("");
-          $("#inputMulta").val("");
-          $("#inputCusto").val("");
-          $("#inputDataMulta").val("");
-          $("option:selected").prop("selected", false);
+          $("#formAddMulta").reset();
+        },
+        onError: function onError() {
+          $("#inputVeiculo").val(aux_veiculo);
+          $("#inputInfracao").val(aux_infracao);
+          $("#inputCusto").val(aux_custo);
+          $("#inputDataMulta").val(aux_data_multa);
         }
       });
     }
@@ -7093,8 +7115,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       form: {
-        nome: null,
-        preserveState: true
+        nome: null
       }
     };
   },
@@ -7104,6 +7125,7 @@ __webpack_require__.r(__webpack_exports__);
         forceFormData: true,
         preserveScroll: false,
         _token: this.$page.props.csrf_token,
+        preserveState: false,
         onSuccess: function onSuccess() {
           bootbox.alert({
             centerVertical: true,
@@ -7113,6 +7135,9 @@ __webpack_require__.r(__webpack_exports__);
             title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
             message: "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Oficina registrada com sucesso!</span>"
           });
+          $("#formAddOficina").reset();
+        },
+        onError: function onError() {
           $("#inputNome").val("");
         }
       });
@@ -7590,17 +7615,18 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       form: {
-        nome: null,
-        preserveState: true
+        nome: null
       }
     };
   },
   methods: {
     sendForm: function sendForm() {
+      var aux_nome = this.form.nome;
       this.$inertia.post("/postos/registrar", this.form, {
         forceFormData: true,
         preserveScroll: false,
         _token: this.$page.props.csrf_token,
+        preserveState: false,
         onSuccess: function onSuccess() {
           bootbox.alert({
             centerVertical: true,
@@ -7610,7 +7636,10 @@ __webpack_require__.r(__webpack_exports__);
             title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
             message: "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Posto registrado com sucesso!</span>"
           });
-          $("#inputNome").val("");
+          $('#formAddPosto').reset();
+        },
+        onError: function onError() {
+          $("#inputNome").val(aux_nome);
         }
       });
     }
@@ -8087,17 +8116,18 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       form: {
-        nome: null,
-        preserveState: true
+        nome: null
       }
     };
   },
   methods: {
     sendForm: function sendForm() {
+      var aux_nome = this.form.nome;
       this.$inertia.post("/servicos/registrar", this.form, {
         forceFormData: true,
         preserveScroll: false,
         _token: this.$page.props.csrf_token,
+        preserveState: false,
         onSuccess: function onSuccess() {
           bootbox.alert({
             centerVertical: true,
@@ -8107,7 +8137,10 @@ __webpack_require__.r(__webpack_exports__);
             title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
             message: "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Serviço registrado com sucesso!</span>"
           });
-          $("#inputNome").val("");
+          $('#formAddServico').reset();
+        },
+        onError: function onError() {
+          $("#inputNome").val(aux_nome);
         }
       });
     }
@@ -8790,17 +8823,26 @@ __webpack_require__.r(__webpack_exports__);
         km_troca: null,
         km_prox_troca: null,
         filtro_oleo: null,
-        filtro_combustivel: null,
-        preserveState: true
+        filtro_combustivel: null
       }
     };
   },
   methods: {
     sendForm: function sendForm() {
+      var aux_veiculo = this.form.veiculo;
+      var aux_oficina = this.form.oficina;
+      var aux_nome_oleo = this.form.nome_oleo;
+      var aux_data_troca = this.form.data_troca;
+      var aux_custo = this.form.custo;
+      var aux_km_troca = this.form.km_troca;
+      var aux_km_prox_troca = this.form.km_prox_troca; //var aux_filtro_oleo = this.form.filtro_oleo;
+      //var aux_filtro_combustivel = this.form.filtro_combustivel;
+
       this.$inertia.post("/trocas-oleo/registrar", this.form, {
         forceFormData: true,
         preserveScroll: false,
         _token: this.$page.props.csrf_token,
+        preserveState: false,
         onSuccess: function onSuccess() {
           bootbox.alert({
             centerVertical: true,
@@ -8810,17 +8852,20 @@ __webpack_require__.r(__webpack_exports__);
             title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
             message: "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Troca de Óleo registrada com sucesso!</span>"
           });
-          $("#inputVeiculo").val("");
-          $("#inputOficina").val("");
-          $("#inputDataTroca").val("");
-          $("#inputNomeOleo").val("");
-          $("#inputFiltroOleo1").prop('checked', false);
-          $("#inputFiltroOleo2").prop('checked', false);
-          $("#inputCombustivel1").prop('checked', false);
-          $("#inputCombustivel2").prop('checked', false);
-          $("#inputKmTroca").val("");
-          $("#inputKmProxTroca").val("");
-          $("#inputCusto").val("");
+          $('#formAddTrocaOleo').reset();
+        },
+        onError: function onError() {
+          $("#inputVeiculo").val(aux_veiculo);
+          $("#inputOficina").val(aux_oficina);
+          $("#inputDataTroca").val(aux_data_troca);
+          $("#inputNomeOleo").val(aux_nome_oleo); //$("#inputFiltroOleo1").prop('checked', false);
+          //$("#inputFiltroOleo2").prop('checked', false);
+          //$("#inputCombustivel1").prop('checked', false);
+          //$("#inputCombustivel2").prop('checked', false);
+
+          $("#inputKmTroca").val(aux_km_troca);
+          $("#inputKmProxTroca").val(aux_km_prox_troca);
+          $("#inputCusto").val(aux_custo);
         }
       });
     }
@@ -11975,13 +12020,14 @@ __webpack_require__.r(__webpack_exports__);
             title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
             message: "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Veículo registrado com sucesso!</span>"
           });
-          $('#formAddUser').reset();
+          $('#formAddVeiculo').reset();
         },
         onError: function onError() {
           $("#inputPlaca").val(aux_placa);
           $("#inputAno").val(aux_ano);
           $("#inputTipo").val(aux_tipo);
           $("#inputKm").val(aux_km);
+          $("#inputEmpresa").val(aux_empresa);
           $("#inputModelo").val(aux_modelo);
         }
       });
@@ -40914,7 +40960,10 @@ var render = function () {
         _c(
           "form",
           {
-            attrs: { enctype: "multipart/form-data" },
+            attrs: {
+              enctype: "multipart/form-data",
+              id: "formAddAbastecimento",
+            },
             on: {
               submit: function ($event) {
                 $event.preventDefault()
@@ -45216,7 +45265,7 @@ var render = function () {
         _c(
           "form",
           {
-            attrs: { enctype: "multipart/form-data" },
+            attrs: { enctype: "multipart/form-data", id: "formAddManutencao" },
             on: {
               submit: function ($event) {
                 $event.preventDefault()
@@ -47156,7 +47205,7 @@ var render = function () {
         _c(
           "form",
           {
-            attrs: { enctype: "multipart/form-data" },
+            attrs: { enctype: "multipart/form-data", id: "formAddMulta" },
             on: {
               submit: function ($event) {
                 $event.preventDefault()
@@ -48895,7 +48944,7 @@ var render = function () {
         _c(
           "form",
           {
-            attrs: { enctype: "multipart/form-data" },
+            attrs: { enctype: "multipart/form-data", id: "formAddOficina" },
             on: {
               submit: function ($event) {
                 $event.preventDefault()
@@ -49527,7 +49576,7 @@ var render = function () {
         _c(
           "form",
           {
-            attrs: { enctype: "multipart/form-data" },
+            attrs: { enctype: "multipart/form-data", id: "formAddPosto" },
             on: {
               submit: function ($event) {
                 $event.preventDefault()
@@ -50153,7 +50202,7 @@ var render = function () {
         _c(
           "form",
           {
-            attrs: { enctype: "multipart/form-data" },
+            attrs: { enctype: "multipart/form-data", id: "formAddServico" },
             on: {
               submit: function ($event) {
                 $event.preventDefault()
@@ -50789,7 +50838,7 @@ var render = function () {
         _c(
           "form",
           {
-            attrs: { enctype: "multipart/form-data" },
+            attrs: { enctype: "multipart/form-data", id: "formAddTrocaOleo" },
             on: {
               submit: function ($event) {
                 $event.preventDefault()
@@ -56923,7 +56972,7 @@ var render = function () {
         _c(
           "form",
           {
-            attrs: { enctype: "multipart/form-data" },
+            attrs: { enctype: "multipart/form-data", id: "formAddVeiculo" },
             on: {
               submit: function ($event) {
                 $event.preventDefault()

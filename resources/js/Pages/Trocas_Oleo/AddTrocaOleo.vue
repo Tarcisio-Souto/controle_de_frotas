@@ -18,7 +18,7 @@
     <br />
     <div class="row">
       <div class="col-md-12">
-        <form @submit.prevent="sendForm" enctype="multipart/form-data">
+        <form @submit.prevent="sendForm" enctype="multipart/form-data" id="formAddTrocaOleo">
           <h4><span style="font-weight: bold">Registro</span></h4><br>
 
           <div class="row">
@@ -289,16 +289,27 @@ export default {
         filtro_oleo: null,
         filtro_combustivel: null,
         
-        preserveState: true,
       },
     };
   },
   methods: {
     sendForm() {
+
+      var aux_veiculo = this.form.veiculo;
+      var aux_oficina = this.form.oficina;
+      var aux_nome_oleo = this.form.nome_oleo;
+      var aux_data_troca = this.form.data_troca;
+      var aux_custo = this.form.custo;
+      var aux_km_troca = this.form.km_troca;
+      var aux_km_prox_troca = this.form.km_prox_troca;
+      //var aux_filtro_oleo = this.form.filtro_oleo;
+      //var aux_filtro_combustivel = this.form.filtro_combustivel;
+
       this.$inertia.post("/trocas-oleo/registrar", this.form, {
         forceFormData: true,
         preserveScroll: false,
         _token: this.$page.props.csrf_token,
+        preserveState: false,
         onSuccess: () => {
           bootbox.alert({
             centerVertical: true,
@@ -311,23 +322,29 @@ export default {
               "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" +
               "<span style='font-weight:bold; position: relative; top: 5px;'>Troca de Óleo registrada com sucesso!</span>",
           });
-
-          
-          $("#inputVeiculo").val("");
-          $("#inputOficina").val("");
-          $("#inputDataTroca").val("");
-          $("#inputNomeOleo").val("");
-
-          $("#inputFiltroOleo1").prop('checked', false);
-          $("#inputFiltroOleo2").prop('checked', false);
-          $("#inputCombustivel1").prop('checked', false);
-          $("#inputCombustivel2").prop('checked', false);
-          $("#inputKmTroca").val("");
-          $("#inputKmProxTroca").val("");
-          $("#inputCusto").val("");
-                   
+  
+           $('#formAddTrocaOleo').reset();
           
         },
+
+        onError: () => {
+
+          $("#inputVeiculo").val(aux_veiculo);
+          $("#inputOficina").val(aux_oficina);
+          $("#inputDataTroca").val(aux_data_troca);
+          $("#inputNomeOleo").val(aux_nome_oleo);
+
+          //$("#inputFiltroOleo1").prop('checked', false);
+          //$("#inputFiltroOleo2").prop('checked', false);
+          //$("#inputCombustivel1").prop('checked', false);
+          //$("#inputCombustivel2").prop('checked', false);
+          $("#inputKmTroca").val(aux_km_troca);
+          $("#inputKmProxTroca").val(aux_km_prox_troca);
+          $("#inputCusto").val(aux_custo);
+
+
+        },
+
       });
     },
   },

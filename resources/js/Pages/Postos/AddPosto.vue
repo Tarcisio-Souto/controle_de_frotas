@@ -18,7 +18,7 @@
     <br />
     <div class="row">
       <div class="col-md-12">
-        <form @submit.prevent="sendForm" enctype="multipart/form-data">
+        <form @submit.prevent="sendForm" enctype="multipart/form-data" id="formAddPosto">
           <h4><span style="font-weight: bold">Dados Cadastrais</span></h4>
           <br>
           <div class="row">
@@ -81,18 +81,20 @@ export default {
   data: () => {
     return {
       form: {
-        nome: null,
-
-        preserveState: true,
+        nome: null,        
       },
     };
   },
   methods: {
     sendForm() {
+
+      var aux_nome = this.form.nome;
+
       this.$inertia.post("/postos/registrar", this.form, {
         forceFormData: true,
         preserveScroll: false,
         _token: this.$page.props.csrf_token,
+        preserveState: false,
         onSuccess: () => {
           bootbox.alert({
             centerVertical: true,
@@ -105,12 +107,17 @@ export default {
               "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" +
               "<span style='font-weight:bold; position: relative; top: 5px;'>Posto registrado com sucesso!</span>",
           });
-
           
-          $("#inputNome").val("");
-                  
+          $('#formAddPosto').reset();
           
         },
+
+        onError: () => {
+
+          $("#inputNome").val(aux_nome);
+
+        }
+
       });
     },
   },

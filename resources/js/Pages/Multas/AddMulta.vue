@@ -18,7 +18,7 @@
     <br />
     <div class="row">
       <div class="col-md-12">
-        <form @submit.prevent="sendForm" enctype="multipart/form-data">
+        <form @submit.prevent="sendForm" enctype="multipart/form-data" id="formAddMulta">
           <h4><span style="font-weight: bold">Registro</span></h4><br>
 
           <div class="row">
@@ -151,16 +151,22 @@ export default {
         data_multa: null,
         custo: null,
         
-        preserveState: true,
       },
     };
   },
   methods: {
     sendForm() {
+
+      var aux_veiculo = this.form.veiculo;
+      var aux_infracao = this.form.infracao;
+      var aux_data_multa = this.form.data_multa;
+      var aux_custo = this.form.custo;
+
       this.$inertia.post("/multas/registrar", this.form, {
         forceFormData: true,
         preserveScroll: false,
         _token: this.$page.props.csrf_token,
+        preserveState: false,
         onSuccess: () => {
           bootbox.alert({
             centerVertical: true,
@@ -174,15 +180,19 @@ export default {
               "<span style='font-weight:bold; position: relative; top: 5px;'>Multa registrada com sucesso!</span>",
           });
 
-          
-          $("#inputVeiculo").val("");
-          $("#inputMulta").val("");
-          $("#inputCusto").val("");
-          $("#inputDataMulta").val("");
-          $("option:selected").prop("selected", false); 
-                   
+          $("#formAddMulta").reset();                   
           
         },
+
+        onError: () => {
+
+          $("#inputVeiculo").val(aux_veiculo);
+          $("#inputInfracao").val(aux_infracao);
+          $("#inputCusto").val(aux_custo);
+          $("#inputDataMulta").val(aux_data_multa);
+
+        },
+
       });
     },
   },

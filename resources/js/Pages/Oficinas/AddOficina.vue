@@ -18,7 +18,7 @@
     <br />
     <div class="row">
       <div class="col-md-12">
-        <form @submit.prevent="sendForm" enctype="multipart/form-data">
+        <form @submit.prevent="sendForm" enctype="multipart/form-data" id="formAddOficina">
           <h4><span style="font-weight: bold">Dados Cadastrais</span></h4>
           <br>
           <div class="row">
@@ -81,9 +81,7 @@ export default {
   data: () => {
     return {
       form: {
-        nome: null,
-
-        preserveState: true,
+        nome: null,        
       },
     };
   },
@@ -93,6 +91,7 @@ export default {
         forceFormData: true,
         preserveScroll: false,
         _token: this.$page.props.csrf_token,
+        preserveState: false,
         onSuccess: () => {
           bootbox.alert({
             centerVertical: true,
@@ -106,11 +105,14 @@ export default {
               "<span style='font-weight:bold; position: relative; top: 5px;'>Oficina registrada com sucesso!</span>",
           });
 
-          
-          $("#inputNome").val("");
-                  
+          $("#formAddOficina").reset();                           
           
         },
+
+        onError: () => {
+          $("#inputNome").val(""); 
+        },
+        
       });
     },
   },

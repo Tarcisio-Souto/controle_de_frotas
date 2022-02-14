@@ -18,7 +18,7 @@
     <br />
     <div class="row">
       <div class="col-md-12">
-        <form @submit.prevent="sendForm" enctype="multipart/form-data">
+        <form @submit.prevent="sendForm" enctype="multipart/form-data" id="formAddManutencao">
           <h4><span style="font-weight: bold">Registro</span></h4><br>
 
           <div class="row">
@@ -192,17 +192,24 @@ export default {
         data_manutencao: null,
         custo: null,
         observacao: null,
-        
-        preserveState: true,
       },
     };
   },
   methods: {
     sendForm() {
+
+      var aux_veiculo = this.form.veiculo;
+      var aux_oficina = this.form.oficina;
+      var aux_servico = this.form.servico;
+      var aux_data_man = this.form.data_manutencao;
+      var aux_custo = this.form.custo;
+      var aux_observacao = this.form.observacao;
+
       this.$inertia.post("/manutencoes/registrar", this.form, {
         forceFormData: true,
         preserveScroll: false,
         _token: this.$page.props.csrf_token,
+        preserveState: false,
         onSuccess: () => {
           bootbox.alert({
             centerVertical: true,
@@ -215,17 +222,22 @@ export default {
               "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" +
               "<span style='font-weight:bold; position: relative; top: 5px;'>Manutenção registrada com sucesso!</span>",
           });
-
           
-          $("#inputVeiculo").val("");
-          $("#inputOficina").val("");
-          $("#inputServico").val("");
-          $("#inputDataManutencao").val("");
-          $("#inputCusto").val("");
-          $("#exampleFormControlTextarea1").val("");
-                   
+          $("#formAddManutencao").reset();
           
         },
+
+        onError: () => {
+
+          $("#inputVeiculo").val(aux_veiculo);
+          $("#inputOficina").val(aux_oficina);
+          $("#inputServico").val(aux_servico);
+          $("#inputDataManutencao").val(aux_data_man);
+          $("#inputCusto").val(aux_custo);
+          $("#exampleFormControlTextarea1").val(aux_observacao);                   
+
+        },
+
       });
     },
   },

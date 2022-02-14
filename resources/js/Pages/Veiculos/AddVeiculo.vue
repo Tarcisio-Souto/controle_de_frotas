@@ -18,7 +18,7 @@
     <br />
     <div class="row">
       <div class="col-md-12">
-        <form @submit.prevent="sendForm" enctype="multipart/form-data">
+        <form @submit.prevent="sendForm" enctype="multipart/form-data" id="formAddVeiculo">
           <h4><span style="font-weight: bold">Registro</span></h4><br>
 
           <div class="row">
@@ -234,7 +234,7 @@ export default {
               "<span style='font-weight:bold; position: relative; top: 5px;'>Veículo registrado com sucesso!</span>",
           });
                     
-          $('#formAddUser').reset();   
+          $('#formAddVeiculo').reset();   
           
         },
 
@@ -244,6 +244,7 @@ export default {
           $("#inputAno").val(aux_ano);
           $("#inputTipo").val(aux_tipo);
           $("#inputKm").val(aux_km);
+          $("#inputEmpresa").val(aux_empresa);
           $("#inputModelo").val(aux_modelo);
 
         }

@@ -18,7 +18,7 @@
     <br />
     <div class="row">
       <div class="col-md-12">
-        <form @submit.prevent="sendForm" enctype="multipart/form-data">
+        <form @submit.prevent="sendForm" enctype="multipart/form-data" id="formAddAbastecimento">
           <h4><span style="font-weight: bold">Registro</span></h4><br>
 
           <div class="row">
@@ -150,18 +150,23 @@ export default {
         veiculo: null,
         posto: null,
         data_abastecimento: null,
-        custo: null,
-        
-        preserveState: true,
+        custo: null,        
       },
     };
   },
   methods: {
     sendForm() {
+
+      var aux_veiculo = this.form.veiculo;
+      var aux_posto = this.form.posto;
+      var aux_data_abastecimento = this.form.data_abastecimento;
+      var aux_custo = this.form.custo;
+
       this.$inertia.post("/abastecimentos/registrar", this.form, {
         forceFormData: true,
         preserveScroll: false,
         _token: this.$page.props.csrf_token,
+        preserveState: false,
         onSuccess: () => {
           bootbox.alert({
             centerVertical: true,
@@ -175,14 +180,22 @@ export default {
               "<span style='font-weight:bold; position: relative; top: 5px;'>Abastecimento registrado com sucesso!</span>",
           });
 
+          $("#formAddAbastecimento").reset();
           
-          $("#inputVeiculo").val("");
-          $("#inputPosto").val("");
-          $("#inputCusto").val("");
-          $("#inputDataAbastecimento").val("");
+          
                    
           
         },
+
+        onError: () => {
+
+          $("#inputVeiculo").val(aux_veiculo);
+          $("#inputPosto").val(aux_posto);
+          $("#inputCusto").val(aux_custo);
+          $("#inputDataAbastecimento").val(aux_data_abastecimento);
+
+        },
+
       });
     },
   },
