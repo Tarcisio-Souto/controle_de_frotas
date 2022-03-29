@@ -12,6 +12,7 @@ use App\Http\Controllers\PostosController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\FabricantesController;
 use App\Http\Controllers\ManutencoesController;
+use App\Http\Controllers\ModelosController;
 use App\Http\Controllers\MultasController;
 use App\Http\Controllers\ServicosController;
 use App\Http\Controllers\TrocasOleoController;
@@ -84,6 +85,16 @@ Route::get('/fabricante/visualizar/{id}', [FabricantesController::class, 'show']
 Route::get('/fabricante/editar/{id}', [FabricantesController::class, 'edit'])->name('fabricante.editar')->middleware('auth');
 Route::post('/fabricante/update/{id}', [FabricantesController::class, 'update'])->name('fabricante.atualizar')->middleware('auth');
 Route::post('/fabricante/deletar/{id}', [FabricantesController::class, 'destroy'])->name('fabricante.deletar')->middleware('auth');
+
+/* Modelos */
+
+Route::get('/modelos/cadastro', [ModelosController::class, 'create'])->name('modelo.cadastro')->middleware('auth');
+Route::post('/modelos/registrar', [ModelosController::class, 'store'])->name('modelo.registrar')->middleware('auth');
+Route::get('/modelos/lista', [ModelosController::class, 'index'])->name('modelo.lista')->middleware('auth');
+Route::get('/modelos/visualizar/{id}', [ModelosController::class, 'show'])->name('modelo.mostrar')->middleware('auth');
+Route::get('/modelos/editar/{id}', [ModelosController::class, 'edit'])->name('modelo.editar')->middleware('auth');
+Route::post('/modelos/update/{id}', [ModelosController::class, 'update'])->name('modelo.atualizar')->middleware('auth');
+Route::post('/modelos/deletar/{id}', [ModelosController::class, 'destroy'])->name('modelo.deletar')->middleware('auth');
 
 /* Serviços */
 
