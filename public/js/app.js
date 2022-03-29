@@ -40633,6 +40633,19 @@ var render = function () {
                     _c(
                       "li",
                       [
+                        _c("Link", { attrs: { href: "/modelos/lista" } }, [
+                          _c("i", {
+                            staticClass: "fas fa-car-side icons-menu",
+                          }),
+                          _vm._v("Modelos"),
+                        ]),
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      [
                         _c("Link", { attrs: { href: "/multas/lista" } }, [
                           _c("i", {
                             staticClass: "fas fa-traffic-light icons-menu",

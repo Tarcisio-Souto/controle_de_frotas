@@ -50,16 +50,16 @@
                 ><i class="fas fa-car icons-menu"></i>Veículos</a
               >
               <ul class="dropdown-menu animated fadeInLeft menuVeiculos" role="menu">
-                <!--<div class="dropdown-header">Ferramentas</div>-->
+                <!--<div class="dropdown-header">Ferramentas</div>--> 
                 <li><Link href="/veiculos/cadastro"><i class="fas fa-plus-circle icons-menu"></i>Cadastrar</Link></li>
                 <li><Link href="/veiculos/lista"><i class="fas fa-search icons-menu"></i>Pesquisar</Link></li>
                 <li><Link href="/fabricantes/lista"><i class="fas fa-industry icons-menu"></i>Fabricantes</Link></li>
+                <li><Link href="/modelos/lista"><i class="fas fa-car-side icons-menu"></i>Modelos</Link></li>
                 <li><Link href="/multas/lista"><i class="fas fa-traffic-light icons-menu"></i>Multas</Link></li>              
                 <li><Link href="/servicos/lista"><i class="fas fa-cogs icons-menu"></i>Serviços</Link></li>
                 <li><Link href="/manutencoes/lista"><i class="fas fa-tools icons-menu"></i>Manutenções</Link></li>
                 <li><Link href="/abastecimentos/lista"><i class="fas fa-gas-pump icons-menu"></i>Abastecimentos</Link></li>
                 <li><Link href="/trocas-oleo/lista"><i class="fas fa-oil-can icons-menu"></i>Trocas de Óleo</Link></li>
-                
               </ul>
             </li>
            

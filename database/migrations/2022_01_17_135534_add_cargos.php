@@ -17,7 +17,7 @@ class AddCargos extends Migration
         
         DB::table('cargos')->insert(array(
 
-            ['nome' => 'Assistente de TI',
+            ['nome' => 'Diretor Executivo',
             'created_at' => '2021-09-21 11:09:00',
             'updated_at' => '2021-09-21 11:09:00'],
 
@@ -25,13 +25,17 @@ class AddCargos extends Migration
             'created_at' => '2021-09-21 11:09:00',
             'updated_at' => '2021-09-21 11:09:00'],
 
+            ['nome' => 'Assistente de TI',
+            'created_at' => '2021-09-21 11:09:00',
+            'updated_at' => '2021-09-21 11:09:00'],            
+
             ['nome' => 'Controller',
             'created_at' => '2021-09-21 11:09:00',
             'updated_at' => '2021-09-21 11:09:00'],
 
-            ['nome' => 'Diretor Executivo',
+            ['nome' => 'Motorista',
             'created_at' => '2021-09-21 11:09:00',
-            'updated_at' => '2021-09-21 11:09:00'],
+            'updated_at' => '2021-09-21 11:09:00'],            
 
         ));
 
