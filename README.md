@@ -91,73 +91,73 @@ de frotas veicular.
 
 ><b>Login</b><br>
 
-![Screenshot](https://github.com/Tarcisio-Souto/controle_de_frotas/blob/main/capturas/0 - inicio.PNG)
+![Screenshot](https://github.com/Tarcisio-Souto/controle_de_frotas/blob/main/capturas/login.PNG)
 
 <br><br>
 
 ><b>Home</b><br>
 
-![Screenshot](https://github.com/Tarcisio-Souto/controle_de_frotas/blob/main/capturas/1 - home.PNG)
+![Screenshot](https://github.com/Tarcisio-Souto/controle_de_frotas/blob/main/capturas/inicio.PNG)
 
 <br><br>
 
 ><b>Menu</b><br>
 
-![Screenshot](https://github.com/Tarcisio-Souto/controle_de_frotas/blob/main/capturas/2 - menu.PNG)
+![Screenshot](https://github.com/Tarcisio-Souto/controle_de_frotas/blob/main/capturas/menu.PNG)
 
 <br><br>
 
 ><b>Menu Veículos</b><br>
 
-![Screenshot](https://github.com/Tarcisio-Souto/controle_de_frotas/blob/main/capturas/2.1 - menu.PNG)
+![Screenshot](https://github.com/Tarcisio-Souto/controle_de_frotas/blob/main/capturas/menu_veiculos.PNG)
 
 <br><br>
 
 ><b>Registro de Usuário</b><br>
 
-![Screenshot](https://github.com/Tarcisio-Souto/controle_de_frotas/blob/main/capturas/3 - add_user.PNG)
+![Screenshot](https://github.com/Tarcisio-Souto/controle_de_frotas/blob/main/capturas/add_user.PNG)
 
 <br><br>
 
 ><b>Modal de Confirmação (usado em outras situações)</b><br>
 
-![Screenshot](https://github.com/Tarcisio-Souto/controle_de_frotas/blob/main/capturas/4 - modal_confirm_add_user.PNG)
+![Screenshot](https://github.com/Tarcisio-Souto/controle_de_frotas/blob/main/capturas/modal_confirm_add_user.PNG)
 
 <br><br>
 
 ><b>Lista de Usuário</b><br>
 
-![Screenshot](https://github.com/Tarcisio-Souto/controle_de_frotas/blob/main/capturas/5 - lista_usuario.PNG)
+![Screenshot](https://github.com/Tarcisio-Souto/controle_de_frotas/blob/main/capturas/lista_usuario.PNG)
 
 <br><br>
 
 ><b>Registro de Multas</b><br>
 
-![Screenshot](https://github.com/Tarcisio-Souto/controle_de_frotas/blob/main/capturas/6 - registro_multas.PNG)
+![Screenshot](https://github.com/Tarcisio-Souto/controle_de_frotas/blob/main/capturas/registro_multas.PNG)
 
 <br><br>
 
 ><b>Lista de Multas</b><br>
 
-![Screenshot](https://github.com/Tarcisio-Souto/controle_de_frotas/blob/main/capturas/7 - lista_multas.PNG)
+![Screenshot](https://github.com/Tarcisio-Souto/controle_de_frotas/blob/main/capturas/lista_multas.PNG)
 
 <br><br>
 
 ><b>Geração de Relatórios</b><br>
 
-![Screenshot](https://github.com/Tarcisio-Souto/controle_de_frotas/blob/main/capturas/8 - geracao_relatorios.PNG)
+![Screenshot](https://github.com/Tarcisio-Souto/controle_de_frotas/blob/main/capturas/geracao_relatorios.PNG)
 
 <br><br>
 
 ><b>Relatórios de Multas (Excel)</b><br>
 
-![Screenshot](https://github.com/Tarcisio-Souto/controle_de_frotas/blob/main/capturas/9 - relatorio_multas.PNG)
+![Screenshot](https://github.com/Tarcisio-Souto/controle_de_frotas/blob/main/capturas/relatorio_multas.PNG)
 
 <br><br>
 
 ><b>Gráficos - Multas Recorrentes</b><br>
 
-![Screenshot](https://github.com/Tarcisio-Souto/controle_de_frotas/blob/main/capturas/9 - multas_graficos.PNG)
+![Screenshot](https://github.com/Tarcisio-Souto/controle_de_frotas/blob/main/capturas/multas_graficos.PNG)
 
 
 <br><br><br>
