@@ -2469,7 +2469,7 @@ __webpack_require__.r(__webpack_exports__);
             backdrop: true,
             closeButton: false,
             size: "large",
-            title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+            title: "<img src='https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1'>",
             message: "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Abastecimento registrado com sucesso!</span>"
           });
           $("#formAddAbastecimento").reset();
@@ -2682,7 +2682,7 @@ __webpack_require__.r(__webpack_exports__);
             backdrop: true,
             closeButton: false,
             size: "large",
-            title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+            title: "<img src='https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1'>",
             message: "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Cadastro atualizado com sucesso!</span>"
           });
         }
@@ -2801,7 +2801,7 @@ __webpack_require__.r(__webpack_exports__);
         backdrop: true,
         closeButton: false,
         size: "large",
-        title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+        title: "<img src='https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1'>",
         message: "<i class='fas fa-exclamation-circle' style='color:red'></i></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Deletar abastecimento?</span>",
         buttons: {
           cancel: {
@@ -3561,7 +3561,7 @@ __webpack_require__.r(__webpack_exports__);
             backdrop: true,
             closeButton: false,
             size: "large",
-            title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+            title: "<img src='https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1'>",
             message: "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Empresa registrada com sucesso!</span>"
           });
           $("#inputNome").val("");
@@ -3880,7 +3880,7 @@ __webpack_require__.r(__webpack_exports__);
             backdrop: true,
             closeButton: false,
             size: "large",
-            title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+            title: "<img src='https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1'>",
             message: "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Cadastro atualizado com sucesso!</span>"
           });
         }
@@ -3985,7 +3985,7 @@ __webpack_require__.r(__webpack_exports__);
         backdrop: true,
         closeButton: false,
         size: "large",
-        title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+        title: "<img src='https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1'>",
         message: "<i class='fas fa-exclamation-circle' style='color:red'></i></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Deletar empresa?</span>",
         buttons: {
           cancel: {
@@ -4272,7 +4272,7 @@ __webpack_require__.r(__webpack_exports__);
             closeButton: false,
             size: "large",
             title:
-              "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+              "<img src='https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1'>",
             message:
               "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" +
               "<span style='font-weight:bold; position: relative; top: 5px;'>Colaborador registrado com sucesso!</span>",
@@ -4399,7 +4399,7 @@ __webpack_require__.r(__webpack_exports__);
             backdrop: true,
             closeButton: false,
             size: "large",
-            title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+            title: "<img src='https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1'>",
             message: "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Fabricante registrado com sucesso!</span>"
           });
           $("#inputNome").val("");
@@ -4539,7 +4539,7 @@ __webpack_require__.r(__webpack_exports__);
             backdrop: true,
             closeButton: false,
             size: "large",
-            title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+            title: "<img src='https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1'>",
             message: "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Cadastro atualizado com sucesso!</span>"
           });
         }
@@ -4644,7 +4644,7 @@ __webpack_require__.r(__webpack_exports__);
         backdrop: true,
         closeButton: false,
         size: "large",
-        title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+        title: "<img src='https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1'>",
         message: "<i class='fas fa-exclamation-circle' style='color:red'></i></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Deletar fabricante?</span>",
         buttons: {
           cancel: {
@@ -5129,7 +5129,7 @@ __webpack_require__.r(__webpack_exports__);
             backdrop: true,
             closeButton: false,
             size: "large",
-            title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+            title: "<img src='https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1'>",
             message: "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Manutenção registrada com sucesso!</span>"
           });
           $("#formAddManutencao").reset();
@@ -5374,7 +5374,7 @@ __webpack_require__.r(__webpack_exports__);
             backdrop: true,
             closeButton: false,
             size: "large",
-            title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+            title: "<img src='https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1'>",
             message: "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Cadastro atualizado com sucesso!</span>"
           });
         }
@@ -5490,7 +5490,7 @@ __webpack_require__.r(__webpack_exports__);
         backdrop: true,
         closeButton: false,
         size: "large",
-        title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+        title: "<img src='https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1'>",
         message: "<i class='fas fa-exclamation-circle' style='color:red'></i></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Deletar manutenção?</span>",
         buttons: {
           cancel: {
@@ -6071,7 +6071,7 @@ __webpack_require__.r(__webpack_exports__);
             backdrop: true,
             closeButton: false,
             size: "large",
-            title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+            title: "<img src='https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1'>",
             message: "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Fabricante registrado com sucesso!</span>"
           });
           $("#inputNome").val("");
@@ -6177,7 +6177,7 @@ __webpack_require__.r(__webpack_exports__);
         backdrop: true,
         closeButton: false,
         size: "large",
-        title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+        title: "<img src='https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1'>",
         message: "<i class='fas fa-exclamation-circle' style='color:red'></i></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Deletar modelo?</span>",
         buttons: {
           cancel: {
@@ -6396,7 +6396,7 @@ __webpack_require__.r(__webpack_exports__);
             backdrop: true,
             closeButton: false,
             size: "large",
-            title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+            title: "<img src='https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1'>",
             message: "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Multa registrada com sucesso!</span>"
           });
           $("#formAddMulta").reset();
@@ -6693,7 +6693,7 @@ __webpack_require__.r(__webpack_exports__);
             backdrop: true,
             closeButton: false,
             size: "large",
-            title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+            title: "<img src='https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1'>",
             message: "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Cadastro atualizado com sucesso!</span>"
           });
         }
@@ -6815,7 +6815,7 @@ __webpack_require__.r(__webpack_exports__);
         backdrop: true,
         closeButton: false,
         size: "large",
-        title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+        title: "<img src='https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1'>",
         message: "<i class='fas fa-exclamation-circle' style='color:red'></i></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Deletar multa?</span>",
         buttons: {
           cancel: {
@@ -7385,7 +7385,7 @@ __webpack_require__.r(__webpack_exports__);
             backdrop: true,
             closeButton: false,
             size: "large",
-            title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+            title: "<img src='https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1'>",
             message: "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Oficina registrada com sucesso!</span>"
           });
           $("#formAddOficina").reset();
@@ -7528,7 +7528,7 @@ __webpack_require__.r(__webpack_exports__);
             backdrop: true,
             closeButton: false,
             size: "large",
-            title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+            title: "<img src='https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1'>",
             message: "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Cadastro atualizado com sucesso!</span>"
           });
         }
@@ -7630,7 +7630,7 @@ __webpack_require__.r(__webpack_exports__);
         backdrop: true,
         closeButton: false,
         size: "large",
-        title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+        title: "<img src='https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1'>",
         message: "<i class='fas fa-exclamation-circle' style='color:red'></i></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Deletar oficina?</span>",
         buttons: {
           cancel: {
@@ -7886,7 +7886,7 @@ __webpack_require__.r(__webpack_exports__);
             backdrop: true,
             closeButton: false,
             size: "large",
-            title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+            title: "<img src='https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1'>",
             message: "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Posto registrado com sucesso!</span>"
           });
           $('#formAddPosto').reset();
@@ -8029,7 +8029,7 @@ __webpack_require__.r(__webpack_exports__);
             backdrop: true,
             closeButton: false,
             size: "large",
-            title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+            title: "<img src='https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1'>",
             message: "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Cadastro atualizado com sucesso!</span>"
           });
         }
@@ -8131,7 +8131,7 @@ __webpack_require__.r(__webpack_exports__);
         backdrop: true,
         closeButton: false,
         size: "large",
-        title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+        title: "<img src='https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1'>",
         message: "<i class='fas fa-exclamation-circle' style='color:red'></i></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Deletar posto?</span>",
         buttons: {
           cancel: {
@@ -8387,7 +8387,7 @@ __webpack_require__.r(__webpack_exports__);
             backdrop: true,
             closeButton: false,
             size: "large",
-            title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+            title: "<img src='https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1'>",
             message: "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Serviço registrado com sucesso!</span>"
           });
           $('#formAddServico').reset();
@@ -8530,7 +8530,7 @@ __webpack_require__.r(__webpack_exports__);
             backdrop: true,
             closeButton: false,
             size: "large",
-            title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+            title: "<img src='https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1'>",
             message: "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Cadastro atualizado com sucesso!</span>"
           });
         }
@@ -8632,7 +8632,7 @@ __webpack_require__.r(__webpack_exports__);
         backdrop: true,
         closeButton: false,
         size: "large",
-        title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+        title: "<img src='https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1'>",
         message: "<i class='fas fa-exclamation-circle' style='color:red'></i></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Deletar serviço?</span>",
         buttons: {
           cancel: {
@@ -9102,7 +9102,7 @@ __webpack_require__.r(__webpack_exports__);
             backdrop: true,
             closeButton: false,
             size: "large",
-            title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+            title: "<img src='https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1'>",
             message: "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Troca de Óleo registrada com sucesso!</span>"
           });
           $('#formAddTrocaOleo').reset();
@@ -9511,7 +9511,7 @@ __webpack_require__.r(__webpack_exports__);
             backdrop: true,
             closeButton: false,
             size: "large",
-            title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+            title: "<img src='https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1'>",
             message: "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Cadastro atualizado com sucesso!</span>"
           });
         }
@@ -9630,7 +9630,7 @@ __webpack_require__.r(__webpack_exports__);
         backdrop: true,
         closeButton: false,
         size: "large",
-        title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+        title: "<img src='https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1'>",
         message: "<i class='fas fa-exclamation-circle' style='color:red'></i></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Deletar troca?</span>",
         buttons: {
           cancel: {
@@ -10814,7 +10814,7 @@ __webpack_require__.r(__webpack_exports__);
             backdrop: true,
             closeButton: false,
             size: "large",
-            title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+            title: "<img src='https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1'>",
             message: "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Colaborador registrado com sucesso!</span>"
           });
           $('#formAddUser').reset();
@@ -11375,7 +11375,7 @@ __webpack_require__.r(__webpack_exports__);
             backdrop: true,
             closeButton: false,
             size: "large",
-            title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+            title: "<img src='https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1'>",
             message: "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Cadastro atualizado com sucesso!</span>"
           });
         }
@@ -11486,7 +11486,7 @@ __webpack_require__.r(__webpack_exports__);
         backdrop: true,
         closeButton: false,
         size: "large",
-        title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+        title: "<img src='https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1'>",
         message: "<i class='fas fa-exclamation-circle' style='color:red'></i></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Deletar usuário?</span>",
         buttons: {
           cancel: {
@@ -12017,7 +12017,7 @@ __webpack_require__.r(__webpack_exports__);
             closeButton: false,
             size: "large",
             title:
-              "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+              "<img src='https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1'>",
             message:
               "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" +
               "<span style='font-weight:bold; position: relative; top: 5px;'>Colaborador registrado com sucesso!</span>",
@@ -12270,7 +12270,7 @@ __webpack_require__.r(__webpack_exports__);
             backdrop: true,
             closeButton: false,
             size: "large",
-            title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+            title: "<img src='https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1'>",
             message: "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Veículo registrado com sucesso!</span>"
           });
           $('#formAddVeiculo').reset();
@@ -12524,7 +12524,7 @@ __webpack_require__.r(__webpack_exports__);
             backdrop: true,
             closeButton: false,
             size: "large",
-            title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+            title: "<img src='https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1'>",
             message: "<i class='fas fa-check-circle' style='color:green'></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Cadastro atualizado com sucesso!</span>"
           });
         }
@@ -12637,7 +12637,7 @@ __webpack_require__.r(__webpack_exports__);
         backdrop: true,
         closeButton: false,
         size: "large",
-        title: "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+        title: "<img src='https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1'>",
         message: "<i class='fas fa-exclamation-circle' style='color:red'></i></i>&nbsp&nbsp" + "<span style='font-weight:bold; position: relative; top: 5px;'>Deletar veículo?</span>",
         buttons: {
           cancel: {
@@ -41226,7 +41226,7 @@ var staticRenderFns = [
         _c("a", { attrs: { href: "#" } }, [
           _c("img", {
             attrs: {
-              src: "http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e",
+              src: "https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1",
               alt: "VHLogo",
               width: "150px",
             },
@@ -42307,12 +42307,12 @@ var render = function () {
                     attrs: {
                       type: "checkbox",
                       id: "regiao1",
-                      value: "Vitória Hospitalar",
-                      "aria-label": "Vitória Hospitalar",
+                      value: "Tarcisio",
+                      "aria-label": "Tarcisio",
                     },
                     domProps: {
                       checked: Array.isArray(_vm.form.regiao1)
-                        ? _vm._i(_vm.form.regiao1, "Vitória Hospitalar") > -1
+                        ? _vm._i(_vm.form.regiao1, "Tarcisio") > -1
                         : _vm.form.regiao1,
                     },
                     on: {
@@ -42321,7 +42321,7 @@ var render = function () {
                           $$el = $event.target,
                           $$c = $$el.checked ? true : false
                         if (Array.isArray($$a)) {
-                          var $$v = "Vitória Hospitalar",
+                          var $$v = "Tarcisio",
                             $$i = _vm._i($$a, $$v)
                           if ($$el.checked) {
                             $$i < 0 &&
@@ -42342,7 +42342,7 @@ var render = function () {
                   }),
                   _vm._v(" "),
                   _c("label", { staticClass: "form-check-label" }, [
-                    _vm._v(" Vitória Hospitalar ES"),
+                    _vm._v(" Tarcisio ES"),
                   ]),
                 ]),
                 _vm._v(" "),
@@ -42361,7 +42361,7 @@ var render = function () {
                       type: "checkbox",
                       id: "regiao2",
                       value: "2",
-                      "aria-label": "Vitória Hospitalar",
+                      "aria-label": "Tarcisio",
                     },
                     domProps: {
                       checked: Array.isArray(_vm.form.regiao2)
@@ -42395,7 +42395,7 @@ var render = function () {
                   }),
                   _vm._v(" "),
                   _c("label", { staticClass: "form-check-label" }, [
-                    _vm._v(" Vitória Hospitalar MG "),
+                    _vm._v(" Tarcisio MG "),
                   ]),
                 ]),
                 _vm._v(" "),
@@ -42414,7 +42414,7 @@ var render = function () {
                       type: "checkbox",
                       id: "regiao3",
                       value: "3",
-                      "aria-label": "Vitória Hospitalar RJ",
+                      "aria-label": "Tarcisio RJ",
                     },
                     domProps: {
                       checked: Array.isArray(_vm.form.regiao3)
@@ -42448,7 +42448,7 @@ var render = function () {
                   }),
                   _vm._v(" "),
                   _c("label", { staticClass: "form-check-label" }, [
-                    _vm._v(" Vitória Hospitalar RJ "),
+                    _vm._v(" Tarcisio RJ "),
                   ]),
                 ]),
               ]),
@@ -42469,7 +42469,7 @@ var render = function () {
                       type: "checkbox",
                       id: "regiao4",
                       value: "4",
-                      "aria-label": "Vitória Hospitalar SP",
+                      "aria-label": "Tarcisio SP",
                     },
                     domProps: {
                       checked: Array.isArray(_vm.form.regiao4)
@@ -42503,7 +42503,7 @@ var render = function () {
                   }),
                   _vm._v(" "),
                   _c("label", { staticClass: "form-check-label" }, [
-                    _vm._v(" Vitória Hospitalar SP "),
+                    _vm._v(" Tarcisio SP "),
                   ]),
                 ]),
                 _vm._v(" "),
@@ -42522,7 +42522,7 @@ var render = function () {
                       type: "checkbox",
                       id: "regiao5",
                       value: "5",
-                      "aria-label": "Healthcare Logística RJ",
+                      "aria-label": "Tarcisio RJ",
                     },
                     domProps: {
                       checked: Array.isArray(_vm.form.regiao5)
@@ -42556,9 +42556,7 @@ var render = function () {
                   }),
                   _vm._v(" "),
                   _c("label", { staticClass: "form-check-label" }, [
-                    _vm._v(
-                      "\n                Healthcare Logística RJ\n              "
-                    ),
+                    _vm._v("\n                Tarcisio RJ\n              "),
                   ]),
                 ]),
                 _vm._v(" "),
@@ -42577,7 +42575,7 @@ var render = function () {
                       type: "checkbox",
                       id: "regiao6",
                       value: "6",
-                      "aria-label": "Healthcare Logística SP",
+                      "aria-label": "Tarcisio SP",
                     },
                     domProps: {
                       checked: Array.isArray(_vm.form.regiao6)
@@ -42611,9 +42609,7 @@ var render = function () {
                   }),
                   _vm._v(" "),
                   _c("label", { staticClass: "form-check-label" }, [
-                    _vm._v(
-                      "\n                Healthcare Logística SP\n              "
-                    ),
+                    _vm._v("\n                Tarcisio SP\n              "),
                   ]),
                 ]),
               ]),
@@ -45511,8 +45507,8 @@ var render = function () {
           [
             _c("img", {
               attrs: {
-                src: "http://vitoriahospitalar.com.br/2017/wp-content/uploads/2017/09/logo-vitoria-hospitalar-204.png",
-                alt: "VH Logo",
+                src: "https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1",
+                alt: "Seu Logo",
               },
             }),
             _vm._v(" "),
@@ -46826,12 +46822,12 @@ var render = function () {
                     attrs: {
                       type: "checkbox",
                       id: "regiao1",
-                      value: "Vitória Hospitalar",
-                      "aria-label": "Vitória Hospitalar",
+                      value: "Tarcisio",
+                      "aria-label": "Tarcisio",
                     },
                     domProps: {
                       checked: Array.isArray(_vm.form.regiao1)
-                        ? _vm._i(_vm.form.regiao1, "Vitória Hospitalar") > -1
+                        ? _vm._i(_vm.form.regiao1, "Tarcisio") > -1
                         : _vm.form.regiao1,
                     },
                     on: {
@@ -46840,7 +46836,7 @@ var render = function () {
                           $$el = $event.target,
                           $$c = $$el.checked ? true : false
                         if (Array.isArray($$a)) {
-                          var $$v = "Vitória Hospitalar",
+                          var $$v = "Tarcisio",
                             $$i = _vm._i($$a, $$v)
                           if ($$el.checked) {
                             $$i < 0 &&
@@ -46861,7 +46857,7 @@ var render = function () {
                   }),
                   _vm._v(" "),
                   _c("label", { staticClass: "form-check-label" }, [
-                    _vm._v(" Vitória Hospitalar ES"),
+                    _vm._v(" Tarcisio ES"),
                   ]),
                 ]),
                 _vm._v(" "),
@@ -46880,7 +46876,7 @@ var render = function () {
                       type: "checkbox",
                       id: "regiao2",
                       value: "2",
-                      "aria-label": "Vitória Hospitalar",
+                      "aria-label": "Tarcisio",
                     },
                     domProps: {
                       checked: Array.isArray(_vm.form.regiao2)
@@ -46914,7 +46910,7 @@ var render = function () {
                   }),
                   _vm._v(" "),
                   _c("label", { staticClass: "form-check-label" }, [
-                    _vm._v(" Vitória Hospitalar MG "),
+                    _vm._v(" Tarcisio MG "),
                   ]),
                 ]),
                 _vm._v(" "),
@@ -46933,7 +46929,7 @@ var render = function () {
                       type: "checkbox",
                       id: "regiao3",
                       value: "3",
-                      "aria-label": "Vitória Hospitalar RJ",
+                      "aria-label": "Tarcisio RJ",
                     },
                     domProps: {
                       checked: Array.isArray(_vm.form.regiao3)
@@ -46967,7 +46963,7 @@ var render = function () {
                   }),
                   _vm._v(" "),
                   _c("label", { staticClass: "form-check-label" }, [
-                    _vm._v(" Vitória Hospitalar RJ "),
+                    _vm._v(" Tarcisio RJ "),
                   ]),
                 ]),
               ]),
@@ -46988,7 +46984,7 @@ var render = function () {
                       type: "checkbox",
                       id: "regiao4",
                       value: "4",
-                      "aria-label": "Vitória Hospitalar SP",
+                      "aria-label": "Tarcisio SP",
                     },
                     domProps: {
                       checked: Array.isArray(_vm.form.regiao4)
@@ -47022,7 +47018,7 @@ var render = function () {
                   }),
                   _vm._v(" "),
                   _c("label", { staticClass: "form-check-label" }, [
-                    _vm._v(" Vitória Hospitalar SP "),
+                    _vm._v(" Tarcisio SP "),
                   ]),
                 ]),
                 _vm._v(" "),
@@ -47041,7 +47037,7 @@ var render = function () {
                       type: "checkbox",
                       id: "regiao5",
                       value: "5",
-                      "aria-label": "Healthcare Logística RJ",
+                      "aria-label": "Tarcisio RJ",
                     },
                     domProps: {
                       checked: Array.isArray(_vm.form.regiao5)
@@ -47075,9 +47071,7 @@ var render = function () {
                   }),
                   _vm._v(" "),
                   _c("label", { staticClass: "form-check-label" }, [
-                    _vm._v(
-                      "\n                Healthcare Logística RJ\n              "
-                    ),
+                    _vm._v("\n                Tarcisio RJ\n              "),
                   ]),
                 ]),
                 _vm._v(" "),
@@ -47096,7 +47090,7 @@ var render = function () {
                       type: "checkbox",
                       id: "regiao6",
                       value: "6",
-                      "aria-label": "Healthcare Logística SP",
+                      "aria-label": "Tarcisio SP",
                     },
                     domProps: {
                       checked: Array.isArray(_vm.form.regiao6)
@@ -47130,9 +47124,7 @@ var render = function () {
                   }),
                   _vm._v(" "),
                   _c("label", { staticClass: "form-check-label" }, [
-                    _vm._v(
-                      "\n                Healthcare Logística SP\n              "
-                    ),
+                    _vm._v("\n                Tarcisio SP\n              "),
                   ]),
                 ]),
               ]),
@@ -48921,12 +48913,12 @@ var render = function () {
                     attrs: {
                       type: "checkbox",
                       id: "regiao1",
-                      value: "Vitória Hospitalar",
-                      "aria-label": "Vitória Hospitalar",
+                      value: "Tarcisio",
+                      "aria-label": "Tarcisio",
                     },
                     domProps: {
                       checked: Array.isArray(_vm.form.regiao1)
-                        ? _vm._i(_vm.form.regiao1, "Vitória Hospitalar") > -1
+                        ? _vm._i(_vm.form.regiao1, "Tarcisio") > -1
                         : _vm.form.regiao1,
                     },
                     on: {
@@ -48935,7 +48927,7 @@ var render = function () {
                           $$el = $event.target,
                           $$c = $$el.checked ? true : false
                         if (Array.isArray($$a)) {
-                          var $$v = "Vitória Hospitalar",
+                          var $$v = "Tarcisio",
                             $$i = _vm._i($$a, $$v)
                           if ($$el.checked) {
                             $$i < 0 &&
@@ -48956,7 +48948,7 @@ var render = function () {
                   }),
                   _vm._v(" "),
                   _c("label", { staticClass: "form-check-label" }, [
-                    _vm._v(" Vitória Hospitalar "),
+                    _vm._v(" Tarcisio ES "),
                   ]),
                 ]),
                 _vm._v(" "),
@@ -48975,7 +48967,7 @@ var render = function () {
                       type: "checkbox",
                       id: "regiao2",
                       value: "2",
-                      "aria-label": "Vitória Hospitalar",
+                      "aria-label": "Tarcisio",
                     },
                     domProps: {
                       checked: Array.isArray(_vm.form.regiao2)
@@ -49009,7 +49001,7 @@ var render = function () {
                   }),
                   _vm._v(" "),
                   _c("label", { staticClass: "form-check-label" }, [
-                    _vm._v(" Vitória Hospitalar MG "),
+                    _vm._v(" Tarcisio MG "),
                   ]),
                 ]),
                 _vm._v(" "),
@@ -49028,7 +49020,7 @@ var render = function () {
                       type: "checkbox",
                       id: "regiao3",
                       value: "3",
-                      "aria-label": "Vitória Hospitalar RJ",
+                      "aria-label": "Tarcisio RJ",
                     },
                     domProps: {
                       checked: Array.isArray(_vm.form.regiao3)
@@ -49062,7 +49054,7 @@ var render = function () {
                   }),
                   _vm._v(" "),
                   _c("label", { staticClass: "form-check-label" }, [
-                    _vm._v(" Vitória Hospitalar RJ "),
+                    _vm._v(" Tarcisio RJ "),
                   ]),
                 ]),
               ]),
@@ -49083,7 +49075,7 @@ var render = function () {
                       type: "checkbox",
                       id: "regiao4",
                       value: "4",
-                      "aria-label": "Vitória Hospitalar SP",
+                      "aria-label": "Tarcisio SP",
                     },
                     domProps: {
                       checked: Array.isArray(_vm.form.regiao4)
@@ -49117,7 +49109,7 @@ var render = function () {
                   }),
                   _vm._v(" "),
                   _c("label", { staticClass: "form-check-label" }, [
-                    _vm._v(" Vitória Hospitalar SP "),
+                    _vm._v(" Tarcisio SP "),
                   ]),
                 ]),
                 _vm._v(" "),
@@ -49136,7 +49128,7 @@ var render = function () {
                       type: "checkbox",
                       id: "regiao5",
                       value: "5",
-                      "aria-label": "Healthcare Logística RJ",
+                      "aria-label": "Tarcisio RJ",
                     },
                     domProps: {
                       checked: Array.isArray(_vm.form.regiao5)
@@ -49171,7 +49163,7 @@ var render = function () {
                   _vm._v(" "),
                   _c("label", { staticClass: "form-check-label" }, [
                     _vm._v(
-                      "\n                Healthcare Logística RJ\n              "
+                      "\n                Tarcisio Logística RJ\n              "
                     ),
                   ]),
                 ]),
@@ -49191,7 +49183,7 @@ var render = function () {
                       type: "checkbox",
                       id: "regiao6",
                       value: "6",
-                      "aria-label": "Healthcare Logística SP",
+                      "aria-label": "Tarcisio SP",
                     },
                     domProps: {
                       checked: Array.isArray(_vm.form.regiao6)
@@ -49226,7 +49218,7 @@ var render = function () {
                   _vm._v(" "),
                   _c("label", { staticClass: "form-check-label" }, [
                     _vm._v(
-                      "\n                Healthcare Logística SP\n              "
+                      "\n                Tarcisio Logística SP\n              "
                     ),
                   ]),
                 ]),
@@ -53239,12 +53231,12 @@ var render = function () {
                     attrs: {
                       type: "checkbox",
                       id: "regiao1",
-                      value: "Vitória Hospitalar",
-                      "aria-label": "Vitória Hospitalar",
+                      value: "Tarcisio",
+                      "aria-label": "Tarcisio",
                     },
                     domProps: {
                       checked: Array.isArray(_vm.form.regiao1)
-                        ? _vm._i(_vm.form.regiao1, "Vitória Hospitalar") > -1
+                        ? _vm._i(_vm.form.regiao1, "Tarcisio") > -1
                         : _vm.form.regiao1,
                     },
                     on: {
@@ -53253,7 +53245,7 @@ var render = function () {
                           $$el = $event.target,
                           $$c = $$el.checked ? true : false
                         if (Array.isArray($$a)) {
-                          var $$v = "Vitória Hospitalar",
+                          var $$v = "Tarcisio",
                             $$i = _vm._i($$a, $$v)
                           if ($$el.checked) {
                             $$i < 0 &&
@@ -53274,7 +53266,7 @@ var render = function () {
                   }),
                   _vm._v(" "),
                   _c("label", { staticClass: "form-check-label" }, [
-                    _vm._v(" Vitória Hospitalar ES"),
+                    _vm._v(" Tarcisio ES"),
                   ]),
                 ]),
                 _vm._v(" "),
@@ -53293,7 +53285,7 @@ var render = function () {
                       type: "checkbox",
                       id: "regiao2",
                       value: "2",
-                      "aria-label": "Vitória Hospitalar",
+                      "aria-label": "Tarcisio",
                     },
                     domProps: {
                       checked: Array.isArray(_vm.form.regiao2)
@@ -53327,7 +53319,7 @@ var render = function () {
                   }),
                   _vm._v(" "),
                   _c("label", { staticClass: "form-check-label" }, [
-                    _vm._v(" Vitória Hospitalar MG "),
+                    _vm._v(" Tarcisio MG "),
                   ]),
                 ]),
                 _vm._v(" "),
@@ -53346,7 +53338,7 @@ var render = function () {
                       type: "checkbox",
                       id: "regiao3",
                       value: "3",
-                      "aria-label": "Vitória Hospitalar RJ",
+                      "aria-label": "Tarcisio RJ",
                     },
                     domProps: {
                       checked: Array.isArray(_vm.form.regiao3)
@@ -53380,7 +53372,7 @@ var render = function () {
                   }),
                   _vm._v(" "),
                   _c("label", { staticClass: "form-check-label" }, [
-                    _vm._v(" Vitória Hospitalar RJ "),
+                    _vm._v(" Tarcisio RJ "),
                   ]),
                 ]),
               ]),
@@ -53401,7 +53393,7 @@ var render = function () {
                       type: "checkbox",
                       id: "regiao4",
                       value: "4",
-                      "aria-label": "Vitória Hospitalar SP",
+                      "aria-label": "Tarcisio SP",
                     },
                     domProps: {
                       checked: Array.isArray(_vm.form.regiao4)
@@ -53435,7 +53427,7 @@ var render = function () {
                   }),
                   _vm._v(" "),
                   _c("label", { staticClass: "form-check-label" }, [
-                    _vm._v(" Vitória Hospitalar SP "),
+                    _vm._v(" Tarcisio SP "),
                   ]),
                 ]),
                 _vm._v(" "),
@@ -53454,7 +53446,7 @@ var render = function () {
                       type: "checkbox",
                       id: "regiao5",
                       value: "5",
-                      "aria-label": "Healthcare Logística RJ",
+                      "aria-label": "Tarcisio RJ",
                     },
                     domProps: {
                       checked: Array.isArray(_vm.form.regiao5)
@@ -53488,9 +53480,7 @@ var render = function () {
                   }),
                   _vm._v(" "),
                   _c("label", { staticClass: "form-check-label" }, [
-                    _vm._v(
-                      "\n                Healthcare Logística RJ\n              "
-                    ),
+                    _vm._v("\n                Tarcisio RJ\n              "),
                   ]),
                 ]),
                 _vm._v(" "),
@@ -53509,7 +53499,7 @@ var render = function () {
                       type: "checkbox",
                       id: "regiao6",
                       value: "6",
-                      "aria-label": "Healthcare Logística SP",
+                      "aria-label": "Tarcisio SP",
                     },
                     domProps: {
                       checked: Array.isArray(_vm.form.regiao6)
@@ -53543,9 +53533,7 @@ var render = function () {
                   }),
                   _vm._v(" "),
                   _c("label", { staticClass: "form-check-label" }, [
-                    _vm._v(
-                      "\n                Healthcare Logística SP\n              "
-                    ),
+                    _vm._v("\n                Tarcisio SP\n              "),
                   ]),
                 ]),
               ]),

@@ -183,17 +183,17 @@ class ManutencoesController extends Controller
         $periodoFim = null; $periodoIni = null;
         
         if ($req->regiao1 != "null")
-            $regiao1 = 'Vitória Hospitalar ES'; 
+            $regiao1 = 'Tarcisio ES'; 
         if ($req->regiao2 != "null")
-            $regiao2 = 'Vitória Hospitalar MG';
+            $regiao2 = 'Tarcisio MG';
         if ($req->regiao3 != "null")
-            $regiao3 = 'Vitória Hospitalar RJ';
+            $regiao3 = 'Tarcisio RJ';
         if ($req->regiao4 != "null")
-            $regiao4 = 'Vitória Hospitalar SP';
+            $regiao4 = 'Tarcisio SP';
         if ($req->regiao5 != "null")
-            $regiao5 = 'Healthcare Logística RJ';
+            $regiao5 = 'Tarcisio RJ';
         if ($req->regiao6 != "null")
-            $regiao6 = 'Healthcare Logística SP';
+            $regiao6 = 'Tarcisio SP';
         
 
         $data = explode("/",$req->periodoIni);

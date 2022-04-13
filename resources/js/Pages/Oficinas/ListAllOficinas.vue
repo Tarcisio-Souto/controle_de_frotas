@@ -82,7 +82,7 @@ export default {
         closeButton: false,
         size: "large",
         title:
-          "<img src='http://denuncia.vitoriahospitalar.com.br/dist/logo.png?343b76e5e3d8038a9c8e00e61671535e'>",
+          "<img src='https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1'>",
         message:
           "<i class='fas fa-exclamation-circle' style='color:red'></i></i>&nbsp&nbsp" +
           "<span style='font-weight:bold; position: relative; top: 5px;'>Deletar oficina?</span>",

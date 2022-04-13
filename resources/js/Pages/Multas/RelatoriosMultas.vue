@@ -29,11 +29,11 @@
                   class="form-check-input position-static"
                   type="checkbox"
                   id="regiao1"
-                  value="Vitória Hospitalar"
-                  aria-label="Vitória Hospitalar"
+                  value="Tarcisio"
+                  aria-label="Tarcisio"
                   v-model="form.regiao1"
                 />
-                <label class="form-check-label"> Vitória Hospitalar </label>
+                <label class="form-check-label"> Tarcisio ES </label>
               </div>
 
               <div class="form-check">
@@ -42,10 +42,10 @@
                   type="checkbox"
                   id="regiao2"
                   value="2"
-                  aria-label="Vitória Hospitalar"
+                  aria-label="Tarcisio"
                   v-model="form.regiao2"
                 />
-                <label class="form-check-label"> Vitória Hospitalar MG </label>
+                <label class="form-check-label"> Tarcisio MG </label>
               </div>
 
               <div class="form-check">
@@ -54,10 +54,10 @@
                   type="checkbox"
                   id="regiao3"
                   value="3"
-                  aria-label="Vitória Hospitalar RJ"
+                  aria-label="Tarcisio RJ"
                   v-model="form.regiao3"
                 />
-                <label class="form-check-label"> Vitória Hospitalar RJ </label>
+                <label class="form-check-label"> Tarcisio RJ </label>
               </div>
             </div>
             <div class="col-md-6">
@@ -67,10 +67,10 @@
                   type="checkbox"
                   id="regiao4"
                   value="4"
-                  aria-label="Vitória Hospitalar SP"
+                  aria-label="Tarcisio SP"
                   v-model="form.regiao4"
                 />
-                <label class="form-check-label"> Vitória Hospitalar SP </label>
+                <label class="form-check-label"> Tarcisio SP </label>
               </div>
 
               <div class="form-check">
@@ -79,11 +79,11 @@
                   type="checkbox"
                   id="regiao5"
                   value="5"
-                  aria-label="Healthcare Logística RJ"
+                  aria-label="Tarcisio RJ"
                   v-model="form.regiao5"
                 />
                 <label class="form-check-label">
-                  Healthcare Logística RJ
+                  Tarcisio Logística RJ
                 </label>
               </div>
 
@@ -93,11 +93,11 @@
                   type="checkbox"
                   id="regiao6"
                   value="6"
-                  aria-label="Healthcare Logística SP"
+                  aria-label="Tarcisio SP"
                   v-model="form.regiao6"
                 />
                 <label class="form-check-label">
-                  Healthcare Logística SP
+                  Tarcisio Logística SP
                 </label>
               </div>
             </div>

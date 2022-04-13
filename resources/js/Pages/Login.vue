@@ -5,7 +5,7 @@
             <div class="row">
               <div class="col-md-3"></div>
               <div class="col-md-6" align="center">
-                <img src="http://vitoriahospitalar.com.br/2017/wp-content/uploads/2017/09/logo-vitoria-hospitalar-204.png" alt="VH Logo">
+                <img src="https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1" alt="Seu Logo">
                 <h4>VH Veículos</h4>
 
                 <div class="error-login" v-for="(erro, login) in errors" :key="login">
