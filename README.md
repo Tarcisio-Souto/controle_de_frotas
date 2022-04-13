@@ -91,7 +91,7 @@ de frotas veicular.
 
 ><b>Login</b><br>
 
-![Screenshot](https://github.com/Tarcisio-Souto/controle_de_frotas/blob/main/capturas/login.PNG)
+![Screenshot](https://github.com/Tarcisio-Souto/controle_de_frotas/blob/main/capturas/login_.PNG)
 
 <br><br>
 
