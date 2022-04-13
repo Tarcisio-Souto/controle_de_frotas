@@ -127,7 +127,7 @@ de frotas veicular.
 
 ><b>Lista de Usuário</b><br>
 
-![Screenshot](https://github.com/Tarcisio-Souto/controle_de_frotas/blob/main/capturas/lista_usuario.PNG)
+![Screenshot](https://github.com/Tarcisio-Souto/controle_de_frotas/blob/main/capturas/lista_usuarios.PNG)
 
 <br><br>
 
