@@ -53,21 +53,21 @@ de frotas veicular.
     <li>
         <b>Editor de códigos (Visual Studio Code)</b>
         <ul><br>
-            <li>Visual Studio Code - Disponível em: https://code.visualstudio.com/download></li>
+            <li>Visual Studio Code - Disponível em: https://code.visualstudio.com/download</li>
         </ul>  
     </li>
     <br>
     <li>
         <b>Laravel 8</b>
         <ul><br>
-            <li>Disponível em: https://laravel.com/docs/8.x></li>
+            <li>Disponível em: https://laravel.com/docs/8.x</li>
         </ul>  
     </li>
     <br>
     <li>
         <b>Composer</b>
         <ul><br>
-            <li>Disponível em: https://getcomposer.org/download/></li>
+            <li>Disponível em: https://getcomposer.org/download/</li>
         </ul>  
     </li>
     <br>
