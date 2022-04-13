@@ -6,7 +6,7 @@
               <div class="col-md-3"></div>
               <div class="col-md-6" align="center">
                 <img src="https://i0.wp.com/www.roteirospe.com/wp-content/uploads/2017/02/SEU-LOGO-AQUI-300x81-1-300x81-1.png?ssl=1" alt="Seu Logo">
-                <h4>VH Veículos</h4>
+                <h4>Tarcísio Veículos</h4>
 
                 <div class="error-login" v-for="(erro, login) in errors" :key="login">
                   <div v-if="login == 'login'">
